@@ -1,0 +1,4 @@
+% layer_num layer_name enable height start_z1 end_z2 material boundary
+% e.g. 1 boundary true 0.100 -0.100 0.000 Silicon
+1 boundary true 0.100 -0.100 0.000 Silicon boundary
+2 

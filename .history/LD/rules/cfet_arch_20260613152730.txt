@@ -1,0 +1,16 @@
+%designed by gds file
+Num_channel = -1
+Num_channel_n = 2
+Num_channel_p = 2
+
+inner_spacer_thickness = 0.005
+gate_spacer_thickness = 0.002
+
+Length_Gate = 0.030
+Width_Gate = 
+
+
+
+
+%designed by super parameters
+

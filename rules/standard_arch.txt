@@ -1,0 +1,55 @@
+% Standard CFET SDE process/device parameters. Length unit: um.
+% x/y geometry, metal tracks, net aliases, and routing orientation are derived
+% from the layout txt and are intentionally not repeated here.
+
+% Gate / channel / spacer hard parameters.
+gate_width = 0.014
+gate_material = Tungsten
+high_k_thickness = 0.002
+high_k_material = HfO2
+inner_spacer_material = Si3N4
+gate_to_sd_sidewall_spacing = 0.005
+
+num_channel_lower = 2
+num_channel_upper = 2
+channel_thickness = 0.006
+channel_vertical_gap = 0.012
+mdi_thickness = 0.040
+channel_width = 0.021
+upper_channel_material = Silicon
+lower_channel_material = Silicon
+
+% Source/drain epi parameters. z coordinates are computed from the channel stack.
+upper_sd_material = Silicon
+lower_sd_material = SiGe
+sd_width = 0.021
+sd_overgrowth_z_up = 0.006
+sd_overgrowth_z_down = 0.006
+
+% Dielectric envelope.
+dielectric_enable = true
+
+% Doping.
+doping_enable = true
+nmos_doping_species = ArsenicActiveConcentration
+nmos_doping_concentration = 8e19
+pmos_doping_species = BoronActiveConcentration
+pmos_doping_concentration = 8e19
+
+% Meshing.
+meshing_enable = true
+global_mesh_max_x = 0.020
+global_mesh_max_y = 0.020
+global_mesh_max_z = 0.020
+global_mesh_min_x = 0.010
+global_mesh_min_y = 0.010
+global_mesh_min_z = 0.010
+core_mesh_max_x = 0.002
+core_mesh_max_y = 0.002
+core_mesh_max_z = 0.002
+core_mesh_min_x = 0.001
+core_mesh_min_y = 0.001
+core_mesh_min_z = 0.001
+mesh_engine = snmesh
+mesh_options = -a -c boxmethod
+mesh_output_name = n@node@_standard_sram_sde

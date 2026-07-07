@@ -1,0 +1,178 @@
+--- PAGE 1 ---
+Double-Flip Sequential CFET: Superior 3T Library Efficiency and PPA
+Sheng Yang*, Jürgen Bömmels*, Halil Kükner*, Fabian M. Bufler, Lynn Verschueren, Hans Mertens,
+Anne Vandooren, Naoto Horiguchi, Anita Farokhnejad, Geert Hellings
+imec, Kapeldreef 75, 3001, Leuven, Belgium, *equally contributed, email: sheng.yang@imec.be
+Abstract DR layout inefficiencies, half-height DR (hDR) architecture
+Double‑flip sequential CFET (sCFET) architecture enables was proposed in [8], and recent PPA results have been
+split‑gate devices and dense BM0 routing, supporting 3‑track presented in [7]. Next, hDR with dense-pitch backside BM0
+standard cells with high library efficiency. Hybrid orientation (hDR denseBM0) and hDR split-gate comparably improve cell
+and asymmetric nanosheet widths in sCFET further optimize area and layout efficiency. Finally, sCFET combines both
+device‑level PPA, offering scaling potential. dense backside and split-gate capabilities within feasible
+Introduction process margins. Fig.3 shows that sCFET achieves the lowest
+Common‑gate (CG) CFETs lack the independent gate core area (-23%) with the highest layout efficiency (98%).
+control needed for transmission gates, while split‑gate (SG) Power/Performance Evaluation
+devices address this limitation [1,2]. To enable split‑gate Gate capacitance evaluation: In the CFET structure with split
+within realistic process margins, we propose a double‑flip gate enabled by double-flip processing, the taller backside gate
+sCFET at the A7 node with asymmetric stacking and a local increases parasitic gate capacitance as shown in Fig.4. This
+vertical bypass path (Fig.1d) [3-5]. Combined with dense BM0 added capacitance leads to a ~10% RO frequency reduction.
+routing, this enables efficient 3‑track CFET standard cells. Sensitivity analysis in Fig.5 indicates that reducing the gate,
+sCFET supports hybrid top–bottom device orientation and MD, and BMD heights can shrink the frequency gap between
+asymmetric sheet widths to enhance PPA and design flexibility. common‑gate and split‑gate devices from 10% to ~4%.
+Double-Flip Sequential Processing flow VGG thickness in Split gate: Complex cells (e.g., MUX)
+CFET devices can be patterned using two approaches. In contain both connected gates of the same polarity and isolated
+monolithic CFET (mCFET), the top and bottom devices are gates of opposite polarity as shown in Fig.6. Connected gates
+patterned in a single step using the same masks for Active and benefit from a smaller VGG to minimize fringing capacitance,
+Gate. Sequential CFET instead patterns the two devices while isolated opposite‑polarity gates prefer a larger VGG to
+independently with dedicated masks. This increases the mask- reduce gate coupling. Selecting the optimal VGG requires
+count and extends the process flow (Table I) but enables balancing these trade‑offs with process complexity.
+greater design freedom and architectural flexibility. sCFET with hybrid orientation (HOT): Independent
+The sCFET process flow is shown in Fig. 2 and starts from NMOS/PMOS crystal‑orientation optimization in sCFET
+a bonded stack with embedded Middle Dielectric Isolation delivers 19-27% Ion gains for stressed channels (Fig.7),
+(eMDI) between top and bottom devices. First the top device boosting sCFET performance from 10% below mCFET_CG to
+is patterned from the front stopping on the eMDI up till the first 9% above. Together with gate‑capacitance tuning, the sCFET
+(high-T) part of the RMG process (high-k and dipole but no RO speed improves by ~17% over mCFET_CG. These gains
+WF-metals yet). Next, a temporary layer is bonded on the top, increase power density, but reducing the active sheet width to
+the wafer is flipped, and the bulk of the bottom wafer is 14 nm lowers it and enables a smaller standard‑cell height
+removed. Bottom device is patterned from the backside (Fig.8-9). At 14 nm sheet width, the CH can be scaled to 54 nm.
+through all high-temperature steps. The connection between sCFET also uses only 3 M0 tracks, 0.5 fewer than mCFET,
+bottom and top Gate through eMDI is a new step in sCFET while maintaining an 18 nm M0 pitch at 54 nm CH.
+requires an isolation etch inside the gate trench without Asymmetrical sheet width: In the sCFET architecture, with
+attacking the devices, which is enabled by an additional BDI the VMM only bypassing the bottom device, high library
+protection layer. It has been shown [9] that overlay between the efficiency is maintained, allowing the top device to use a wider
+Top and Bot devices is 3 nm. The top and bottom Device are sheet. This can be used to balance rise/fall delays by
+finished with Nanosheet-like process with another Flip. strengthening the weaker device. As shown in Fig.9, widening
+The sCFET scheme enables split gate and offers two key the NMOS sheet (e.g., 14 nm → 18 nm) restores its drive
+benefits: a two‑step RMG for the top device, in which the current and re‑equalizes rise/fall delays. In complex cells such
+second (metal‑fill) step is performed at low thermal budget, as NAND, series‑connected NMOS devices amplify the impact
+enabling low‑Vt for both tiers, and the sequential patterning of of the weaker transistor. The stacked pull‑down path has higher
+a single device at a time reduces etch complexity by avoiding effective resistance. Enlarging the NMOS sheet width reduces
+high‑aspect‑ratio processes inherent to monolithic CFET. this resistance, giving greater frequency benefits in NAND and
+Standard Cell Library Layout Efficiency other stacked‑NMOS structures.
+Impacts of architectural choices (i.e. common vs split-gate, Conclusion
+dense backside BM0, MOL connectivity) can be obscured if Double‑flip sCFET enables split‑gate architecture, together
+only evaluated at a single cell. Therefore, several CFET with dense BM0 routing and the VMM scheme, it supports a
+libraries (Fig.1) have been designed to evaluate routability, 3T device without library efficiency penalty. The 3T
+area scaling and library efficiency. Cell area breakdown and architecture can be further enhanced through capacitance
+core area scaling projections are shown in Table II and Fig.3 tuning and HOT optimization. The combination of 3T design
+for each CFET architecture. Library layout efficiency (η ) and HOT creates additional scaling potential. The
+layout
+is defined as follows: asymmetrical sCFET structure enables hybrid sheet‑width
+η = 𝑠𝑐𝑎𝑙𝑖𝑛𝑔 ⁄𝑠𝑐𝑎𝑙𝑖𝑛𝑔 , (1) optimization, allowing independent NMOS/PMOS tuning for
+where Core A 𝑙 r 𝑎 e 𝑦 a 𝑜 𝑢 a 𝑡 nd Unit Are 𝐶 a 𝑜𝑟 𝑒 s 𝐴 c 𝑟 a 𝑒 l 𝑎 ing are no 𝑈 r 𝑛 m 𝑖𝑡 a 𝐴 l 𝑟 i 𝑒 z 𝑎 ed to the balanced electrical performance and improved delay in
+complex stacked cells such as NAND.
+reference N2 6T Nanosheet node with backside power [10].
+Acknowledgements: This work has been enabled in part by
+Unit area is Contacted Poly Pitch (CPP) × Cell Height (CH).
+Core area is the projected total cell area of an ARM 64-bit HD the NanoIC pilot line. The acquisition and operation are jointly
+funded by the Chips Joint Undertaking, through the European
+core with ∼500K-700K cells (∼10%-7% flop rate) without any
+Union’s Digital Europe (101183266) and Horizon Europe
+SRAM macros, targeted at lvt, tt, 0.7 V, 25 °C corner.
+Double-Row CFET (DR) [6, 7] cells show significant area programs (101183277), as well as by the participating states
+Belgium (Flanders), France, Germany, Finland, Ireland and
+overhead caused by intrinsic layout limitations. To overcome
+Romania. For more information, visit nanoic-project.eu.
+
+--- PAGE 2 ---
+Fig. 1. Cross-sectional views of a. (h)DR mCFET [6-8], b. with
+dense BM0 tracks (i.e. same M0 pitch), c. with split-gate, d. sCFET
+with split-gate and dense BM0. sCFET CPP, CH and M0 pitch/cd
+are 42, 54-60 and 18/10 nm, respectively. Power and ground rails
+are ~3-cd wide. Both top and bottom FETs have symmetric routing
+resources at front/backside, i.e. 2 signal routing tracks per n/pFET,
+respectively. Vertical local interconnect is realized by VMM via
+(that can bypass bottom device). All regions are encapsulated Fig. 2. sCFET process flow. List of
+within cell boundaries, hence sCFET doesn’t cause any resource (FEOL)-modules. Bulk modules
+conflicts/constraints as opposed to hDR mCFET architectures with shown as gate‑aligned cross‑sections
+shared MRW at cell boundary. from process emulation
+TABLE I. Flow comparison of different processing schemes. The TABLE II. Cell area breakdown (rows × cols) of CFET libraries. DR
+comparison considers a FEOL flow from Backside‑M0 to shows 26% lower library layout efficiency than N2 6T nanosheet
+Frontside‑M0, using one VT for nMOS and pMOS each (2 in total). architecture. hDR improves DR layout efficiency from 0.74 to 0.86.
+No IO-devices, diodes etc. are considered. The DR and hDR flows Furthermore, hDR denseBM0 enables a higher track density at
+are identical in process and differ only in layout. Adding the backside BM0 to improve routability, resulting in low area in many
+denseBM0 increases the mask-count by 17% and the op-count by cells, and increased efficiency (0.93). Alternatively, hDR split-gate
+11%, whereas adding split-gate increases the mask-count also by improves transmission gates, and achieves a similar efficiency (0.94)
+17% and the op-count by 16%. sCFET has the combination of both as hDR denseBM0. Finally, sCFET significantly optimizes cell library,
+elements, this leads to a mask-count increase by 55% and op-count and achieves an overall 98% layout efficiency.
+by 37%.
+Fig. 4a: Sentaurus SDE structures.
+Left: A7 mCFET with common gate
+Fig. 3. Core area scaling projections for CFET libraries. hDR
+(CG), frontside RMG. Middle, Right:
+optimization scales core area down by 13% than DR. Both hDR A7 mCFET, sCFET with split‑gate
+denseBM0 and hDR split-gate present a similar scaling potential (SG) and double‑flip processing.
+around 8% on top of hDR. Finally, sCFET reduces core area by Fig. 4b: Parasitic gate capacitances
+15%-23% (CH60-54) than hDR, as an outcome of denser backside extracted from mCFET CG and SG Fig. 4c: RO benchmark [11]
+using Synopsys Raphael FX. The SG results for the 3 CFETs. SG
+BM0 tracks, split-gate, asymmetric sheet width and vertical local
+configuration enabled by double-flip devices show 9-10% lower
+interconnect VMM. sCFET nearly achieves ~1:1 scaling ratio
+results in a 27% increase in gate frequency compared with CG
+between unit and core area, i.e. sCFET optimizations are converted parasitic capacitance, mainly due to device, attributed to the added
+to core area scaling with high efficiency. larger gate‑to‑BMD coupling. capacitance penalty.
+
+--- PAGE 3 ---
+Table III: Parameters used in the capacitance sensitivity analysis for
+gate-over-active and MD/BMD-over-active in sCFET_SG.
+Fig. 6. RO results showing the VGG-thickness sensitivity for split-gate
+devices, with VGG varied from 5 to 25 nm.
+(a) INVD1 uses only one gate type—a connected gate with uniform
+polarity—so reducing the VGG thickness lowers the fringing
+capacitance.
+(b) In MUX2D1 based RO, the two input terminals of the MUX
+Fig. 5. Sensitivity analysis using the 5 DoEs. (a): Parasitic gate connected to VSS and VDD, while the select terminal is driven by the
+capacitances extracted from sCFET with SG. Reducing the gate and RO stage nodes. MUX2D1 includes both connected gates and isolated
+MD/BMD facing area reduces gate parasitic capacitance. (b): Ring split-gates with opposite polarities. Thinner VGG improves the
+oscillator (RO) performance comparison between mCFET_CG and connected-gate behavior but increases the capacitive coupling between
+sCFET_SG. DoE5 minimizes the frequency gap between the isolated opposite-polarity gates. Consequently, the MUX2D1
+mCFET_CG and sCFET_SG from 10% to 4%. design exhibits an optimal VGG thickness due to this trade-off.
+Fig. 7a: <channel> /(wafer)
+orientation dependent Ionsat as
+a function of W extracted from
+TCAD simulations [11,12].
+Fig. 7b: RO results for CFETs. Fig. 8a: In sCFET, the VMM only needs to
+With HOT, the Ieff of the bypass the bottom device to maintain library
+sCFET device increases by efficiency: Isolation is required for the bottom
+approximately 25%. Combined device, whereas the top device can use an
+with gate capacitance tuning, the active sheet width that is 8 nm larger.
+sCFET_SG achieves a 17%
+Fig. 8b: Ion mismatch between NMOS and
+higher RO speed than
+PMOS is observed for both stressed and
+mCFET_CG. This performance
+unstressed devices. This mismatch can be
+gain, however, is accompanied
+mitigated by placing the weaker device on top
+by a 27% increase in power and enlarging its active sheet width.
+density.
+References
+[1] L. Liebmann et al., IEDM, 2021, pp. 3.1.1-3.1.4,
+doi: 10.1109/IEDM19574.2021.9720577.
+[2] S. Liao et al., IEDM, 2025, pp. 2.5.1-2.5.4.
+[3] C. Zhang et al., IEDM, 2024, pp. 1-4,
+doi: 10.1109/IEDM50854.2024.10873419.
+[4] H. Wu et al., VLSI 2025.
+doi: 10.23919/VLSITechnologyandCir65189.2025.11075188
+[5] S. Reboh et al., VLSI 2025.
+doi:10.23919/VLSITechnologyandCir65189.2025.11074866
+[6] H. Kükner et al., IEDM, 2024, pp. 1-4,
+doi: 10.1109/IEDM50854.2024.10873524.
+[7] J. Y. Lin et al., IEDM, 2025, pp. 1–4.
+[8] H. Kükner et al., ICCAD, 2025, pp. 1-8,
+doi: 10.1109/ICCAD66269.2025.11240689.
+[9] A. Vandooren et al., IEDM, 2024, pp. 1-4.
+Fig. 9. RO results of CFET devices (DoE4 in Table III). (a): sCFET
+doi: 10.1109/IEDM50854.2024.10873520
+sheet‑width scaling from 21 nm to 14 nm reduces power density
+[10] A. Farokhnejad et al., ESSERC, 2024, pp. 17-20,
+while maintaining a 6% higher frequency than mCFET_CG.
+doi: 10.1109/ESSERC62670.2024.10719536.
+(b): Increasing NMOS sheet width to 18 nm mitigates rise/fall delay
+[11] S. Yang et al., IEDM, 2025, pp. 1–4.
+(tpLH, tpHL) imbalance and improves INVD1 RO frequency by
+[12] F. M. Bufler et al., SISPAD, 2025, pp. 1-4.
+5%. (c): NMOS sheet‑width enlargement provides larger frequency
+doi: 10.1109/SISPAD66650.2025.11186385
+gains (∼7%) in NAND cells, where two NMOS devices are
+connected in series.

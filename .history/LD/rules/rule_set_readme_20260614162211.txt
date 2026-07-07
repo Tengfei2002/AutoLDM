@@ -1,0 +1,9 @@
+layer_num 层编号
+layer_name 层名称、层定义
+enable 层可用性
+height 层的物理高度
+start_z1 层的物理最低点
+end_z2 层的物理最高点
+material 该层版图内部的填充材料类型
+boundary 该层版图的最大有效区域（最大有效区域外的版图无效）
+ILD 该层版图的最大有效区域内未被填充材料的区域
