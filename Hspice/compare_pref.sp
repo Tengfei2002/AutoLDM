@@ -6,8 +6,8 @@
 .TEMP 25
 
 * --- 1. Include Files ---
-.hdl "fusion_ic_nmos_lvt.va"
-.hdl "fusion_ic_pmos_lvt.va"
+.hdl "va/fusion_ic_nmos_lvt.va"
+.hdl "va/fusion_ic_pmos_lvt.va"
 .INCLUDE "parasitics_wrapper.sp"
 
 * --- 2. Parameters ---

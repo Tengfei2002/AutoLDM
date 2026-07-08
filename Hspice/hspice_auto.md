@@ -1,4 +1,238 @@
-# HSPICE / Verilog-A Model Notes
+﻿# HSPICE 自动化流说明
+
+本文档记录当前项目在 Windows 上用命令行运行 HSPICE 的约定。当前已验证的 HSPICE 路径是：
+
+```text
+C:\synopsys\Hspice_P-2019.06-SP1-1\WIN64\hspice.com
+```
+
+当前 license 环境变量为：
+
+```text
+SNPSLMD_LICENSE_FILE=27000@LAPTOP-K9QP6UAM
+```
+
+Custom WaveView 路径为：
+
+```text
+C:\synopsys\Custom WaveView O-2018.09-SP2\wv.exe
+```
+
+## 目录结构
+
+```text
+Hspice\
+  hspice_auto.md
+  va\
+    cfet_nmos_lvt.va
+    cfet_pmos_lvt.va
+    fusion_ic_nmos_lvt.va
+    fusion_ic_pmos_lvt.va
+  parasitics_wrapper.sp
+  compare_pref.sp
+  wt_cfet\
+    CFET_N4.40_14000.csv
+  iv_flow\
+    run_hspice.py
+    run_wv.py
+    README.md
+    cmd\
+      run_hspice.cmd
+      run_wv.cmd
+      run_iv.cmd
+      run_iv.ps1
+      check_hspice_install.ps1
+      configure_hspice_env.ps1
+      open_awaves.cmd
+      open_hspice_gui.cmd
+    decks\
+      single_nmos_output_iv.sp
+      single_pmos_output_iv.sp
+      circuit_inverter_dc_iv.sp
+```
+
+约定：
+
+- 所有命令行工具脚本都放在 `iv_flow\cmd\`，包括 `.cmd` 和 `.ps1`。
+- `run_hspice.py` 默认把输出放在 `.sp` 同级的同名文件夹下。
+- `run_wv.py` 单独负责打开已有波形。
+- `run_hspice.py -wv` 仍然保留，仿真结束后会自动打开 WaveView。
+
+## Python 一键仿真
+
+进入工作流目录：
+
+```powershell
+cd C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv_flow
+```
+
+运行一个 deck：
+
+```powershell
+python .\run_hspice.py .\decks\single_nmos_output_iv.sp
+```
+
+输出结构现在是：
+
+```text
+decks\
+  single_nmos_output_iv.sp
+  single_nmos_output_iv\
+    single_nmos_output_iv.lis
+    single_nmos_output_iv.sw0
+    single_nmos_output_iv.st0
+    single_nmos_output_iv.pa0
+    single_nmos_output_iv.valog
+    single_nmos_output_iv.pvadir\
+    manifest.json
+```
+
+也就是：
+
+```text
+xxx.sp
+xxx\xxx.sw0
+xxx\xxx.lis
+xxx\manifest.json
+```
+
+显式指定 HSPICE 或 license：
+
+```powershell
+python .\run_hspice.py .\decks\single_nmos_output_iv.sp --install-dir "C:\synopsys\Hspice_P-2019.06-SP1-1"
+python .\run_hspice.py .\decks\single_nmos_output_iv.sp --license-server "27000@LAPTOP-K9QP6UAM"
+```
+
+只打印命令，不运行：
+
+```powershell
+python .\run_hspice.py .\decks\single_nmos_output_iv.sp --dry-run
+```
+
+## 仿真后自动打开 WaveView
+
+保留原来的 `-wv` 功能：
+
+```powershell
+python .\run_hspice.py .\decks\single_nmos_output_iv.sp -wv
+```
+
+它会先运行 HSPICE，然后优先打开：
+
+```text
+decks\single_nmos_output_iv\single_nmos_output_iv.sw0
+```
+
+如果是瞬态或 AC 仿真，则会尝试 `.tr0` 或 `.ac0`。
+
+## 单独打开已有波形
+
+新增独立入口：
+
+```powershell
+python .\run_wv.py .\decks\single_nmos_output_iv.sp
+```
+
+给它 `.sp` 时，它会自动找：
+
+```text
+decks\single_nmos_output_iv\single_nmos_output_iv.sw0
+```
+
+也可以直接给输出目录：
+
+```powershell
+python .\run_wv.py .\decks\single_nmos_output_iv
+```
+
+或者直接给波形文件：
+
+```powershell
+python .\run_wv.py .\decks\single_nmos_output_iv\single_nmos_output_iv.sw0
+```
+
+显式指定 WaveView：
+
+```powershell
+python .\run_wv.py .\decks\single_nmos_output_iv.sp --wv-cmd "C:\synopsys\Custom WaveView O-2018.09-SP2\wv.exe"
+```
+
+## CMD 包装器
+
+所有 `.cmd` 都在：
+
+```text
+Hspice\iv_flow\cmd\
+```
+
+可以这样使用：
+
+```powershell
+.\cmd\run_hspice.cmd .\decks\single_nmos_output_iv.sp
+.\cmd\run_wv.cmd .\decks\single_nmos_output_iv.sp
+.\cmd\run_iv.cmd -Target all
+```
+
+打开 GUI 工具：
+
+```powershell
+.\cmd\open_hspice_gui.cmd
+.\cmd\open_awaves.cmd
+```
+
+## 批量 IV Flow
+
+`run_iv.ps1` / `cmd\run_iv.cmd` 仍然用于批量运行预设 deck：
+
+```powershell
+.\cmd\run_iv.cmd -Target nmos
+.\cmd\run_iv.cmd -Target pmos
+.\cmd\run_iv.cmd -Target single
+.\cmd\run_iv.cmd -Target circuit
+.\cmd\run_iv.cmd -Target all
+```
+
+它仍然把批量结果放在 `iv_flow\results\` 下。这个批量 flow 和 `run_hspice.py` 的“贴着 `.sp` 输出”是两个入口：前者用于批量回归，后者用于单个 deck 的快速仿真。
+
+## 检查环境
+
+检查 HSPICE、license server 和 `snpslmd`：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\cmd\check_hspice_install.ps1
+```
+
+正常状态应包含：
+
+```text
+License server UP
+snpslmd: UP
+Users of hspice
+Users of hspicewin
+```
+
+如果需要完整 FLEXlm feature 清单：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\cmd\check_hspice_install.ps1 -FullLicenseStatus
+```
+
+## 输出文件速查
+
+- `.lis`：HSPICE 主日志、warning/error、`.PRINT` 输出和运行统计。
+- `.sw0`：DC sweep 波形文件，WaveView 主要打开它。
+- `.tr0`：瞬态仿真波形文件。
+- `.ac0`：AC 仿真波形文件。
+- `.ms0`：`.MEASURE` 结果。
+- `.st0`：状态文件。
+- `.pa0`：后处理辅助文件。
+- `.valog`：Verilog-A 编译日志。
+- `.pvadir\`：Verilog-A 编译缓存目录。
+- `manifest.json`：本次 run 的输入、输出、HSPICE 路径、license 和 WaveView 信息。
+
+---
+
+## HSPICE / Verilog-A 模型与后仿说明
 
 本文说明 `fusion_ic_nmos_lvt.va` 和 `fusion_ic_pmos_lvt.va` 的作用、整体仿真结构，以及从 OA/layout 抽取到 HSPICE 后仿网表时需要准备的参数。这里的 OA 按 OpenAccess/layout 数据库或版图抽取对象理解；如果目标是具体模拟电路中的 op-amp/OA，器件与寄生部分仍然适用，testbench 指标需要替换为增益、带宽、相位裕度、CMRR、PSRR 等模拟指标。
 
@@ -479,3 +713,4 @@ I(D, S) <+ ddt(QD);
 ```
 
 也就是说，它是“电流模型 + 电荷模型”合并进一个 module 的写法。I-V 和 C-V 共享器件几何入口，但使用不同的 NN 权重和部分不同的工艺参数。这个设计可以减少 HSPICE wrapper 的复杂度，但正式建库时需要特别确认 DC、AC、TRAN 三种分析下电流和电荷是否没有漏贡献或重复贡献。
+
