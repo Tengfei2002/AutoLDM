@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local editor/history snapshots
+.history/
+
+# HSPICE generated outputs
+Hspice/iv_flow/results/
+Hspice/iv_flow/decks/*/
+*.lis
+*.sw0
+*.tr0
+*.ac0
+*.st0
+*.pa0
+*.mt0
+*.ms0
+*.valog
+*.pvadir/
+
