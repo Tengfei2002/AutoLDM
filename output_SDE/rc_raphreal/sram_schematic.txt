@@ -1,0 +1,47 @@
+
+########################################################################
+# 1. SRAM 电路图端点
+########################################################################
+
+# 外部端口
+#define R BL_PORT Contact_M0_BL_1_5_Top           // bitline 左侧访问端
+#define R BLB_PORT Contact_M0_BLB_1_4_Top        // bitline-bar 右侧访问端
+#define R WL_PORT Contact_M0_WL_1_0_Top         // wordline 栅控端
+#define R VDD_PORT Contact_BM0_VDD_1_0_Bottom        // 上拉电源端
+#define R VSS_PORT Contact_M0_VSS_1_3_Top       // 下拉地端
+#define R Q_NODE  Contact_MRW_Q_1_0_Top         // 左反相器输出、右反相器输入
+#define R QB_NODE Contact_MRW_QB_1_1_Top         // 右反相器输出、左反相器输入
+
+# 顶层 NFET 扩散端点
+#define R PG1_BL_SD  Contact_MD_L16_0_Bottom      // PG1 外侧扩散端，接 BL
+#define R PG1_PD1_Q_SD Contact_MD_L16_1_Bottom // PG1 与 PD1 共享扩散端，接 Q
+#define R PD1_VSS_SD Contact_MD_L16_6_Bottom      // PD1 外侧扩散端，接 VSS
+#define R PD2_VSS_SD Contact_MD_L16_2_Bottom      // PD2 外侧扩散端，接 VSS
+#define R PD2_PG2_QB_SD Contact_MD_L16_3_Bottom   // PD2 与 PG2 共享扩散端，接 QB
+#define R PG2_BLB_SD Contact_MD_L16_4_Bottom      // PG2 外侧扩散端，接 BLB
+
+# 底层 PFET 扩散端点
+#define R PU1_Q_SD Contact_BMD_L51_0_Top        // PU1 输出扩散端，接 Q
+#define R PU1_VDD_SD Contact_BMD_L51_4_Top      // PU1 电源扩散端，接 VDD
+#define R PU2_VDD_SD Contact_BMD_L51_4_Top      // PU2 电源扩散端，接 VDD
+#define R PU2_QB_SD Contact_BMD_L51_3_Top       // PU2 输出扩散端，接 QB
+
+# 栅端点
+#define R PG1_WL_GATE Contact_Gate_L7_0_Top     // PG1 栅，接 WL
+#define R PG2_WL_GATE Contact_Gate_L7_3_Top     // PG2 栅，接 WL
+#define R PD1_QB_GATE Contact_Gate_L7_1_Top // PD1/PU1 输入栅，接 QB
+#define R PU1_QB_GATE Contact_Gate_L7_1_Bottom // PD1/PU1 输入栅，接 QB
+#define R PD2_Q_GATE Contact_Gate_L7_2_Top  // PD2 输入栅，接 Q
+#define R PU2_Q_GATE Contact_Gate_L7_2_Bottom  //PU2 输入栅，接 Q
+
+########################################################################
+# 3. 电容观测点
+########################################################################
+
+#define C BL_PORT region_19
+#define C BLB_PORT region_21
+#define C WL_PORT region_16
+#define C VDD_PORT region_22
+#define C VSS_PORT region_20
+#define C Q_NODE region_18
+#define C QB_NODE region_17
