@@ -1,0 +1,8 @@
+$DATA1 SOURCE='HSPICE' VERSION='P-2019.06-SP1-1 win64' PARAM_COUNT=0
+.TITLE 'write_1'
+ read_q1_q_min    read_q1_blb_min  read_q0_qb_min   read_q0_bl_min  
+ write0_q_final   write0_qb_final  write1_q_final   write1_qb_final 
+ temper           alter#          
+  6.98288e-01     -1.34936e-04     -7.85034e-05      7.00000e-01    
+  6.99997e-01      3.89441e-06      6.99997e-01      3.89441e-06    
+  2.50000e+01     5               

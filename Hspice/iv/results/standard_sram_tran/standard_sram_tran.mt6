@@ -1,0 +1,10 @@
+$DATA1 SOURCE='HSPICE' VERSION='P-2019.06-SP1-1 win64' PARAM_COUNT=0
+.TITLE 'hold_q0'
+ read_q1_q_min    read_q1_blb_min  read_q0_qb_min   read_q0_bl_min  
+ write0_q_final   write0_qb_final  write1_q_final   write1_qb_final 
+ hold_q1_q_min    hold_q1_qb_max   hold_q1_ivdd_avg hold_q0_q_max   
+ hold_q0_qb_min   hold_q0_ivdd_avg temper           alter#          
+  6.99997e-01      6.96258e-01      3.81779e-06      6.96509e-01    
+  6.99997e-01      3.88989e-06      6.99997e-01      3.88989e-06    
+  6.99994e-01      6.60039e-06     -1.98123e-09      6.99997e-01    
+  3.78945e-06     -1.98123e-09      2.50000e+01     7               

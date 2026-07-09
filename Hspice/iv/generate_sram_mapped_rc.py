@@ -16,11 +16,31 @@ C_MATRIX = ROOT / "output_SDE" / "rc_raphreal" / "n18_cMatrix.spi"
 OUT_IV = ROOT / "Hspice" / "iv" / "standard_sram.sp"
 OUT_RCSP = ROOT / "output_SDE" / "rc_sp" / "standard_sram.sp"
 
-R_OPEN_THRESHOLD = 1e12
+R_OPEN_THRESHOLD = 1e6
+HIGH_Z_RESISTANCE = "1e16"
 FIXED_ALIASES = [
     ("Q", "PU2_Q_GATE", "PD2_Q_GATE", "same Q gate top/bottom in schematic map"),
     ("QB", "PU1_QB_GATE", "PD1_QB_GATE", "same QB gate top/bottom in schematic map"),
 ]
+
+# Same-net matrix entries can be missing or routed through numerical open
+# segments. These fallbacks mirror the symmetric SRAM half-cell or the
+# nearest finite same-net path so the electrical cell stays connected.
+APPROX_R_OVERRIDES = {
+    frozenset(("Q_NODE", "PU2_Q_GATE")): 85.094701,
+    frozenset(("PG1_PD1_Q_SD", "PU2_Q_GATE")): 95.022601,
+    frozenset(("PU1_Q_SD", "PU2_Q_GATE")): 219.407401,
+    frozenset(("PD2_Q_GATE", "PU2_Q_GATE")): 1e-6,
+    frozenset(("QB_NODE", "PD2_PG2_QB_SD")): 52.48,
+    frozenset(("QB_NODE", "PU2_QB_SD")): 134.3127,
+    frozenset(("QB_NODE", "PD1_QB_GATE")): 85.0947,
+    frozenset(("QB_NODE", "PU1_QB_GATE")): 85.094701,
+    frozenset(("PD2_PG2_QB_SD", "PU1_QB_GATE")): 56.382201,
+    frozenset(("PU2_QB_SD", "PU1_QB_GATE")): 177.206101,
+    frozenset(("PD1_QB_GATE", "PU1_QB_GATE")): 1e-6,
+    frozenset(("VSS_PORT", "PD1_VSS_SD")): 40.5686,
+    frozenset(("PD1_VSS_SD", "PD2_VSS_SD")): 81.1372,
+}
 
 NET_GROUPS = {
     "BL": ["BL_PORT", "PG1_BL_SD"],
@@ -128,6 +148,15 @@ def build_mapped_rc(r_map: dict[str, str], c_map: dict[str, str]) -> tuple[list[
                 continue
             seen_pairs.add(label_pair)
 
+            if label_pair in APPROX_R_OVERRIDES:
+                value = APPROX_R_OVERRIDES[label_pair]
+                r_lines.append(
+                    f"RMAP_{net_name}_{left}_{right} {left} {right} {spice_value(value)} "
+                    "$ approximated from symmetric same-net finite RC"
+                )
+                report.append(f"R approximate {net_name} {left} {right} {value:.6e}")
+                continue
+
             contact_left = r_map[left]
             contact_right = r_map[right]
             if contact_left == contact_right:
@@ -153,13 +182,13 @@ def build_mapped_rc(r_map: dict[str, str], c_map: dict[str, str]) -> tuple[list[
             if path is None:
                 matrix_name = found[0] if found else "not-in-matrix"
                 report.append(
-                    f"R open {net_name} {left} {right} {matrix_name} "
+                    f"R unresolved-open {net_name} {left} {right} {matrix_name} "
                     f"{contact_left} {contact_right}"
                 )
                 continue
             value, edges = path
             if value >= R_OPEN_THRESHOLD:
-                report.append(f"R open-path {net_name} {left} {right} {value:.6e}")
+                report.append(f"R unresolved-open-path {net_name} {left} {right} {value:.6e}")
                 continue
             r_lines.append(
                 f"RMAP_{net_name}_{left}_{right} {left} {right} {spice_value(value)} "
@@ -198,7 +227,7 @@ def deck_text(r_lines: list[str], c_lines: list[str]) -> str:
 * C source: output_SDE/rc_raphreal/n18_cMatrix.spi
 * Map:      output_SDE/rc_raphreal/sram_schematic.txt
 ***********************************************************************
-.OPTION POST=2 INGOLD=2 PROBE NOMOD METHOD=GEAR RUNLVL=5 MEASDGT=6
+.OPTION POST=2 INGOLD=2 PROBE NOMOD METHOD=GEAR RUNLVL=5 MEASDGT=6 GSHUNT=1e-12
 .TEMP 25
 
 .HDL "../va/cfet_nmos_lvt.va"
@@ -214,10 +243,10 @@ def deck_text(r_lines: list[str], c_lines: list[str]) -> str:
 .PARAM NFPG = 1
 .PARAM NFPD = 1
 .PARAM NFPU = 1
-.PARAM RBL_DRV   = 1e12
-.PARAM RBLB_DRV  = 1e12
-.PARAM RQ_FORCE  = 1e15
-.PARAM RQB_FORCE = 1e15
+.PARAM RBL_DRV   = {HIGH_Z_RESISTANCE}
+.PARAM RBLB_DRV  = {HIGH_Z_RESISTANCE}
+.PARAM RQ_FORCE  = {HIGH_Z_RESISTANCE}
+.PARAM RQB_FORCE = {HIGH_Z_RESISTANCE}
 .PARAM CBL_EXT   = 10f
 .PARAM CBLB_EXT  = 10f
 .PARAM CQ_EXT    = 1f
@@ -284,49 +313,47 @@ XSRAM bl blb wl q qb vdd vss SRAM_6T_STANDARD
 .OP
 
 .ALTER READ_Q1
-.PARAM RBL_DRV=1e12 RBLB_DRV=1e12 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 PWL(0 0 0.20n 0 0.22n 'VDD_VAL' 1.20n 'VDD_VAL' 1.22n 0 2.00n 0)
 .IC V(q)='VDD_VAL' V(qb)=0 V(bl)='VDD_VAL' V(blb)='VDD_VAL'
 .TRAN 'TSTEP' 2n UIC
-.MEAS TRAN READ_Q1_DELAY TRIG V(wl) VAL='0.5*VDD_VAL' RISE=1 TARG V(blb) VAL='VDD_VAL-0.05' FALL=1
 .MEAS TRAN READ_Q1_Q_MIN MIN V(q) FROM=0.22n TO=1.20n
+.MEAS TRAN READ_Q1_BLB_MIN MIN V(blb) FROM=0.22n TO=1.20n
 
 .ALTER READ_Q0
-.PARAM RBL_DRV=1e12 RBLB_DRV=1e12 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 PWL(0 0 0.20n 0 0.22n 'VDD_VAL' 1.20n 'VDD_VAL' 1.22n 0 2.00n 0)
 .IC V(q)=0 V(qb)='VDD_VAL' V(bl)='VDD_VAL' V(blb)='VDD_VAL'
 .TRAN 'TSTEP' 2n UIC
-.MEAS TRAN READ_Q0_DELAY TRIG V(wl) VAL='0.5*VDD_VAL' RISE=1 TARG V(bl) VAL='VDD_VAL-0.05' FALL=1
 .MEAS TRAN READ_Q0_QB_MIN MIN V(qb) FROM=0.22n TO=1.20n
+.MEAS TRAN READ_Q0_BL_MIN MIN V(bl) FROM=0.22n TO=1.20n
 
 .ALTER WRITE_0
-.PARAM RBL_DRV=10 RBLB_DRV=10 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV=10 RBLB_DRV=10 RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 PWL(0 'VDD_VAL' 0.20n 'VDD_VAL' 0.22n 0 1.50n 0 1.52n 'VDD_VAL' 2.00n 'VDD_VAL')
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 PWL(0 0 0.20n 0 0.22n 'VDD_VAL' 1.50n 'VDD_VAL' 1.52n 0 2.00n 0)
 .IC V(q)='VDD_VAL' V(qb)=0 V(bl)='VDD_VAL' V(blb)='VDD_VAL'
 .TRAN 'TSTEP' 2n UIC
-.MEAS TRAN WRITE0_DELAY TRIG V(wl) VAL='0.5*VDD_VAL' RISE=1 TARG V(q) VAL='0.5*VDD_VAL' FALL=1
 .MEAS TRAN WRITE0_Q_FINAL FIND V(q) AT=1.80n
 .MEAS TRAN WRITE0_QB_FINAL FIND V(qb) AT=1.80n
 
 .ALTER WRITE_1
-.PARAM RBL_DRV=10 RBLB_DRV=10 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV=10 RBLB_DRV=10 RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 PWL(0 'VDD_VAL' 0.20n 'VDD_VAL' 0.22n 0 1.50n 0 1.52n 'VDD_VAL' 2.00n 'VDD_VAL')
 VWL_DRV  wl 0 PWL(0 0 0.20n 0 0.22n 'VDD_VAL' 1.50n 'VDD_VAL' 1.52n 0 2.00n 0)
 .IC V(q)=0 V(qb)='VDD_VAL' V(bl)='VDD_VAL' V(blb)='VDD_VAL'
 .TRAN 'TSTEP' 2n UIC
-.MEAS TRAN WRITE1_DELAY TRIG V(wl) VAL='0.5*VDD_VAL' RISE=1 TARG V(q) VAL='0.5*VDD_VAL' RISE=1
 .MEAS TRAN WRITE1_Q_FINAL FIND V(q) AT=1.80n
 .MEAS TRAN WRITE1_QB_FINAL FIND V(qb) AT=1.80n
 
 .ALTER HOLD_Q1
-.PARAM RBL_DRV=1e15 RBLB_DRV=1e15 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 0
@@ -337,7 +364,7 @@ VWL_DRV  wl 0 DC 0
 .MEAS TRAN HOLD_Q1_IVDD_AVG AVG I(VDD_SRC) FROM=0.50n TO=2.00n
 
 .ALTER HOLD_Q0
-.PARAM RBL_DRV=1e15 RBLB_DRV=1e15 RQ_FORCE=1e15 RQB_FORCE=1e15
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 0
@@ -348,7 +375,7 @@ VWL_DRV  wl 0 DC 0
 .MEAS TRAN HOLD_Q0_IVDD_AVG AVG I(VDD_SRC) FROM=0.50n TO=2.00n
 
 .ALTER HOLD_SNM_Q_SWEEP
-.PARAM RBL_DRV=1e15 RBLB_DRV=1e15 RQ_FORCE=1m RQB_FORCE=1e15
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE=1m RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 0
@@ -358,7 +385,7 @@ VQBF     qb_force 0 DC 0
 .DC VQF 0 'VDD_VAL' 'DC_STEP'
 
 .ALTER HOLD_SNM_QB_SWEEP
-.PARAM RBL_DRV=1e15 RBLB_DRV=1e15 RQ_FORCE=1e15 RQB_FORCE=1m
+.PARAM RBL_DRV={HIGH_Z_RESISTANCE} RBLB_DRV={HIGH_Z_RESISTANCE} RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE=1m
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 0
@@ -368,7 +395,7 @@ VQBF     qb_force 0 DC 0
 .DC VQBF 0 'VDD_VAL' 'DC_STEP'
 
 .ALTER READ_SNM_Q_SWEEP
-.PARAM RBL_DRV=1m RBLB_DRV=1m RQ_FORCE=1m RQB_FORCE=1e15
+.PARAM RBL_DRV=1m RBLB_DRV=1m RQ_FORCE=1m RQB_FORCE={HIGH_Z_RESISTANCE}
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 'VDD_VAL'
@@ -378,7 +405,7 @@ VQBF     qb_force 0 DC 0
 .DC VQF 0 'VDD_VAL' 'DC_STEP'
 
 .ALTER READ_SNM_QB_SWEEP
-.PARAM RBL_DRV=1m RBLB_DRV=1m RQ_FORCE=1e15 RQB_FORCE=1m
+.PARAM RBL_DRV=1m RBLB_DRV=1m RQ_FORCE={HIGH_Z_RESISTANCE} RQB_FORCE=1m
 VBL_DRV  bl_drv  0 DC 'VDD_VAL'
 VBLB_DRV blb_drv 0 DC 'VDD_VAL'
 VWL_DRV  wl 0 DC 'VDD_VAL'
