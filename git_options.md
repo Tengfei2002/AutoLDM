@@ -9,7 +9,7 @@ git status
 ```powershell
 git add -A
 git status
-git commit -m "update sram iv fitness"
+git commit -m "update readme file"
 git push
 ```
 
