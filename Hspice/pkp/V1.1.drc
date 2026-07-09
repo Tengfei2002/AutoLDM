@@ -1,0 +1,2862 @@
+//************************************
+//    Calibre Severity Proposals
+//************************************
+
+                              
+LAYOUT INPUT EXCEPTION SEVERITY PATH_NONSIMPLE 1
+LAYOUT INPUT EXCEPTION SEVERITY PATH_CIRCULAR 6
+LAYOUT INPUT EXCEPTION SEVERITY POLYGON_NONSIMPLE 1
+LAYOUT INPUT EXCEPTION SEVERITY POLYGON_NOT_CLOSED 2
+LAYOUT INPUT EXCEPTION SEVERITY PATH_ENDSEGMENT_SHORT 1
+LAYOUT INPUT EXCEPTION SEVERITY PATH_ACUTE 4
+LAYOUT INPUT EXCEPTION SEVERITY PATH_WIDTH_ZERO 2
+LAYOUT INPUT EXCEPTION SEVERITY POLYGON_IS_RECTANGLE 2
+LAYOUT INPUT EXCEPTION SEVERITY BOX_RECORD 1
+LAYOUT INPUT EXCEPTION SEVERITY NODE_RECORD 1
+LAYOUT INPUT EXCEPTION SEVERITY POLYGON_SPIKE 2
+LAYOUT INPUT EXCEPTION SEVERITY PATH_WIDTH_ODD 2
+LAYOUT INPUT EXCEPTION SEVERITY POLYGON_DEGENERATE 2
+LAYOUT ERROR ON INPUT YES     
+LAYOUT PROCESS BOX RECORD NO  
+LAYOUT PROCESS NODE RECORD NO 
+LAYOUT ALLOW DUPLICATE CELL NO    
+
+
+//*************************************
+//     DIRECTIVE SECTION
+//*************************************
+LAYOUT PRIMARY "*"
+LAYOUT PATH "*.gds"     
+LAYOUT SYSTEM GDSII     
+            
+DRC RESULTS DATABASE "drc_CAL.OUT" ASCII
+DRC SUMMARY REPORT "drc_CAL.SUM" HIER
+            
+PRECISION 10000
+LAYOUT PRECISION 2000   
+LAYOUT MAGNIFY AUTO     
+RESOLUTION 1
+
+FLAG SKEW YES                      
+FLAG ACUTE YES                     
+FLAG OFFGRID YES                   
+FLAG NONSIMPLE YES                 
+                                   
+LAYOUT BASE LAYER AAi GTi CT
+LAYOUT CLONE ROTATED PLACEMENTS YES     
+
+DRC KEEP EMPTY YES
+TEXT DEPTH PRIMARY  
+
+
+//************************************
+//     INPUT LAYER STATEMENTS
+//************************************
+LAYER MAP  0   DATATYPE 0      12000 
+LAYER MAP  0   DATATYPE 3      12000 
+LAYER MAP  0   DATATYPE 2      12000 
+LAYER MAP  0   DATATYPE 255    12000 
+LAYER NW                       12000 // N-Well  
+
+LAYER MAP  1   DATATYPE 0      12004 
+LAYER MAP  1   DATATYPE 255    12004 
+LAYER MAP  1   DATATYPE 3      12004
+LAYER AAi                      12004 // ACTIVE  
+
+LAYER MAP  2   DATATYPE 0      12007 
+LAYER NSH                      12007 // NANOSHEET  
+
+LAYER MAP  3   DATATYPE 0      12008
+LAYER MAP  3   DATATYPE 3      12008 
+//LAYER MAP  3   DATATYPE 2      12008 
+LAYER MAP  3   DATATYPE 255    12008 
+LAYER GTi                      12008 // GATE  
+
+LAYER MAP  4   DATATYPE 0      12012 
+LAYER MAP  4   DATATYPE 4      12012 
+LAYER GCUT                     12012 // Gate mteal cut 
+
+LAYER MAP  5   DATATYPE 0      12014 
+LAYER SDB                      12014 // Single Diffusion Break 
+
+LAYER MAP  6   DATATYPE 0      12015 
+LAYER NIM                       12015 // N-Implant
+
+LAYER MAP  7   DATATYPE 0      12016 
+LAYER PIM                       12016 // P-Implant 
+
+LAYER MAP  8   DATATYPE 0      12017
+LAYER SVT_N                    12017 // SVT_N 
+
+LAYER MAP  9   DATATYPE 0      12018 
+LAYER SVT_P                    12018 // SVT_P 
+
+LAYER MAP  10   DATATYPE 0     12019 
+LAYER LVT_N                    12019 // LVT_N 
+
+LAYER MAP  11   DATATYPE 0     12020 
+LAYER LVT_P                    12020 // LVT_P 
+
+LAYER MAP  12   DATATYPE 0     12021 
+LAYER SLVT_N                   12021 // SLVT_N 
+
+LAYER MAP  13   DATATYPE 0     12022 
+LAYER SLVT_P                   12022 // SLVT_P 
+
+LAYER MAP  14   DATATYPE 0      12023 
+LAYER MAP  14   DATATYPE 4      12023 
+LAYER MAP  14   DATATYPE 255    12023
+LAYER MAP  14   DATATYPE 2      12023 
+LAYER CT                        12023 // Source or Drain interconnect layer 
+
+LAYER MAP  15   DATATYPE 0      12027 
+LAYER MAP  15   DATATYPE 4      12027 
+LAYER MAP  15   DATATYPE 255    12027 
+LAYER MAP  15   DATATYPE 2      12027 
+LAYER CT_PR                     12027 // CT_power rail 
+
+LAYER MAP  16   DATATYPE 0      12031 
+LAYER MAP  16   DATATYPE 4      12031 
+LAYER MAP  16   DATATYPE 255    12031 
+LAYER VCT                       12031 // VCT, connect CT to M0 
+
+LAYER MAP  17   DATATYPE 0      12034 
+LAYER MAP  17   DATATYPE 4      12034 
+LAYER MAP  17   DATATYPE 255    12034 
+LAYER VCT_PR                    12034 // VCT_power rail 
+
+LAYER MAP  18   DATATYPE 0      12037 
+LAYER MAP  18   DATATYPE 4      12037 
+LAYER MAP  18   DATATYPE 255    12037 
+LAYER VCG                       12037 // Gate interconnect layer 
+
+LAYER MAP  19   DATATYPE 0      12040 
+LAYER MAP  19   DATATYPE 3      12040 
+LAYER MAP  19   DATATYPE 255    12040 
+//LAYER MAP  19   DATATYPE 2      12040 
+LAYER MAP  19   DATATYPE 4      12040
+LAYER M0i                        12040 // M0 
+
+LAYER MAP  20   DATATYPE 0      12045 
+LAYER MAP  20   DATATYPE 3      12045 
+LAYER MAP  20   DATATYPE 255    12045 
+LAYER MAP  20   DATATYPE 2      12045 
+LAYER MAP  20   DATATYPE 4      12045 
+LAYER M0_PR                     12045 // M0_power rail 
+
+LAYER MAP  21   DATATYPE 0      12050 
+LAYER MAP  21   DATATYPE 4      12050 
+LAYER MAP  21   DATATYPE 3      12050 
+LAYER MAP  21   DATATYPE 255    12050 
+LAYER V0i                        12050 // V0, connect M0 to M1 
+
+LAYER MAP  22   DATATYPE 0      12054 
+LAYER MAP  22   DATATYPE 3      12054 
+LAYER MAP  22   DATATYPE 255    12054 
+//LAYER MAP  22   DATATYPE 2      12054 
+LAYER MAP  22   DATATYPE 4      12054 
+LAYER M1i                        12054 // M1 
+
+LAYER MAP  23   DATATYPE 0      12059 
+LAYER MAP  23   DATATYPE 4      12059 
+LAYER MAP  23   DATATYPE 3      12059 
+LAYER MAP  23   DATATYPE 255    12059 
+LAYER V1i                        12059 // V1 
+
+LAYER MAP  24   DATATYPE 0      12063 
+LAYER MAP  24   DATATYPE 3      12063 
+LAYER MAP  24   DATATYPE 255    12063 
+//LAYER MAP  24   DATATYPE 2      12063 
+LAYER MAP  24   DATATYPE 4      12063 
+LAYER M2i                        12063 // M2 
+
+LAYER MAP  25   DATATYPE 0      12068 
+LAYER MAP  25   DATATYPE 4      12068 
+LAYER MAP  25   DATATYPE 3      12068 
+LAYER MAP  25   DATATYPE 255    12068 
+LAYER V2i                        12068 // V2 
+
+LAYER MAP  26   DATATYPE 0      12072 
+LAYER MAP  26   DATATYPE 3      12072 
+LAYER MAP  26   DATATYPE 255    12072 
+//LAYER MAP  26   DATATYPE 2      12072 
+LAYER MAP  26   DATATYPE 4      12072 
+LAYER M3i                        12072 // M3 
+
+LAYER MAP  27   DATATYPE 0      12077 
+LAYER MAP  27   DATATYPE 4      12077 
+LAYER MAP  27   DATATYPE 3      12077 
+LAYER MAP  27   DATATYPE 255    12077 
+LAYER V3i                        12077 // V3 
+
+LAYER MAP  28   DATATYPE 0      12085 
+LAYER MAP  28   DATATYPE 3      12085 
+LAYER MAP  28   DATATYPE 255    12085 
+//LAYER MAP  28   DATATYPE 2      12085 
+LAYER MAP  28   DATATYPE 4      12085 
+LAYER M4i                        12085 // M4 
+
+LAYER MAP  29   DATATYPE 0      12086 
+LAYER MAP  29   DATATYPE 4      12086 
+LAYER MAP  29   DATATYPE 3      12086 
+LAYER MAP  29   DATATYPE 255    12086 
+LAYER V4i                        12086 // V4 
+
+LAYER MAP  30   DATATYPE 0      12090 
+LAYER MAP  30   DATATYPE 3      12090 
+LAYER MAP  30   DATATYPE 255    12090 
+//LAYER MAP  30   DATATYPE 2      12090 
+LAYER MAP  30   DATATYPE 4      12090 
+LAYER M5i                        12090 // M5 
+
+LAYER MAP  31   DATATYPE 0      12095 
+LAYER MAP  31   DATATYPE 4      12095 
+LAYER MAP  31   DATATYPE 3      12095 
+LAYER MAP  31   DATATYPE 255    12095 
+LAYER V5i                        12095 // V5 
+
+LAYER MAP  32   DATATYPE 0      12099 
+LAYER MAP  32   DATATYPE 3      12199 
+LAYER MAP  32   DATATYPE 255    12199 
+//LAYER MAP  32   DATATYPE 2      12199 
+LAYER MAP  32   DATATYPE 4      12199 
+LAYER M6i                        12099 // M6 
+
+LAYER MAP  33   DATATYPE 0      12104 
+LAYER MAP  33   DATATYPE 4      12104 
+LAYER MAP  33   DATATYPE 3      12104 
+LAYER MAP  33   DATATYPE 255    12104 
+LAYER V6i                        12104 // V6 
+
+LAYER MAP  34   DATATYPE 0      12108 
+LAYER MAP  34   DATATYPE 3      12108 
+LAYER MAP  34   DATATYPE 255    12108 
+//LAYER MAP  34   DATATYPE 2      12108 
+LAYER MAP  34   DATATYPE 4      12108 
+LAYER M7i                        12108 // M7 
+
+LAYER MAP  35   DATATYPE 0      12113 
+LAYER MAP  35   DATATYPE 4      12113 
+LAYER MAP  35   DATATYPE 3      12113 
+LAYER MAP  35   DATATYPE 255    12113 
+LAYER V7i                        12113 // V7 
+
+LAYER MAP  36   DATATYPE 0      12117 
+LAYER MAP  36   DATATYPE 3      12117 
+LAYER MAP  36   DATATYPE 255    12117 
+//LAYER MAP  36   DATATYPE 2      12117 
+LAYER MAP  36   DATATYPE 4      12117 
+LAYER M8i                        12117 // M8 
+
+LAYER MAP  37   DATATYPE 0      12122 
+LAYER MAP  37   DATATYPE 4      12122 
+LAYER MAP  37   DATATYPE 3      12122 
+LAYER MAP  37   DATATYPE 255    12122 
+LAYER V8i                        12122 // V8 
+
+LAYER MAP  38   DATATYPE 0      12127 
+LAYER MAP  38   DATATYPE 3      12127 
+LAYER MAP  38   DATATYPE 255    12127 
+//LAYER MAP  38   DATATYPE 2      12127 
+LAYER MAP  38   DATATYPE 4      12127 
+LAYER M9i                        12127 // M9 
+
+
+LAYER MAP  19   DATATYPE 255      12500
+LAYER MAP  19   TEXTTYPE 255      12500
+LAYER M0TXT                     12500
+
+LAYER MAP  22   DATATYPE 255      13000
+LAYER MAP  22   TEXTTYPE 255      13000
+LAYER M1TXT                     13000
+
+LAYER MAP  24   DATATYPE 255      13001
+LAYER MAP  24   TEXTTYPE 255      13001
+LAYER M2TXT                     13001
+
+LAYER MAP  26   DATATYPE 255      13002
+LAYER MAP  26   TEXTTYPE 255      13002
+LAYER M3TXT                     13002
+
+LAYER MAP  28   DATATYPE 255      13003
+LAYER MAP  28   TEXTTYPE 255      13003
+LAYER M4TXT                     13003
+
+LAYER MAP  30   DATATYPE 255      13004
+LAYER MAP  30   TEXTTYPE 255      13004
+LAYER M5TXT                     13004
+
+LAYER MAP  32   DATATYPE 255      13005
+LAYER MAP  32   TEXTTYPE 255      13005
+LAYER M6TXT                     13005
+
+LAYER MAP  34   DATATYPE 255      13006
+LAYER MAP  34   TEXTTYPE 255      13006
+LAYER M7TXT                     13006
+
+LAYER MAP  36   DATATYPE 255      13007
+LAYER MAP  36   TEXTTYPE 255      13007
+LAYER M8TXT                     13007
+
+LAYER MAP  38   DATATYPE 255      13008
+LAYER MAP  38   TEXTTYPE 255      13008
+LAYER M9TXT                     13008
+
+LAYER MAP  3   DATATYPE 255      13009
+LAYER MAP  3   TEXTTYPE 255      13009
+LAYER POLYTXT                     13009
+
+LAYER MAP  14   DATATYPE 255      13010
+LAYER MAP  14   TEXTTYPE 255      13010
+LAYER CTTXT                     13010
+
+LAYER MAP  1   DATATYPE 255      13011
+LAYER MAP  1   TEXTTYPE 255      13011
+LAYER DIFTXT                     13011
+
+LAYER MAP  39   DATATYPE 0      12399 
+LAYER MAP  39   DATATYPE 4      12399 
+LAYER MAP  39   DATATYPE 3      12399 
+LAYER MAP  39   DATATYPE 255    12399 
+LAYER V9i                        12399 // V9 
+
+LAYER MAP  40   DATATYPE 0      12400 
+LAYER MAP  40   DATATYPE 3      12400 
+LAYER MAP  40   DATATYPE 255    12400 
+LAYER MAP  40   DATATYPE 2      12400 
+LAYER MAP  40   DATATYPE 4      12400 
+LAYER M10i                        12400 // M10
+
+LAYER MAP  41   DATATYPE 0      12401 
+LAYER MAP  41   DATATYPE 4      12401 
+LAYER MAP  41   DATATYPE 3      12401 
+LAYER MAP  41   DATATYPE 255    12401 
+LAYER V10i                        12401 // V10 
+
+LAYER MAP  42   DATATYPE 0      12402 
+LAYER MAP  42   DATATYPE 3      12402 
+LAYER MAP  42   DATATYPE 255    12402 
+LAYER MAP  42   DATATYPE 2      12402 
+LAYER MAP  42   DATATYPE 4      12402 
+LAYER M11i                        12402 // M11
+
+LAYER MAP  43   DATATYPE 0      12403 
+LAYER MAP  43   DATATYPE 4      12403 
+LAYER MAP  43   DATATYPE 3      12403 
+LAYER MAP  43   DATATYPE 255    12403 
+LAYER V11i                        12403 // V11 
+
+LAYER MAP  44   DATATYPE 0      12404 
+LAYER MAP  44   DATATYPE 3      12404 
+LAYER MAP  44   DATATYPE 255    12404 
+LAYER MAP  44   DATATYPE 2      12404 
+LAYER MAP  44   DATATYPE 4      12404 
+LAYER M12i                        12404 // M12
+
+LAYER MAP  45   DATATYPE 0      12405 
+LAYER MAP  45   DATATYPE 4      12405 
+LAYER MAP  45   DATATYPE 3      12405 
+LAYER MAP  45   DATATYPE 255    12405 
+LAYER V12i                        12405 // V12 
+
+LAYER MAP  46   DATATYPE 0      12406 
+LAYER MAP  46   DATATYPE 3      12406 
+LAYER MAP  46   DATATYPE 255    12406 
+LAYER MAP  46   DATATYPE 2      12406 
+LAYER MAP  46   DATATYPE 4      12406 
+LAYER M13i                        12406 // M13
+
+LAYER MAP  47   DATATYPE 0      20000 
+LAYER boundary                  20000 // boundary 
+
+
+LAYER MAP  49   DATATYPE 0      21000 
+LAYER SRAMMRK                  21000 // SRAMMRK
+
+
+// ############################################
+// metal stack configuration control         
+// ############################################
+// ---------------------------------------------------------------------------------------------
+// generate the layer list for all metal and via
+// --------------metal-0~metal-9 selection------------------------------------------------------
+M0 = COPY M0i     
+M1 = COPY M1i     
+M2 = COPY M2i     
+M3 = COPY M3i     
+M4 = COPY M4i     
+M5 = COPY M5i     
+M6 = COPY M6i     
+M7 = COPY M7i     
+M8 = COPY M8i     
+M9 = COPY M9i     
+M10 = COPY M10i     
+M11 = COPY M11i     
+M12 = COPY M12i     
+M13 = COPY M13i     
+
+V0 = COPY V0i
+V1 = COPY V1i
+V2 = COPY V2i
+V3 = COPY V3i
+V4 = COPY V4i
+V5 = COPY V5i
+V6 = COPY V6i
+V7 = COPY V7i
+V8 = COPY V8i
+V9 = COPY V9i
+V10 = COPY V10i
+V11 = COPY V11i
+V12 = COPY V12i
+
+
+// ============================
+// Chip / Extent           
+// ============================
+DRC:1 = EXTENT DRAWN ORIGINAL
+BULK = SIZE DRC:1 BY 1.0   
+PW = BULK NOT NW 
+
+
+// ============================
+// Common derivations          
+// ============================ 
+AA = COPY AAi
+GT = COPY GTi  
+SN = COPY NIM
+SP = COPY PIM
+ALL_SN_SP = SN OR SP
+
+GT_0 = GT NOT GCUT
+
+
+// ============================ 
+// Vertical/Horizontal Edges    
+// ============================  
+AA_h_edges = ANGLE AA == 0 
+AA_v_edges = ANGLE AA == 90    
+
+GT_h_edges = ANGLE GT == 0 
+GT_v_edges = ANGLE GT == 90   
+
+GT_0_h_edges = ANGLE GT_0 == 0 
+GT_0_v_edges = ANGLE GT_0 == 90   
+
+NS_h_edges = ANGLE NSH == 0 
+NS_v_edges = ANGLE NSH == 90   
+
+NW_h_edges = ANGLE NW == 0 
+NW_v_edges = ANGLE NW == 90   
+
+SP_h_edges = ANGLE SP == 0 
+SP_v_edges = ANGLE SP == 90   
+
+SN_h_edges = ANGLE SN == 0 
+SN_v_edges = ANGLE SN == 90   
+
+CT_h_edges = ANGLE CT == 0 
+CT_v_edges = ANGLE CT == 90   
+
+GCUT_h_edges = ANGLE GCUT == 0 
+GCUT_v_edges = ANGLE GCUT == 90   
+
+CT_PR_h_edges = ANGLE CT_PR == 0 
+CT_PR_v_edges = ANGLE CT_PR == 90   
+
+VCT_h_edges = ANGLE VCT == 0 
+VCT_v_edges = ANGLE VCT == 90   
+
+VCT_PR_h_edges = ANGLE VCT_PR == 0 
+VCT_PR_v_edges = ANGLE VCT_PR == 90   
+
+VCG_h_edges = ANGLE VCG == 0 
+VCG_v_edges = ANGLE VCG == 90   
+
+M0_h_edges = ANGLE M0 == 0 
+M0_v_edges = ANGLE M0 == 90   
+
+M1_h_edges = ANGLE M1 == 0 
+M1_v_edges = ANGLE M1 == 90   
+
+M2_h_edges = ANGLE M2 == 0 
+M2_v_edges = ANGLE M2 == 90   
+
+M3_h_edges = ANGLE M3 == 0 
+M3_v_edges = ANGLE M3 == 90   
+
+M4_h_edges = ANGLE M4 == 0 
+M4_v_edges = ANGLE M4 == 90   
+
+M5_h_edges = ANGLE M5 == 0 
+M5_v_edges = ANGLE M5 == 90   
+
+M6_h_edges = ANGLE M6 == 0 
+M6_v_edges = ANGLE M6 == 90   
+
+M7_h_edges = ANGLE M7 == 0 
+M7_v_edges = ANGLE M7 == 90   
+
+M8_h_edges = ANGLE M8 == 0 
+M8_v_edges = ANGLE M8 == 90   
+
+M9_h_edges = ANGLE M9 == 0 
+M9_v_edges = ANGLE M9 == 90   
+
+M10_h_edges = ANGLE M10 == 0 
+M10_v_edges = ANGLE M10 == 90   
+
+M11_h_edges = ANGLE M11 == 0 
+M11_v_edges = ANGLE M11 == 90   
+
+M12_h_edges = ANGLE M12 == 0 
+M12_v_edges = ANGLE M12 == 90   
+
+M13_h_edges = ANGLE M13 == 0 
+M13_v_edges = ANGLE M13 == 90   
+
+M0_PR_h_edges = ANGLE M0_PR == 0 
+M0_PR_v_edges = ANGLE M0_PR == 90   
+
+V0_h_edges = ANGLE V0 == 0 
+V0_v_edges = ANGLE V0 == 90   
+
+V1_h_edges = ANGLE V1 == 0 
+V1_v_edges = ANGLE V1 == 90   
+
+V2_h_edges = ANGLE V2 == 0 
+V2_v_edges = ANGLE V2 == 90   
+
+V3_h_edges = ANGLE V3 == 0 
+V3_v_edges = ANGLE V3 == 90   
+
+V4_h_edges = ANGLE V4 == 0 
+V4_v_edges = ANGLE V4 == 90   
+
+V5_h_edges = ANGLE V5 == 0 
+V5_v_edges = ANGLE V5 == 90   
+
+V6_h_edges = ANGLE V6 == 0 
+V6_v_edges = ANGLE V6 == 90   
+
+V7_h_edges = ANGLE V7 == 0 
+V7_v_edges = ANGLE V7 == 90   
+
+V8_h_edges = ANGLE V8 == 0 
+V8_v_edges = ANGLE V8 == 90   
+
+V9_h_edges = ANGLE V9 == 0 
+V9_v_edges = ANGLE V9 == 90   
+
+V10_h_edges = ANGLE V10 == 0 
+V10_v_edges = ANGLE V10 == 90   
+
+V11_h_edges = ANGLE V11 == 0 
+V11_v_edges = ANGLE V11 == 90   
+
+V12_h_edges = ANGLE V12 == 0 
+V12_v_edges = ANGLE V12 == 90   
+
+AA_convex_90_270_edges = CONVEX EDGE AA ANGLE1==90 ANGLE2==270
+AA_convex_270_270_edges = CONVEX EDGE AA ANGLE1==270 ANGLE2==270
+
+
+// ============================
+// S/D derivation              
+// ============================
+GATE = GT AND AA  //;gate
+NGATE = GATE AND SN  //;n+ gate
+PGATE = GATE AND SP  //;p+ gate
+
+PAA = AA AND SP                
+NAA = AA AND SN                
+PNAA = OR PAA NAA              
+
+//;active AA   
+NACT = NAA NOT NW  //;N+AA
+PACT = PAA AND NW  //;P+AA
+ACT = NACT OR PACT  //;ACTIVE
+
+//;source/drain/active AA for connection
+PSD = PACT NOT GT    
+NSD = NACT NOT GT    
+SD = PSD OR NSD      
+
+real_PSD = PSD INTERACT PGATE 
+real_NSD = NSD INTERACT NGATE 
+real_SD = OR real_PSD real_NSD   
+
+//;pick-up AA  
+NTAP = NAA AND NW
+PTAP = PAA NOT NW
+TAP = OR NTAP PTAP
+
+AA_c = OR PSD NSD real_PSD real_NSD NTAP PTAP
+
+
+// --------------------------------------------------------------
+// Beginning of the FEOL/BEOL connection for global DRC check
+// --------------------------------------------------------------
+CONNECT CT M0 BY VCT
+CONNECT GT_0 M0 BY VCG
+
+CONNECT CT real_PSD
+CONNECT CT real_NSD
+CONNECT CT PSD
+CONNECT CT NSD
+CONNECT CT PTAP
+CONNECT CT NTAP
+CONNECT CT GT_0
+
+CONNECT AAi PTAP     
+CONNECT AAi NTAP     
+CONNECT AAi PSD     
+CONNECT AAi NSD     
+CONNECT real_PSD PSD // pass connectivity from P+ACTIVE to real_PSD
+CONNECT real_NSD NSD  
+
+CONNECT NTAP NW                          
+CONNECT PTAP PW  
+
+//; For BEOL mapping layers connection 
+CONNECT M0 M1 BY V0
+CONNECT M1 M2 BY V1
+CONNECT M2 M3 BY V2
+CONNECT M3 M4 BY V3
+CONNECT M4 M5 BY V4
+CONNECT M5 M6 BY V5
+CONNECT M6 M7 BY V6     
+CONNECT M7 M8 BY V7     
+CONNECT M8 M9 BY V8     
+CONNECT M9 M10 BY V9     
+CONNECT M10 M11 BY V10     
+CONNECT M11 M12 BY V11     
+CONNECT M12 M13 BY V12     
+// --------------------------------------------------------------
+// End of the FEOL/BEOL connection for global DRC check          
+// --------------------------------------------------------------   
+
+VIRTUAL CONNECT NAME ?VDD? ?VCC? ?VSS? ?GND?          
+VIRTUAL CONNECT COLON YES  
+
+
+// =======================     
+// GATE derivation             
+// =======================     
+GATE_WE = GATE COIN EDGE GT     //; channel width
+GATE_LE = (GATE INTERACT (AA NOT GATE) >= 2) COIN EDGE AA //; channel length 
+
+
+// =======================================================
+// Design requirements                                    
+// =======================================================
+
+GROUP GGR GR_?  
+
+GR_1_2_M0 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M0 10
+}
+
+GR_1_2_V0 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V0 10
+}
+
+GR_1_2_M1 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M1 10
+}
+   
+GR_1_2_V1 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V1 10
+}
+
+GR_1_2_M2 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M2 10
+}
+   
+GR_1_2_V2 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V2 10
+}
+
+GR_1_2_M3 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M3 10
+}
+   
+GR_1_2_V3 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V3 10
+}
+
+GR_1_2_M4 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M4 10
+}
+   
+GR_1_2_V4 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V4 10
+}
+
+GR_1_2_M5 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M5 10
+}
+   
+GR_1_2_V5 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V5 10
+}
+
+GR_1_2_M6 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M6 10
+}
+   
+GR_1_2_V6 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V6 10
+}
+
+GR_1_2_M7 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M7 10
+}
+   
+GR_1_2_V7 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V7 10
+}
+
+GR_1_2_M8 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M8 10
+}
+   
+GR_1_2_V8 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V8 10
+}
+
+GR_1_2_M9 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M9 10
+}
+
+GR_1_2_V9 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V9 10
+}
+
+GR_1_2_M10 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M10 10
+}
+
+GR_1_2_V10 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V10 10
+}
+
+GR_1_2_M11 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M11 10
+}
+
+GR_1_2_V11 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V11 10
+}
+
+GR_1_2_M12 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M12 10
+}
+
+GR_1_2_V12 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID V12 10
+}
+
+GR_1_2_M13 {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M13 10
+}
+
+GR_1_2_SVT_N {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SVT_N 10
+}
+
+GR_1_2_SVT_P {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SVT_P 10
+}
+
+GR_1_2_LVT_N {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID LVT_N 10
+}
+
+GR_1_2_LVT_P {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID LVT_P 10
+}
+
+GR_1_2_SLVT_N {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SLVT_N 10
+}
+
+GR_1_2_SLVT_P {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SLVT_P 10
+}
+
+GR_1_2_ACT {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID AA 10
+}
+
+GR_1_2_GATE {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID GT 10
+}
+
+GR_1_2_GCUT {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID GCUT 10
+}
+
+GR_1_2_VCT {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID VCT 10
+}
+
+GR_1_2_CT {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID CT 10
+}
+
+GR_1_2_VCG {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID VCG 10
+}
+
+GR_1_2_PIM {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SP 10
+}
+
+GR_1_2_NIM {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SN 10
+}
+
+GR_1_2_NW {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID NW 10
+}
+
+GR_1_2_NSH {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID NSH 10
+}
+
+GR_1_2_SDB {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID SDB 10
+}
+
+GR_1_2_CT_PR {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID CT_PR 10
+}
+
+GR_1_2_VCT_PR {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID VCT_PR 10
+}
+
+GR_1_2_M0_PR {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID M0_PR 10
+}
+
+GR_1_2_boundary {
+@ All the geometry design must be an integer multiple of 0.001um. 
+@ Design shape geometry all vertices and intersections of 45-degree polygon must be on an integer multiple of 0.001um.
+    OFFGRID boundary 10
+}
+
+GR_3_4 {
+@ Only shapes of geometry that are orthogonal or 45-degree angle are allowed
+@ Shapes with acute angles between line segments are not allowed
+    DRAWN SKEW
+} 
+
+
+// =======================================================
+// ACT: Active Area design rules                           
+// =======================================================  
+
+GROUP GACT ACT_?
+
+ACT_W_1 {    
+@ minimum vertical width of ACT (outside the layer SRAMMRK) >= 15nm 
+    err = INT [AA_h_edges] < 0.015 ABUT<90 OPPOSITE
+    err OUTSIDE EDGE SRAMMRK
+}
+
+ACT_W_2_SRAM {    
+@ minimum vertical width of ACT (interacting with the layer SRAMMRK) >= 10nm 
+    err = INT [AA_h_edges] < 0.01 ABUT<90 OPPOSITE
+    err NOT OUTSIDE EDGE SRAMMRK
+}
+
+ACT_W_3 {    
+@ minimum horizontal width of ACT >= 15nm 
+    INT AA_v_edges < 0.015 ABUT<90 OPPOSITE
+}
+
+ACT_W_4 {    
+@ width in GATE poly direction  <= 50nm 
+    INT (AA_h_edges) <= 0.050 ABUT<90 OPPOSITE
+}
+
+ACT_S_1 {
+@ Minimum vertical spacing of ACT (outside the layer SRAMMRK) >= 60nm
+    err = EXT [AA_h_edges] < 0.06 ABUT<90 OPPOSITE
+    err OUTSIDE EDGE SRAMMRK
+
+    EXT AA < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+ACT_S_2_SRAM {
+@ Minimum vertical spacing of ACT (interacting with the layer SRAMMRK) >= 40nm
+    err = EXT [AA_h_edges] < 0.04 ABUT<90 OPPOSITE
+    err NOT OUTSIDE EDGE SRAMMRK
+
+    EXT AA < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+ACT_S_2A {
+@ Minimum horizontal spacing between ACT layers from source/drain regions(of different transistors) on different nets >= 48nm
+    (EXT [AAi] < 0.048 ABUT<90 NOT CONNECTED) COIN EDGE AA_v_edges 
+} 
+
+ACT_S_2B {
+@ Minimum horizontal spacing of ACT >= 16nm
+    EXT AA_v_edges < 0.016 ABUT<90 OPPOSITE REGION
+} 
+
+ACT_S_3B {
+@ Space between NW and ACT in GATE poly direction (outside the layer SRAMMRK) >= 27nm
+    err = EXT AA_h_edges NW < 0.027 ABUT<90 OPPOSITE REGION MEASURE ALL
+    err OUTSIDE SRAMMRK
+} 
+
+ACT_S_4B {
+@ Space between NW and ACT in GATE poly direction (interacting with the layer SRAMMRK) >= 13.5nm
+    err = EXT AA_h_edges NW < 0.0135 ABUT<90 OPPOSITE REGION MEASURE ALL
+    err INTERACT SRAMMRK
+} 
+
+//ACT_EN_1A {
+//@ ACT enclosure by NW >= 20nm
+//    ENC (AA AND NW) NW < 0.020 ABUT<90 REGION
+//} 
+
+//ACT_AUX_1 {
+//@ ACT must always be enclosed by NIM or PIM, such that no ACT layer edge(s) coincide with NIM or PIM
+//    AA NOT INSIDE EDGE ALL_SN_SP
+//} 
+
+ACT_AUX_3 {
+@ A notch in ACT along vertical axis is not allowed
+    //AA_convex_90_270_edges COIN EDGE AA_h_edges
+    AA_convex_270_270_edges COIN EDGE AA_v_edges
+} 
+
+ACT_A_1 {
+@ ACT area (outside the layer SRAMMRK) >= 225nm2
+    err = AREA AA < 0.000225  
+    err OUTSIDE SRAMMRK
+}
+
+ACT_A_2_SRAM {
+@ ACT area (interacting with the layer SRAMMRK) >= 150nm2
+    err = AREA AA < 0.00015
+    err INTERACT SRAMMRK
+}
+
+// =======================================================
+// GATE: Gate design rules                           
+// =======================================================  
+
+GROUP GGATE GATE_?
+
+GT_merge = SIZE GT BY 0.032 OVERUNDER
+GT_merge_all = EXTENT GT
+
+GATE_W_1 {
+@ Horizontal GATE width >= 16nm
+    INT (GT_v_edges) <= 0.016 ABUT<90 OPPOSITE
+}
+
+GATE_W_2 {    
+@ Minimum vertical GATE width >= 40nm 
+    INT GT_h_edges < 0.040 ABUT<90 OPPOSITE
+}
+
+GATE_S_1 {    
+@ Exact horizontal GATE pitch (not cut by GCUT and not interacting with the layer SRAMMRK) == 48
+    CHK_016_sides = INT [GT_v_edges] == 0.016 ABUT<90 OPPOSITE 
+    err = (EXT (CHK_016_sides) == 0.048-0.016 ABUT<90 OPPOSITE) NOT COIN EDGE GT_merge
+    err OUTSIDE EDGE (OR GCUT SRAMMRK)
+}
+
+GATE_S_2 {    
+@ Minimum horizontal GATE spacing >= 32nm
+    EXT GT_V_edges < 0.032 ABUT<90 OPPOSITE    
+}
+
+GATE_AUX_1 {
+@ GATE not be bend
+    NOT RECTANGLE GT ORTHOGONAL ONLY
+} 
+
+GATE_AUX_2 {
+@ GATE may not be discontinuous along the vertical axis. Use GCUT layer to mark cuts in the GATE
+    EXT GT_h_edges > 0 < 100 ABUT<90 OPPOSITE
+} 
+
+GATE_AA_AUX_3 {
+@ AA layer vertical edge may not lie inside, or coincide with, the GATE layer
+    AA_v_edges NOT OUTSIDE EDGE GT
+} 
+
+GATE_AA_EX_1 {
+@ Minimum vertical extension of GATE (not cut by GCUT) past AA >= 5nm
+    ENC GATE_LE [GT_0_h_edges] < 0.005 ABUT<90 OPPOSITE 
+} 
+
+GATE_AA_EX_2 {
+@ Minimum horizontal extension of AA interacting with GATE (not cut by GCUT layer) past GATE (not cut by GCUT layer) >= 16nm
+    chk_side = ANGLE (AA INTERACT GT_0) == 90
+    ENC GATE_WE [chk_side] < 0.016 ABUT<90 OPPOSITE
+} 
+
+GATE_A_1 {
+@ GATE area >= 640nm2
+    AREA GT < 0.000640  
+} 
+
+
+// =======================================================
+// NS: NANOSHEET design rules                           
+// =======================================================  
+
+GROUP GNS NS_?
+
+NS_merge = SIZE NSH BY 0.1 OVERUNDER
+
+NS_W_1 {
+@ Vertical nanosheet width >= 10nm
+    INT NS_h_edges < 0.010 ABUT<90 OPPOSITE
+} 
+
+NS_W_2 {
+@ Minimum horizontal nanosheet width >= 90nm
+    INT NS_V_edges < 0.090 ABUT<90 OPPOSITE
+} 
+
+NS_S_2 {
+@ Exact vertical nanosheet spacing == 20nm
+    (EXT (NS_h_edges) == 0.02 ABUT<90 OPPOSITE) NOT COIN EDGE NS_merge
+    EXT NSH < 0.001 ABUT<90 SINGULAR
+} 
+
+NS_AUX_1 {
+@ nanosheet may not be bend
+    NOT RECTANGLE NSH ORTHOGONAL ONLY
+} 
+
+
+// =======================================================
+// NW: Nwell design rules                           
+// =======================================================  
+
+GROUP GNW NW_?
+
+NW_W_1 {
+@ Minimum horizontal width of WELL >= 90nm
+    INT NW_v_edges < 0.090 ABUT<90 OPPOSITE
+} 
+
+NW_W_2 {
+@ Minimum vertical width of WELL >= 57nm
+    INT NW_h_edges < 0.057 ABUT<90 OPPOSITE
+} 
+
+NW_S_1 {
+@ Minimum vertical spacing between WELL layer polygons >= 90nm
+    EXT NW_h_edges < 0.09 ABUT<90 OPPOSITE    
+    EXT NW < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+NW_S_2 {
+@ Minimum horizontal spacing between WELL layer polygons >= 45nm
+    EXT NW_v_edges < 0.045 ABUT<90 OPPOSITE
+} 
+
+NW_A_1A {
+@ Minimum area of WELL >= 5130nm2
+    AREA NW < 0.005130  
+} 
+
+NW_A_1B {
+@ Minimum enclosed area of WELL >= 5130nm2
+    AREA ((HOLES NW INNER) NOT NW) < 0.005130  
+} 
+
+NW_GATE_EX_1 {
+@ Minimum horizontal extension of WELL past GATE (not cut by GCUT layer) >= 7nm
+    ENC GT_v_edges NW < 0.007 ABUT<90 OPPOSITE
+} 
+
+//NW_GATE_EX_2 {
+//@ Minimum vertical extension of WELL past GATE (not cut by GCUT layer) >= 7nm
+//    ENC GT_h_edges NW < 0.007 ABUT<90 OPPOSITE
+//} 
+
+
+// =======================================================
+// NIM: N-type Implant design rules                           
+// =======================================================  
+
+GROUP GNIM NIM_?
+
+NIM_W_1 {
+@ Minimum horizontal width of NIM >= 48nm
+    INT SN_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+} 
+
+NIM_W_2 {
+@ Minimum vertical width of NIM (outside the layer SRAMMRK) >= 57nm
+    err = INT SN_h_edges < 0.057 ABUT<90 OPPOSITE REGION
+    err OUTSIDE SRAMMRK
+} 
+
+NIM_W_3_SRAM {
+@ Minimum vertical width of NIM (interacting with the layer SRAMMRK) >= 45nm
+    err = INT SN_h_edges < 0.045 ABUT<90 OPPOSITE REGION
+    err INTERACT SRAMMRK
+} 
+
+NIM_S_1 {
+@ NIM horizontal Space >= 48nm
+    EXT SN_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+    EXT SN < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+NIM_S_2 {
+@ horizontal Space between ACT and NIM >= 48nm
+    EXT AA SN_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+} 
+
+//NIM_EN_1 {
+//@ NIM enclosure of ACT >= 10nm
+//    ENC NAA SN < 0.010 ABUT<90 REGION
+//} 
+
+NIM_R_1 {
+@ NIM AND PIM may not overlap
+    SN AND SP
+} 
+
+NIM_A_1 {
+@ NIM area >= 2736nm2
+    AREA SN < 0.002736
+} 
+
+
+// =======================================================
+// PIM: P-type Implant design rules                           
+// =======================================================  
+
+GROUP GPIM PIM_?
+
+PIM_W_1 {
+@ Minimum horizontal width of PIM >= 48nm
+    INT SP_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+} 
+
+PIM_W_2 {
+@ Minimum vertical width of PIM (outside the layer SRAMMRK) >= 57nm
+    err = INT SP_h_edges < 0.057 ABUT<90 OPPOSITE REGION
+    err OUTSIDE SRAMMRK
+} 
+
+PIM_W_3_SRAM {
+@ Minimum vertical width of PIM (interacting with the layer SRAMMRK) >= 45nm
+    err = INT SP_h_edges < 0.045 ABUT<90 OPPOSITE REGION
+    err INTERACT SRAMMRK
+} 
+
+PIM_S_1 {
+@ PIM horizontal Space >= 48nm
+    EXT SP_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+    EXT SP < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+PIM_S_2 {
+@ horizontal Space between ACT and PIM >= 48nm
+    EXT AA SP_v_edges < 0.048 ABUT<90 OPPOSITE REGION
+} 
+
+//PIM_EN_1 {
+//@ PIM enclosure of AA >= 10nm
+//    ENC PAA SP < 0.010 ABUT<90 REGION
+//} 
+
+PIM_A_1 {
+@ PIM area >= 2736nm2
+    AREA SP < 0.002736
+} 
+
+
+// =======================================================
+// VT: N/P-type Vt MOS design rules                           
+// =======================================================  
+
+VT_AUX_2{
+@ VT layers (LVT, SLVT, and SVT) may not overlap
+    LVT_N AND (OR LVT_P SVT_N SVT_P SLVT_N SLVT_P) 
+    LVT_P AND (OR LVT_N SVT_N SVT_P SLVT_N SLVT_P) 
+    SLVT_N AND (OR LVT_P SVT_N SVT_P LVT_N SLVT_P) 
+    SLVT_P AND (OR LVT_N SVT_N SVT_P SLVT_N LVT_P) 
+    SVT_N AND (OR LVT_P LVT_N SVT_P SLVT_N SLVT_P) 
+    SVT_P AND (OR LVT_N SVT_N LVT_P SLVT_N SLVT_P) 
+}
+
+
+// =======================================================
+// CT: CT design rules                           
+// =======================================================  
+
+GROUP GCT CT_?
+
+CT_AA = CT AND AA
+CT_AA_h_edges = ANGLE CT_AA == 0 
+CT_AA_v_edges = ANGLE CT_AA == 90   
+
+CT_VCT = CT AND VCT
+CT_VCT_h_edges = ANGLE CT_VCT == 0 
+CT_VCT_v_edges = ANGLE CT_VCT == 90  
+
+CT_W_1 {
+@ Minimum horizontal width of CT >= 10nm
+    INT CT_v_edges < 0.01 ABUT<90 OPPOSITE REGION
+} 
+
+CT_W_2 {
+@ Minimum vertical width of CT (outside the layer SRAMMRK) >= 20nm
+    err = INT CT_h_edges < 0.02 ABUT<90 OPPOSITE REGION
+    err OUTSIDE SRAMMRK
+} 
+
+CT_W_3_SRAM {
+@ Minimum vertical width of CT (interacting with the layer SRAMMRK) >= 15nm
+    err = INT CT_h_edges < 0.015 ABUT<90 OPPOSITE REGION
+    err INTERACT SRAMMRK
+} 
+
+CT_S_1 {
+@ Minimum horizontal spacing between two CT layer polygons >= 28nm
+    EXT CT_v_edges < 0.028 ABUT<90 OPPOSITE REGION
+    EXT CT < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+CT_GATE_S_2 {
+@ Minimum horizontal spacing between CT and GATE >= 6nm
+    EXT CT_v_edges GT < 0.006 ABUT<90 OPPOSITE REGION
+} 
+
+CT_ACTIVE_OV_1 {
+@ Minimum vertical overlap between CT and ACTIVE (outside the layer SRAMMRK) >= 15nm
+    err = INT CT_AA_h_edges < 0.015 ABUT<90 OPPOSITE REGION
+    err NOT SRAMMRK
+} 
+
+CT_ACTIVE_OV_2_SRAM {
+@ Minimum vertical overlap between CT and ACTIVE (interacting with the layer SRAMMRK) >= 10nm
+    err = INT CT_AA_h_edges < 0.01 ABUT<90 OPPOSITE REGION
+    err INTERACT SRAMMRK
+} 
+
+CT_VCT_OV_2 {
+@ Minimum vertical overlap between CT and VCT >= 15nm
+    INT CT_VCT_h_edges < 0.015 ABUT<90 OPPOSITE REGION
+} 
+
+CT_GATE_AUX_1 {
+@ CT and GATE may not overlap or touch
+    CT INTERACT GT
+} 
+
+CT_ACT_AUX_3 {
+@ CT may not be entirely outside ACT
+    CT OUTSIDE AA
+} 
+
+CT_ACT_EX_1 {
+@ Minimum vertical extension of CT past ACT >= 8nm
+    ENC AA_h_edges CT_h_edges < 0.008 ABUT<90 OPPOSITE REGION
+
+    CT_h_edges INSIDE EDGE AA
+}
+
+// =======================================================
+// GCUT: GATE cut design rules                           
+// =======================================================  
+
+GROUP GGCUT GCUT_?
+
+GCUT_GT = GCUT AND GT
+
+GCUT_GT_h_edges = ANGLE GCUT_GT == 0 
+GCUT_GT_v_edges = ANGLE GCUT_GT == 90   
+
+GCUT_W_1 {
+@ Minimum vertical width of GCUT >= 20nm
+    INT GCUT_h_edges < 0.020 ABUT<90 OPPOSITE REGION
+} 
+
+GCUT_W_2 {
+@ Maximum vertical width  <= 40nm
+    INT (GCUT_h_edges) <= 0.04 ABUT<90 OPPOSITE EXCLUDE SHIELDED
+} 
+
+GCUT_L_1 {
+@ GCUT edge length in S/D direction >= 35nm
+    LENGTH GCUT_h_edges < 0.035
+} 
+
+GCUT_ACTIVE_S_1 {
+@ Minimum vertical spacing between GCUT and channel >= 5nm
+    EXT GCUT_h_edges GATE_LE < 0.005 ABUT<90 OPPOSITE REGION
+} 
+
+GCUT_GATE_EX_1 {
+@ Minimum horizontal extension of GCUT past GATE >= 16nm
+    ENC GT GCUT_v_edges < 0.016 ABUT<90 OPPOSITE REGION
+} 
+
+GCUT_GATE_S_2 {
+@ Minimum spacing of GCUT to GATE, when the former is not being used to cut a particular polygon drawn using the latter >= 16nm
+    EXT GT GCUT < 0.016 ABUT<90 SINGULAR REGION
+} 
+
+GCUT_S_3 {
+@ Minimum vertical spacing between two GCUT layer polygons >= 40nm
+    EXT GCUT_h_edges < 0.04 ABUT<90 OPPOSITE REGION
+} 
+
+GCUT_O_1 {
+@ Overlap of GATE and GCUT in GATE poly direction >= 5nm
+    INT GCUT_GT_h_edges < 0.005 ABUT<90 OPPOSITE REGION
+} 
+
+GCUT_AUX_1 {
+@ GCUT layer may not exist without the layer GATE.
+    GCUT OUTSIDE GT
+} 
+
+GCUT_AUX_2 {
+@ GCUT layer vertical edge may not lie inside, or coincide with, the GATE layer
+    GCUT_v_edges NOT OUTSIDE EDGE GT
+} 
+
+GCUT_AUX_3 {
+@ GCUT may not interact with channel.
+    GCUT INTERACT GATE
+} 
+
+
+// =======================================================
+// CT_PR: CT powerrail design rules                           
+// =======================================================  
+
+GROUP GCT_PR CT_PR_?
+
+CT_PR_AA = CT_PR AND AA
+CT_PR_AA_h_edges = ANGLE CT_PR_AA == 0 
+CT_PR_AA_v_edges = ANGLE CT_PR_AA == 90   
+
+CT_PR_VCT_PR = CT_PR AND VCT_PR
+CT_PR_VCT_PR_h_edges = ANGLE CT_PR_VCT_PR == 0 
+CT_PR_VCT_PR_v_edges = ANGLE CT_PR_VCT_PR == 90  
+
+CT_PR_W_1 {
+@ Minimum horizontal width of CT_PR >= 10nm
+    INT CT_PR_v_edges < 0.01 ABUT<90 OPPOSITE REGION
+} 
+
+CT_PR_W_2 {
+@ Minimum vertical width of CT_PR >= 60nm
+    INT CT_PR_h_edges < 0.06 ABUT<90 OPPOSITE REGION
+} 
+
+CT_PR_S_1 {
+@ Minimum horizontal spacing between two CT_PR layer polygons >= 48nm
+    EXT CT_PR_v_edges < 0.048 ABUT<90 OPPOSITE REGION 
+    EXT CT_PR < 0.001 ABUT<90 SINGULAR REGION
+} 
+
+CT_PR_GATE_S_2 {
+@ Minimum horizontal spacing between CT_PR and GATE >= 6nm
+    EXT CT_PR GT < 0.006 ABUT<90 SINGULAR REGION
+} 
+
+CT_PR_ACTIVE_OV_1 {
+@ Minimum vertical overlap between CT_PR and ACTIVE >= 20nm
+    INT CT_PR_AA_h_edges < 0.02 ABUT<90 OPPOSITE REGION
+} 
+
+CT_PR_VCT_PR_OV_2 {
+@ Minimum vertical overlap between CT_PR and VCT_PR >= 15nm
+    INT CT_PR_VCT_PR_h_edges < 0.015 ABUT<90 OPPOSITE REGION
+} 
+
+CT_PR_GATE_AUX_1 {
+@ CT_PR and GATE may not overlap or touch
+    CT_PR INTERACT GT
+} 
+
+CT_PR_ACT_AUX_3 {
+@ CT_PR may not be entirely outside ACT
+    CT_PR OUTSIDE AA
+} 
+
+
+// =======================================================
+// VCT: VCT design rules                           
+// =======================================================  
+
+GROUP GVCT VCT_?
+
+VCT_0.005_M0_end_cap = ENC VCT M0_v_edges == 0.005 ABUT<90 OPPOSITE REGION 
+
+vct_with_end_cap = VCT TOUCH VCT_0.005_M0_end_cap == 2
+vct_without_end_cap = VCT NOT vct_with_end_cap
+
+VCT_M0 = VCT INTERACT M0
+VCT_M0_h_edges = ANGLE VCT_M0 == 0
+VCT_M0_v_edges = ANGLE VCT_M0 == 90
+
+VCT_W_1 {
+@ Minimum width of a VCT instance along the length of M0 >= 10nm
+    INT VCT_v_edges < 0.01 ABUT<90 OPPOSITE REGION  // VCT have same width with M0
+} 
+
+VCT_S_1 {
+@ Minimum spacing between VCT instances [on the same M0 track | on parallel M0 tracks, if they are not aligned with each other | on parallel M0 tracks, if they are fully or partially aligned with each other]] >= 20nm
+    EXT VCT < 0.020 ABUT<90 SINGULAR OPPOSITE REGION
+} 
+
+VCT_S_2 {
+@ Minimum corner-to-corner spacing between two VCT instances—both with a 5 nm M0 end-cap >= 23nm
+    EXT vct_with_end_cap < 0.023 CORNER TO CORNER REGION
+} 
+
+VCT_S_3 {
+@ Minimum corner-to-corner spacing between two VCT instances—both without a 5 nm M0 end-cap >= 30nm
+    EXT vct_without_end_cap < 0.03 CORNER TO CORNER REGION
+} 
+
+VCT_S_4 {
+@ Minimum corner-to-corner spacing between two VCT instances—one with and another without, a 5 nm M0 end-cap >= 27nm
+    EXT vct_without_end_cap vct_with_end_cap < 0.027 CORNER TO CORNER REGION
+} 
+
+VCT_CT_EN_1 {
+@ Minimum enclosure of VCT by CT on two opposite sides(outside the layer SRAMMRK) >= 3.5nm
+    ENC (VCT OUTSIDE SRAMMRK) CT_h_edges < 0.0035 ABUT<90 OPPOSITE REGION
+
+    VCT NOT CT
+} 
+
+VCT_M0_EN_1 {
+@ Minimum enclosure of VCT by M0 on two opposite sides(outside the layer SRAMMRK) >= 4nm
+    ENC (VCT OUTSIDE SRAMMRK) M0_v_edges < 0.004 ABUT<90 OPPOSITE REGION
+
+    VCT NOT M0
+} 
+
+VCT_AUX_1 {
+@ VCT must always interact with M0 and CT
+    VCT OUTSIDE M0
+    VCT OUTSIDE CT
+} 
+
+VCT_M0_AUX_3 {
+@ VCT must exactly be the same width as M0 along the  horizontal direction
+    NOT COIN EDGE VCT_M0_h_edges M0
+} 
+
+
+// =======================================================
+// VCT_PR: VCT_PR  design rules                           
+// =======================================================  
+
+GROUP GVCT_PR VCT_PR_?
+
+VCT_PR_0.005_M0_PR_end_cap = ENC VCT_PR M0_PR_v_edges == 0.005 ABUT<90 OPPOSITE REGION 
+vct_pr_with_end_cap = VCT_PR TOUCH VCT_PR_0.005_M0_PR_end_cap == 2
+vct_pr_without_end_cap = VCT_PR NOT vct_pr_with_end_cap
+
+VCT_PR_M0_PR = VCT_PR INTERACT M0_PR
+VCT_PR_M0_PR_h_edges = ANGLE VCT_PR_M0_PR == 0
+VCT_PR_M0_PR_v_edges = ANGLE VCT_PR_M0_PR == 90
+
+VCT_PR_W_1 {
+@ Minimum width of a VCT_PR instance along the length of M0_PR >= 19nm
+    INT VCT_PR_v_edges < 0.019 ABUT<90 OPPOSITE REGION  // VCT_PR have same width with M0
+} 
+
+VCT_PR_S_1 {
+@ Minimum spacing between VCT_PR instances >= 48nm
+    EXT VCT_PR < 0.048 ABUT<90 OPPOSITE REGION
+} 
+
+VCT_PR_S_2 {
+@ Minimum corner-to-corner spacing between two VCT_PR instances—both with a 5 nm M0_PR end-cap >= 23nm
+    EXT vct_pr_with_end_cap < 0.023 CORNER TO CORNER REGION
+} 
+
+VCT_PR_S_3 {
+@ Minimum corner-to-corner spacing between two VCT_PR instances—both without a 5 nm M0_PR end-cap >= 30nm
+    EXT vct_pr_without_end_cap < 0.03 CORNER TO CORNER REGION
+} 
+
+VCT_PR_S_4 {
+@ Minimum corner-to-corner spacing between two VCT_PR instances—one with and another without, a 5 nm M0_PR end-cap >= 27nm
+    EXT vct_pr_without_end_cap vct_pr_with_end_cap < 0.027 CORNER TO CORNER REGION
+} 
+
+//VCT_PR_CT_PR_EN_1 {
+//@ Minimum enclosure of VCT_PR by CT_PR on two opposite sides >= 3.5nm
+//    ENC VCT_PR CT_PR_h_edges < 0.0035 ABUT<90 REGION
+//
+//    VCT_PR NOT CT_PR
+//} 
+
+VCT_PR_M0_PR_EN_1 {
+@ Minimum enclosure of VCT_PR by M0_PR on two opposite sides >= 4nm
+    ENC VCT_PR M0_PR_v_edges < 0.004 ABUT<90 REGION
+
+    VCT_PR NOT M0_PR
+} 
+
+VCT_PR_AUX_1 {
+@ VCT_PR must always interact with M0_PR and CT_PR
+    VCT_PR OUTSIDE M0_PR 
+    VCT_PR OUTSIDE CT_PR
+} 
+
+VCT_PR_M0_PR_AUX_3 {
+@ VCT_PR must exactly be the same width as M0_PR along the  horizontal direction
+    NOT COIN EDGE VCT_PR_M0_PR_h_edges M0_PR
+} 
+
+
+// =======================================================
+// VCG: VCG design rules                           
+// =======================================================  
+
+GROUP GVCG VCG_?
+
+VCG_W_1 {
+@ Minimum width of VCG >= 14nm
+    INT VCG < 0.014 ABUT<90 SINGULAR REGION
+} 
+
+//VCG_S_1 {
+//@ Minimum (side-to-side) spacing between two VCG layer polygons' edges, when both edges are > 36 nm.  >= 10nm
+//    vcg_meet_wid_sides = INT (VCG) <= 0.036 ABUT<90 OPPOSITE
+//    vcg_meet_wid_block = VCG WITH EDGE vcg_meet_wid_sides
+//    EXT vcg_meet_wid_block < 0.01 OPPOSITE REGION
+//
+//    EXT VCG < 0.001 ABUT<90 SINGULAR REGION
+//} 
+
+VCG_GATE_S_1 {
+@ Minimum horizontal spacing between VCG and GATE (not cut using GCUT) layer polygons >= 30nm
+    EXT VCG_v_edges GT_0 < 0.03 ABUT<90 OPPOSITE REGION MEASURE ALL
+} 
+
+VCG_GATE_EN_1 {
+@ Minimum enclosure of VCG by GATE on two opposite sides >= 1nm
+    ENC VCG GT_h_edges < 0.001 ABUT<90 REGION
+
+    VCG NOT GT
+} 
+
+VCG_M0_EN_1 {
+@ Minimum enclosure of VCG by M0 on two opposite sides >= 4nm
+    ENC VCG M0_v_edges < 0.004 ABUT<90 REGION
+
+    VCG NOT M0
+} 
+
+VCG_VCT_S_1 {
+@ Minimum corner-to-corner spacing between VCG and VCT >= 15nm
+    EXT VCG VCT < 0.015  ABUT<90 CORNER TO CORNER SINGULAR REGION
+} 
+
+VCG_AUX_1 {
+@ VCG must always interact with M0 and GATE
+    VCG OUTSIDE M0
+    VCG OUTSIDE GT
+} 
+
+VCG_M0_AUX_1 {
+@ VCG must exactly be the same width as M0 along the direction perpendicular to the M0 length
+    VCG WITH EDGE (VCG_h_edges NOT COIN INSIDE EDGE M0)
+} 
+
+
+// =======================================================
+// M0: M0 design rules                           
+// =======================================================  
+
+GROUP GM0 M0_?
+
+M0_W_1 {
+@ Minimum vertical width of M0 >= 15nm
+    INT M0_h_edges < 0.015 ABUT<90 OPPOSITE REGION
+}
+
+M0_W_2 {
+@ Minimum horizontal width of M0,except MARKS region >= 25nm
+    INT M0_v_edges < 0.025 ABUT<90 OPPOSITE REGION
+}
+
+M0_S_1 {
+@ Minimum vertical spacing of M0s, >= 11nm
+    EXT M0_h_edges < 0.011 ABUT<90 REGION
+}
+
+M0_M0_PR_S_1 {
+@ Minimum vertical spacing between M0 and M0_PR >= 11nm
+    EXT M0_h_edges M0_PR_h_edges < 0.011 ABUT<90 REGION
+}
+
+M0_S_2 {
+@ Minimum horizontal(TtT) spacing between two M0 layers on the same track >= 18nm
+    EXT M0_v_edges < 0.017 ABUT<90 OPPOSITE REGION
+}
+
+M0_A_1 {
+@ Area of M0 >= 375nm2
+    AREA M0 < 0.000375  
+}
+
+M0_S_3 {
+@ Minimum corner-to-corner spacing between two M0 polygons >= 15nm
+    EXT M0 < 0.015 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M0_AUX_1 {
+@ M0 must not bend
+    NOT RECTANGLE M0 ORTHOGONAL ONLY
+}
+
+//M0_EX_1 {
+//@ ACT extension outside of M0 in S/D direction >= 5nm
+//    ENC (M0 AND AA) [AA_v_edges] < 0.005 ABUT<90 OPPOSITE 
+//}
+
+
+// =======================================================
+// M0_PR: M0_PR design rules                           
+// =======================================================  
+
+GROUP GM0_PR M0_PR_?
+
+M0_PR_W_1 {
+@ Minimum vertical width of M0_PR >= 38nm
+    INT M0_PR_h_edges < 0.038 ABUT<90 OPPOSITE REGION
+}
+
+M0_PR_W_2 {
+@ Minimum horizontal width of M0_PR, except MARKS region >= 90nm
+    INT M0_PR_v_edges < 0.09 ABUT<90 OPPOSITE REGION
+}
+
+M0_PR_S_1 {
+@ Minimum vertical spacing of M0_PRs, >= 98nm
+    EXT M0_PR_h_edges < 0.098 ABUT<90 REGION
+}
+
+M0_PR_S_2 {
+@ Minimum horizontal(TtT) spacing two M0_PR layers on the same track >= 60nm
+    EXT M0_PR_v_edges < 0.06 ABUT<90 OPPOSITE REGION
+}
+
+M0_PR_S_3 {
+@ Minimum corner-to-corner spacing between two M0_PR polygons >= 50nm
+    EXT M0_PR < 0.05 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M0_PR_AUX_1 {
+@ M0_PR must not bend
+    NOT RECTANGLE M0_PR ORTHOGONAL ONLY
+}
+
+M0_PR_A_1 {
+@ Area of M0_PR >= 1710nm2
+    AREA M0_PR < 0.001710
+}
+
+
+// =======================================================
+// V0: V0 design rules                           
+// =======================================================  
+
+GROUP GV0 V0_?
+
+V0_M0 = V0 INTERACT M0
+V0_M0_h_edges = ANGLE V0_M0 == 0
+V0_M0_v_edges = ANGLE V0_M0 == 90
+
+V0_M0_PR = V0 INTERACT M0_PR
+V0_M0_PR_h_edges = ANGLE V0_M0_PR == 0
+V0_M0_PR_v_edges = ANGLE V0_M0_PR == 90
+
+V0_M1 = V0 INTERACT M1
+V0_M1_h_edges = ANGLE V0_M1 == 0
+V0_M1_v_edges = ANGLE V0_M1 == 90
+
+
+V0_W_1 {
+@ Minimum width of V0 >= 15nm
+    INT V0 < 0.015 ABUT<90 SINGULAR REGION
+}
+
+//V0_S_1 {
+//@ Minimum spacing between V0 instances [on the same M1 track | on parallel M1 tracks, if they are not aligned with each other | on parallel M1 tracks, if they are fully or partially aligned with each other] >= [9 | 23 | 14]nm
+//    EXT V0 < 0.009 ABUT<90 OPPOSITE REGION
+//
+//    EXT V0_h_edges < 0.014 ABUT<90 OPPOSITE REGION
+//
+//    opposite_region = EXT V0_h_edges >= 0.014 < 0.023 ABUT<90 OPPOSITE REGION
+//    opposite_region_h_edges = ANGLE opposite_region == 0
+//    opposite_region_v_edges = ANGLE opposite_region == 90
+//
+//    chk = EXPAND EDGE opposite_region_h_edges OUTSIDE BY 0.001
+//    chk_h_sides = ANGLE chk == 0
+//    good3 = DFM PROPERTY chk V0_h_edges chk_h_sides OVERLAP ABUT ALSO MULTI [-= LENGTH(V0_h_edges)/COUNT(V0_h_edges) - LENGTH(chk_h_sides)/COUNT(chk_h_sides)] == 0
+//    opposite_region NOT (opposite_region INTERACT good3)
+//}
+
+V0_S_1 {
+@ Minimum corner to corner spacing between V0 instances >= 14nm
+    EXT V0 < 0.014 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V0_M0_EN_1 {
+@ V0 must be covered by M0 or M0_PR
+    V0 NOT (M0 OR M0_PR)
+}
+
+V0_M0_EN_2 {
+@ V0 enclosure by M0 or M0_PR on horizontal direction >= 5nm
+    ENC V0 [M0_v_edges] < 0.005 ABUT<90 OPPOSITE INSIDE ALSO
+    ENC V0 [M0_PR_v_edges] < 0.005 ABUT<90 OPPOSITE INSIDE ALSO
+}
+
+V0_M0_AUX_1 {
+@ V0 must exactly be the same vertical width with M0/M0_PR
+    NOT COIN EDGE V0_M0_h_edges M0
+    NOT COIN EDGE V0_M0_PR_h_edges M0_PR
+}
+
+V0_M1_AUX_2 {
+@ V0 must exactly be the same horizontal width with M1
+    NOT COIN EDGE V0_M1_v_edges M1
+}
+
+V0_AUX_3 {
+@ V0 must interact with M0/M0_PR and M1
+    (V0 NOT (OR M0 M0_PR)) OR (V0 NOT M1)
+}
+
+V0_M1_EN_1 {
+@ V0 enclosure by M1 on two opposite sides >= 5nm
+    ENC V0_h_edges M1 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M1: M1 design rules                           
+// =======================================================  
+
+GROUP GM1 M1_?
+
+M1_W_1 {
+@ Minimum vertical width of M1 >= 28nm
+    INT M1_h_edges < 0.028 ABUT<90 OPPOSITE REGION
+}
+
+M1_W_2 {
+@ Minimum horizontal width of M1 >= 21nm
+    INT M1_v_edges < 0.021 ABUT<90 OPPOSITE REGION
+}
+
+M1_S_1 {
+@ Minimum horizontal spacing of M1s, >= 13nm
+    EXT M1_v_edges < 0.013 ABUT<90 REGION
+}
+
+M1_S_2 {
+@ Minimum vertical(TtT) spacing between two M1 layers on the same track >= 27nm
+    EXT M1_h_edges < 0.027 ABUT<90 OPPOSITE REGION
+}
+
+M1_A_1 {
+@ Area of M1 >= 504nm2
+    AREA M1 < 0.000504  
+}
+
+M1_S_3 {
+@ Minimum corner-to-corner spacing between two M1 polygons >= 24nm
+    EXT M1 < 0.024 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M1_AUX_1 {
+@ M1 must not bend
+    NOT RECTANGLE M1 ORTHOGONAL ONLY
+}
+
+
+// =======================================================
+// V1: V1 design rules                           
+// =======================================================  
+
+GROUP GV1 V1_?
+
+V1_M1 = V1 INTERACT M1
+V1_M1_h_edges = ANGLE V1_M1 == 0
+V1_M1_v_edges = ANGLE V1_M1 == 90
+
+V1_M2 = V1 INTERACT M2
+V1_M2_h_edges = ANGLE V1_M2 == 0
+V1_M2_v_edges = ANGLE V1_M2 == 90
+
+
+V1_W_1 {
+@ Minimum width >= 21nm
+    INT V1 < 0.021 ABUT<90 SINGULAR REGION
+}
+
+V1_S_1 {
+@ Minimum corner to corner spacing between V1 instances >= 15nm
+    EXT V1 < 0.015 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V1_M1_AUX_1 {
+@ V1 must exactly be the same horizontal width with M1
+    NOT COIN EDGE V1_M1_v_edges M1
+}
+
+V1_M2_AUX_2 {
+@ V1 must exactly be the same vertical width with M2
+    NOT COIN EDGE V1_M2_h_edges M2
+}
+
+V1_AUX_3 {
+@ V1 must interact with M1 and M2
+    (V1 NOT M1) OR (V1 NOT M2)
+}
+
+V1_M1_EN_2 {
+@ V1 enclosure by M1 >= 5nm
+    ENC V1_h_edges M1 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V1_M2_EN_1 {
+@ V1 enclosure by M2 >= 5nm
+    ENC V1_v_edges M2 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M2: M2 design rules                           
+// =======================================================  
+
+GROUP GM2 M2_?
+
+M2_W_1 {
+@ Minimum Vertical width >= 21nm
+    INT M2_h_edges < 0.021 ABUT<90 REGION
+}
+
+M2_S_1 {
+@ Minimum Vertical spacing >= 13nm
+    EXT M2_h_edges < 0.013 ABUT<90 REGION
+}
+
+M2_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M2 layers on the same track >= 20nm
+    EXT M2_v_edges < 0.02 ABUT<90 OPPOSITE REGION
+}
+
+M2_S_3 {
+@ Minimum corner-to-corner spacing between two M2 polygons >= 16nm
+    EXT M2 < 0.016 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M2_AUX_1 {
+@ M2 must not bend
+    NOT RECTANGLE M2 ORTHOGONAL ONLY
+}
+
+
+// =======================================================
+// V2: V2 design rules                           
+// =======================================================  
+
+GROUP GV2 V2_?
+
+V2_M2 = V2 INTERACT M2
+V2_M2_h_edges = ANGLE V2_M2 == 0
+V2_M2_v_edges = ANGLE V2_M2 == 90
+
+V2_M3 = V2 INTERACT M3
+V2_M3_h_edges = ANGLE V2_M3 == 0
+V2_M3_v_edges = ANGLE V2_M3 == 90
+
+
+V2_W_1 {
+@ Minimum width >= 21nm
+    INT V2 < 0.021 ABUT<90 SINGULAR REGION
+}
+
+V2_S_1 {
+@ Minimum corner to corner spacing between V2 instances>= 15nm
+    EXT V2 < 0.015 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V2_M2_AUX_1 {
+@ V2 must exactly be the same vertical width with M2
+    NOT COIN EDGE V2_M2_h_edges M2
+}
+
+V2_M3_AUX_2 {
+@ V2 must exactly be the same Horizontal width with M3
+    NOT COIN EDGE V2_M3_v_edges M3
+}
+
+V2_AUX_3 {
+@ V2 must interact with M2 and M3
+    (V2 NOT M2) OR (V2 NOT M3)
+}
+
+V2_M2_EN_2 {
+@ V2 enclosure by M2 >= 5nm
+    ENC V2_v_edges M2 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V2_M3_EN_1 {
+@ V2 enclosure by M3 >= 5nm
+    ENC V2_h_edges M3 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M3: M3 design rules                           
+// =======================================================  
+
+GROUP GM3 M3_?
+
+M3_W_1 {
+@ Minimum Horizontal width >= 21nm
+    INT M3_v_edges < 0.021 ABUT<90 REGION
+}
+
+M3_S_1 {
+@ Minimum Horizontal spacing >= 13nm
+    EXT M3_v_edges < 0.013 ABUT<90 REGION
+}
+
+M3_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M3 layers on the same track >= 20nm
+    EXT M3_v_edges < 0.02 ABUT<90 OPPOSITE REGION
+}
+
+M3_S_3 {
+@ Minimum corner-to-corner spacing between two M3 polygons >= 16nm
+    EXT M3 < 0.016 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M3_AUX_1 {
+@ M3 must not bend
+    NOT RECTANGLE M3 ORTHOGONAL ONLY
+}
+
+
+// =======================================================
+// V3: V3 design rules                           
+// =======================================================  
+
+GROUP GV3 V3_?
+
+V3_M3 = V3 INTERACT M3
+V3_M3_h_edges = ANGLE V3_M3 == 0
+V3_M3_v_edges = ANGLE V3_M3 == 90
+
+V3_M4 = V3 INTERACT M4
+V3_M4_h_edges = ANGLE V3_M4 == 0
+V3_M4_v_edges = ANGLE V3_M4 == 90
+
+V3_W_1 {
+@ Minimum width >= 21nm
+    INT V3 < 0.021 ABUT<90 SINGULAR REGION
+}
+
+V3_S_1 {
+@ Minimum corner to corner spacing between V3 instances>= 15nm
+    EXT V3 < 0.015 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V3_M3_AUX_1 {
+@ V3 must exactly be the same horizontal width with M3
+    NOT COIN EDGE V3_M3_v_edges M3
+}
+
+V3_M4_AUX_2 {
+@ V3 must exactly be the same vertical width with M4
+    NOT COIN EDGE V3_M4_h_edges M4
+}
+
+V3_AUX_3 {
+@ V3 must interact with M3 and M4
+    (V3 NOT M3) OR (V3 NOT M4)
+}
+
+
+V3_M3_EN_2 {
+@ V3 enclosure by M3 >= 5nm
+    ENC V3_h_edges M3 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V3_M4_EN_1 {
+@ V3 enclosure by M4 >= 5nm
+    ENC V3_v_edges M4 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M4: M4 design rules                           
+// =======================================================  
+
+GROUP GM4 M4_?
+
+M4_W_1 {
+@ Minimum Vertical width >= 30nm
+    INT M4_h_edges < 0.030 ABUT<90 REGION
+}
+
+M4_S_1 {
+@ Minimum Vertical spacing >= 25nm
+    EXT M4_h_edges < 0.025 ABUT<90 REGION
+}
+
+M4_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M4 layers on the same track >= 32nm
+    EXT M4_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M4_S_3 {
+@ Minimum corner-to-corner spacing between two M4 polygons >= 28nm
+    EXT M4 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M4_AUX_1 {
+@ M4 must not bend
+    NOT RECTANGLE M4 ORTHOGONAL ONLY
+}
+
+
+// =======================================================
+// V4: V4 design rules                           
+// =======================================================  
+
+GROUP GV4 V4_?
+
+V4_M4 = V4 INTERACT M4
+V4_M4_h_edges = ANGLE V4_M4 == 0
+V4_M4_v_edges = ANGLE V4_M4 == 90
+
+V4_M5 = V4 INTERACT M5
+V4_M5_h_edges = ANGLE V4_M5 == 0
+V4_M5_v_edges = ANGLE V4_M5 == 90
+
+
+V4_W_1 {
+@ Minimum width >= 30nm
+    INT V4 < 0.024 ABUT<90 SINGULAR REGION
+}
+
+V4_S_1 {
+@ Minimum corner to corner spacing between V4 instances>= 25nm
+    EXT V4 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V4_M4_AUX_1 {
+@ V4 must exactly be the same vertical width with M4
+    NOT COIN EDGE V4_M4_h_edges M4
+}
+
+V4_M5_AUX_2 {
+@ V4 must exactly be the same Horizontal width with M5
+    NOT COIN EDGE V4_M5_v_edges M5
+}
+
+V4_AUX_3 {
+@ V4 must interact with M4 and M5
+    (V4 NOT M4) OR (V4 NOT M5)
+}
+
+V4_M4_EN_2 {
+@ V4 enclosure by M4 >= 5nm
+    ENC V4_v_edges M4 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V4_M5_EN_1 {
+@ V4 enclosure by M5 >= 5nm
+    ENC V4_h_edges M5 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M5: M5 design rules                           
+// =======================================================  
+
+GROUP GM5 M5_?
+
+M5_W_1 {
+@ Minimum Horizontal width >= 30nm
+    INT M5_v_edges < 0.030 ABUT<90 REGION
+}
+
+M5_S_1 {
+@ Minimum Horizontal spacing >= 25nm
+    EXT M5_v_edges < 0.025 ABUT<90 REGION
+}
+
+M5_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M5 layers on the same track >= 32nm
+    EXT M5_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M5_S_3 {
+@ Minimum corner-to-corner spacing between two M5 polygons >= 28nm
+    EXT M5 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M5_AUX_1 {
+@ M5 must not bend
+    NOT RECTANGLE M5 ORTHOGONAL ONLY
+}
+
+
+// =======================================================
+// V5: V5 design rules                           
+// =======================================================  
+
+GROUP GV5 V5_?
+
+V5_M5 = V5 INTERACT M5
+V5_M5_h_edges = ANGLE V5_M5 == 0
+V5_M5_v_edges = ANGLE V5_M5 == 90
+
+V5_M6 = V5 INTERACT M6
+V5_M6_h_edges = ANGLE V5_M6 == 0
+V5_M6_v_edges = ANGLE V5_M6 == 90
+
+
+V5_W_1 {
+@ Minimum width >= 30nm
+    INT V5 < 0.030 ABUT<90 SINGULAR REGION
+}
+
+V5_S_1 {
+@ Minimum corner to corner spacing >= 25nm
+    EXT V5 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V5_M5_AUX_1 {
+@ V5 must exactly be the same horizontal width with M5
+    NOT COIN EDGE V5_M5_v_edges M5
+}
+
+V5_M6_AUX_2 {
+@ V5 must exactly be the same vertical width with M6
+    NOT COIN EDGE V5_M6_h_edges M6
+}
+
+V5_AUX_3 {
+@ V5 must interact with M5 and M6
+    (V5 NOT M5) OR (V5 NOT M6)
+}
+
+V5_M5_EN_2 {
+@ V5 enclosure by M5 >= 5nm
+    ENC V5_h_edges M5 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V5_M6_EN_1 {
+@ V5 enclosure by M6 >= 5nm
+    ENC V5_v_edges M6 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M6: M6 design rules                           
+// =======================================================  
+
+GROUP GM6 M6_?
+
+M6_W_1 {
+@ Minimum Vertical width >= 30nm
+    INT M6_h_edges < 0.030 ABUT<90 REGION
+}
+
+M6_S_1 {
+@ Minimum Vertical spacing >= 25nm
+    EXT M6_h_edges < 0.025 ABUT<90 REGION
+}
+
+M6_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M6 layers on the same track >= 32nm
+    EXT M6_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M6_S_3 {
+@ Minimum corner-to-corner spacing between two M6 polygons >= 28nm
+    EXT M6 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M6_AUX_1 {
+@ M6 must not bend
+    NOT RECTANGLE M6 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V6: V6 design rules                           
+// =======================================================  
+
+GROUP GV6 V6_?
+
+V6_M6 = V6 INTERACT M6
+V6_M6_h_edges = ANGLE V6_M6 == 0
+V6_M6_v_edges = ANGLE V6_M6 == 90
+
+V6_M7 = V6 INTERACT M7
+V6_M7_h_edges = ANGLE V6_M7 == 0
+V6_M7_v_edges = ANGLE V6_M7 == 90
+
+
+V6_W_1 {
+@ Minimum width >= 30nm
+    INT V6 < 0.030 ABUT<90 SINGULAR REGION
+}
+
+V6_S_1 {
+@ Minimum corner to corner spacing >= 25nm
+    EXT V6 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V6_M6_AUX_1 {
+@ V6 must exactly be the same vertical width with M6
+    NOT COIN EDGE V6_M6_h_edges M6
+}
+
+V6_M7_AUX_2 {
+@ V6 must exactly be the same Horizontal width with M7
+    NOT COIN EDGE V6_M7_v_edges M7
+}
+
+V6_AUX_3 {
+@ V6 must interact with M6 and M7
+    (V6 NOT M6) OR (V6 NOT M7)
+}
+
+
+V6_M6_EN_2 {
+@ V6 enclosure by M6 >= 5nm
+    ENC V6_v_edges M6 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V6_M7_EN_1 {
+@ V6 enclosure by M7 >= 5nm
+    ENC V6_h_edges M7 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M7: M7 design rules                           
+// =======================================================  
+
+GROUP GM7 M7_?
+
+M7_W_1 {
+@ Minimum Horizontal width >= 35nm
+    INT M7_v_edges < 0.035 ABUT<90 REGION
+}
+
+M7_S_1 {
+@ Minimum Horizontalspacing >= 25nm
+    EXT M7_v_edges < 0.025 ABUT<90 REGION
+}
+
+M7_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M7 layers on the same track >= 32nm
+    EXT M7_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M7_S_3 {
+@ Minimum corner-to-corner spacing between two M7 polygons >= 28nm
+    EXT M7 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M7_AUX_1 {
+@ M7 must not bend
+    NOT RECTANGLE M7 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V7: V7 design rules                           
+// =======================================================  
+
+GROUP GV7 V7_?
+
+V7_M7 = V7 INTERACT M7
+V7_M7_h_edges = ANGLE V7_M7 == 0
+V7_M7_v_edges = ANGLE V7_M7 == 90
+
+V7_M8 = V7 INTERACT M8
+V7_M8_h_edges = ANGLE V7_M8 == 0
+V7_M8_v_edges = ANGLE V7_M8 == 90
+
+
+V7_W_1 {
+@ Minimum width >= 35nm
+    INT V7 < 0.035 ABUT<90 SINGULAR REGION
+}
+
+V7_S_1 {
+@ Minimum corner to corner spacing >= 25nm
+    EXT V7 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V7_M7_AUX_1 {
+@ V7 must exactly be the same horizontal width with M7
+    NOT COIN EDGE V7_M7_v_edges M7
+}
+
+V7_M8_AUX_2 {
+@ V7 must exactly be the same vertical width with M8
+    NOT COIN EDGE V7_M8_h_edges M8
+}
+
+V7_AUX_3 {
+@ V7 must interact with M7 and M8
+    (V7 NOT M7) OR (V7 NOT M8)
+}
+
+V7_M7_EN_2 {
+@ V7 enclosure by M7 >= 5nm
+    ENC V7_h_edges M7 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V7_M8_EN_1 {
+@ V7 enclosure by M8 >= 5nm
+    ENC V7_v_edges M8 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M8: M8 design rules                           
+// =======================================================  
+
+GROUP GM8 M8_?
+
+M8_W_1 {
+@ Minimum Vertical width >= 35nm
+    INT M8_h_edges < 0.035 ABUT<90 REGION
+}
+
+M8_S_1 {
+@ Minimum Vertical spacing >= 25nm
+    EXT M8_h_edges < 0.025 ABUT<90 REGION
+}
+
+M8_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M8 layers on the same track >= 32nm
+    EXT M8_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M8_S_3 {
+@ Minimum corner-to-corner spacing between two M8 polygons >= 28nm
+    EXT M8 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M8_AUX_1 {
+@ M8 must not bend
+    NOT RECTANGLE M8 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V8: V8 design rules                           
+// =======================================================  
+
+GROUP GV8 V8_?
+
+V8_M8 = V8 INTERACT M8
+V8_M8_h_edges = ANGLE V8_M8 == 0
+V8_M8_v_edges = ANGLE V8_M8 == 90
+
+V8_M9 = V8 INTERACT M9
+V8_M9_h_edges = ANGLE V8_M9 == 0
+V8_M9_v_edges = ANGLE V8_M9 == 90
+
+
+V8_W_1 {
+@ Minimum width >= 35nm
+    INT V8 < 0.035 ABUT<90 SINGULAR REGION
+}
+
+V8_S_1 {
+@ Minimum corner to corner spacing >= 25nm
+    EXT V8 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V8_M8_AUX_1 {
+@ V8 must exactly be the same vertical width with M8
+    NOT COIN EDGE V8_M8_h_edges M8
+}
+
+V8_M9_AUX_2 {
+@ V8 must exactly be the same Horizontal width with M9
+    NOT COIN EDGE V8_M9_v_edges M9
+}
+
+V8_AUX_3 {
+@ V8 must interact with M8 and M9
+    (V8 NOT M8) OR (V8 NOT M9)
+}
+
+
+V8_M8_EN_2 {
+@ V8 enclosure by M8 >= 5nm
+    ENC V8_v_edges M8 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+V8_M9_EN_1 {
+@ V8 enclosure by M9 >= 5nm
+    ENC V8_h_edges M9 < 0.005 ABUT<90 OPPOSITE REGION
+}
+
+
+// =======================================================
+// M9: M9 design rules                           
+// =======================================================  
+
+GROUP GM9 M9_?
+
+M9_W_1 {
+@ Minimum Horizontal width >= 35nm
+    INT M9_v_edges < 0.035 ABUT<90 REGION
+}
+
+M9_S_1 {
+@ Minimum Horizontal spacing >= 25nm
+    EXT M9_v_edges < 0.025 ABUT<90 REGION
+}
+
+M9_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M9 layers on the same track >= 32nm
+    EXT M9_v_edges < 0.032 ABUT<90 OPPOSITE REGION
+}
+
+M9_S_3 {
+@ Minimum corner-to-corner spacing between two M9 polygons >= 28nm
+    EXT M9 < 0.028 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M9_AUX_1 {
+@ M9 must not bend
+    NOT RECTANGLE M9 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V9: V9 design rules                           
+// =======================================================  
+
+GROUP GV9 V9_?
+
+V9_M9 = V9 INTERACT M9
+V9_M9_h_edges = ANGLE V9_M9 == 0
+V9_M9_v_edges = ANGLE V9_M9 == 90
+
+V9_M10 = V9 INTERACT M10
+V9_M10_h_edges = ANGLE V9_M10 == 0
+V9_M10_v_edges = ANGLE V9_M10 == 90
+
+
+V9_W_1 {
+@ Minimum width >= 35nm
+    INT V9 < 0.035 ABUT<90 SINGULAR REGION
+}
+
+V9_S_1 {
+@ Minimum corner to corner spacing >= 25nm
+    EXT V9 < 0.025 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V9_M9_AUX_1 {
+@ V9 must exactly be the same horizontal width with M9
+    NOT COIN EDGE V9_M9_v_edges M9
+}
+
+V9_M10_AUX_2 {
+@ V9 must exactly be the same vertical width with M10
+    NOT COIN EDGE V9_M10_h_edges M10
+}
+
+V9_AUX_3 {
+@ V9 must interact with M9 and M10
+    (V9 NOT M9) OR (V9 NOT M10)
+}
+
+// =======================================================
+// M10: M10 design rules                           
+// =======================================================  
+
+GROUP GM10 M10_?
+
+M10_W_1 {
+@ Minimum Vertical width >= 50nm
+    INT M10_h_edges < 0.050 ABUT<90 REGION
+}
+
+M10_S_1 {
+@ Minimum Vertical spacing >= 40nm
+    EXT M10_h_edges < 0.040 ABUT<90 REGION
+}
+
+M10_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M10 layers on the same track >= 50nm
+    EXT M10_v_edges < 0.05 ABUT<90 OPPOSITE REGION
+}
+
+M10_S_3 {
+@ Minimum corner-to-corner spacing between two M10 polygons >= 45nm
+    EXT M10 < 0.045 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M10_AUX_1 {
+@ M10 must not bend
+    NOT RECTANGLE M10 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V10: V10 design rules                           
+// =======================================================  
+
+GROUP GV10 V10_?
+
+V10_M10 = V10 INTERACT M10
+V10_M10_h_edges = ANGLE V10_M10 == 0
+V10_M10_v_edges = ANGLE V10_M10 == 90
+
+V10_M11 = V10 INTERACT M11
+V10_M11_h_edges = ANGLE V10_M11 == 0
+V10_M11_v_edges = ANGLE V10_M11 == 90
+
+
+V10_W_1 {
+@ Minimum width >= 50nm
+    INT V10 < 0.05 ABUT<90 SINGULAR REGION
+}
+
+V10_S_1 {
+@ Minimum corner to corner spacing >= 40nm
+    EXT V10 < 0.040 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V10_M10_AUX_1 {
+@ V10 must exactly be the same vertical width with M10
+    NOT COIN EDGE V10_M10_h_edges M10
+}
+
+V10_M11_AUX_2 {
+@ V10 must exactly be the same Horizontal width with M11
+    NOT COIN EDGE V10_M11_v_edges M11
+}
+
+V10_AUX_3 {
+@ V10 must interact with M10 and M11
+    (V10 NOT M10) OR (V10 NOT M11)
+}
+
+
+
+// =======================================================
+// M11: M11 design rules                           
+// =======================================================  
+
+GROUP GM11 M11_?
+
+M11_W_1 {
+@ Minimum Horizontal  width >= 50nm
+    INT M11_v_edges < 0.050 ABUT<90 REGION
+}
+
+M11_S_1 {
+@ Minimum Horizontal spacing >= 40nm
+    EXT M11_v_edges < 0.040 ABUT<90 REGION
+}
+
+M11_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M11 layers on the same track >= 50nm
+    EXT M11_v_edges < 0.05 ABUT<90 OPPOSITE REGION
+}
+
+M11_S_3 {
+@ Minimum corner-to-corner spacing between two M11 polygons >= 45nm
+    EXT M11 < 0.045 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M11_AUX_1 {
+@ M11 must not bend
+    NOT RECTANGLE M11 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V11: V11 design rules                           
+// =======================================================  
+
+GROUP GV11 V11_?
+
+V11_M11 = V11 INTERACT M11
+V11_M11_h_edges = ANGLE V11_M11 == 0
+V11_M11_v_edges = ANGLE V11_M11 == 90
+
+V11_M12 = V11 INTERACT M12
+V11_M12_h_edges = ANGLE V11_M12 == 0
+V11_M12_v_edges = ANGLE V11_M12 == 90
+
+
+V11_W_1 {
+@ Minimum width >= 50nm
+    INT V11 < 0.05 ABUT<90 SINGULAR REGION
+}
+
+V11_S_1 {
+@ Minimum corner to corner spacing >= 40nm
+    EXT V11 < 0.040 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V11_M11_AUX_1 {
+@ V11 must exactly be the same horizontal width with M11
+    NOT COIN EDGE V11_M11_v_edges M11
+}
+
+V11_M12_AUX_2 {
+@ V11 must exactly be the same vertical width with M12
+    NOT COIN EDGE V11_M12_h_edges M12
+}
+
+V11_AUX_3 {
+@ V11 must interact with M11 and M12
+    (V11 NOT M11) OR (V11 NOT M12)
+}
+
+
+
+// =======================================================
+// M12: M12 design rules                           
+// =======================================================  
+
+GROUP GM12 M12_?
+
+M12_W_1 {
+@ Minimum Vertical width >= 60nm
+    INT M12_h_edges < 0.060 ABUT<90 REGION
+}
+
+M12_S_1 {
+@ Minimum Vertical spacing >= 40nm
+    EXT M12_h_edges < 0.040 ABUT<90 REGION
+}
+
+M12_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M12 layers on the same track >= 50nm
+    EXT M12_v_edges < 0.05 ABUT<90 OPPOSITE REGION
+}
+
+M12_S_3 {
+@ Minimum corner-to-corner spacing between two M12 polygons >= 45nm
+    EXT M12 < 0.045 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M12_AUX_1 {
+@ M12 must not bend
+    NOT RECTANGLE M12 ORTHOGONAL ONLY
+}
+
+
+
+// =======================================================
+// V12: V12 design rules                           
+// =======================================================  
+
+GROUP GV12 V12_?
+
+V12_M12 = V12 INTERACT M12
+V12_M12_h_edges = ANGLE V12_M12 == 0
+V12_M12_v_edges = ANGLE V12_M12 == 90
+
+V12_M13 = V12 INTERACT M13
+V12_M13_h_edges = ANGLE V12_M13 == 0
+V12_M13_v_edges = ANGLE V12_M13 == 90
+
+
+V12_W_1 {
+@ Minimum width >= 60nm
+    INT V12 < 0.06 ABUT<90 SINGULAR REGION
+}
+
+V12_S_1 {
+@ Minimum corner to corner spacing >= 40nm
+    EXT V12 < 0.04 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+V12_M12_AUX_1 {
+@ V12 must exactly be the same vertical width with M12
+    NOT COIN EDGE V12_M12_h_edges M12
+}
+
+V12_M13_AUX_2 {
+@ V12 must exactly be the same Horizontal width with M13
+    NOT COIN EDGE V12_M13_v_edges M13
+}
+
+V12_AUX_3 {
+@ V12 must interact with M12 and M13
+    (V12 NOT M12) OR (V12 NOT M13)
+}
+
+
+
+// =======================================================
+// M13: M13 design rules                           
+// =======================================================  
+
+GROUP GM13 M13_?
+
+M13_W_1 {
+@ Minimum Horizontal width >= 60nm
+    INT M13_v_edges < 0.060 ABUT<90 REGION
+}
+
+M13_S_1 {
+@ Minimum Horizontal spacing >= 40nm
+    EXT M13_v_edges < 0.040 ABUT<90 REGION
+}
+
+M13_S_2 {
+@ Minimum Horizontal(TtT) spacing between two M13 layers on the same track >= 50nm
+    EXT M13_v_edges < 0.05 ABUT<90 OPPOSITE REGION
+}
+
+M13_S_3 {
+@ Minimum corner-to-corner spacing between two M13 polygons >= 45nm
+    EXT M13 < 0.045 CORNER TO CORNER ABUT<90 SINGULAR REGION
+}
+
+M13_AUX_1 {
+@ M13 must not bend
+    NOT RECTANGLE M13 ORTHOGONAL ONLY
+}
+
+
+

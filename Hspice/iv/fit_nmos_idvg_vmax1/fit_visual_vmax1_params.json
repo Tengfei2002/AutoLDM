@@ -1,0 +1,30 @@
+{
+  "candidate": {
+    "tag": "fit_l230",
+    "round_name": "local",
+    "u0": 0.02,
+    "xl": 1.6e-08,
+    "dvtshift": -0.02,
+    "delta_wgaa": 0.0,
+    "delta_tgaa": -1e-09,
+    "eot_0": 9.5e-10
+  },
+  "metrics": {
+    "tag": "fit_l230",
+    "round_name": "local",
+    "loss": 0.14611435842118178,
+    "log_rmse_all": 0.11219258079121201,
+    "log_rmse_low": 0.21396923026748862,
+    "log_rmse_mid": 0.08289737477613812,
+    "rel_rmse_high": 0.13568711051987906,
+    "lin_rmse": 1.9601982313459777e-06,
+    "max_rel_err_high": 0.20198331878109277,
+    "status": "ok"
+  },
+  "fixed": {
+    "L": 1.6e-08,
+    "W": 2.5e-08,
+    "NF": 1.0
+  },
+  "fit_vmax": 1.0
+}

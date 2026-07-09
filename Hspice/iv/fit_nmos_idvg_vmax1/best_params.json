@@ -1,0 +1,30 @@
+{
+  "candidate": {
+    "tag": "fit_l202",
+    "round_name": "local",
+    "u0": 0.016,
+    "xl": 1.2e-08,
+    "dvtshift": 0.0,
+    "delta_wgaa": 0.0,
+    "delta_tgaa": -1e-09,
+    "eot_0": 9.5e-10
+  },
+  "metrics": {
+    "tag": "fit_l202",
+    "round_name": "local",
+    "loss": 0.12514848290673236,
+    "log_rmse_all": 0.07888012793417624,
+    "log_rmse_low": 0.04896619216542235,
+    "log_rmse_mid": 0.07411576007350532,
+    "rel_rmse_high": 0.18507341989022452,
+    "lin_rmse": 2.619270541475683e-06,
+    "max_rel_err_high": 0.26596919945773206,
+    "status": "ok"
+  },
+  "fixed": {
+    "L": 1.6e-08,
+    "W": 2.5e-08,
+    "NF": 1.0
+  },
+  "fit_vmax": 1.0
+}

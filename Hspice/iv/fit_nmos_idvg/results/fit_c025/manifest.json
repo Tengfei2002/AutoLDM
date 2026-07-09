@@ -1,0 +1,18 @@
+{
+  "deck": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\iv\\fit_nmos_idvg\\decks\\fit_c025.sp",
+  "hspice_cmd": "C:\\synopsys\\Hspice_P-2019.06-SP1-1\\WIN64\\hspice.com",
+  "license_server": "27000@LAPTOP-K9QP6UAM",
+  "output_prefix": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\iv\\fit_nmos_idvg\\results\\fit_c025\\fit_c025",
+  "return_code": 0,
+  "created_at": "2026-07-09T10:53:50",
+  "outputs": [
+    "fit_c025.lis",
+    "fit_c025.pa0",
+    "fit_c025.pvadir",
+    "fit_c025.st0",
+    "fit_c025.sw0",
+    "fit_c025.valog"
+  ],
+  "waveview_cmd": null,
+  "waveview_file": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\iv\\fit_nmos_idvg\\results\\fit_c025\\fit_c025.sw0"
+}
