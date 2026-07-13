@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360" viewBox="0 0 980 360">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+    .axis { stroke: #334155; stroke-width: 1.2; }
+    .grid { stroke: #e2e8f0; stroke-width: 1; }
+    .barHigh { fill: #2563eb; }
+    .barLow { fill: #f97316; }
+    .title { font-size: 18px; font-weight: 700; }
+    .label { font-size: 12px; }
+  </style>
+  <text class="title" x="34" y="30">No-RC SRAM functional voltages from HSPICE .mt0</text>
+  <line class="axis" x1="80" y1="300" x2="930" y2="300"/>
+  <line class="axis" x1="80" y1="70" x2="80" y2="300"/>
+  <line class="grid" x1="80" y1="70" x2="930" y2="70"/>
+  <line class="grid" x1="80" y1="136" x2="930" y2="136"/>
+  <line class="grid" x1="80" y1="201" x2="930" y2="201"/>
+  <text class="label" x="35" y="74">0.70 V</text>
+  <text class="label" x="35" y="140">0.50 V</text>
+  <text class="label" x="35" y="205">0.30 V</text>
+  <text class="label" x="42" y="304">0 V</text>
+  <rect class="barHigh" x="125" y="70" width="42" height="230"/>
+  <rect class="barLow" x="172" y="298.7" width="42" height="1.3"/>
+  <text class="label" x="108" y="323">Hold-Q1</text>
+  <rect class="barLow" x="275" y="298.7" width="42" height="1.3"/>
+  <rect class="barHigh" x="322" y="70" width="42" height="230"/>
+  <text class="label" x="258" y="323">Hold-Q0</text>
+  <rect class="barHigh" x="425" y="70.2" width="42" height="229.8"/>
+  <rect class="barLow" x="472" y="249.3" width="42" height="50.7"/>
+  <text class="label" x="410" y="323">Read-Q1</text>
+  <rect class="barLow" x="575" y="249.3" width="42" height="50.7"/>
+  <rect class="barHigh" x="622" y="70.2" width="42" height="229.8"/>
+  <text class="label" x="560" y="323">Read-Q0</text>
+  <rect class="barLow" x="725" y="298.5" width="42" height="1.5"/>
+  <rect class="barHigh" x="772" y="70" width="42" height="230"/>
+  <text class="label" x="710" y="323">Write-0</text>
+  <rect class="barHigh" x="845" y="70" width="42" height="230"/>
+  <rect class="barLow" x="892" y="298.5" width="42" height="1.5"/>
+  <text class="label" x="835" y="323">Write-1</text>
+  <rect class="barHigh" x="725" y="40" width="16" height="10"/>
+  <text class="label" x="748" y="50">stored-high node</text>
+  <rect class="barLow" x="845" y="40" width="16" height="10"/>
+  <text class="label" x="868" y="50">stored-low node / disturbed node</text>
+</svg>

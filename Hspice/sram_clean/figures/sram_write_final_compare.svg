@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }
+    .axis { stroke: #374151; stroke-width: 1.2; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+    .no { fill: #2563eb; }
+    .rc { fill: #0f766e; }
+    .title { font-size: 18px; font-weight: 700; }
+    .label { font-size: 12px; }
+    .note { font-size: 13px; fill: #4b5563; }
+  </style>
+  <text class="title" x="34" y="32">Write final-state residual voltage</text>
+  <text class="note" x="34" y="55">Data source: HSPICE .mt0; lower written-low residual indicates stronger completed write.</text>
+  <line class="axis" x1="90" y1="320" x2="840" y2="320"/>
+  <line class="axis" x1="90" y1="90" x2="90" y2="320"/>
+  <line class="grid" x1="90" y1="120" x2="840" y2="120"/>
+  <line class="grid" x1="90" y1="170" x2="840" y2="170"/>
+  <line class="grid" x1="90" y1="220" x2="840" y2="220"/>
+  <line class="grid" x1="90" y1="270" x2="840" y2="270"/>
+  <text class="label" x="28" y="124">6 uV</text>
+  <text class="label" x="28" y="174">4.5 uV</text>
+  <text class="label" x="28" y="224">3 uV</text>
+  <text class="label" x="28" y="274">1.5 uV</text>
+  <text class="label" x="50" y="324">0</text>
+  <rect class="no" x="190" y="172.7" width="76" height="147.3"/>
+  <rect class="rc" x="290" y="187.5" width="76" height="132.5"/>
+  <text class="label" x="176" y="346">Write-0 low residual</text>
+  <text class="label" x="185" y="160">4.419 uV</text>
+  <text class="label" x="285" y="175">3.974 uV</text>
+  <rect class="no" x="515" y="172.7" width="76" height="147.3"/>
+  <rect class="rc" x="615" y="147.2" width="76" height="172.8"/>
+  <text class="label" x="505" y="346">Write-1 low residual</text>
+  <text class="label" x="510" y="160">4.419 uV</text>
+  <text class="label" x="610" y="135">5.186 uV</text>
+  <rect class="no" x="650" y="70" width="14" height="10"/>
+  <text class="label" x="670" y="80">No-RC</text>
+  <rect class="rc" x="720" y="70" width="14" height="10"/>
+  <text class="label" x="740" y="80">RC candidate</text>
+  <text class="note" x="34" y="390">All plotted write cases reach the intended final state; original extracted-RC is excluded because its topology is invalid.</text>
+</svg>

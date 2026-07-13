@@ -1,0 +1,16 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "16:53:34 07/12/2026 "
+* "netlist" "06_inv_tran.sp "
+* "runtitle" "* gate 2: fusion cmos inverter transient, independent deck"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ in = 0.000e+00       
++ out = 7.000e-01       
++ vdd = 7.000e-01       
+***   END: Saved Operating Point ***                     

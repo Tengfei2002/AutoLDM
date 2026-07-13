@@ -1,0 +1,14 @@
+configuration,case,measurement_1_name,measurement_1_v,measurement_2_name,measurement_2_v,derived_metric,derived_value_v,status
+no_rc,hold_q1,h1_qmin,6.99997e-01,h1_qbmax,3.82821e-06,low_residual,3.82821e-06,pass
+no_rc,hold_q0,h0_qmax,3.82821e-06,h0_qbmin,6.99997e-01,low_residual,3.82821e-06,pass
+no_rc,read_q1,r1_qmin,6.99311e-01,r1_qbmax,1.54269e-01,read_disturb,1.54269e-01,pass
+no_rc,read_q0,r0_qbmin,6.99311e-01,r0_qmax,1.54269e-01,read_disturb,1.54269e-01,pass
+no_rc,write_0,w0_qfinal,4.41875e-06,w0_qbfinal,6.99995e-01,write_low_residual,4.41875e-06,pass
+no_rc,write_1,w1_qfinal,6.99995e-01,w1_qbfinal,4.41875e-06,write_low_residual,4.41875e-06,pass
+original_rc,hold_q1,empty_row_column,NaN,empty_row_column,NaN,invalid_topology,NaN,blocked
+rc_candidate,hold_q1,h1_qmin,6.99997e-01,h1_qbmax,3.95496e-06,low_residual,3.95496e-06,diagnostic_pass
+rc_candidate,hold_q0,h0_qmax,3.95243e-06,h0_qbmin,6.99997e-01,low_residual,3.95243e-06,diagnostic_pass
+rc_candidate,read_q1,r1_qmin,6.99148e-01,r1_qbmax,1.56253e-01,read_disturb,1.56253e-01,diagnostic_pass
+rc_candidate,read_q0,r0_qbmin,6.99214e-01,r0_qmax,1.56160e-01,read_disturb,1.56160e-01,diagnostic_pass
+rc_candidate,write_0,w0_qfinal,3.97413e-06,w0_qbfinal,6.99996e-01,write_low_residual,3.97413e-06,diagnostic_pass
+rc_candidate,write_1,w1_qfinal,6.99995e-01,w1_qbfinal,5.18585e-06,write_low_residual,5.18585e-06,diagnostic_pass

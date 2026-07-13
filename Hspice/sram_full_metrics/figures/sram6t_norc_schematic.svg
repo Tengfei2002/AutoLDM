@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="600.3pt" height="373.7205pt" viewBox="0 0 600.3 373.7205" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-13T11:50:21.614435</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 373.7205 
+L 600.3 373.7205 
+L 600.3 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 263.53125 60.60258 
+L 336.76875 60.60258 
+L 336.76875 36.54162 
+L 263.53125 36.54162 
+z
+" clip-path="url(#p0481e74923)" style="fill: #eef7ee; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 263.53125 352.77138 
+L 336.76875 352.77138 
+L 336.76875 328.71042 
+L 263.53125 328.71042 
+z
+" clip-path="url(#p0481e74923)" style="fill: #f7eeee; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 218.7099 203.82258 
+L 264.4101 203.82258 
+L 264.4101 185.49042 
+L 218.7099 185.49042 
+z
+" clip-path="url(#p0481e74923)" style="fill: #eef3ff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 335.8899 203.82258 
+L 381.5901 203.82258 
+L 381.5901 185.49042 
+L 335.8899 185.49042 
+z
+" clip-path="url(#p0481e74923)" style="fill: #eef3ff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 48.7989 203.82258 
+L 94.4991 203.82258 
+L 94.4991 185.49042 
+L 48.7989 185.49042 
+z
+" clip-path="url(#p0481e74923)" style="fill: #fff6df; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 505.8009 203.82258 
+L 551.5011 203.82258 
+L 551.5011 185.49042 
+L 505.8009 185.49042 
+z
+" clip-path="url(#p0481e74923)" style="fill: #fff6df; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 270.855 304.07658 
+L 329.445 304.07658 
+L 329.445 285.74442 
+L 270.855 285.74442 
+z
+" clip-path="url(#p0481e74923)" style="fill: #f1ecff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 120.8646 212.41578 
+L 192.3444 212.41578 
+L 192.3444 176.89722 
+L 120.8646 176.89722 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 407.9556 212.41578 
+L 479.4354 212.41578 
+L 479.4354 176.89722 
+L 407.9556 176.89722 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 205.8201 129.34818 
+L 277.2999 129.34818 
+L 277.2999 93.82962 
+L 205.8201 93.82962 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 323.0001 129.34818 
+L 394.4799 129.34818 
+L 394.4799 93.82962 
+L 323.0001 93.82962 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 205.8201 289.75458 
+L 277.2999 289.75458 
+L 277.2999 254.23602 
+L 205.8201 254.23602 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 323.0001 289.75458 
+L 394.4799 289.75458 
+L 394.4799 254.23602 
+L 323.0001 254.23602 
+z
+" clip-path="url(#p0481e74923)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 95.085 194.6565 
+L 121.4505 194.6565 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 191.7585 194.6565 
+L 218.124 194.6565 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 382.176 194.6565 
+L 408.5415 194.6565 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 478.8495 194.6565 
+L 505.215 194.6565 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 241.56 61.74834 
+L 241.56 92.68386 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 358.74 61.74834 
+L 358.74 92.68386 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 241.56 130.49394 
+L 241.56 180.3345 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 358.74 130.49394 
+L 358.74 180.3345 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 241.56 208.9785 
+L 241.56 253.09026 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 358.74 208.9785 
+L 358.74 253.09026 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 241.56 290.90034 
+L 241.56 327.56466 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 358.74 290.90034 
+L 358.74 327.56466 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 200.547 294.9105 
+L 420.2595 294.9105 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 262.0665 174.6057 
+L 338.2335 131.6397 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #262626; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 338.2335 214.7073 
+L 262.0665 254.8089 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #262626; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 338.2335 174.6057 
+L 262.0665 131.6397 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #262626; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 262.0665 214.7073 
+L 338.2335 254.8089 
+" clip-path="url(#p0481e74923)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #262626; stroke-width: 1.4"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(291.35125 45.94385)">VDD</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(280.15 55.6066)">电源高电位</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(281.900625 338.11265)">VSS/GND</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(288.15 347.7754)">地电位</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(238.3 192.02825)">Q</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(225.56 201.691)">存储节点</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(352.97 192.02825)">QB</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(334.74 201.691)">互补存储节点</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(67.0865 192.02825)">BL</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(63.649 201.691)">位线</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(521.5785 192.02825)">BLB</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(516.651 201.691)">反位线</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(294.026875 292.28225)">WL</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(292.15 301.945)">字线</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(149.825437 188.109094)">PG1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(133.759891 196.564)">access NMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(141.218172 205.018906)">gate=WL</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(436.916438 188.109094)">PG2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(420.850891 196.564)">access NMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(428.309172 205.018906)">gate=WL</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(234.753047 105.041494)">PU1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(231.126172 113.4964)">PMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(226.482656 121.951306)">gate=QB</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(351.933047 105.041494)">PU2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(348.306172 113.4964)">PMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(345.858906 121.951306)">gate=Q</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(234.7 265.447894)">PD1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(230.422344 273.9028)">NMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(226.482656 282.357706)">gate=QB</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(351.88 265.447894)">PD2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(347.602344 273.9028)">NMOS</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(345.858906 282.357706)">gate=Q</text>
+   </g>
+   <g id="text_14">
+    <g id="patch_15">
+     <path d="M 267.903953 299.508625 
+L 352.902547 299.508625 
+Q 353.812547 299.508625 353.812547 298.598625 
+L 353.812547 291.222375 
+Q 353.812547 290.312375 352.902547 290.312375 
+L 267.903953 290.312375 
+Q 266.993953 290.312375 266.993953 291.222375 
+L 266.993953 298.598625 
+Q 266.993953 299.508625 267.903953 299.508625 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="310.40325" y="296.818" transform="rotate(-0 310.40325 296.818)">WL drives PG1/PG2 gates</text>
+   </g>
+   <g id="text_15">
+    <g id="patch_16">
+     <path d="M 264.361406 157.700591 
+L 335.938594 157.700591 
+Q 336.848594 157.700591 336.848594 156.790591 
+L 336.848594 149.454809 
+Q 336.848594 148.544809 335.938594 148.544809 
+L 264.361406 148.544809 
+Q 263.451406 148.544809 263.451406 149.454809 
+L 263.451406 156.790591 
+Q 263.451406 157.700591 264.361406 157.700591 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="300.15" y="155.050434" transform="rotate(-0 300.15 155.050434)">QB controls PU1/PD1</text>
+   </g>
+   <g id="text_16">
+    <g id="patch_17">
+     <path d="M 266.557656 157.700591 
+L 333.742344 157.700591 
+Q 334.652344 157.700591 334.652344 156.790591 
+L 334.652344 149.454809 
+Q 334.652344 148.544809 333.742344 148.544809 
+L 266.557656 148.544809 
+Q 265.647656 148.544809 265.647656 149.454809 
+L 265.647656 156.790591 
+Q 265.647656 157.700591 266.557656 157.700591 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="300.15" y="155.050434" transform="rotate(-0 300.15 155.050434)">Q controls PU2/PD2</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="300.15" y="77.2161" transform="rotate(-0 300.15 77.2161)">Two cross-coupled inverters form the latch; PG1/PG2 connect Q/QB to BL/BLB when WL is high.</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="300.15" y="16.7925" transform="rotate(-0 300.15 16.7925)">No-RC 6T SRAM schematic with plain-potential labels</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p0481e74923">
+   <rect x="7.2" y="22.7925" width="585.9" height="343.728"/>
+  </clipPath>
+ </defs>
+</svg>

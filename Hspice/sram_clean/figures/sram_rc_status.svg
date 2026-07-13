@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+    .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.3; rx: 8; }
+    .bad { fill: #fee2e2; stroke: #b91c1c; }
+    .good { fill: #dcfce7; stroke: #15803d; }
+    .diag { fill: #e0f2fe; stroke: #0369a1; }
+    .arrow { stroke: #475569; stroke-width: 1.8; marker-end: url(#arrow); }
+    .title { font-size: 18px; font-weight: 700; }
+    .small { font-size: 13px; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  <text class="title" x="32" y="32">RC topology decision tree</text>
+  <rect class="box" x="40" y="70" width="210" height="78"/>
+  <text x="62" y="100">Existing RC include</text>
+  <text class="small" x="62" y="124">first gate: Hold-Q1</text>
+  <line class="arrow" x1="250" y1="109" x2="300" y2="109"/>
+  <rect class="box bad" x="304" y="70" width="230" height="78"/>
+  <text x="326" y="100">Empty row/column</text>
+  <text class="small" x="326" y="124">PU1_QB_GATE, PU2_Q_GATE</text>
+  <text class="small" x="326" y="142">PU2_VDD_SD</text>
+  <line class="arrow" x1="534" y1="109" x2="584" y2="109"/>
+  <rect class="box bad" x="588" y="70" width="230" height="78"/>
+  <text x="610" y="100">Formal RC metrics rejected</text>
+  <text class="small" x="610" y="124">no SNM/delay/energy</text>
+  <text class="small" x="610" y="142">from invalid topology</text>
+  <rect class="box diag" x="304" y="190" width="230" height="72"/>
+  <text x="326" y="220">Gate-direct RC candidate</text>
+  <text class="small" x="326" y="244">diagnostic topology repair</text>
+  <line class="arrow" x1="534" y1="226" x2="584" y2="226"/>
+  <rect class="box good" x="588" y="190" width="230" height="72"/>
+  <text x="610" y="220">Six function cases pass</text>
+  <text class="small" x="610" y="244">not final extracted-RC</text>
+</svg>

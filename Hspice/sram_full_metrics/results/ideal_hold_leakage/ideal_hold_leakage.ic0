@@ -1,0 +1,20 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "12:57:26 07/13/2026 "
+* "netlist" "ideal_hold_leakage.sp "
+* "runtitle" "* ideal hold leakage q=1"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl = 7.000e-01       
++ blb = 7.000e-01       
++ q = 7.000e-01       
++ qb = 1.975e-11       
++ vdd = 7.000e-01       
++ vss = 0.000e+00       
++ wl = 0.000e+00       
+***   END: Saved Operating Point ***                     

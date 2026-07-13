@@ -1,0 +1,22 @@
+* ideal hold leakage q=1
+.OPTION POST=2 PROBE INGOLD=2 MEASDGT=6 METHOD=GEAR GSHUNT=1e-12
+.TEMP 25
+.INCLUDE "sram6t_ideal.inc"
+.PARAM VDD=0.7
+VDD_SRC vdd 0 DC 'VDD'
+VSS_SRC vss 0 DC 0
+
+VBL bl 0 DC 'VDD'
+VBLB blb 0 DC 'VDD'
+VWL wl 0 DC 0
+CQ q 0 1f
+CQB qb 0 1f
+CBL bl 0 10f
+CBLB blb 0 10f
+XSRAM bl blb wl q qb vdd vss SRAM6T
+.IC V(q)='VDD' V(qb)=0 V(bl)='VDD' V(blb)='VDD'
+.TRAN 0.2p 1.2n
+.PRINT TRAN V(q) V(qb)
+.PRINT TRAN I(VDD_SRC)
+.MEAS TRAN I_HOLD AVG I(VDD_SRC) FROM=0.60n TO=1.20n
+.END

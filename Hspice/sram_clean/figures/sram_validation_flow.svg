@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="230" viewBox="0 0 980 230">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+    .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.4; rx: 8; }
+    .pass { fill: #dcfce7; stroke: #15803d; }
+    .fail { fill: #fee2e2; stroke: #b91c1c; }
+    .diag { fill: #e0f2fe; stroke: #0369a1; }
+    .arrow { stroke: #475569; stroke-width: 1.8; marker-end: url(#arrow); }
+    .title { font-size: 18px; font-weight: 700; }
+    .small { font-size: 13px; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  <text class="title" x="28" y="32">Clean-room gated SRAM validation</text>
+  <rect class="box pass" x="28" y="70" width="145" height="76"/>
+  <text x="48" y="98">Single-device IV</text>
+  <text class="small" x="48" y="122">NMOS/PMOS VA</text>
+  <text class="small" x="48" y="140">PASS</text>
+  <line class="arrow" x1="173" y1="108" x2="216" y2="108"/>
+  <rect class="box pass" x="220" y="70" width="145" height="76"/>
+  <text x="244" y="98">Inverter</text>
+  <text class="small" x="244" y="122">DC + transient</text>
+  <text class="small" x="244" y="140">PASS</text>
+  <line class="arrow" x1="365" y1="108" x2="408" y2="108"/>
+  <rect class="box pass" x="412" y="70" width="145" height="76"/>
+  <text x="436" y="98">No-RC SRAM</text>
+  <text class="small" x="436" y="122">Hold/read/write</text>
+  <text class="small" x="436" y="140">PASS</text>
+  <line class="arrow" x1="557" y1="108" x2="600" y2="108"/>
+  <rect class="box fail" x="604" y="70" width="160" height="76"/>
+  <text x="628" y="98">Original RC</text>
+  <text class="small" x="628" y="122">Hold-Q1 matrix</text>
+  <text class="small" x="628" y="140">BLOCKED</text>
+  <line class="arrow" x1="764" y1="108" x2="807" y2="108"/>
+  <rect class="box diag" x="811" y="70" width="145" height="76"/>
+  <text x="835" y="98">RC candidate</text>
+  <text class="small" x="835" y="122">Diagnostic only</text>
+  <text class="small" x="835" y="140">PASS</text>
+  <text class="small" x="604" y="183">Rule: do not extract RC SNM/delay/energy after Empty row/column.</text>
+</svg>

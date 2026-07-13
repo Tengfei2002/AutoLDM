@@ -1,0 +1,41 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "17:24:22 07/12/2026 "
+* "netlist" "23_sram_rc_gate_direct_read0.sp "
+* "runtitle" "* candidate 2 validation: read q=0."
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl = 7.000e-01       
++ bl_drv = 7.000e-01       
++ blb = 7.000e-01       
++ blb_drv = 7.000e-01       
++ q = 1.938e-11       
++ qb = 7.000e-01       
++ vdd = 7.000e-01       
++ vss = 0.000e+00       
++ wl = 0.000e+00       
++ xsram.bl_port = 7.000e-01       
++ xsram.blb_port = 7.000e-01       
++ xsram.pd1_vss_sd = 1.527e-09       
++ xsram.pd2_pg2_qb_sd = 7.000e-01       
++ xsram.pd2_vss_sd = 5.888e-08       
++ xsram.pg1_bl_sd = 7.000e-01       
++ xsram.pg1_pd1_q_sd = 7.422e-08       
++ xsram.pg1_wl_gate = 0.000e+00       
++ xsram.pg2_blb_sd = 7.000e-01       
++ xsram.pg2_wl_gate = 0.000e+00       
++ xsram.pu1_q_sd = 7.039e-08       
++ xsram.pu1_vdd_sd = 7.000e-01       
++ xsram.pu2_qb_sd = 7.000e-01       
++ xsram.pu2_vdd_sd = 7.000e-01       
++ xsram.q_node = 2.132e-11       
++ xsram.qb_node = 7.000e-01       
++ xsram.vdd_port = 7.000e-01       
++ xsram.vss_port = 1.489e-12       
++ xsram.wl_port = 0.000e+00       
+***   END: Saved Operating Point ***                     

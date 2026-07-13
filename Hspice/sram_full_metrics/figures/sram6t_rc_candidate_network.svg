@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="739.8pt" height="484.6005pt" viewBox="0 0 739.8 484.6005" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-13T11:50:22.034914</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 484.6005 
+L 739.8 484.6005 
+L 739.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 37.89 94.39326 
+L 88.11 94.39326 
+L 88.11 76.20894 
+L 37.89 76.20894 
+z
+" clip-path="url(#p649a251307)" style="fill: #fff6df; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 37.89 148.37796 
+L 88.11 148.37796 
+L 88.11 130.19364 
+L 37.89 130.19364 
+z
+" clip-path="url(#p649a251307)" style="fill: #fff6df; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 37.89 202.36266 
+L 88.11 202.36266 
+L 88.11 184.17834 
+L 37.89 184.17834 
+z
+" clip-path="url(#p649a251307)" style="fill: #f1ecff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 37.89 256.34736 
+L 88.11 256.34736 
+L 88.11 238.16304 
+L 37.89 238.16304 
+z
+" clip-path="url(#p649a251307)" style="fill: #eef3ff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 37.89 310.33206 
+L 88.11 310.33206 
+L 88.11 292.14774 
+L 37.89 292.14774 
+z
+" clip-path="url(#p649a251307)" style="fill: #eef3ff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 37.89 364.31676 
+L 88.11 364.31676 
+L 88.11 346.13244 
+L 37.89 346.13244 
+z
+" clip-path="url(#p649a251307)" style="fill: #eef7ee; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 37.89 418.30146 
+L 88.11 418.30146 
+L 88.11 400.11714 
+L 37.89 400.11714 
+z
+" clip-path="url(#p649a251307)" style="fill: #f7eeee; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 103.455 93.25674 
+L 156.465 93.25674 
+L 156.465 77.34546 
+L 103.455 77.34546 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 103.455 147.24144 
+L 156.465 147.24144 
+L 156.465 131.33016 
+L 103.455 131.33016 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 103.455 201.22614 
+L 156.465 201.22614 
+L 156.465 185.31486 
+L 103.455 185.31486 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 103.455 255.21084 
+L 156.465 255.21084 
+L 156.465 239.29956 
+L 103.455 239.29956 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 103.455 309.19554 
+L 156.465 309.19554 
+L 156.465 293.28426 
+L 103.455 293.28426 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 103.455 363.18024 
+L 156.465 363.18024 
+L 156.465 347.26896 
+L 103.455 347.26896 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 103.455 417.16494 
+L 156.465 417.16494 
+L 156.465 401.25366 
+L 103.455 401.25366 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 253.278 134.17146 
+L 319.122 134.17146 
+L 319.122 104.62194 
+L 253.278 104.62194 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 420.678 134.17146 
+L 486.522 134.17146 
+L 486.522 104.62194 
+L 420.678 104.62194 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 253.278 222.25176 
+L 319.122 222.25176 
+L 319.122 192.70224 
+L 253.278 192.70224 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 420.678 222.25176 
+L 486.522 222.25176 
+L 486.522 192.70224 
+L 420.678 192.70224 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 253.278 330.22116 
+L 319.122 330.22116 
+L 319.122 300.67164 
+L 253.278 300.67164 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 420.678 330.22116 
+L 486.522 330.22116 
+L 486.522 300.67164 
+L 420.678 300.67164 
+z
+" clip-path="url(#p649a251307)" style="fill: #ffffff; stroke: #404040; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 88.11 85.3011 
+L 103.176 85.3011 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 88.11 139.2858 
+L 103.176 139.2858 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 88.11 193.2705 
+L 103.176 193.2705 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 88.11 247.2552 
+L 103.176 247.2552 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 88.11 301.2399 
+L 103.176 301.2399 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 88.11 355.2246 
+L 103.176 355.2246 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 88.11 409.2093 
+L 103.176 409.2093 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 129.96 85.3011 
+L 253.836 119.3967 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 129.96 139.2858 
+L 421.236 119.3967 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 129.96 193.2705 
+L 286.2 135.30798 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 129.96 193.2705 
+L 453.6 135.30798 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 129.96 247.2552 
+L 286.2 298.96686 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 129.96 247.2552 
+L 286.2 223.95654 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 129.96 301.2399 
+L 453.6 298.96686 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 129.96 301.2399 
+L 453.6 223.95654 
+" clip-path="url(#p649a251307)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #b23b3b; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 129.96 355.2246 
+L 286.2 190.99746 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 129.96 355.2246 
+L 453.6 190.99746 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 129.96 409.2093 
+L 286.2 331.92594 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 129.96 409.2093 
+L 453.6 331.92594 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #262626; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 286.2 222.82002 
+L 286.2 300.10338 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #595959; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 453.6 222.82002 
+L 453.6 300.10338 
+" clip-path="url(#p649a251307)" style="fill: none; stroke: #595959; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 312.984 207.477 
+L 129.96 301.2399 
+" clip-path="url(#p649a251307)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #595959; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 426.816 207.477 
+L 129.96 247.2552 
+" clip-path="url(#p649a251307)" style="fill: none; stroke-dasharray: 5.18,2.24; stroke-dashoffset: 0; stroke: #595959; stroke-width: 1.4"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(58.4375 82.67285)">BL</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(47 92.3356)">位线端口</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(55.9275 136.65755)">BLB</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(43 146.3203)">反位线端口</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(56.876875 190.64225)">WL</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(47 200.305)">字线端口</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(59.74 244.62695)">Q</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(39 254.2897)">存储节点端口</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(57.23 298.61165)">QB</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(39 308.2744)">互补节点端口</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(54.20125 352.59635)">VDD</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(47 362.2591)">电源端口</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(55.7325 406.58105)">VSS</text>
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'" transform="translate(51 416.2438)">地端口</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="87.181803" transform="rotate(-0 129.96 87.181803)">BL_PORT</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="141.166503" transform="rotate(-0 129.96 141.166503)">BLB_PORT</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="195.151203" transform="rotate(-0 129.96 195.151203)">WL_PORT</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="249.135903" transform="rotate(-0 129.96 249.135903)">Q_NODE</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="303.120603" transform="rotate(-0 129.96 303.120603)">QB_NODE</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="357.105303" transform="rotate(-0 129.96 357.105303)">VDD_PORT</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="129.96" y="411.090003" transform="rotate(-0 129.96 411.090003)">VSS_PORT</text>
+   </g>
+   <g id="text_15">
+    <g id="patch_22">
+     <path d="M 87.451906 89.878991 
+L 103.834094 89.878991 
+Q 104.744094 89.878991 104.744094 88.968991 
+L 104.744094 81.633209 
+Q 104.744094 80.723209 103.834094 80.723209 
+L 87.451906 80.723209 
+Q 86.541906 80.723209 86.541906 81.633209 
+L 86.541906 88.968991 
+Q 86.541906 89.878991 87.451906 89.878991 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="87.228834" transform="rotate(-0 95.643 87.228834)">1mΩ</text>
+   </g>
+   <g id="text_16">
+    <g id="patch_23">
+     <path d="M 87.451906 143.863691 
+L 103.834094 143.863691 
+Q 104.744094 143.863691 104.744094 142.953691 
+L 104.744094 135.617909 
+Q 104.744094 134.707909 103.834094 134.707909 
+L 87.451906 134.707909 
+Q 86.541906 134.707909 86.541906 135.617909 
+L 86.541906 142.953691 
+Q 86.541906 143.863691 87.451906 143.863691 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="141.213534" transform="rotate(-0 95.643 141.213534)">1mΩ</text>
+   </g>
+   <g id="text_17">
+    <g id="patch_24">
+     <path d="M 87.451906 197.848391 
+L 103.834094 197.848391 
+Q 104.744094 197.848391 104.744094 196.938391 
+L 104.744094 189.602609 
+Q 104.744094 188.692609 103.834094 188.692609 
+L 87.451906 188.692609 
+Q 86.541906 188.692609 86.541906 189.602609 
+L 86.541906 196.938391 
+Q 86.541906 197.848391 87.451906 197.848391 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="195.198234" transform="rotate(-0 95.643 195.198234)">1mΩ</text>
+   </g>
+   <g id="text_18">
+    <g id="patch_25">
+     <path d="M 87.451906 251.833091 
+L 103.834094 251.833091 
+Q 104.744094 251.833091 104.744094 250.923091 
+L 104.744094 243.587309 
+Q 104.744094 242.677309 103.834094 242.677309 
+L 87.451906 242.677309 
+Q 86.541906 242.677309 86.541906 243.587309 
+L 86.541906 250.923091 
+Q 86.541906 251.833091 87.451906 251.833091 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="249.182934" transform="rotate(-0 95.643 249.182934)">1mΩ</text>
+   </g>
+   <g id="text_19">
+    <g id="patch_26">
+     <path d="M 87.451906 305.817791 
+L 103.834094 305.817791 
+Q 104.744094 305.817791 104.744094 304.907791 
+L 104.744094 297.572009 
+Q 104.744094 296.662009 103.834094 296.662009 
+L 87.451906 296.662009 
+Q 86.541906 296.662009 86.541906 297.572009 
+L 86.541906 304.907791 
+Q 86.541906 305.817791 87.451906 305.817791 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="303.167634" transform="rotate(-0 95.643 303.167634)">1mΩ</text>
+   </g>
+   <g id="text_20">
+    <g id="patch_27">
+     <path d="M 87.451906 359.802491 
+L 103.834094 359.802491 
+Q 104.744094 359.802491 104.744094 358.892491 
+L 104.744094 351.556709 
+Q 104.744094 350.646709 103.834094 350.646709 
+L 87.451906 350.646709 
+Q 86.541906 350.646709 86.541906 351.556709 
+L 86.541906 358.892491 
+Q 86.541906 359.802491 87.451906 359.802491 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="357.152334" transform="rotate(-0 95.643 357.152334)">1mΩ</text>
+   </g>
+   <g id="text_21">
+    <g id="patch_28">
+     <path d="M 87.451906 413.787191 
+L 103.834094 413.787191 
+Q 104.744094 413.787191 104.744094 412.877191 
+L 104.744094 405.541409 
+Q 104.744094 404.631409 103.834094 404.631409 
+L 87.451906 404.631409 
+Q 86.541906 404.631409 86.541906 405.541409 
+L 86.541906 412.877191 
+Q 86.541906 413.787191 87.451906 413.787191 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="95.643" y="411.137034" transform="rotate(-0 95.643 411.137034)">1mΩ</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(279.420937 117.096981)">PG1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(263.355391 125.551887)">access NMOS</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(446.820938 117.096981)">PG2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(430.755391 125.551887)">access NMOS</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(279.393047 205.177281)">PU1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(275.766172 213.632187)">PMOS</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(446.793047 205.177281)">PU2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(443.166172 213.632187)">PMOS</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(279.34 313.146681)">PD1</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(275.062344 321.601587)">NMOS</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(446.74 313.146681)">PD2</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(442.462344 321.601587)">NMOS</text>
+   </g>
+   <g id="text_28">
+    <g id="patch_29">
+     <path d="M 171.104719 106.926791 
+L 212.691281 106.926791 
+Q 213.601281 106.926791 213.601281 106.016791 
+L 213.601281 98.681009 
+Q 213.601281 97.771009 212.691281 97.771009 
+L 171.104719 97.771009 
+Q 170.194719 97.771009 170.194719 98.681009 
+L 170.194719 106.016791 
+Q 170.194719 106.926791 171.104719 106.926791 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="191.898" y="104.229603" transform="rotate(-0 191.898 104.229603)">R_BL 21.96Ω</text>
+   </g>
+   <g id="text_29">
+    <g id="patch_30">
+     <path d="M 252.608469 133.919141 
+L 298.587531 133.919141 
+Q 299.497531 133.919141 299.497531 133.009141 
+L 299.497531 125.673359 
+Q 299.497531 124.763359 298.587531 124.763359 
+L 252.608469 124.763359 
+Q 251.698469 124.763359 251.698469 125.673359 
+L 251.698469 133.009141 
+Q 251.698469 133.919141 252.608469 133.919141 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="275.598" y="131.221953" transform="rotate(-0 275.598 131.221953)">R_BLB 25.68Ω</text>
+   </g>
+   <g id="text_30">
+    <g id="patch_31">
+     <path d="M 185.921172 168.867131 
+L 230.238828 168.867131 
+Q 231.148828 168.867131 231.148828 167.957131 
+L 231.148828 160.621349 
+Q 231.148828 159.711349 230.238828 159.711349 
+L 185.921172 159.711349 
+Q 185.011172 159.711349 185.011172 160.621349 
+L 185.011172 167.957131 
+Q 185.011172 168.867131 185.921172 168.867131 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="208.08" y="166.169943" transform="rotate(-0 208.08 166.169943)">R_WL1 7.03Ω</text>
+   </g>
+   <g id="text_31">
+    <g id="patch_32">
+     <path d="M 269.621172 168.867131 
+L 313.938828 168.867131 
+Q 314.848828 168.867131 314.848828 167.957131 
+L 314.848828 160.621349 
+Q 314.848828 159.711349 313.938828 159.711349 
+L 269.621172 159.711349 
+Q 268.711172 159.711349 268.711172 160.621349 
+L 268.711172 167.957131 
+Q 268.711172 168.867131 269.621172 168.867131 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="291.78" y="166.169943" transform="rotate(-0 291.78 166.169943)">R_WL2 7.03Ω</text>
+   </g>
+   <g id="text_32">
+    <g id="patch_33">
+     <path d="M 182.049844 277.688921 
+L 234.110156 277.688921 
+Q 235.020156 277.688921 235.020156 276.778921 
+L 235.020156 269.443139 
+Q 235.020156 268.533139 234.110156 268.533139 
+L 182.049844 268.533139 
+Q 181.139844 268.533139 181.139844 269.443139 
+L 181.139844 276.778921 
+Q 181.139844 277.688921 182.049844 277.688921 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="208.08" y="274.991733" transform="rotate(-0 208.08 274.991733)">R_Q_PD 52.48Ω</text>
+   </g>
+   <g id="text_33">
+    <g id="patch_34">
+     <path d="M 180.050469 240.183761 
+L 236.109531 240.183761 
+Q 237.019531 240.183761 237.019531 239.273761 
+L 237.019531 231.937979 
+Q 237.019531 231.027979 236.109531 231.027979 
+L 180.050469 231.027979 
+Q 179.140469 231.027979 179.140469 231.937979 
+L 179.140469 239.273761 
+Q 179.140469 240.183761 180.050469 240.183761 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="208.08" y="237.486573" transform="rotate(-0 208.08 237.486573)">R_Q_PU 134.31Ω</text>
+   </g>
+   <g id="text_34">
+    <g id="patch_35">
+     <path d="M 263.553594 304.681271 
+L 320.006406 304.681271 
+Q 320.916406 304.681271 320.916406 303.771271 
+L 320.916406 296.435489 
+Q 320.916406 295.525489 320.006406 295.525489 
+L 263.553594 295.525489 
+Q 262.643594 295.525489 262.643594 296.435489 
+L 262.643594 303.771271 
+Q 262.643594 304.681271 263.553594 304.681271 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="291.78" y="301.984083" transform="rotate(-0 291.78 301.984083)">R_QB_PD 52.48Ω</text>
+   </g>
+   <g id="text_35">
+    <g id="patch_36">
+     <path d="M 261.554219 271.403564 
+L 322.005781 271.403564 
+Q 322.915781 271.403564 322.915781 270.493564 
+L 322.915781 254.655845 
+Q 322.915781 253.745845 322.005781 253.745845 
+L 261.554219 253.745845 
+Q 260.644219 253.745845 260.644219 254.655845 
+L 260.644219 270.493564 
+Q 260.644219 271.403564 261.554219 271.403564 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(261.554219 260.25147)">R_QB_PU 134.31Ω</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(277.78 268.753407)">悬挂支路</text>
+   </g>
+   <g id="text_36">
+    <g id="patch_37">
+     <path d="M 175.204063 277.688921 
+L 240.955938 277.688921 
+Q 241.865938 277.688921 241.865938 276.778921 
+L 241.865938 269.443139 
+Q 241.865938 268.533139 240.955938 268.533139 
+L 175.204063 268.533139 
+Q 174.294063 268.533139 174.294063 269.443139 
+L 174.294063 276.778921 
+Q 174.294063 277.688921 175.204063 277.688921 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="208.08" y="274.991733" transform="rotate(-0 208.08 274.991733)">R_VDD_PU1 38.51Ω</text>
+   </g>
+   <g id="text_37">
+    <g id="patch_38">
+     <path d="M 258.904062 277.688921 
+L 324.655937 277.688921 
+Q 325.565937 277.688921 325.565937 276.778921 
+L 325.565937 269.443139 
+Q 325.565937 268.533139 324.655937 268.533139 
+L 258.904062 268.533139 
+Q 257.994062 268.533139 257.994062 269.443139 
+L 257.994062 276.778921 
+Q 257.994062 277.688921 258.904062 277.688921 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="291.78" y="274.991733" transform="rotate(-0 291.78 274.991733)">R_VDD_PU2 38.51Ω</text>
+   </g>
+   <g id="text_38">
+    <g id="patch_39">
+     <path d="M 176.490859 375.145511 
+L 239.669141 375.145511 
+Q 240.579141 375.145511 240.579141 374.235511 
+L 240.579141 366.899729 
+Q 240.579141 365.989729 239.669141 365.989729 
+L 176.490859 365.989729 
+Q 175.580859 365.989729 175.580859 366.899729 
+L 175.580859 374.235511 
+Q 175.580859 375.145511 176.490859 375.145511 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="208.08" y="372.448323" transform="rotate(-0 208.08 372.448323)">R_VSS_PD1 40.57Ω</text>
+   </g>
+   <g id="text_39">
+    <g id="patch_40">
+     <path d="M 260.190859 375.145511 
+L 323.369141 375.145511 
+Q 324.279141 375.145511 324.279141 374.235511 
+L 324.279141 366.899729 
+Q 324.279141 365.989729 323.369141 365.989729 
+L 260.190859 365.989729 
+Q 259.280859 365.989729 259.280859 366.899729 
+L 259.280859 374.235511 
+Q 259.280859 375.145511 260.190859 375.145511 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="291.78" y="372.448323" transform="rotate(-0 291.78 372.448323)">R_VSS_PD2 40.57Ω</text>
+   </g>
+   <g id="text_40">
+    <g id="patch_41">
+     <path d="M 234.593047 266.039591 
+L 337.806953 266.039591 
+Q 338.716953 266.039591 338.716953 265.129591 
+L 338.716953 257.793809 
+Q 338.716953 256.883809 337.806953 256.883809 
+L 234.593047 256.883809 
+Q 233.683047 256.883809 233.683047 257.793809 
+L 233.683047 265.129591 
+Q 233.683047 266.039591 234.593047 266.039591 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="286.2" y="263.389434" transform="rotate(-0 286.2 263.389434)">Q-side pull-up/pull-down path</text>
+   </g>
+   <g id="text_41">
+    <g id="patch_42">
+     <path d="M 431.643516 266.039591 
+L 475.556484 266.039591 
+Q 476.466484 266.039591 476.466484 265.129591 
+L 476.466484 257.793809 
+Q 476.466484 256.883809 475.556484 256.883809 
+L 431.643516 256.883809 
+Q 430.733516 256.883809 430.733516 257.793809 
+L 430.733516 265.129591 
+Q 430.733516 266.039591 431.643516 266.039591 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="453.6" y="263.389434" transform="rotate(-0 453.6 263.389434)">QB-side path</text>
+   </g>
+   <g id="text_42">
+    <g id="patch_43">
+     <path d="M 188.125203 258.936341 
+L 254.818797 258.936341 
+Q 255.728797 258.936341 255.728797 258.026341 
+L 255.728797 250.690559 
+Q 255.728797 249.780559 254.818797 249.780559 
+L 188.125203 249.780559 
+Q 187.215203 249.780559 187.215203 250.690559 
+L 187.215203 258.026341 
+Q 187.215203 258.936341 188.125203 258.936341 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="221.472" y="256.245716" transform="rotate(-0 221.472 256.245716)">PU1/PD1 gate = QB</text>
+   </g>
+   <g id="text_43">
+    <g id="patch_44">
+     <path d="M 247.237453 231.943991 
+L 309.538547 231.943991 
+Q 310.448547 231.943991 310.448547 231.033991 
+L 310.448547 223.698209 
+Q 310.448547 222.788209 309.538547 222.788209 
+L 247.237453 222.788209 
+Q 246.327453 222.788209 246.327453 223.698209 
+L 246.327453 231.033991 
+Q 246.327453 231.943991 247.237453 231.943991 
+z
+" style="fill: #ffffff; opacity: 0.9"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="278.388" y="229.253366" transform="rotate(-0 278.388 229.253366)">PU2/PD2 gate = Q</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #9b2c2c" x="397.8" y="62.077525" transform="rotate(-0 397.8 62.077525)">红色虚线：现有 candidate 网表中 R_QB_PU 接到 PU2_QB_SD，但 XPU2 漏端直接为 QB，因此该支路未真正串入 PU2 漏端路径。</text>
+   </g>
+   <g id="text_45">
+    <g id="patch_45">
+     <path d="M 202.767344 448.5962 
+L 576.092656 448.5962 
+Q 578.542656 448.5962 578.542656 446.1462 
+L 578.542656 403.9677 
+Q 578.542656 401.5177 576.092656 401.5177 
+L 202.767344 401.5177 
+Q 200.317344 401.5177 200.317344 403.9677 
+L 200.317344 446.1462 
+Q 200.317344 448.5962 202.767344 448.5962 
+z
+" style="fill: #f9f9f9; stroke: #8c8c8c; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(327.998438 409.516294)">Complete parasitic capacitor list (aF):</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(221.448594 418.1917)">C_BL_BLB 0.028 | C_BL_WL 21.001 | C_BL_VDD 0.618 | C_BL_VSS 1.177 | C_BL_Q 1.484 | C_BL_QB 0.222</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(239.228594 426.914137)">C_BLB_WL 21.058 | C_BLB_VDD 0.607 | C_BLB_VSS 1.085 | C_BLB_Q 0.357 | C_BLB_QB 1.575</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(268.573359 435.636575)">C_WL_VDD 3.334 | C_WL_VSS 26.457 | C_WL_Q 40.638 | C_WL_QB 56.711</text>
+    <text style="font-size: 7px; font-family: 'Microsoft YaHei'" transform="translate(202.767344 444.359012)">C_VDD_VSS 0.0015 | C_VDD_Q 10.015 | C_VDD_QB 10.008 | C_VSS_Q 18.814 | C_VSS_QB 19.001 | C_Q_QB 93.747</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="369.9" y="16.7925" transform="rotate(-0 369.9 16.7925)">RC candidate 6T SRAM netlist diagram with plain-potential labels</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p649a251307">
+   <rect x="7.2" y="22.7925" width="725.4" height="454.608"/>
+  </clipPath>
+ </defs>
+</svg>

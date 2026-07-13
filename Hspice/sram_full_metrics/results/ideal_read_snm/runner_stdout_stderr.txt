@@ -1,0 +1,106 @@
+
+
+****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                     
+
+ Input File: ideal_read_snm.sp                                                  
+
+ lic:  
+
+ lic: FLEXlm: SDK_12.3 
+
+ lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM 
+
+ lic: HOSTID: "00155daa97f3"       PID:      74544 
+
+ lic: Using FLEXlm license file: 
+
+ lic: 27000@LAPTOP-K9QP6UAM 
+
+ lic: Checkout 1 hspice 
+
+ lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12 
+
+ lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM 
+
+ lic:   
+
+ init: begin read circuit files, cpu clock= 4.90E-02                            
+
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/         
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/             
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/         
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/          
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/             
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/         
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/            
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC         
+
+                         H/                                                     
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/            
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/            
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE         
+
+                         /                                                      
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR         
+
+                         M/                                                     
+
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/            
+
+       option post =     2.00                                                   
+
+       option probe                                                             
+
+       option ingold =     2.00                                                 
+
+       option measdgt =     6.00                                                
+
+       option method = gear                                                     
+
+       option gshunt =    1.000E-12                                             
+
+ init: end read circuit files, cpu clock= 2.63E+00 peak memory=      78 mb      
+
+ init: begin check errors, cpu clock= 2.63E+00                                  
+
+ init: end check errors, cpu clock= 2.64E+00 peak memory=      80 mb            
+
+ init: begin setup matrix, pivot=     0 cpu clock= 2.64E+00                     
+
+       establish matrix -- done, cpu clock= 2.64E+00 peak memory=      80 mb    
+
+       re-order matrix -- done, cpu clock= 2.64E+00 peak memory=      80 mb     
+
+ init: end setup matrix, cpu clock= 2.64E+00 peak memory=      80 mb            
+
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\sram_full_metrics\
+
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.64E+00                       
+
+ sweep: dc dc0    end, cpu clock= 2.73E+00 peak memory=      80 mb              
+
+>info:         ***** hspice job concluded                                       
+
+           total cpu time            2.70 seconds                               
+
+           total elapsed time            2.73 seconds                           
+
+           job started at     12:57:06 07/13/2026                               
+
+           job ended   at     12:57:09 07/13/2026                               
+>info:         ***** hspice job concluded
+
+
+ lic: Release hspice token(s) 

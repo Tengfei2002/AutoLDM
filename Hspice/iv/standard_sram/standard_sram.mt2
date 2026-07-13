@@ -1,6 +1,0 @@
-$DATA1 SOURCE='HSPICE' VERSION='P-2019.06-SP1-1 win64' PARAM_COUNT=0
-.TITLE 'read_q0'
- read_q1_delay    read_q1_q_min    read_q0_delay    read_q0_qb_min  
- temper           alter#          
-  1.10293e-11      6.99329e-01        failed         6.87803e-01    
-  2.50000e+01     3               
