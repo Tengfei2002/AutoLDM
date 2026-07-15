@@ -1,0 +1,626 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/udsvah03",
+    "id": "udsvah03",
+    "slide": 9,
+    "layoutId": "/ppt/slideLayouts/slideLayout5.xml",
+    "layoutName": "1_内容页-标题",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "1_内容页-标题",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/61",
+          "id": "61",
+          "name": "灯片编号占位符 8",
+          "bbox": [
+            945.49,
+            671.32,
+            288,
+            30.68
+          ],
+          "geometry": "rect",
+          "text": "< ‹#› >",
+          "textPreview": "< ‹#› >",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "< ‹#› >",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "< "
+                },
+                {
+                  "index": 2,
+                  "text": "‹#›"
+                },
+                {
+                  "index": 3,
+                  "text": " "
+                },
+                {
+                  "index": 4,
+                  "text": ">"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/8",
+          "id": "8",
+          "name": "文本占位符 2",
+          "bbox": [
+            13.9,
+            18,
+            972.93,
+            40.07
+          ],
+          "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "textPreview": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+              "marginLeft": 342900,
+              "indent": -342900,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfmhgne",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        24,
+        24,
+        1017.6,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "u 对比对象：No-RC单元与RC candidate网络",
+      "textPreview": "u 对比对象：No-RC单元与RC candidate网络",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "u 对比对象：No-RC单元与RC candidate网络"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "u 对比对象：No-RC单元与RC candidate网络",
+          "runs": [
+            {
+              "index": 1,
+              "text": "u 对比对象：No-RC单元与RC candidate网络",
+              "fontSize": 29.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0b65obm9",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        1113.6,
+        628.8,
+        76.8,
+        19.2
+      ],
+      "geometry": "rect",
+      "text": "< 9 >",
+      "textPreview": "< 9 >",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "< 9 >"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "< 9 >",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "< 9 >",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/jutknyd4",
+      "id": "9",
+      "name": "Picture 3",
+      "bbox": [
+        43.2,
+        141.94,
+        523.2,
+        325.72
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image15.png",
+        "contentType": "image/png",
+        "byteLength": 158521
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image15.png",
+        "contentType": "image/png",
+        "byteLength": 158521
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/faho3ad0",
+      "id": "10",
+      "name": "Picture 4",
+      "bbox": [
+        590.4,
+        125.57,
+        547.2,
+        358.47
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image16.png",
+        "contentType": "image/png",
+        "byteLength": 425948
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image16.png",
+        "contentType": "image/png",
+        "byteLength": 425948
+      }
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gzml0nq",
+      "id": "6",
+      "name": "TextBox 5",
+      "bbox": [
+        67.2,
+        528,
+        470.4,
+        21.12
+      ],
+      "geometry": "rect",
+      "text": "No-RC：理想6T SRAM单元，作为器件/电路基线",
+      "textPreview": "No-RC：理想6T SRAM单元，作为器件/电路基线",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "No-RC：理想6T SRAM单元，作为器件/电路基线"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "No-RC：理想6T SRAM单元，作为器件/电路基线",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "No-RC：理想6T SRAM单元，作为器件/电路基线",
+              "fontSize": 12,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofq5svm5",
+      "id": "7",
+      "name": "TextBox 6",
+      "bbox": [
+        595.2,
+        528,
+        537.6,
+        21.12
+      ],
+      "geometry": "rect",
+      "text": "RC candidate：加入候选寄生网络，用于评估互连代价",
+      "textPreview": "RC candidate：加入候选寄生网络，用于评估互连代价",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "RC candidate：加入候选寄生网络，用于评估互连代价"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "RC candidate：加入候选寄生网络，用于评估互连代价",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "RC candidate：加入候选寄生网络，用于评估互连代价",
+              "fontSize": 12,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bih4na5w",
+      "id": "8",
+      "name": "TextBox 7",
+      "bbox": [
+        72,
+        580.8,
+        1036.8,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "固定条件：VDD=0.7 V，T=25 °C，L=16 nm，WPG/WPD/WPU=25 nm，CQ/CQB=1 fF，CBL/CBLB=10 fF。",
+      "textPreview": "固定条件：VDD=0.7 V，T=25 °C，L=16 nm，WPG/WPD/WPU=25 nm，CQ/CQB=1 fF，CBL/CBLB=10 fF。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "固定条件：VDD=0.7 V，T=25 °C，L=16 nm，WPG/WPD/WPU=25 nm，CQ/CQB=1 fF，CBL/CBLB=10 fF。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "固定条件：VDD=0.7 V，T=25 °C，L=16 nm，WPG/WPD/WPU=25 nm，CQ/CQB=1 fF，CBL/CBLB=10 fF。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "固定条件：VDD=0.7 V，T=25 °C，L=16 nm，WPG/WPD/WPU=25 nm，CQ/CQB=1 fF，CBL/CBLB=10 fF。",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

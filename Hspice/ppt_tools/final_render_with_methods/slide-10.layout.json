@@ -1,0 +1,851 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/m90b6t0r",
+    "id": "m90b6t0r",
+    "slide": 10,
+    "layoutId": "/ppt/slideLayouts/slideLayout5.xml",
+    "layoutName": "1_内容页-标题",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "1_内容页-标题",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/61",
+          "id": "61",
+          "name": "灯片编号占位符 8",
+          "bbox": [
+            945.49,
+            671.32,
+            288,
+            30.68
+          ],
+          "geometry": "rect",
+          "text": "< ‹#› >",
+          "textPreview": "< ‹#› >",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "< ‹#› >",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "< "
+                },
+                {
+                  "index": 2,
+                  "text": "‹#›"
+                },
+                {
+                  "index": 3,
+                  "text": " "
+                },
+                {
+                  "index": 4,
+                  "text": ">"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/8",
+          "id": "8",
+          "name": "文本占位符 2",
+          "bbox": [
+            13.9,
+            18,
+            972.93,
+            40.07
+          ],
+          "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "textPreview": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+              "marginLeft": 342900,
+              "indent": -342900,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc3mho32",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        24,
+        24,
+        1017.6,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "u 静态稳定性：RC对HSNM/RSNM影响较小",
+      "textPreview": "u 静态稳定性：RC对HSNM/RSNM影响较小",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "u 静态稳定性：RC对HSNM/RSNM影响较小"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "u 静态稳定性：RC对HSNM/RSNM影响较小",
+          "runs": [
+            {
+              "index": 1,
+              "text": "u 静态稳定性：RC对HSNM/RSNM影响较小",
+              "fontSize": 29.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbu58j2h",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        1113.6,
+        628.8,
+        76.8,
+        19.2
+      ],
+      "geometry": "rect",
+      "text": "< 10 >",
+      "textPreview": "< 10 >",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "< 10 >"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "< 10 >",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "< 10 >",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/uhgz6tkr",
+      "id": "11",
+      "name": "Picture 3",
+      "bbox": [
+        33.6,
+        137.34,
+        556.8,
+        296.52
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image17.png",
+        "contentType": "image/png",
+        "byteLength": 235503
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.png",
+        "contentType": "image/png",
+        "byteLength": 235503
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/h47i1oj2",
+      "id": "12",
+      "name": "Picture 4",
+      "bbox": [
+        609.6,
+        132.48,
+        259.2,
+        100.8
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image18.png",
+        "contentType": "image/png",
+        "byteLength": 145907
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image18.png",
+        "contentType": "image/png",
+        "byteLength": 145907
+      }
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/g3yh832h",
+      "id": "13",
+      "name": "Picture 5",
+      "bbox": [
+        868.8,
+        132.48,
+        259.2,
+        100.8
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image19.png",
+        "contentType": "image/png",
+        "byteLength": 155158
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image19.png",
+        "contentType": "image/png",
+        "byteLength": 155158
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzu5c32t",
+      "id": "7",
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        619.2,
+        321.6,
+        158.4,
+        76.8
+      ],
+      "geometry": "roundRect",
+      "text": "−0.5 mV\nHSNM\n268→267.5",
+      "textPreview": "−0.5 mV | HSNM | 268→267.5",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "−0.5 mV"
+          },
+          {
+            "index": 2,
+            "text": "HSNM"
+          },
+          {
+            "index": 3,
+            "text": "268→267.5"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "−0.5 mV",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "−0.5 mV",
+              "fontSize": 26.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#1F77B4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "HSNM",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "HSNM",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "268→267.5",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "268→267.5",
+              "fontSize": 10.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#FAFAFA",
+      "lineColor": "#DCDCDC",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/725onyl4",
+      "id": "8",
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        792,
+        321.6,
+        158.4,
+        76.8
+      ],
+      "geometry": "roundRect",
+      "text": "−2 mV\nRSNM\n108→106",
+      "textPreview": "−2 mV | RSNM | 108→106",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "−2 mV"
+          },
+          {
+            "index": 2,
+            "text": "RSNM"
+          },
+          {
+            "index": 3,
+            "text": "108→106"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "−2 mV",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "−2 mV",
+              "fontSize": 26.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#1F77B4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "RSNM",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "RSNM",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "108→106",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "108→106",
+              "fontSize": 10.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#FAFAFA",
+      "lineColor": "#DCDCDC",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1cnetkj",
+      "id": "9",
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        964.8,
+        321.6,
+        158.4,
+        76.8
+      ],
+      "geometry": "roundRect",
+      "text": "+0.21%\nLeakage\n1383.9→1386.8 pW",
+      "textPreview": "+0.21% | Leakage | 1383.9→1386.8 pW",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "+0.21%"
+          },
+          {
+            "index": 2,
+            "text": "Leakage"
+          },
+          {
+            "index": 3,
+            "text": "1383.9→1386.8 pW"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "+0.21%",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "+0.21%",
+              "fontSize": 26.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Leakage",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Leakage",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "1383.9→1386.8 pW",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1383.9→1386.8 pW",
+              "fontSize": 10.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#FAFAFA",
+      "lineColor": "#DCDCDC",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s7yt4b21",
+      "id": "10",
+      "name": "TextBox 9",
+      "bbox": [
+        619.2,
+        427.2,
+        504,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "解释：RC候选网络没有显著破坏双稳态；读噪声容限降低约2 mV，主要表现为轻微读稳定性退化。",
+      "textPreview": "解释：RC候选网络没有显著破坏双稳态；读噪声容限降低约2 mV，主要表现为轻微读稳定性退化。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "解释：RC候选网络没有显著破坏双稳态；读噪声容限降低约2"
+          },
+          {
+            "index": 2,
+            "text": "mV，主要表现为轻微读稳定性退化。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "解释：RC候选网络没有显著破坏双稳态；读噪声容限降低约2 mV，主要表现为轻微读稳定性退化。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "解释：RC候选网络没有显著破坏双稳态；读噪声容限降低约2 mV，主要表现为轻微读稳定性退化。",
+              "fontSize": 17.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

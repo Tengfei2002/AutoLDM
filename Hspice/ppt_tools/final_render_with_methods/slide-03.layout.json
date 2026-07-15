@@ -1,0 +1,3594 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ofy9wn61",
+    "id": "ofy9wn61",
+    "slide": 3,
+    "layoutId": "/ppt/slideLayouts/slideLayout5.xml",
+    "layoutName": "1_内容页-标题",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Consolas",
+      "Courier New",
+      "微软雅黑"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "1_内容页-标题",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/61",
+          "id": "61",
+          "name": "灯片编号占位符 8",
+          "bbox": [
+            945.49,
+            671.32,
+            288,
+            30.68
+          ],
+          "geometry": "rect",
+          "text": "< ‹#› >",
+          "textPreview": "< ‹#› >",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "< ‹#› >",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "< "
+                },
+                {
+                  "index": 2,
+                  "text": "‹#›"
+                },
+                {
+                  "index": 3,
+                  "text": " "
+                },
+                {
+                  "index": 4,
+                  "text": ">"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/8",
+          "id": "8",
+          "name": "文本占位符 2",
+          "bbox": [
+            13.9,
+            18,
+            972.93,
+            40.07
+          ],
+          "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "textPreview": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+              "marginLeft": 342900,
+              "indent": -342900,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cza94vmx",
+      "id": "2",
+      "name": "灯片编号占位符 1",
+      "bbox": [
+        945.49,
+        671.32,
+        288,
+        30.68
+      ],
+      "text": "< 3 >",
+      "textPreview": "< 3 >",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "vertical": 1,
+        "fontSize": 16,
+        "typeface": "Arial",
+        "color": {
+          "type": "theme",
+          "value": "tx1",
+          "transform": {
+            "lighten": 0.5
+          }
+        },
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "< 3 >"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "< 3 >",
+          "runs": [
+            {
+              "index": 1,
+              "text": "< "
+            },
+            {
+              "index": 2,
+              "text": "3"
+            },
+            {
+              "index": 3,
+              "text": " "
+            },
+            {
+              "index": 4,
+              "text": ">"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0jax03i",
+      "id": "3",
+      "name": "文本占位符 2",
+      "bbox": [
+        13.9,
+        18,
+        972.93,
+        40.07
+      ],
+      "text": "参数变化展示",
+      "textPreview": "参数变化展示",
+      "resolvedFontSize": 26.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "vertical": 1,
+        "fontSize": 26.67,
+        "typeface": "微软雅黑",
+        "color": {
+          "type": "theme",
+          "value": "tx1",
+          "transform": {
+            "lighten": 0.25
+          }
+        },
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "u 参数变化展示"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "参数变化展示",
+          "runs": [
+            {
+              "index": 1,
+              "text": "参数变化展示"
+            }
+          ],
+          "bulletCharacter": "u",
+          "marginLeft": 228600,
+          "indent": -228600,
+          "lineSpacingPercent": 90000,
+          "spaceBefore": 1000
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ah8rqlg",
+      "id": "5",
+      "name": "文本框 4",
+      "bbox": [
+        70.52,
+        88.9,
+        639.83,
+        214.12
+      ],
+      "geometry": "rect",
+      "text": "parameter real L=1.6e-8;\nparameter real W=2.5e-8;\nparameter real NF=1;\nparameter real U0 = 3.0e-2;\nparameter real XL=1.2e-8;\nparameter real DVTSHIFT=0.0; \nparameter real DeltaWGAA = 0;\nparameter real DeltaTGAA = 0;\nparameter real EOT_0 = 1.1e-9;  ",
+      "textPreview": "parameter real L=1.6e-8; | parameter real W=2.5e-8; | parameter real NF=1; | parameter real U0 = 3.0e-2; | parameter real XL=1.2e-8; | pa...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 9,
+        "lines": [
+          {
+            "index": 1,
+            "text": "parameter real L=1.6e-8;"
+          },
+          {
+            "index": 2,
+            "text": "parameter real W=2.5e-8;"
+          },
+          {
+            "index": 3,
+            "text": "parameter real NF=1;"
+          },
+          {
+            "index": 4,
+            "text": "parameter real U0 = 3.0e-2;"
+          },
+          {
+            "index": 5,
+            "text": "parameter real XL=1.2e-8;"
+          },
+          {
+            "index": 6,
+            "text": "parameter real DVTSHIFT=0.0;"
+          },
+          {
+            "index": 7,
+            "text": "parameter real DeltaWGAA = 0;"
+          },
+          {
+            "index": 8,
+            "text": "parameter real DeltaTGAA = 0;"
+          },
+          {
+            "index": 9,
+            "text": "parameter real EOT_0 = 1.1e-9;"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "parameter real L=1.6e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " L",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".6e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "parameter real W=2.5e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " W",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".5e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "parameter real NF=1;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " NF",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "parameter real U0 = 3.0e-2;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " U0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "3",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".0e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "parameter real XL=1.2e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " XL",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".2e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "parameter real DVTSHIFT=0.0; ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DVTSHIFT",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 9,
+              "text": "; ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "parameter real DeltaWGAA = 0;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaWGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "parameter real DeltaTGAA = 0;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaTGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "parameter real EOT_0 = 1.1e-9;  ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " EOT_0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".1e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "9",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";  ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcjqtg36",
+      "id": "7",
+      "name": "文本框 6",
+      "bbox": [
+        70.52,
+        360,
+        639.83,
+        214.12
+      ],
+      "geometry": "rect",
+      "text": "parameter real L=1.6e-8;\nparameter real W=2.5e-8;\nparameter real NF=1;\nparameter real U0 = 3.0e-2;\nparameter real XL=1.2e-8;\nparameter real DVTSHIFT=0.0; \nparameter real DeltaWGAA = 0;\nparameter real DeltaTGAA = 0;\nparameter real EOT_0 = 1.1e-10; ",
+      "textPreview": "parameter real L=1.6e-8; | parameter real W=2.5e-8; | parameter real NF=1; | parameter real U0 = 3.0e-2; | parameter real XL=1.2e-8; | pa...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 9,
+        "lines": [
+          {
+            "index": 1,
+            "text": "parameter real L=1.6e-8;"
+          },
+          {
+            "index": 2,
+            "text": "parameter real W=2.5e-8;"
+          },
+          {
+            "index": 3,
+            "text": "parameter real NF=1;"
+          },
+          {
+            "index": 4,
+            "text": "parameter real U0 = 3.0e-2;"
+          },
+          {
+            "index": 5,
+            "text": "parameter real XL=1.2e-8;"
+          },
+          {
+            "index": 6,
+            "text": "parameter real DVTSHIFT=0.0;"
+          },
+          {
+            "index": 7,
+            "text": "parameter real DeltaWGAA = 0;"
+          },
+          {
+            "index": 8,
+            "text": "parameter real DeltaTGAA = 0;"
+          },
+          {
+            "index": 9,
+            "text": "parameter real EOT_0 = 1.1e-10;"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "parameter real L=1.6e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " L",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".6e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "parameter real W=2.5e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " W",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".5e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "parameter real NF=1;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " NF",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "parameter real U0 = 3.0e-2;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " U0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "3",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".0e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "parameter real XL=1.2e-8;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " XL",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".2e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "8",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "parameter real DVTSHIFT=0.0; ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DVTSHIFT",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 9,
+              "text": "; ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "parameter real DeltaWGAA = 0;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaWGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "parameter real DeltaTGAA = 0;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaTGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "0",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "parameter real EOT_0 = 1.1e-10; ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " EOT_0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "1.1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": "e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "10",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": "; ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6ls3alk",
+      "id": "9",
+      "name": "文本框 8",
+      "bbox": [
+        392.56,
+        264.38,
+        317.79,
+        138.94
+      ],
+      "geometry": "rect",
+      "text": "L     = 1.6e-8\nW     = 2.5e-8\nNF    = 1\nEOT_0 = 7.9e-10",
+      "textPreview": "L     = 1.6e-8 | W     = 2.5e-8 | NF    = 1 | EOT_0 = 7.9e-10",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "L     = 1.6e-8"
+          },
+          {
+            "index": 2,
+            "text": "W     = 2.5e-8"
+          },
+          {
+            "index": 3,
+            "text": "NF    = 1"
+          },
+          {
+            "index": 4,
+            "text": "EOT_0 = 7.9e-10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "L     = 1.6e-8",
+          "runs": [
+            {
+              "index": 1,
+              "text": "L     = 1.6e-8",
+              "fontSize": 26.67,
+              "typeface": "Courier New",
+              "color": "#FF0000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "W     = 2.5e-8",
+          "runs": [
+            {
+              "index": 1,
+              "text": "W     = 2.5e-8",
+              "fontSize": 26.67,
+              "typeface": "Courier New",
+              "color": "#FF0000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "NF    = 1",
+          "runs": [
+            {
+              "index": 1,
+              "text": "NF    = 1",
+              "fontSize": 26.67,
+              "typeface": "Courier New",
+              "color": "#FF0000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "EOT_0 = 7.9e-10",
+          "runs": [
+            {
+              "index": 1,
+              "text": "EOT_0 = 7.9e-10",
+              "fontSize": 26.67,
+              "typeface": "Courier New",
+              "color": "#FF0000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1c3mlsn",
+      "id": "11",
+      "name": "文本框 10",
+      "bbox": [
+        702.93,
+        69.58,
+        577.07,
+        214.12
+      ],
+      "geometry": "rect",
+      "text": "parameter real L=1.6e-08;\nparameter real W=2.5e-08;\nparameter real NF=1;\nparameter real U0 = 2.465126225809e-02;\nparameter real XL=4.677576751588e-09;\nparameter real DVTSHIFT=2.340310883015e-01; \nparameter real DeltaWGAA = 2.048235619238e-09;\nparameter real DeltaTGAA = 1.409403394487e-09;\nparameter real EOT_0 = 7.9e-10;",
+      "textPreview": "parameter real L=1.6e-08; | parameter real W=2.5e-08; | parameter real NF=1; | parameter real U0 = 2.465126225809e-02; | parameter real X...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 9,
+        "lines": [
+          {
+            "index": 1,
+            "text": "parameter real L=1.6e-08;"
+          },
+          {
+            "index": 2,
+            "text": "parameter real W=2.5e-08;"
+          },
+          {
+            "index": 3,
+            "text": "parameter real NF=1;"
+          },
+          {
+            "index": 4,
+            "text": "parameter real U0 = 2.465126225809e-02;"
+          },
+          {
+            "index": 5,
+            "text": "parameter real XL=4.677576751588e-09;"
+          },
+          {
+            "index": 6,
+            "text": "parameter real DVTSHIFT=2.340310883015e-01;"
+          },
+          {
+            "index": 7,
+            "text": "parameter real DeltaWGAA = 2.048235619238e-09;"
+          },
+          {
+            "index": 8,
+            "text": "parameter real DeltaTGAA = 1.409403394487e-09;"
+          },
+          {
+            "index": 9,
+            "text": "parameter real EOT_0 = 7.9e-10;"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "parameter real L=1.6e-08;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " L",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".6e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "parameter real W=2.5e-08;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " W",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".5e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "parameter real NF=1;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " NF",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "parameter real U0 = 2.465126225809e-02;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " U0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".465126225809e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "02",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "parameter real XL=4.677576751588e-09;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " XL",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "4",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".677576751588e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "09",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "parameter real DVTSHIFT=2.340310883015e-01; ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DVTSHIFT",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".340310883015e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "01",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": "; ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "parameter real DeltaWGAA = 2.048235619238e-09;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaWGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".048235619238e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "09",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "parameter real DeltaTGAA = 1.409403394487e-09;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaTGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".409403394487e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "09",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "parameter real EOT_0 = 7.9e-10;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " EOT_0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "7",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".9e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "10",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/p4bu58jm",
+      "id": "20",
+      "name": "图片 14",
+      "bbox": [
+        1145.07,
+        69.58,
+        118.99,
+        197.98
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 2037
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 2037
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i9w3u58v",
+      "id": "19",
+      "name": "文本框 18",
+      "bbox": [
+        702.93,
+        375.29,
+        442.14,
+        214.12
+      ],
+      "geometry": "rect",
+      "text": "parameter real L=1.6e-08;\nparameter real W=2.5e-08;\nparameter real NF=1;\nparameter real U0 = 4.593370855865e-02;\nparameter real XL=2.724361157963e-08;\nparameter real DVTSHIFT=3.953451585888e-01;\nparameter real DeltaWGAA = 6.394033645387e-09;\nparameter real DeltaTGAA = -3.582191512312e-10;\nparameter real EOT_0 = 7.6e-10; ",
+      "textPreview": "parameter real L=1.6e-08; | parameter real W=2.5e-08; | parameter real NF=1; | parameter real U0 = 4.593370855865e-02; | parameter real X...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 9,
+        "lines": [
+          {
+            "index": 1,
+            "text": "parameter real L=1.6e-08;"
+          },
+          {
+            "index": 2,
+            "text": "parameter real W=2.5e-08;"
+          },
+          {
+            "index": 3,
+            "text": "parameter real NF=1;"
+          },
+          {
+            "index": 4,
+            "text": "parameter real U0 = 4.593370855865e-02;"
+          },
+          {
+            "index": 5,
+            "text": "parameter real XL=2.724361157963e-08;"
+          },
+          {
+            "index": 6,
+            "text": "parameter real DVTSHIFT=3.953451585888e-01;"
+          },
+          {
+            "index": 7,
+            "text": "parameter real DeltaWGAA = 6.394033645387e-09;"
+          },
+          {
+            "index": 8,
+            "text": "parameter real DeltaTGAA = -3.582191512312e-10;"
+          },
+          {
+            "index": 9,
+            "text": "parameter real EOT_0 = 7.6e-10;"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "parameter real L=1.6e-08;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " L",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".6e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "parameter real W=2.5e-08;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " W",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".5e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "parameter real NF=1;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " NF",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "1",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "parameter real U0 = 4.593370855865e-02;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " U0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "4",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".593370855865e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "02",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "parameter real XL=2.724361157963e-08;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " XL",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".724361157963e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "parameter real DVTSHIFT=3.953451585888e-01;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DVTSHIFT",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": "3",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 7,
+              "text": ".953451585888e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 8,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 9,
+              "text": "01",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 10,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "parameter real DeltaWGAA = 6.394033645387e-09;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaWGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "6",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".394033645387e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "09",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "parameter real DeltaTGAA = -3.582191512312e-10;",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " DeltaTGAA ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 8,
+              "text": "3",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 9,
+              "text": ".582191512312e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 10,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 11,
+              "text": "10",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 12,
+              "text": ";",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "parameter real EOT_0 = 7.6e-10; ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "parameter",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 3,
+              "text": "real",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#B38CFF"
+            },
+            {
+              "index": 4,
+              "text": " EOT_0 ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 5,
+              "text": "=",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 7,
+              "text": "7",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 8,
+              "text": ".6e",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            },
+            {
+              "index": 9,
+              "text": "-",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D5D8E0"
+            },
+            {
+              "index": 10,
+              "text": "10",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#F48CCA"
+            },
+            {
+              "index": 11,
+              "text": "; ",
+              "fontSize": 16,
+              "typeface": "Consolas",
+              "color": "#D4D4D4"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/o32dw321",
+      "id": "21",
+      "name": "图片 20",
+      "bbox": [
+        1138.26,
+        424.42,
+        120.98,
+        164.98
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image10.png",
+        "contentType": "image/png",
+        "byteLength": 1598
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image10.png",
+        "contentType": "image/png",
+        "byteLength": 1598
+      }
+    }
+  ],
+  "composeRuns": []
+}

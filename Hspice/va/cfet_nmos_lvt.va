@@ -31,15 +31,15 @@ module cfet_nmos_lvt(D, G, S, B);
    electrical D, G, S, B;
 
 //***** primary device structure / instance parameters ******//
-parameter real L=1.6e-8;
-parameter real W=2.5e-8;
+parameter real L=1.6e-08;
+parameter real W=2.5e-08;
 parameter real NF=1;
-parameter real U0 = 3.0e-2;
-parameter real XL=1.2e-8;
-parameter real DVTSHIFT=0.0;		//###########1111
-parameter real DeltaWGAA = 0;
-parameter real DeltaTGAA = 0;
-parameter real EOT_0 = 1.1e-9;				//###########1111
+parameter real U0 = 2.465126225809e-02;
+parameter real XL=4.677576751588e-09;
+parameter real DVTSHIFT=2.340310883015e-01;		//###########1111
+parameter real DeltaWGAA = 2.048235619238e-09;
+parameter real DeltaTGAA = 1.409403394487e-09;
+parameter real EOT_0 = 7.9e-10;				//###########1111
 
 //*****network normalization factors******//
    real tgaamax = 5.0e-9;

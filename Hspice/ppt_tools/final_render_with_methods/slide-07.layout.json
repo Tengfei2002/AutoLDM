@@ -1,0 +1,1103 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gnmp4jqx",
+    "id": "gnmp4jqx",
+    "slide": 7,
+    "layoutId": "/ppt/slideLayouts/slideLayout5.xml",
+    "layoutName": "1_内容页-标题",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "1_内容页-标题",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/61",
+          "id": "61",
+          "name": "灯片编号占位符 8",
+          "bbox": [
+            945.49,
+            671.32,
+            288,
+            30.68
+          ],
+          "geometry": "rect",
+          "text": "< ‹#› >",
+          "textPreview": "< ‹#› >",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "< ‹#› >",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "< "
+                },
+                {
+                  "index": 2,
+                  "text": "‹#›"
+                },
+                {
+                  "index": 3,
+                  "text": " "
+                },
+                {
+                  "index": 4,
+                  "text": ">"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/8",
+          "id": "8",
+          "name": "文本占位符 2",
+          "bbox": [
+            13.9,
+            18,
+            972.93,
+            40.07
+          ],
+          "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "textPreview": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+              "marginLeft": 342900,
+              "indent": -342900,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cb2tkvap",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        24,
+        24,
+        1017.6,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "u 指标含义与测试条件：静态稳定性",
+      "textPreview": "u 指标含义与测试条件：静态稳定性",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "u 指标含义与测试条件：静态稳定性"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "u 指标含义与测试条件：静态稳定性",
+          "runs": [
+            {
+              "index": 1,
+              "text": "u 指标含义与测试条件：静态稳定性",
+              "fontSize": 29.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcbud0ra",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        1113.6,
+        628.8,
+        76.8,
+        19.2
+      ],
+      "geometry": "rect",
+      "text": "< 7 >",
+      "textPreview": "< 7 >",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "< 7 >"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "< 7 >",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "< 7 >",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/h4bqxcve",
+      "id": "6",
+      "name": "Table 3",
+      "bbox": [
+        52.8,
+        96,
+        1065.6,
+        436.8
+      ],
+      "text": "指标 | 物理含义 | 测试条件 | 提取/计算方法\nHSNM | 保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。 | Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。 | 在两个butterfly lobe内搜索最大内嵌正方形；HSNM取左右lobe中较小边长。\nRSNM | 读操作中抵抗读破坏的静态噪声容限；直接反映读稳定性。 | Read mode：WL=VDD，BL=BLB=VDD；对内部反馈路径注入反向噪声VN。 | VN从0到0.5 V按1 mV扫描；首次出现Q/QB翻转的临界VN为读噪声容限。\nRead disturb | 读操作期间，原本低电平存储节点被预充位线抬高的最大幅度。 | Read transient：初始Q=1/QB=0，BL/BLB预充到VDD，WL打开。 | read_disturb = max(V(QB))；该量不是RSNM，但可直观看读扰动强弱。\nRead stability margin | 动态读扰动距离VDD/2翻转阈值的剩余空间；辅助理解瞬态安全裕量。 | 使用同一read transient波形和read disturb提取结果。 | margin = VDD/2 - read_disturb；VDD=0.7 V。",
+      "textPreview": "指标 | 物理含义 | 测试条件 | 提取/计算方法 | HSNM | 保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。 | Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。 | 在两个butterfly lobe内搜索...",
+      "rows": 5,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            52.8,
+            96,
+            110.4,
+            87.36
+          ],
+          "text": "指标",
+          "textPreview": "指标",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "指标",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "指标",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            163.2,
+            96,
+            288,
+            87.36
+          ],
+          "text": "物理含义",
+          "textPreview": "物理含义",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "物理含义",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "物理含义",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            451.2,
+            96,
+            312,
+            87.36
+          ],
+          "text": "测试条件",
+          "textPreview": "测试条件",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "测试条件",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "测试条件",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            763.2,
+            96,
+            355.2,
+            87.36
+          ],
+          "text": "提取/计算方法",
+          "textPreview": "提取/计算方法",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "提取/计算方法",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "提取/计算方法",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            52.8,
+            183.36,
+            110.4,
+            87.36
+          ],
+          "text": "HSNM",
+          "textPreview": "HSNM",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "HSNM",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "HSNM",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            163.2,
+            183.36,
+            288,
+            87.36
+          ],
+          "text": "保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。",
+          "textPreview": "保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "保持状态下抵抗静态噪声的能力；数值越大，存储节点越不易被扰动翻转。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            451.2,
+            183.36,
+            312,
+            87.36
+          ],
+          "text": "Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。",
+          "textPreview": "Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Hold mode：WL=0；SRAM内部交叉耦合反相器做DC butterfly。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            763.2,
+            183.36,
+            355.2,
+            87.36
+          ],
+          "text": "在两个butterfly lobe内搜索最大内嵌正方形；HSNM取左右lobe中较小边长。",
+          "textPreview": "在两个butterfly lobe内搜索最大内嵌正方形；HSNM取左右lobe中较小边长。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "在两个butterfly lobe内搜索最大内嵌正方形；HSNM取左右lobe中较小边长。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "在两个butterfly lobe内搜索最大内嵌正方形；HSNM取左右lobe中较小边长。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            52.8,
+            270.72,
+            110.4,
+            87.36
+          ],
+          "text": "RSNM",
+          "textPreview": "RSNM",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "RSNM",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "RSNM",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            163.2,
+            270.72,
+            288,
+            87.36
+          ],
+          "text": "读操作中抵抗读破坏的静态噪声容限；直接反映读稳定性。",
+          "textPreview": "读操作中抵抗读破坏的静态噪声容限；直接反映读稳定性。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "读操作中抵抗读破坏的静态噪声容限；直接反映读稳定性。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "读操作中抵抗读破坏的静态噪声容限；直接反映读稳定性。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            451.2,
+            270.72,
+            312,
+            87.36
+          ],
+          "text": "Read mode：WL=VDD，BL=BLB=VDD；对内部反馈路径注入反向噪声VN。",
+          "textPreview": "Read mode：WL=VDD，BL=BLB=VDD；对内部反馈路径注入反向噪声VN。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read mode：WL=VDD，BL=BLB=VDD；对内部反馈路径注入反向噪声VN。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read mode：WL=VDD，BL=BLB=VDD；对内部反馈路径注入反向噪声VN。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            763.2,
+            270.72,
+            355.2,
+            87.36
+          ],
+          "text": "VN从0到0.5 V按1 mV扫描；首次出现Q/QB翻转的临界VN为读噪声容限。",
+          "textPreview": "VN从0到0.5 V按1 mV扫描；首次出现Q/QB翻转的临界VN为读噪声容限。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "VN从0到0.5 V按1 mV扫描；首次出现Q/QB翻转的临界VN为读噪声容限。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "VN从0到0.5 V按1 mV扫描；首次出现Q/QB翻转的临界VN为读噪声容限。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            52.8,
+            358.08,
+            110.4,
+            87.36
+          ],
+          "text": "Read disturb",
+          "textPreview": "Read disturb",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read disturb",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read disturb",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            163.2,
+            358.08,
+            288,
+            87.36
+          ],
+          "text": "读操作期间，原本低电平存储节点被预充位线抬高的最大幅度。",
+          "textPreview": "读操作期间，原本低电平存储节点被预充位线抬高的最大幅度。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "读操作期间，原本低电平存储节点被预充位线抬高的最大幅度。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "读操作期间，原本低电平存储节点被预充位线抬高的最大幅度。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            451.2,
+            358.08,
+            312,
+            87.36
+          ],
+          "text": "Read transient：初始Q=1/QB=0，BL/BLB预充到VDD，WL打开。",
+          "textPreview": "Read transient：初始Q=1/QB=0，BL/BLB预充到VDD，WL打开。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read transient：初始Q=1/QB=0，BL/BLB预充到VDD，WL打开。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read transient：初始Q=1/QB=0，BL/BLB预充到VDD，WL打开。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            763.2,
+            358.08,
+            355.2,
+            87.36
+          ],
+          "text": "read_disturb = max(V(QB))；该量不是RSNM，但可直观看读扰动强弱。",
+          "textPreview": "read_disturb = max(V(QB))；该量不是RSNM，但可直观看读扰动强弱。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "read_disturb = max(V(QB))；该量不是RSNM，但可直观看读扰动强弱。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "read_disturb = max(V(QB))；该量不是RSNM，但可直观看读扰动强弱。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            52.8,
+            445.44,
+            110.4,
+            87.36
+          ],
+          "text": "Read stability margin",
+          "textPreview": "Read stability margin",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read stability margin",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read stability margin",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            163.2,
+            445.44,
+            288,
+            87.36
+          ],
+          "text": "动态读扰动距离VDD/2翻转阈值的剩余空间；辅助理解瞬态安全裕量。",
+          "textPreview": "动态读扰动距离VDD/2翻转阈值的剩余空间；辅助理解瞬态安全裕量。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "动态读扰动距离VDD/2翻转阈值的剩余空间；辅助理解瞬态安全裕量。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "动态读扰动距离VDD/2翻转阈值的剩余空间；辅助理解瞬态安全裕量。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            451.2,
+            445.44,
+            312,
+            87.36
+          ],
+          "text": "使用同一read transient波形和read disturb提取结果。",
+          "textPreview": "使用同一read transient波形和read disturb提取结果。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "使用同一read transient波形和read disturb提取结果。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "使用同一read transient波形和read disturb提取结果。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            763.2,
+            445.44,
+            355.2,
+            87.36
+          ],
+          "text": "margin = VDD/2 - read_disturb；VDD=0.7 V。",
+          "textPreview": "margin = VDD/2 - read_disturb；VDD=0.7 V。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "margin = VDD/2 - read_disturb；VDD=0.7 V。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "margin = VDD/2 - read_disturb；VDD=0.7 V。",
+                  "fontSize": 12,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zedcfa9g",
+      "id": "5",
+      "name": "TextBox 4",
+      "bbox": [
+        62.4,
+        561.6,
+        1027.2,
+        48
+      ],
+      "geometry": "rect",
+      "text": "汇报口径：HSNM/RSNM为静态噪声容限；read disturb与read stability margin是瞬态读操作的辅助解释量。",
+      "textPreview": "汇报口径：HSNM/RSNM为静态噪声容限；read disturb与read stability margin是瞬态读操作的辅助解释量。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "汇报口径：HSNM/RSNM为静态噪声容限；read disturb与read stability margin是瞬态读操作的辅助解释量。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "汇报口径：HSNM/RSNM为静态噪声容限；read disturb与read stability margin是瞬态读操作的辅助解释量。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "汇报口径：HSNM/RSNM为静态噪声容限；read disturb与read stability margin是瞬态读操作的辅助解释量。",
+              "fontSize": 17.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

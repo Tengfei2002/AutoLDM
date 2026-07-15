@@ -48,12 +48,12 @@ RC candidate 网表图：
 
 | 配置 | HSNM (mV) | RSNM (mV) | Read disturb (mV) | Read stability margin (mV) | Read delay (ps) | Write delay (ps) | Write-trip BL drop (mV) | Read energy (fJ) | Write energy (fJ) | Hold leakage (pW) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| No-RC | 268.00 | 108.00 | 143.70 | 206.30 | 15.20 | 37.40 | 454.00 | 0.029 | 0.039 | 1383.889 |
-| RC candidate | 267.50 | 106.00 | 145.20 | 204.80 | 15.60 | 38.60 | 450.00 | 0.043 | 0.114 | 1386.834 |
+| No-RC | 268.00 | 108.00 | 143.70 | 206.30 | 15.20 | 37.26 | 453.36 | 0.029 | 0.039 | 1383.889 |
+| RC candidate | 267.50 | 106.00 | 145.20 | 204.80 | 15.43 | 38.52 | 449.36 | 0.043 | 0.114 | 1386.834 |
 
 ## 4. 指标提取总览图
 
-下图展示 read disturb、read stability margin、read delay、write delay 与 write-trip BL drop 在曲线中的提取位置。图中数值与 `summary_metrics.csv` 使用同一离散采样口径。
+下图展示 read disturb、read stability margin、read delay、write delay 与 write-trip BL drop 在曲线中的提取位置。read delay 图采用 `WL=0.5VDD` 与 `BL-BLB=50 mV` 两个交点的线性插值读数。
 
 ![[sram_full_metrics/figures/metric_extraction_annotation.png]]
 
@@ -130,7 +130,7 @@ RSNM = min(VN_critical_Q1, VN_critical_Q0)
 | No-RC | 108.00 mV | 108.00 mV | 108.00 mV |
 | RC candidate | 106.00 mV | 107.00 mV | 106.00 mV |
 
-科研绘图说明：RSNM 图采用“双面板”呈现。左图保留完整 sweep 范围 `0-500 mV`，用于确认整体状态翻转；右图放大 `90-126 mV` 临界区，用于清楚展示 RSNM 竖线和交叉附近的曲线变化。横轴统一使用 `mV`，避免原先 `0-0.5 V` 比例尺压缩临界区的问题。
+RSNM 图采用双面板呈现：左图为完整 sweep 范围 `0-500 mV`，右图为 `100-110 mV` 临界区放大图，用于读取 RSNM 竖线和翻转附近的曲线变化。
 
 No-RC RSNM noise-source sweep:
 
@@ -185,7 +185,7 @@ read_delay = t(BL - BLB = 50 mV) - t(WL = 0.5VDD)
 结果：
 
 - No-RC: `15.20 ps`
-- RC candidate: `15.60 ps`
+- RC candidate: `15.43 ps`
 
 ![[sram_full_metrics/figures/ideal_read_bldiff.png]]
 
@@ -199,8 +199,8 @@ write_delay = t(Q = 0.5VDD) - t(WL = 0.5VDD)
 
 结果：
 
-- No-RC: `37.40 ps`
-- RC candidate: `38.60 ps`
+- No-RC: `37.26 ps`
+- RC candidate: `38.52 ps`
 
 ![[sram_full_metrics/figures/ideal_write_waveform.png]]
 
@@ -216,8 +216,8 @@ write_trip_BL_drop = VDD - VBL_at_crossing
 
 结果：
 
-- No-RC: `454.00 mV`
-- RC candidate: `450.00 mV`
+- No-RC: `453.36 mV`
+- RC candidate: `449.36 mV`
 
 ![[sram_full_metrics/figures/ideal_write_trip.png]]
 

@@ -1,0 +1,41 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"编辑母版文本样式 | 第二级 | 第三级 | 第四级"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"封面-1","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"x"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"目录-6部分","placeholders":[{"name":"body","type":"body","textPreview":"标题1"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"章节页","placeholders":[{"name":"body","type":"body","textPreview":"XX"},{"name":"body","type":"body","textPreview":"输入标题文本"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"内容页-标题","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"< ‹#› >"},{"name":"title","type":"title","textPreview":"X.X  单击此处输入标题"},{"name":"body","type":"body","textPreview":"单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"1_内容页-标题","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"< ‹#› >"},{"name":"body","type":"body","textPreview":"单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"结尾","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑结束语"},{"name":"subtitle","type":"subtitle","textPreview":"单击此处编辑作者信息"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"SRAM Simulations","textShapes":2}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"标题 1","placeholder":"title","text":"SRAM Simulations \nand IV – Fitness","textPreview":"SRAM Simulations  | and IV – Fitness","textChars":34,"textLines":2,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"文本占位符 2","placeholder":"body","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"< 2 >","textShapes":5}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"灯片编号占位符 1","placeholder":"slideNumber","text":"< 2 >","textPreview":"< 2 >","textChars":5,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"文本占位符 2","placeholder":"body","text":"IV(NFET)","textPreview":"IV(NFET)","textChars":8,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"矩形 5","bbox":[25.1,380.32,216.74,42.56]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"文本框 10","text":"Gemini","textPreview":"Gemini","textChars":6,"textLines":1,"bbox":[1029.28,238.49,101.68,38.78]}
+{"kind":"shape","id":"sh/nu58f2hs","slide":2,"name":"矩形 12","bbox":[669.03,227.38,127.67,30.5]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"文本框 17","text":"𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/20 = 0.7925\n𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/25 = 0.734\n𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/40 = 0.646","textPreview":"𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/20 = 0.7925 | 𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/25 = 0.734 | 𝐸𝑂𝑇 = T_(IL) + T_(HK)∗3.9/40 = 0.646","textChars":120,"textLines":3,"bbox":[556.35,289.94,668.38,100.25]}
+{"kind":"textbox","id":"sh/hcvy14ne","slide":2,"name":"文本框 23","text":"L     = 1.6e-8\nW     = 2.5e-8\nNF    = 1\nEOT_0 = 7.9e-10","textPreview":"L     = 1.6e-8 | W     = 2.5e-8 | NF    = 1 | EOT_0 = 7.9e-10","textChars":55,"textLines":4,"bbox":[713.28,450.46,317.79,138.94]}
+{"kind":"image","id":"im/zqlgral0","slide":2,"name":"图片 4","bbox":[19.16,59.94,491.88,459.99]}
+{"kind":"image","id":"im/0ruxkv2l","slide":2,"name":"图片 7","bbox":[855.75,13.41,347.05,169.02]}
+{"kind":"image","id":"im/ls3yt036","slide":2,"name":"图片 9","bbox":[556.35,196.89,619.92,60.99]}
+{"kind":"image","id":"im/mtwfm5kr","slide":2,"name":"图片 19","bbox":[-1.01,535.27,532.22,151.39]}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"< 3 >","textShapes":7}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"灯片编号占位符 1","placeholder":"slideNumber","text":"< 3 >","textPreview":"< 3 >","textChars":5,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"文本占位符 2","placeholder":"body","text":"参数变化展示","textPreview":"参数变化展示","textChars":6,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"文本框 4","text":"parameter real L=1.6e-8;\nparameter real W=2.5e-8;\nparameter real NF=1;\nparameter real U0 = 3.0e-2;\nparameter real XL=1.2e-8;\nparameter real DVTSHIFT=0.0; \nparameter real DeltaWGAA = 0;\nparameter real DeltaTGAA = 0;\nparameter real EOT_0 = 1.1e-9;  ","textPreview":"parameter real L=1.6e-8; | parameter real W=2.5e-8; | parameter real NF=1; | parameter real U0 = 3.0e-2; | parameter real XL=1.2e-8; | pa...","textChars":247,"textLines":9,"bbox":[70.52,88.9,639.83,214.12]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"文本框 6","text":"parameter real L=1.6e-8;\nparameter real W=2.5e-8;\nparameter real NF=1;\nparameter real U0 = 3.0e-2;\nparameter real XL=1.2e-8;\nparameter real DVTSHIFT=0.0; \nparameter real DeltaWGAA = 0;\nparameter real DeltaTGAA = 0;\nparameter real EOT_0 = 1.1e-10; ","textPreview":"parameter real L=1.6e-8; | parameter real W=2.5e-8; | parameter real NF=1; | parameter real U0 = 3.0e-2; | parameter real XL=1.2e-8; | pa...","textChars":247,"textLines":9,"bbox":[70.52,360,639.83,214.12]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"文本框 8","text":"L     = 1.6e-8\nW     = 2.5e-8\nNF    = 1\nEOT_0 = 7.9e-10","textPreview":"L     = 1.6e-8 | W     = 2.5e-8 | NF    = 1 | EOT_0 = 7.9e-10","textChars":55,"textLines":4,"bbox":[392.56,264.38,317.79,138.94]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"文本框 10","text":"parameter real L=1.6e-08;\nparameter real W=2.5e-08;\nparameter real NF=1;\nparameter real U0 = 2.465126225809e-02;\nparameter real XL=4.677576751588e-09;\nparameter real DVTSHIFT=2.340310883015e-01; \nparameter real DeltaWGAA = 2.048235619238e-09;\nparameter real DeltaTGAA = 1.409403394487e-09;\nparameter real EOT_0 = 7.9e-10;","textPreview":"parameter real L=1.6e-08; | parameter real W=2.5e-08; | parameter real NF=1; | parameter real U0 = 2.465126225809e-02; | parameter real X...","textChars":321,"textLines":9,"bbox":[702.93,69.58,639.83,214.12]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"name":"文本框 18","text":"parameter real L=1.6e-08;\nparameter real W=2.5e-08;\nparameter real NF=1;\nparameter real U0 = 4.593370855865e-02;\nparameter real XL=2.724361157963e-08;\nparameter real DVTSHIFT=3.953451585888e-01;\nparameter real DeltaWGAA = 6.394033645387e-09;\nparameter real DeltaTGAA = -3.582191512312e-10;\nparameter real EOT_0 = 7.6e-10; ","textPreview":"parameter real L=1.6e-08; | parameter real W=2.5e-08; | parameter real NF=1; | parameter real U0 = 4.593370855865e-02; | parameter real X...","textChars":322,"textLines":9,"bbox":[702.93,375.29,442.14,214.12]}
+{"kind":"image","id":"im/p4bu58jm","slide":3,"name":"图片 14","bbox":[1145.07,69.58,118.99,197.98]}
+{"kind":"image","id":"im/o32dw321","slide":3,"name":"图片 20","bbox":[1138.26,424.42,120.98,164.98]}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"< 4 >","textShapes":2}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"灯片编号占位符 1","placeholder":"slideNumber","text":"< 4 >","textPreview":"< 4 >","textChars":5,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"文本占位符 2","placeholder":"body","text":"IV","textPreview":"IV","textChars":2,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"image","id":"im/q1sbal07","slide":4,"name":"图片 6","bbox":[64.25,404.9,729.49,266.42]}
+{"kind":"image","id":"im/b2lc3q1s","slide":4,"name":"图片 8","bbox":[64.25,81.2,738.39,269.67]}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"< 5 >","textShapes":2}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"灯片编号占位符 1","placeholder":"slideNumber","text":"< 5 >","textPreview":"< 5 >","textChars":5,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"文本占位符 2","placeholder":"body","text":"SRAM结果展示和参数分析","textPreview":"SRAM结果展示和参数分析","textChars":13,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"image","id":"im/ulsbm18f","slide":5,"name":"图片 4","bbox":[60.37,58.07,875.88,200.45]}

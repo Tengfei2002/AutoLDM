@@ -1,0 +1,29 @@
+{
+  "best_tag": "eval_0142",
+  "fixed": {
+    "L": 1.6e-08,
+    "W": 2.5e-08,
+    "NF": 1.0,
+    "EOT_0": 7.9e-10
+  },
+  "params": {
+    "U0": 0.024651262258088006,
+    "XL": 4.677576751587678e-09,
+    "DVTSHIFT": 0.23403108830146474,
+    "DeltaWGAA": 2.048235619237761e-09,
+    "DeltaTGAA": 1.4094033944865978e-09
+  },
+  "metrics": {
+    "loss": 0.1726265865388116,
+    "log_rmse_all": 0.12153139248228878,
+    "log_rmse_vd005": 0.10459824760293367,
+    "log_rmse_vd070": 0.13984361553189867,
+    "rel_rmse_high_vd005": 0.09971268950955615,
+    "rel_rmse_high_vd070": 0.2409219375339295,
+    "max_abs_log_err": 0.3175458999188585
+  },
+  "reference_files": {
+    "vd005": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\nfet_idvg_0_05V_48nm.csv",
+    "vd070": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\nfet_idvg_0_70V_48nm.csv"
+  }
+}

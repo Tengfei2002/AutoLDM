@@ -1,0 +1,96 @@
+{
+  "operation": "Id_scaled",
+  "formula": "Id_scaled = Id_original / 0.44893 * 3.9E-5 / 0.156",
+  "scale": 0.0005568796917114027,
+  "backup_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale",
+  "files": [
+    {
+      "file": "nfet_idvg_0_05V_44nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 3.472388e-07,
+      "before_max": 0.0752094,
+      "after_min": 1.9337023589423744e-10,
+      "after_max": 4.188258748579957e-05,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\nfet_idvg_0_05V_44nm.csv"
+    },
+    {
+      "file": "nfet_idvg_0_05V_48nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 3.472388e-07,
+      "before_max": 0.0752094,
+      "after_min": 1.9337023589423744e-10,
+      "after_max": 4.188258748579957e-05,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\nfet_idvg_0_05V_48nm.csv"
+    },
+    {
+      "file": "nfet_idvg_0_70V_44nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 8.352411e-07,
+      "before_max": 0.962058,
+      "after_min": 4.651288062726929e-10,
+      "after_max": 0.0005357505624484887,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\nfet_idvg_0_70V_44nm.csv"
+    },
+    {
+      "file": "nfet_idvg_0_70V_48nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 8.352411e-07,
+      "before_max": 0.962058,
+      "after_min": 4.651288062726929e-10,
+      "after_max": 0.0005357505624484887,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\nfet_idvg_0_70V_48nm.csv"
+    },
+    {
+      "file": "pfet_idvg_0_05V_44nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 3.338432e-07,
+      "before_max": 0.0843604,
+      "after_min": 1.8591049829594816e-10,
+      "after_max": 4.697859354465062e-05,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\pfet_idvg_0_05V_44nm.csv"
+    },
+    {
+      "file": "pfet_idvg_0_05V_48nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 1.07769e-07,
+      "before_max": 0.0713768,
+      "after_min": 6.001436749604617e-11,
+      "after_max": 3.974829037934645e-05,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\pfet_idvg_0_05V_48nm.csv"
+    },
+    {
+      "file": "pfet_idvg_0_70V_44nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 1.440221e-06,
+      "before_max": 1.03464,
+      "after_min": 8.020298264762881e-10,
+      "after_max": 0.0005761700042322857,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\pfet_idvg_0_70V_44nm.csv"
+    },
+    {
+      "file": "pfet_idvg_0_70V_48nm.csv",
+      "first_column": "Vg",
+      "scaled_column": "Id",
+      "scale": 0.0005568796917114027,
+      "before_min": 1.495424e-05,
+      "before_max": 1.07911,
+      "after_min": 8.327712560978327e-09,
+      "after_max": 0.0006009344441226918,
+      "backup": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\Hspice\\.ref_iv\\backup_before_id_scale\\pfet_idvg_0_70V_48nm.csv"
+    }
+  ]
+}

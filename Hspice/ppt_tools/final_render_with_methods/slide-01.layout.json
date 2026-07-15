@@ -1,0 +1,1310 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y90nupkv",
+    "id": "y90nupkv",
+    "slide": 1,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "封面-1",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "微软雅黑",
+      "黑体"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "封面-1",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/33",
+          "id": "33",
+          "name": "标题 32",
+          "bbox": [
+            95.84,
+            295.1,
+            1104,
+            139.17
+          ],
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "autoFit": "shrinkText"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 100000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/48",
+          "id": "48",
+          "name": "图片 2",
+          "bbox": [
+            0,
+            0,
+            1280,
+            197.45
+          ],
+          "contentType": "image/png",
+          "imageCrop": {
+            "left": 0,
+            "top": 0.31747,
+            "right": 0,
+            "bottom": 0.12235
+          },
+          "asset": {
+            "assetId": "/ppt/media/image1.png",
+            "contentType": "image/png",
+            "byteLength": 965838
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image1.png",
+            "contentType": "image/png",
+            "byteLength": 965838
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/4",
+          "id": "4",
+          "name": "矩形 3",
+          "bbox": [
+            -0.17,
+            -0.86,
+            1280,
+            197.45
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "rgba(154, 0, 1, 0.28)",
+          "lineWidth": 0
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/5",
+          "id": "5",
+          "name": "椭圆 4",
+          "bbox": [
+            556.8,
+            114.25,
+            166.4,
+            166.4
+          ],
+          "geometry": "ellipse",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "bg1",
+          "lineWidth": 0
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/7",
+          "id": "7",
+          "name": "Freeform 8",
+          "bbox": [
+            568,
+            125.61,
+            144,
+            143.66
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 6,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/8",
+          "id": "8",
+          "name": "Freeform 42",
+          "bbox": [
+            586.8,
+            144.24,
+            106.24,
+            106.07
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 7,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/9",
+          "id": "9",
+          "name": "Freeform 43",
+          "bbox": [
+            683.3,
+            154.82,
+            11.75,
+            14.1
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 8,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/10",
+          "id": "10",
+          "name": "Freeform 44",
+          "bbox": [
+            573.71,
+            181.5,
+            11.24,
+            12.08
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 9,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/11",
+          "id": "11",
+          "name": "Freeform 45",
+          "bbox": [
+            672.22,
+            142.9,
+            12.25,
+            13.09
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 10,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/12",
+          "id": "12",
+          "name": "Freeform 46",
+          "bbox": [
+            573.71,
+            200.3,
+            10.57,
+            10.07
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 11,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/13",
+          "id": "13",
+          "name": "Freeform 47",
+          "bbox": [
+            627.58,
+            252.66,
+            7.38,
+            10.57
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 12,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/14",
+          "id": "14",
+          "name": "Freeform 48",
+          "bbox": [
+            577.9,
+            217.08,
+            10.91,
+            9.4
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 13,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/15",
+          "id": "15",
+          "name": "Freeform 49",
+          "bbox": [
+            584.28,
+            153.31,
+            12.92,
+            14.1
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 14,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/16",
+          "id": "16",
+          "name": "Freeform 50",
+          "bbox": [
+            660.14,
+            248.13,
+            9.06,
+            10.41
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 15,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/17",
+          "id": "17",
+          "name": "Freeform 51",
+          "bbox": [
+            596.53,
+            141.56,
+            12.25,
+            11.92
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 16,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/18",
+          "id": "18",
+          "name": "Freeform 52",
+          "bbox": [
+            632.78,
+            130.65,
+            9.73,
+            10.57
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 17,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/19",
+          "id": "19",
+          "name": "Freeform 53",
+          "bbox": [
+            644.7,
+            252.66,
+            7.55,
+            10.74
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 18,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/20",
+          "id": "20",
+          "name": "Freeform 54",
+          "bbox": [
+            615.33,
+            132.66,
+            10.07,
+            11.41
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 19,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/21",
+          "id": "21",
+          "name": "Freeform 55",
+          "bbox": [
+            691.52,
+            171.26,
+            11.75,
+            9.4
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 20,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/22",
+          "id": "22",
+          "name": "Freeform 56",
+          "bbox": [
+            691.69,
+            215.4,
+            11.58,
+            10.74
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 21,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/23",
+          "id": "23",
+          "name": "Freeform 57",
+          "bbox": [
+            695.89,
+            198.79,
+            10.24,
+            9.06
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 22,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/24",
+          "id": "24",
+          "name": "Freeform 58",
+          "bbox": [
+            661.99,
+            134.68,
+            9.23,
+            11.58
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 23,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/25",
+          "id": "25",
+          "name": "Freeform 59",
+          "bbox": [
+            578.24,
+            168.24,
+            10.57,
+            9.23
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 24,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/26",
+          "id": "26",
+          "name": "Freeform 60",
+          "bbox": [
+            695.72,
+            185.53,
+            10.24,
+            6.71
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 25,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/27",
+          "id": "27",
+          "name": "Freeform 61",
+          "bbox": [
+            648.22,
+            131.82,
+            6.21,
+            10.41
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 26,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/28",
+          "id": "28",
+          "name": "Freeform 62",
+          "bbox": [
+            610.29,
+            248.8,
+            7.72,
+            10.07
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 27,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/29",
+          "id": "29",
+          "name": "Freeform 71",
+          "bbox": [
+            591.33,
+            148.77,
+            97.34,
+            97.17
+          ],
+          "rotation": 0,
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 28,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/30",
+          "id": "30",
+          "name": "矩形 29",
+          "bbox": [
+            615.57,
+            476.42,
+            69.85,
+            4.8
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "vertical": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "fillColor": "#9A0001",
+          "lineWidth": 0
+        },
+        {
+          "order": 29,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/32",
+          "id": "32",
+          "name": "文本框 31",
+          "bbox": [
+            327.92,
+            502.24,
+            639.84,
+            46.5
+          ],
+          "geometry": "rect",
+          "text": "姓名：张腾飞",
+          "textPreview": "姓名：张腾飞",
+          "resolvedTextStyle": {
+            "wrap": "square",
+            "autoFit": "resizeShapeToFitText"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "姓名：张腾飞",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 150000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "姓名：张腾飞",
+                  "fontSize": 24,
+                  "typeface": "黑体",
+                  "color": "#000000",
+                  "bold": true,
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 30,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/40",
+          "id": "40",
+          "name": "文本占位符 39",
+          "bbox": [
+            649.62,
+            551.17,
+            55.4,
+            49.17
+          ],
+          "text": "x",
+          "textPreview": "x",
+          "resolvedTextStyle": {
+            "autoFit": "none"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "x",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 150000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "x",
+                  "fontSize": 24,
+                  "typeface": "黑体",
+                  "color": "#000000",
+                  "bold": true,
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 31,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/44",
+          "id": "44",
+          "name": "文本框 43",
+          "bbox": [
+            532.89,
+            551.76,
+            174.95,
+            46.5
+          ],
+          "geometry": "rect",
+          "text": "2026年",
+          "textPreview": "2026年",
+          "resolvedTextStyle": {
+            "wrap": "square",
+            "autoFit": "resizeShapeToFitText"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2026年",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 150000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2026",
+                  "fontSize": 24,
+                  "typeface": "黑体",
+                  "color": "#000000",
+                  "bold": true,
+                  "textTransform": "none"
+                },
+                {
+                  "index": 2,
+                  "text": "年",
+                  "fontSize": 24,
+                  "typeface": "黑体",
+                  "color": "#000000",
+                  "bold": true,
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 32,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/47",
+          "id": "47",
+          "name": "文本框 46",
+          "bbox": [
+            688.67,
+            551.76,
+            44.13,
+            46.5
+          ],
+          "geometry": "rect",
+          "text": "月",
+          "textPreview": "月",
+          "resolvedTextStyle": {
+            "wrap": "none",
+            "autoFit": "resizeShapeToFitText"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "月",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 150000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "月",
+                  "fontSize": 24,
+                  "typeface": "黑体",
+                  "color": "#000000",
+                  "bold": true,
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/547294r6",
+      "id": "2",
+      "name": "标题 1",
+      "bbox": [
+        95.84,
+        295.1,
+        1104,
+        139.17
+      ],
+      "text": "SRAM Simulations \nand IV – Fitness",
+      "textPreview": "SRAM Simulations  | and IV – Fitness",
+      "resolvedFontSize": 53.33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "vertical": 1,
+        "fontSize": 53.33,
+        "typeface": "微软雅黑",
+        "color": "#9A0001",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SRAM Simulations"
+          },
+          {
+            "index": 2,
+            "text": "and IV – Fitness"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SRAM Simulations \nand IV – Fitness",
+          "runs": [
+            {
+              "index": 1,
+              "text": "SRAM Simulations "
+            },
+            {
+              "index": 2,
+              "text": "\n"
+            },
+            {
+              "index": 3,
+              "text": "and IV – Fitness"
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 90000
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3yl0zql",
+      "id": "3",
+      "name": "文本占位符 2",
+      "bbox": [
+        649.62,
+        551.17,
+        55.4,
+        49.17
+      ],
+      "text": "7",
+      "textPreview": "7",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "黑体",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "center",
+        "textTransform": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "7"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "7",
+          "runs": [
+            {
+              "index": 1,
+              "text": "7"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 150000,
+          "spaceBefore": 0,
+          "spaceAfter": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

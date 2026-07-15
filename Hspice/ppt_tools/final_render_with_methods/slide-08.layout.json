@@ -1,0 +1,1227 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/fu1gfa1s",
+    "id": "fu1gfa1s",
+    "slide": 8,
+    "layoutId": "/ppt/slideLayouts/slideLayout5.xml",
+    "layoutName": "1_内容页-标题",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "自定义 2",
+    "colors": {
+      "accent1": "#9A0001",
+      "accent2": "#CEAB6E",
+      "accent3": "#063771",
+      "accent4": "#F3F4F8",
+      "accent5": "#64646C",
+      "accent6": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#768395",
+      "lt2": "#F0F0F0",
+      "hlink": "#0070C0",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "自定义 1",
+      "majorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "1_内容页-标题",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/61",
+          "id": "61",
+          "name": "灯片编号占位符 8",
+          "bbox": [
+            945.49,
+            671.32,
+            288,
+            30.68
+          ],
+          "geometry": "rect",
+          "text": "< ‹#› >",
+          "textPreview": "< ‹#› >",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "< ‹#› >",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "< "
+                },
+                {
+                  "index": 2,
+                  "text": "‹#›"
+                },
+                {
+                  "index": 3,
+                  "text": " "
+                },
+                {
+                  "index": 4,
+                  "text": ">"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout5.xml/8",
+          "id": "8",
+          "name": "文本占位符 2",
+          "bbox": [
+            13.9,
+            18,
+            972.93,
+            40.07
+          ],
+          "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "textPreview": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论",
+              "marginLeft": 342900,
+              "indent": -342900,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处输入本页的结论单击此处输入本页的结论单击此处输入本页的结论"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": " 编辑母版文本样式\n第二级\n第三级\n第四级",
+          "textPreview": "编辑母版文本样式 | 第二级 | 第三级 | 第四级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": " 编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": " 编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "第二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "第三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "第四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "第四级"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18byd4zy",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        24,
+        24,
+        1017.6,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "u 指标含义与测试条件：速度、写能力与能耗",
+      "textPreview": "u 指标含义与测试条件：速度、写能力与能耗",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "u 指标含义与测试条件：速度、写能力与能耗"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "u 指标含义与测试条件：速度、写能力与能耗",
+          "runs": [
+            {
+              "index": 1,
+              "text": "u 指标含义与测试条件：速度、写能力与能耗",
+              "fontSize": 29.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g72x4zyd",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        1113.6,
+        628.8,
+        76.8,
+        19.2
+      ],
+      "geometry": "rect",
+      "text": "< 8 >",
+      "textPreview": "< 8 >",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "< 8 >"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "< 8 >",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "< 8 >",
+              "fontSize": 13.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#696969"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/4zud8jit",
+      "id": "6",
+      "name": "Table 3",
+      "bbox": [
+        52.8,
+        96,
+        1065.6,
+        451.2
+      ],
+      "text": "指标 | 物理含义 | 测试条件 | 提取/计算方法\nRead delay | 读出速度proxy；位线差分达到sense阈值所需时间。 | Read transient；WL上升打开access管，BL/BLB预充至VDD。 | read_delay = t(BL−BLB=50 mV) − t(WL=0.5VDD)。\nWrite delay | 写入速度；存储节点跨过中点电压的时间。 | Write-0 transient；BL拉低、BLB保持高，WL打开。 | write_delay = t(Q=0.5VDD) − t(WL=0.5VDD)。\nWrite-trip BL drop | 写能力proxy；写0时BL需从VDD下拉多少才能触发cell翻转。 | Write-trip DC sweep；逐步降低BL，观察Q/QB交叉点。 | BL_drop = VDD − VBL_at_crossing；不等同严格WSNM/WRM。\nRead/write energy | 单cell读/写操作中从电源端消耗的能量。 | 对应read/write transient窗口，统计VDD电源电流。 | E = ∫ VDD·abs(I(VDD_SRC)) dt，单位fJ。\nHold leakage | 保持状态下的静态漏电功耗。 | Hold mode稳态；WL=0，存储节点维持既定状态。 | P_leak = VDD·abs(I_VDD)，单位pW。",
+      "textPreview": "指标 | 物理含义 | 测试条件 | 提取/计算方法 | Read delay | 读出速度proxy；位线差分达到sense阈值所需时间。 | Read transient；WL上升打开access管，BL/BLB预充至VDD。 | read_delay = t(BL−B...",
+      "rows": 6,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            52.8,
+            96,
+            120,
+            75.2
+          ],
+          "text": "指标",
+          "textPreview": "指标",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "指标",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "指标",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            172.8,
+            96,
+            288,
+            75.2
+          ],
+          "text": "物理含义",
+          "textPreview": "物理含义",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "物理含义",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "物理含义",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            460.8,
+            96,
+            307.2,
+            75.2
+          ],
+          "text": "测试条件",
+          "textPreview": "测试条件",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "测试条件",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "测试条件",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            768,
+            96,
+            350.4,
+            75.2
+          ],
+          "text": "提取/计算方法",
+          "textPreview": "提取/计算方法",
+          "fillColor": "#EBEBEB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "提取/计算方法",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "提取/计算方法",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            52.8,
+            171.2,
+            120,
+            75.2
+          ],
+          "text": "Read delay",
+          "textPreview": "Read delay",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read delay",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read delay",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            172.8,
+            171.2,
+            288,
+            75.2
+          ],
+          "text": "读出速度proxy；位线差分达到sense阈值所需时间。",
+          "textPreview": "读出速度proxy；位线差分达到sense阈值所需时间。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "读出速度proxy；位线差分达到sense阈值所需时间。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "读出速度proxy；位线差分达到sense阈值所需时间。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            460.8,
+            171.2,
+            307.2,
+            75.2
+          ],
+          "text": "Read transient；WL上升打开access管，BL/BLB预充至VDD。",
+          "textPreview": "Read transient；WL上升打开access管，BL/BLB预充至VDD。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read transient；WL上升打开access管，BL/BLB预充至VDD。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read transient；WL上升打开access管，BL/BLB预充至VDD。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            768,
+            171.2,
+            350.4,
+            75.2
+          ],
+          "text": "read_delay = t(BL−BLB=50 mV) − t(WL=0.5VDD)。",
+          "textPreview": "read_delay = t(BL−BLB=50 mV) − t(WL=0.5VDD)。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "read_delay = t(BL−BLB=50 mV) − t(WL=0.5VDD)。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "read_delay = t(BL−BLB=50 mV) − t(WL=0.5VDD)。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            52.8,
+            246.4,
+            120,
+            75.2
+          ],
+          "text": "Write delay",
+          "textPreview": "Write delay",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Write delay",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Write delay",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            172.8,
+            246.4,
+            288,
+            75.2
+          ],
+          "text": "写入速度；存储节点跨过中点电压的时间。",
+          "textPreview": "写入速度；存储节点跨过中点电压的时间。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "写入速度；存储节点跨过中点电压的时间。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "写入速度；存储节点跨过中点电压的时间。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            460.8,
+            246.4,
+            307.2,
+            75.2
+          ],
+          "text": "Write-0 transient；BL拉低、BLB保持高，WL打开。",
+          "textPreview": "Write-0 transient；BL拉低、BLB保持高，WL打开。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Write-0 transient；BL拉低、BLB保持高，WL打开。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Write-0 transient；BL拉低、BLB保持高，WL打开。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            768,
+            246.4,
+            350.4,
+            75.2
+          ],
+          "text": "write_delay = t(Q=0.5VDD) − t(WL=0.5VDD)。",
+          "textPreview": "write_delay = t(Q=0.5VDD) − t(WL=0.5VDD)。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "write_delay = t(Q=0.5VDD) − t(WL=0.5VDD)。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "write_delay = t(Q=0.5VDD) − t(WL=0.5VDD)。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            52.8,
+            321.6,
+            120,
+            75.2
+          ],
+          "text": "Write-trip BL drop",
+          "textPreview": "Write-trip BL drop",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Write-trip BL drop",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Write-trip BL drop",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            172.8,
+            321.6,
+            288,
+            75.2
+          ],
+          "text": "写能力proxy；写0时BL需从VDD下拉多少才能触发cell翻转。",
+          "textPreview": "写能力proxy；写0时BL需从VDD下拉多少才能触发cell翻转。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "写能力proxy；写0时BL需从VDD下拉多少才能触发cell翻转。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "写能力proxy；写0时BL需从VDD下拉多少才能触发cell翻转。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            460.8,
+            321.6,
+            307.2,
+            75.2
+          ],
+          "text": "Write-trip DC sweep；逐步降低BL，观察Q/QB交叉点。",
+          "textPreview": "Write-trip DC sweep；逐步降低BL，观察Q/QB交叉点。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Write-trip DC sweep；逐步降低BL，观察Q/QB交叉点。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Write-trip DC sweep；逐步降低BL，观察Q/QB交叉点。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            768,
+            321.6,
+            350.4,
+            75.2
+          ],
+          "text": "BL_drop = VDD − VBL_at_crossing；不等同严格WSNM/WRM。",
+          "textPreview": "BL_drop = VDD − VBL_at_crossing；不等同严格WSNM/WRM。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "BL_drop = VDD − VBL_at_crossing；不等同严格WSNM/WRM。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "BL_drop = VDD − VBL_at_crossing；不等同严格WSNM/WRM。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            52.8,
+            396.8,
+            120,
+            75.2
+          ],
+          "text": "Read/write energy",
+          "textPreview": "Read/write energy",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Read/write energy",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Read/write energy",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            172.8,
+            396.8,
+            288,
+            75.2
+          ],
+          "text": "单cell读/写操作中从电源端消耗的能量。",
+          "textPreview": "单cell读/写操作中从电源端消耗的能量。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单cell读/写操作中从电源端消耗的能量。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单cell读/写操作中从电源端消耗的能量。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            460.8,
+            396.8,
+            307.2,
+            75.2
+          ],
+          "text": "对应read/write transient窗口，统计VDD电源电流。",
+          "textPreview": "对应read/write transient窗口，统计VDD电源电流。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "对应read/write transient窗口，统计VDD电源电流。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "对应read/write transient窗口，统计VDD电源电流。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            768,
+            396.8,
+            350.4,
+            75.2
+          ],
+          "text": "E = ∫ VDD·abs(I(VDD_SRC)) dt，单位fJ。",
+          "textPreview": "E = ∫ VDD·abs(I(VDD_SRC)) dt，单位fJ。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "E = ∫ VDD·abs(I(VDD_SRC)) dt，单位fJ。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "E = ∫ VDD·abs(I(VDD_SRC)) dt，单位fJ。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            52.8,
+            472,
+            120,
+            75.2
+          ],
+          "text": "Hold leakage",
+          "textPreview": "Hold leakage",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Hold leakage",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Hold leakage",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            172.8,
+            472,
+            288,
+            75.2
+          ],
+          "text": "保持状态下的静态漏电功耗。",
+          "textPreview": "保持状态下的静态漏电功耗。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "保持状态下的静态漏电功耗。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "保持状态下的静态漏电功耗。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            460.8,
+            472,
+            307.2,
+            75.2
+          ],
+          "text": "Hold mode稳态；WL=0，存储节点维持既定状态。",
+          "textPreview": "Hold mode稳态；WL=0，存储节点维持既定状态。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Hold mode稳态；WL=0，存储节点维持既定状态。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Hold mode稳态；WL=0，存储节点维持既定状态。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "row": 6,
+          "column": 4,
+          "bbox": [
+            768,
+            472,
+            350.4,
+            75.2
+          ],
+          "text": "P_leak = VDD·abs(I_VDD)，单位pW。",
+          "textPreview": "P_leak = VDD·abs(I_VDD)，单位pW。",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "P_leak = VDD·abs(I_VDD)，单位pW。",
+              "resolvedTextStyle": {
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "P_leak = VDD·abs(I_VDD)，单位pW。",
+                  "fontSize": 11.59,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#323232"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6h0fypgb",
+      "id": "5",
+      "name": "TextBox 4",
+      "bbox": [
+        62.4,
+        568.32,
+        1027.2,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "注意：delay/energy为cell-level指标，不包含decoder、sense amplifier和write driver。",
+      "textPreview": "注意：delay/energy为cell-level指标，不包含decoder、sense amplifier和write driver。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "注意：delay/energy为cell-level指标，不包含decoder、sense amplifier和write driver。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "注意：delay/energy为cell-level指标，不包含decoder、sense amplifier和write driver。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "注意：delay/energy为cell-level指标，不包含decoder、sense amplifier和write driver。",
+              "fontSize": 17.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#323232",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
