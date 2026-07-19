@@ -1,0 +1,763 @@
+ ****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: eval_0037.sp                                                      
+  Command line options: C:\synopsys\Hspice_P-2019.06-SP1-1\WIN64\hspice.com -i eval_0037.sp -o C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\pfet_48nm_dualvd_fit\results\eval_0037\eval_0037
+  Start time: Mon Jul 13 19:18:48 2026
+  lic:  
+  lic: FLEXlm: SDK_12.3 
+  lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM 
+  lic: HOSTID: "00155daa97f3"       PID:      52076 
+  lic: Using FLEXlm license file: 
+  lic: 27000@LAPTOP-K9QP6UAM 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12 
+  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM 
+  lic:   
+ **info** *pvaI* Module (cfet_pmos_lvt): 4 unexpanded port, 0 init, 1005 behav, 4 contrib, 136/1439 expr(s)
+
+ **info** *pvaI*        Has DIS(ST), 2/146 afCount, 0 MT, sys, IO(0/0/1/0)
+
+ **info** *pvaI*        0 gmdIsThreadSafe (ST)
+
+ **info** *pvaI*        0 const-G and 0 const-C, Has switchBranch, 22 bypassOpt, 0 bus2scalar, 0 vwb
+
+ **info** *pvaI*        set_va_exp = 600 set by default
+
+ **warning** *pvaW*        variable 'tgaamax' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:45)
+
+ **warning** *pvaW*                   To relax this rule, use 'setenv PVA_KEEP_VARS 1' to keep variables for probing.
+
+ **warning** *pvaW*        variable 'tgaamin' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:46)
+
+ **warning** *pvaW*        variable 'HFIN' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:450)
+
+ **warning** *pvaW*        variable 'Inv_L' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2314)
+
+ **warning** *pvaW*        variable 'Inv_NFIN' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2315)
+
+ **warning** *pvaW*        variable 'Inv_LNFIN' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2316)
+
+ **warning** *pvaW*        variable 'Inv_W' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2317)
+
+ **warning** *pvaW*        variable 'Inv_WL' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2318)
+
+ **warning** *pvaW*        variable 'WDIM0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:485)
+
+ **warning** *pvaW*        variable 'WDIMR' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:486)
+
+ **warning** *pvaW*        variable 'WSSP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:487)
+
+ **warning** *pvaW*        variable 'WSSPR' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:488)
+
+ **warning** *pvaW*        variable 'DIM1H' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:490)
+
+ **warning** *pvaW*        variable 'DIMENSION1_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:491)
+
+ **warning** *pvaW*        variable 'DIM2H' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:492)
+
+ **warning** *pvaW*        variable 'DIMENSION2_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:493)
+
+ **warning** *pvaW*        variable 'DIM3H' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:494)
+
+ **warning** *pvaW*        variable 'DIMENSION3_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:495)
+
+ **warning** *pvaW*        variable 'DSSP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:496)
+
+ **warning** *pvaW*        variable 'DSSP2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:497)
+
+ **warning** *pvaW*        variable 'DSSP3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:498)
+
+ **warning** *pvaW*        variable 'SSP1_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:499)
+
+ **warning** *pvaW*        variable 'SSP2_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:500)
+
+ **warning** *pvaW*        variable 'SSP3_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:501)
+
+ **warning** *pvaW*        variable 'TSRE2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:503)
+
+ **warning** *pvaW*        variable 'TDWSE2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:504)
+
+ **warning** *pvaW*        variable 'TSRE3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:505)
+
+ **warning** *pvaW*        variable 'TDWSE3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:506)
+
+ **warning** *pvaW*        variable 'TSRQ1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:508)
+
+ **warning** *pvaW*        variable 'TDWSQ1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:509)
+
+ **warning** *pvaW*        variable 'TSRQ2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:510)
+
+ **warning** *pvaW*        variable 'TDWSQ2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:511)
+
+ **warning** *pvaW*        variable 'TSRQ3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:512)
+
+ **warning** *pvaW*        variable 'TDWSQ3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:513)
+
+ **warning** *pvaW*        variable 'WGAANOM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:515)
+
+ **warning** *pvaW*        variable 'WSFE2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:516)
+
+ **warning** *pvaW*        variable 'WSFE3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:517)
+
+ **warning** *pvaW*        variable 'E2NOM_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:519)
+
+ **warning** *pvaW*        variable 'E3NOM_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:520)
+
+ **warning** *pvaW*        variable 'MFE2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:522)
+
+ **warning** *pvaW*        variable 'MFE3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:523)
+
+ **warning** *pvaW*        variable 'MFQ1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:525)
+
+ **warning** *pvaW*        variable 'MFQ2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:526)
+
+ **warning** *pvaW*        variable 'MFQ3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:527)
+
+ **warning** *pvaW*        variable 'WSFQ1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:529)
+
+ **warning** *pvaW*        variable 'WSFQ2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:530)
+
+ **warning** *pvaW*        variable 'WSFQ3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:531)
+
+ **warning** *pvaW*        variable 'MFQ1NOM_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:533)
+
+ **warning** *pvaW*        variable 'MFQ2NOM_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:534)
+
+ **warning** *pvaW*        variable 'MFQ3NOM_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:535)
+
+ **warning** *pvaW*        variable 'QMFACTOR_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:537)
+
+ **warning** *pvaW*        variable 'QMTCENCV_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:539)
+
+ **warning** *pvaW*        variable 'ETAMOBTHIN' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:547)
+
+ **warning** *pvaW*        variable 'ETAMOB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:548)
+
+ **warning** *pvaW*        variable 'ETAMOBTNI' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:549)
+
+ **warning** *pvaW*        variable 'ETAMOBIR' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:550)
+
+ **warning** *pvaW*        variable 'UA' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:551)
+
+ **warning** *pvaW*        variable 'UATHIN' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:552)
+
+ **warning** *pvaW*        variable 'UATSAT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:553)
+
+ **warning** *pvaW*        variable 'UARTSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:554)
+
+ **warning** *pvaW*        variable 'UATNI' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:555)
+
+ **warning** *pvaW*        variable 'UAIR' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:556)
+
+ **warning** *pvaW*        variable 'EUTHIN' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:557)
+
+ **warning** *pvaW*        variable 'EU' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:558)
+
+ **warning** *pvaW*        variable 'EUPTSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:559)
+
+ **warning** *pvaW*        variable 'EUTNI' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:560)
+
+ **warning** *pvaW*        variable 'EUIR' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:561)
+
+ **warning** *pvaW*        variable 'U0ETAWSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:562)
+
+ **warning** *pvaW*        variable 'EGBULK' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:563)
+
+ **warning** *pvaW*        variable 'U0EMSM1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:564)
+
+ **warning** *pvaW*        variable 'U0EMSM2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:565)
+
+ **warning** *pvaW*        variable 'UDTHIN' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:568)
+
+ **warning** *pvaW*        variable 'UD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:569)
+
+ **warning** *pvaW*        variable 'UDTSAT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:570)
+
+ **warning** *pvaW*        variable 'UDPTSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:571)
+
+ **warning** *pvaW*        variable 'PSAT_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:578)
+
+ **warning** *pvaW*        variable 'PSATCV_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:579)
+
+ **warning** *pvaW*        variable 'DELTAVSAT_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:580)
+
+ **warning** *pvaW*        variable 'DELTAVSATCV_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:581)
+
+ **warning** *pvaW*        variable 'PTWG_a' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:582)
+
+ **warning** *pvaW*        variable 'PCLMG' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:609)
+
+ **warning** *pvaW*        variable 'PCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:614)
+
+ **warning** *pvaW*        variable 'LPCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:615)
+
+ **warning** *pvaW*        variable 'NPCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:616)
+
+ **warning** *pvaW*        variable 'PPCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:617)
+
+ **warning** *pvaW*        variable 'WPCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:618)
+
+ **warning** *pvaW*        variable 'P2PCLM' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:619)
+
+ **warning** *pvaW*        variable 'PCLMCV_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:621)
+
+ **warning** *pvaW*        variable 'DVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:623)
+
+ **warning** *pvaW*        variable 'LDVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:624)
+
+ **warning** *pvaW*        variable 'NDVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:625)
+
+ **warning** *pvaW*        variable 'PDVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:626)
+
+ **warning** *pvaW*        variable 'WDVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:627)
+
+ **warning** *pvaW*        variable 'P2DVT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:628)
+
+ **warning** *pvaW*        variable 'DVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:630)
+
+ **warning** *pvaW*        variable 'LDVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:631)
+
+ **warning** *pvaW*        variable 'NDVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:632)
+
+ **warning** *pvaW*        variable 'PDVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:633)
+
+ **warning** *pvaW*        variable 'WDVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:634)
+
+ **warning** *pvaW*        variable 'P2DVT1SS' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:635)
+
+ **warning** *pvaW*        variable 'DSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:637)
+
+ **warning** *pvaW*        variable 'LDSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:638)
+
+ **warning** *pvaW*        variable 'NDSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:639)
+
+ **warning** *pvaW*        variable 'PDSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:640)
+
+ **warning** *pvaW*        variable 'WDSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:641)
+
+ **warning** *pvaW*        variable 'P2DSUB' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:642)
+
+ **warning** *pvaW*        variable 'LPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:644)
+
+ **warning** *pvaW*        variable 'LLPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:645)
+
+ **warning** *pvaW*        variable 'NLPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:646)
+
+ **warning** *pvaW*        variable 'PLPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:647)
+
+ **warning** *pvaW*        variable 'WLPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:648)
+
+ **warning** *pvaW*        variable 'P2LPE0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:649)
+
+ **warning** *pvaW*        variable 'CDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:651)
+
+ **warning** *pvaW*        variable 'LCDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:652)
+
+ **warning** *pvaW*        variable 'NCDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:653)
+
+ **warning** *pvaW*        variable 'PCDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:654)
+
+ **warning** *pvaW*        variable 'WCDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:655)
+
+ **warning** *pvaW*        variable 'P2CDSC' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:656)
+
+ **warning** *pvaW*        variable 'CDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:658)
+
+ **warning** *pvaW*        variable 'LCDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:659)
+
+ **warning** *pvaW*        variable 'NCDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:660)
+
+ **warning** *pvaW*        variable 'PCDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:661)
+
+ **warning** *pvaW*        variable 'WCDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:662)
+
+ **warning** *pvaW*        variable 'P2CDSCD' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:663)
+
+ **warning** *pvaW*        variable 'CIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:665)
+
+ **warning** *pvaW*        variable 'LCIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:666)
+
+ **warning** *pvaW*        variable 'NCIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:667)
+
+ **warning** *pvaW*        variable 'PCIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:668)
+
+ **warning** *pvaW*        variable 'WCIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:669)
+
+ **warning** *pvaW*        variable 'P2CIT' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:670)
+
+ **warning** *pvaW*        variable 'DVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:672)
+
+ **warning** *pvaW*        variable 'LDVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:673)
+
+ **warning** *pvaW*        variable 'NDVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:674)
+
+ **warning** *pvaW*        variable 'PDVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:675)
+
+ **warning** *pvaW*        variable 'WDVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:676)
+
+ **warning** *pvaW*        variable 'P2DVT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:677)
+
+ **warning** *pvaW*        variable 'ETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:679)
+
+ **warning** *pvaW*        variable 'LETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:680)
+
+ **warning** *pvaW*        variable 'NETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:681)
+
+ **warning** *pvaW*        variable 'PETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:682)
+
+ **warning** *pvaW*        variable 'WETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:683)
+
+ **warning** *pvaW*        variable 'P2ETA0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:684)
+
+ **warning** *pvaW*        variable 'DVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:686)
+
+ **warning** *pvaW*        variable 'LDVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:687)
+
+ **warning** *pvaW*        variable 'NDVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:688)
+
+ **warning** *pvaW*        variable 'PDVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:689)
+
+ **warning** *pvaW*        variable 'WDVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:690)
+
+ **warning** *pvaW*        variable 'P2DVTP0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:691)
+
+ **warning** *pvaW*        variable 'DVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:693)
+
+ **warning** *pvaW*        variable 'LDVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:694)
+
+ **warning** *pvaW*        variable 'NDVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:695)
+
+ **warning** *pvaW*        variable 'PDVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:696)
+
+ **warning** *pvaW*        variable 'WDVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:697)
+
+ **warning** *pvaW*        variable 'P2DVTP1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:698)
+
+ **warning** *pvaW*        variable 'K1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:700)
+
+ **warning** *pvaW*        variable 'LK1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:701)
+
+ **warning** *pvaW*        variable 'NK1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:702)
+
+ **warning** *pvaW*        variable 'PK1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:703)
+
+ **warning** *pvaW*        variable 'WK1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:704)
+
+ **warning** *pvaW*        variable 'P2K1RSCE' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:705)
+
+ **warning** *pvaW*        variable 'CKAPPAS_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:712)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_1_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:905)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_2_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:906)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_3_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:907)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_1_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:908)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_2_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:909)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_3_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:910)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_1_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:911)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_2_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:912)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_3_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:913)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_1_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:914)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_2_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:915)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_3_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:916)
+
+ **warning** *pvaW*        variable 'nnquab3_4_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:932)
+
+ **warning** *pvaW*        variable 'nnquab3_5_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:933)
+
+ **warning** *pvaW*        variable 'nnquab3_6_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:934)
+
+ **warning** *pvaW*        variable 'nnquab3_7_cap' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:935)
+
+ **warning** *pvaW*        variable 'gidl_output6' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1453)
+
+ **warning** *pvaW*        variable 'gidl_output7' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1454)
+
+ **warning** *pvaW*        variable 'cv_output15' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2288)
+
+ **warning** *pvaW*        variable 'CGG' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2744)
+
+ **warning** *pvaW*        variable 'CGD' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2745)
+
+ **warning** *pvaW*        variable 'CGS' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2746)
+
+ **warning** *pvaW*        variable 'CDG' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2747)
+
+ **warning** *pvaW*        variable 'CDD' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2748)
+
+ **warning** *pvaW*        variable 'CDS' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2749)
+
+ **warning** *pvaW*        variable 'CSG' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2750)
+
+ **warning** *pvaW*        variable 'CSD' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2751)
+
+ **warning** *pvaW*        variable 'CSS' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2752)
+
+ **warning** *pvaW*        variable 'tmp1_pku' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2035)
+
+ **warning** *pvaW*        variable 'tmp2_pku' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2036)
+
+ **warning** *pvaW*        variable 'tmp3_pku' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2037)
+
+ **warning** *pvaW*        variable 'tmp4_pku' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2038)
+
+ **warning** *pvaW*        variable 'tmp5_pku' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2039)
+
+ **warning** *pvaW*        variable 'vfbsd1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1200)
+
+ **warning** *pvaW*        variable 'vgs_a' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1200)
+
+ **warning** *pvaW*        variable 'vgd_a' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1200)
+
+ **warning** *pvaW*        variable 'WeffB' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2362)
+
+ **warning** *pvaW*        variable 'd1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'd2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'd3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'p1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'p2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'p3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Tp1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Tp2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Tp3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Wp1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Wp2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'Wp3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1204)
+
+ **warning** *pvaW*        variable 'VnD1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qndnf1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'VnD2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qndnf2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'VnD3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qndnf3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3d0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3d' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'ncq' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'QT0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'QT1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'ne2h' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'pe2h' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'ne3h' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'pe3h' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc1l0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'pnc1l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc2l0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'pnc2l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3l0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'pnc3l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qe2n' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qe3n' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qe2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qe3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc1l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc1ln' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc2l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc2ln' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3l' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3ln' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'nc3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qnd10' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qnd20' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'qnd30' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1212)
+
+ **warning** *pvaW*        variable 'GM' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2741)
+
+ **warning** *pvaW*        variable 'GDS' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2742)
+
+ **warning** *pvaW*        variable 'qndd1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1216)
+
+ **warning** *pvaW*        variable 'qndd2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1216)
+
+ **warning** *pvaW*        variable 'qndd3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1216)
+
+ **warning** *pvaW*        variable 'QT2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT4' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'qnds1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT5' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT6' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT7' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'qnds2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT8' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT9' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'QT10' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'qnds3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'TOXG1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'igtemp' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'Tox_ratio' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'T0_g' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'igc' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'igs' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'igd' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'ig' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'vgd' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1235)
+
+ **warning** *pvaW*        variable 'NTOX_i' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut0' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut1' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut2' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut3' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut4' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut5' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'mut6' declared but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:1241)
+
+ **warning** *pvaW*        variable 'ids_tmp' initialized but not used in RHS, deleted (../../va/cfet_pmos_lvt.va:2691)
+
+ **info** *pvaI*        port 'B' at 4 declared, but not used
+
+ **info** *pvaI*        generated 0 flow node(s) during compilation.
+
+ **info** *pvaI* #### Total 2188 line-size(s), 136/1439 expr(s), 4 contr(s), 0 init(s), 1005 behav(s), 4 port(s)
+
+ Loading pVA library C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\pfet_48nm_dualvd_fit\results\eval_0037\eval_0037.pvadir\pvaRTL_win64.dll...
+1****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+ ******  
+ ***********************************************************************
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xmp.                            cfet_pmos_lvt(va)
+                                                                 1.00 
+ **info** *pvaI* Creating VA module (cfet_pmos_lvt) for instance XMP with gmd reduction
+
+ **info** *pvaI*        termCount=4 diwSize=16 probeSize=1086 Qsize=2 Isize=1
+
+ End of GMD creation on Mon Jul 13 19:18:52 2026	
+
+
+ **warning** *pvaW* (31) FPE: Encountered numerical NaN with node (G, S) (../../va/cfet_pmos_lvt.va:2764)
+
+ **warning** *pvaW*           in N/A-instname(cfet_pmos_lvt)
+
+ **warning** *pvaW* (31)      For a complete list of FPE warnings, please setenv PVA_ENABLE_FPE3 2
+
+ **warning** *pvaW* (31)      For debugging, please use $strobe to print the value of signal.
+
+
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+  Opening plot unit= 79
+ file=C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\pfet_48nm_dualvd_fit\results\eval_0037\eval_0037.pa0
+
+ End of pVA setup    on Mon Jul 13 19:18:52 2026	
+
+
+ Begin of pVA simulation on Mon Jul 13 19:18:52 2026	
+
+
+ ******
+ ***********************************************************************
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+  *** parameter 0:vd  =  -5.000e-02       ***
+  
+x
+
+ volt         voltage    voltage    current    param     
+             g          d          vd         abs(i(vd)) 
+ -1.3133e+00 -1.313e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.3071e+00 -1.307e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.2147e+00 -1.215e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.2031e+00 -1.203e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.1161e+00 -1.116e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.1045e+00 -1.105e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.0121e+00 -1.012e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -1.0059e+00 -1.006e+00 -5.000e-02  0.000e+00  0.000e+00 
+ -9.0796e-01 -9.080e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -9.0186e-01 -9.019e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -8.0386e-01 -8.039e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -7.9776e-01 -7.978e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -7.1064e-01 -7.106e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -7.0461e-01 -7.046e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -6.0091e-01 -6.009e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -5.9494e-01 -5.949e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -5.0199e-01 -5.020e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -5.0165e-01 -5.016e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -4.0270e-01 -4.027e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -3.9743e-01 -3.974e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -2.9820e-01 -2.982e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -2.9801e-01 -2.980e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -1.9859e-01 -1.986e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -1.9355e-01 -1.935e-01 -5.000e-02  0.000e+00  0.000e+00 
+ -9.9181e-02 -9.918e-02 -5.000e-02  0.000e+00  0.000e+00 
+y
+ ******
+ ***********************************************************************
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+  *** parameter 0:vd  =  -7.000e-01       ***
+  
+x
+
+ volt         voltage    voltage    current    param     
+             g          d          vd         abs(i(vd)) 
+ -1.3133e+00 -1.313e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.3071e+00 -1.307e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.2147e+00 -1.215e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.2031e+00 -1.203e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.1161e+00 -1.116e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.1045e+00 -1.105e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.0121e+00 -1.012e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -1.0059e+00 -1.006e+00 -7.000e-01  0.000e+00  0.000e+00 
+ -9.0796e-01 -9.080e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -9.0186e-01 -9.019e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -8.0386e-01 -8.039e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -7.9776e-01 -7.978e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -7.1064e-01 -7.106e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -7.0461e-01 -7.046e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -6.0091e-01 -6.009e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -5.9494e-01 -5.949e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -5.0199e-01 -5.020e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -5.0165e-01 -5.016e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -4.0270e-01 -4.027e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -3.9743e-01 -3.974e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -2.9820e-01 -2.982e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -2.9801e-01 -2.980e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -1.9859e-01 -1.986e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -1.9355e-01 -1.935e-01 -7.000e-01  0.000e+00  0.000e+00 
+ -9.9181e-02 -9.918e-02 -7.000e-01  0.000e+00  0.000e+00 
+y
+
+          ***** job concluded
+ ******  
+ ***********************************************************************
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    20
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       5 # elements   =       5
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       4
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       1
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  dc sweep           0.07          50         102
+  readin             3.69
+  errchk             0.01
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         81.17 megabytes
+           total cpu time            3.76 seconds
+           total elapsed time        3.84 seconds
+           job started at     19:18:48 07/13/2026
+           job ended   at     19:18:52 07/13/2026
+           job total runtime         3.84 seconds
+
+
+  lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.06(s)

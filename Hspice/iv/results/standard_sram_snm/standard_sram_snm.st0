@@ -1,0 +1,219 @@
+****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******
+Input File: standard_sram_snm.sp
+lic:
+lic: FLEXlm: SDK_12.3
+lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM
+lic: HOSTID: "00155daa97f3"       PID:      33300
+lic: Using FLEXlm license file:
+lic: 27000@LAPTOP-K9QP6UAM
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12
+lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM
+lic:
+
+ init: begin read circuit files, cpu clock= 6.60E-02
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+       option method = gear
+       option runlvl =     5.00
+       option measdgt =     6.00
+       option gshunt =    1.000E-12
+ init: end read circuit files, cpu clock= 2.40E+00 peak memory=      79 mb
+ init: begin check errors, cpu clock= 2.40E+00
+ init: end check errors, cpu clock= 2.41E+00 peak memory=      81 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.41E+00
+       establish matrix -- done, cpu clock= 2.41E+00 peak memory=      81 mb
+       re-order matrix -- done, cpu clock= 2.41E+00 peak memory=      81 mb
+ init: end setup matrix, cpu clock= 2.41E+00 peak memory=      81 mb
+ dcop: begin dcop, cpu clock= 2.41E+00
+ dcop: end dcop, cpu clock= 2.41E+00 peak memory=      81 mb tot_iter=      18
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 2.43E+00
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+       option method = gear
+       option runlvl =     5.00
+       option measdgt =     6.00
+       option gshunt =    1.000E-12
+ init: end read circuit files, cpu clock= 2.43E+00 peak memory=      80 mb
+ init: begin check errors, cpu clock= 2.43E+00
+ init: end check errors, cpu clock= 2.44E+00 peak memory=      80 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.44E+00
+       establish matrix -- done, cpu clock= 2.44E+00 peak memory=      80 mb
+       re-order matrix -- done, cpu clock= 2.44E+00 peak memory=      80 mb
+ init: end setup matrix, cpu clock= 2.44E+00 peak memory=      80 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.44E+00
+ sweep: dc dc0    end, cpu clock= 2.54E+00 peak memory=      81 mb
+ dcop: begin dcop, cpu clock= 2.55E+00
+ dcop: end dcop, cpu clock= 2.55E+00 peak memory=      81 mb tot_iter=      21
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 2.57E+00
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+       option method = gear
+       option runlvl =     5.00
+       option measdgt =     6.00
+       option gshunt =    1.000E-12
+ init: end read circuit files, cpu clock= 2.57E+00 peak memory=      81 mb
+ init: begin check errors, cpu clock= 2.57E+00
+ init: end check errors, cpu clock= 2.58E+00 peak memory=      82 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.58E+00
+       establish matrix -- done, cpu clock= 2.58E+00 peak memory=      82 mb
+       re-order matrix -- done, cpu clock= 2.58E+00 peak memory=      82 mb
+ init: end setup matrix, cpu clock= 2.58E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.58E+00
+ sweep: dc dc0    end, cpu clock= 2.68E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.68E+00
+ sweep: dc dc0    end, cpu clock= 2.78E+00 peak memory=      82 mb
+ dcop: begin dcop, cpu clock= 2.79E+00
+ dcop: end dcop, cpu clock= 2.79E+00 peak memory=      82 mb tot_iter=      23
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 2.81E+00
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+       option method = gear
+       option runlvl =     5.00
+       option measdgt =     6.00
+       option gshunt =    1.000E-12
+ init: end read circuit files, cpu clock= 2.82E+00 peak memory=      81 mb
+ init: begin check errors, cpu clock= 2.82E+00
+ init: end check errors, cpu clock= 2.83E+00 peak memory=      82 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.83E+00
+       establish matrix -- done, cpu clock= 2.83E+00 peak memory=      82 mb
+       re-order matrix -- done, cpu clock= 2.83E+00 peak memory=      82 mb
+ init: end setup matrix, cpu clock= 2.83E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.83E+00
+ sweep: dc dc0    end, cpu clock= 2.92E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 2.93E+00
+ sweep: dc dc0    end, cpu clock= 3.03E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 3.04E+00
+ sweep: dc dc0    end, cpu clock= 3.13E+00 peak memory=      82 mb
+ dcop: begin dcop, cpu clock= 3.13E+00
+ dcop: end dcop, cpu clock= 3.14E+00 peak memory=      82 mb tot_iter=       6
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 3.15E+00
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+       option method = gear
+       option runlvl =     5.00
+       option measdgt =     6.00
+       option gshunt =    1.000E-12
+ init: end read circuit files, cpu clock= 3.16E+00 peak memory=      81 mb
+ init: begin check errors, cpu clock= 3.16E+00
+ init: end check errors, cpu clock= 3.17E+00 peak memory=      82 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 3.17E+00
+       establish matrix -- done, cpu clock= 3.17E+00 peak memory=      82 mb
+       re-order matrix -- done, cpu clock= 3.17E+00 peak memory=      82 mb
+ init: end setup matrix, cpu clock= 3.17E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 3.17E+00
+ sweep: dc dc0    end, cpu clock= 3.27E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 3.27E+00
+ sweep: dc dc0    end, cpu clock= 3.37E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 3.38E+00
+ sweep: dc dc0    end, cpu clock= 3.47E+00 peak memory=      82 mb
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\results\standar
+ sweep: dc dc0    begin, #sweeps= 701 cpu clock= 3.48E+00
+ sweep: dc dc0    end, cpu clock= 3.57E+00 peak memory=      82 mb
+ dcop: begin dcop, cpu clock= 3.58E+00
+ dcop: end dcop, cpu clock= 3.58E+00 peak memory=      82 mb tot_iter=       6
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

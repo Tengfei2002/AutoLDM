@@ -1,0 +1,47 @@
+****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******
+Input File: fit_c035.sp
+lic:
+lic: FLEXlm: SDK_12.3
+lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM
+lic: HOSTID: "00155daa97f3"       PID:      12160
+lic: Using FLEXlm license file:
+lic: 27000@LAPTOP-K9QP6UAM
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12
+lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM
+lic:
+
+ init: begin read circuit files, cpu clock= 4.90E-02
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/behave/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/AD/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/XILINX/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TLINE/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/TI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/SIGNET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PCI/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/LIN_TEC
+                         H/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/PET/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/DI0/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/COMLINE
+                         /
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BURR_BR
+                         M/
+       option search = C:/synopsys/Hspice_P-2019.06-SP1-1/parts/BJT/
+       option post =     2.00
+       option ingold =     2.00
+       option probe
+       option nomod
+ init: end read circuit files, cpu clock= 1.83E+00 peak memory=      76 mb
+ init: begin check errors, cpu clock= 1.83E+00
+ init: end check errors, cpu clock= 1.84E+00 peak memory=      77 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.84E+00
+       establish matrix -- done, cpu clock= 1.84E+00 peak memory=      77 mb
+       re-order matrix -- done, cpu clock= 1.84E+00 peak memory=      77 mb
+ init: end setup matrix, cpu clock= 1.84E+00 peak memory=      77 mb
+ voltage: vd              =    5.00E-02
+ output: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\iv\fit_nmos_idvg\r
+ sweep: dc dc1    begin, #sweeps= 351 cpu clock= 1.84E+00
+ sweep: dc dc1    end, cpu clock= 1.86E+00 peak memory=      78 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

@@ -1,0 +1,1322 @@
+ ****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: given_nfet_idvg.sp                                                
+  Command line options: C:\synopsys\Hspice_P-2019.06-SP1-1\WIN64\hspice.com -i given_nfet_idvg.sp -o C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\nfet_given_param_idvg\results\given_nfet_idvg
+  Start time: Mon Jul 13 17:26:50 2026
+  lic:  
+  lic: FLEXlm: SDK_12.3 
+  lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM 
+  lic: HOSTID: "00155daa97f3"       PID:      46760 
+  lic: Using FLEXlm license file: 
+  lic: 27000@LAPTOP-K9QP6UAM 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12 
+  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM 
+  lic:   
+ **info** *pvaI* Module (cfet_nmos_lvt): 4 unexpanded port, 0 init, 980 behav, 4 contrib, 136/1414 expr(s)
+
+ **info** *pvaI*        Has DIS(ST), 2/146 afCount, 0 MT, sys, IO(0/0/1/0)
+
+ **info** *pvaI*        0 gmdIsThreadSafe (ST)
+
+ **info** *pvaI*        0 const-G and 0 const-C, Has switchBranch, 22 bypassOpt, 0 bus2scalar, 0 vwb
+
+ **info** *pvaI*        set_va_exp = 600 set by default
+
+ **warning** *pvaW*        variable 'tgaamax' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:45)
+
+ **warning** *pvaW*                   To relax this rule, use 'setenv PVA_KEEP_VARS 1' to keep variables for probing.
+
+ **warning** *pvaW*        variable 'tgaamin' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:46)
+
+ **warning** *pvaW*        variable 'HFIN' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:451)
+
+ **warning** *pvaW*        variable 'Inv_L' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2268)
+
+ **warning** *pvaW*        variable 'Inv_NFIN' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2269)
+
+ **warning** *pvaW*        variable 'Inv_LNFIN' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2270)
+
+ **warning** *pvaW*        variable 'Inv_W' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2271)
+
+ **warning** *pvaW*        variable 'Inv_WL' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2272)
+
+ **warning** *pvaW*        variable 'WDIM0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:485)
+
+ **warning** *pvaW*        variable 'WDIMR' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:486)
+
+ **warning** *pvaW*        variable 'WSSP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:487)
+
+ **warning** *pvaW*        variable 'WSSPR' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:488)
+
+ **warning** *pvaW*        variable 'DIM1H' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:490)
+
+ **warning** *pvaW*        variable 'DIMENSION1_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:491)
+
+ **warning** *pvaW*        variable 'DIM2H' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:492)
+
+ **warning** *pvaW*        variable 'DIMENSION2_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:493)
+
+ **warning** *pvaW*        variable 'DIM3H' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:494)
+
+ **warning** *pvaW*        variable 'DIMENSION3_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:495)
+
+ **warning** *pvaW*        variable 'DSSP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:496)
+
+ **warning** *pvaW*        variable 'DSSP2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:497)
+
+ **warning** *pvaW*        variable 'DSSP3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:498)
+
+ **warning** *pvaW*        variable 'SSP1_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:499)
+
+ **warning** *pvaW*        variable 'SSP2_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:500)
+
+ **warning** *pvaW*        variable 'SSP3_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:501)
+
+ **warning** *pvaW*        variable 'TSRE2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:503)
+
+ **warning** *pvaW*        variable 'TDWSE2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:504)
+
+ **warning** *pvaW*        variable 'TSRE3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:505)
+
+ **warning** *pvaW*        variable 'TDWSE3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:506)
+
+ **warning** *pvaW*        variable 'TSRQ1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:508)
+
+ **warning** *pvaW*        variable 'TDWSQ1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:509)
+
+ **warning** *pvaW*        variable 'TSRQ2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:510)
+
+ **warning** *pvaW*        variable 'TDWSQ2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:511)
+
+ **warning** *pvaW*        variable 'TSRQ3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:512)
+
+ **warning** *pvaW*        variable 'TDWSQ3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:513)
+
+ **warning** *pvaW*        variable 'WGAANOM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:515)
+
+ **warning** *pvaW*        variable 'WSFE2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:516)
+
+ **warning** *pvaW*        variable 'WSFE3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:517)
+
+ **warning** *pvaW*        variable 'E2NOM_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:519)
+
+ **warning** *pvaW*        variable 'E3NOM_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:520)
+
+ **warning** *pvaW*        variable 'MFE2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:522)
+
+ **warning** *pvaW*        variable 'MFE3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:523)
+
+ **warning** *pvaW*        variable 'MFQ1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:525)
+
+ **warning** *pvaW*        variable 'MFQ2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:526)
+
+ **warning** *pvaW*        variable 'MFQ3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:527)
+
+ **warning** *pvaW*        variable 'WSFQ1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:529)
+
+ **warning** *pvaW*        variable 'WSFQ2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:530)
+
+ **warning** *pvaW*        variable 'WSFQ3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:531)
+
+ **warning** *pvaW*        variable 'MFQ1NOM_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:533)
+
+ **warning** *pvaW*        variable 'MFQ2NOM_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:534)
+
+ **warning** *pvaW*        variable 'MFQ3NOM_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:535)
+
+ **warning** *pvaW*        variable 'QMFACTOR_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:537)
+
+ **warning** *pvaW*        variable 'QMTCENCV_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:539)
+
+ **warning** *pvaW*        variable 'ETAMOBTHIN' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:547)
+
+ **warning** *pvaW*        variable 'ETAMOB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:548)
+
+ **warning** *pvaW*        variable 'ETAMOBTNI' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:549)
+
+ **warning** *pvaW*        variable 'ETAMOBIR' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:550)
+
+ **warning** *pvaW*        variable 'UA' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:551)
+
+ **warning** *pvaW*        variable 'UATHIN' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:552)
+
+ **warning** *pvaW*        variable 'UATSAT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:553)
+
+ **warning** *pvaW*        variable 'UARTSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:554)
+
+ **warning** *pvaW*        variable 'UATNI' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:555)
+
+ **warning** *pvaW*        variable 'UAIR' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:556)
+
+ **warning** *pvaW*        variable 'EUTHIN' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:557)
+
+ **warning** *pvaW*        variable 'EU' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:558)
+
+ **warning** *pvaW*        variable 'EUPTSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:559)
+
+ **warning** *pvaW*        variable 'EUTNI' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:560)
+
+ **warning** *pvaW*        variable 'EUIR' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:561)
+
+ **warning** *pvaW*        variable 'U0ETAWSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:562)
+
+ **warning** *pvaW*        variable 'EGBULK' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:563)
+
+ **warning** *pvaW*        variable 'U0EMSM1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:564)
+
+ **warning** *pvaW*        variable 'U0EMSM2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:565)
+
+ **warning** *pvaW*        variable 'UDTHIN' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:568)
+
+ **warning** *pvaW*        variable 'UD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:569)
+
+ **warning** *pvaW*        variable 'UDTSAT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:570)
+
+ **warning** *pvaW*        variable 'UDPTSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:571)
+
+ **warning** *pvaW*        variable 'PSAT_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:578)
+
+ **warning** *pvaW*        variable 'PSATCV_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:579)
+
+ **warning** *pvaW*        variable 'DELTAVSAT_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:580)
+
+ **warning** *pvaW*        variable 'DELTAVSATCV_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:581)
+
+ **warning** *pvaW*        variable 'PTWG_a' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:582)
+
+ **warning** *pvaW*        variable 'PCLMG' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:609)
+
+ **warning** *pvaW*        variable 'PCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:614)
+
+ **warning** *pvaW*        variable 'LPCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:615)
+
+ **warning** *pvaW*        variable 'NPCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:616)
+
+ **warning** *pvaW*        variable 'PPCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:617)
+
+ **warning** *pvaW*        variable 'WPCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:618)
+
+ **warning** *pvaW*        variable 'P2PCLM' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:619)
+
+ **warning** *pvaW*        variable 'PCLMCV_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:621)
+
+ **warning** *pvaW*        variable 'DVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:623)
+
+ **warning** *pvaW*        variable 'LDVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:624)
+
+ **warning** *pvaW*        variable 'NDVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:625)
+
+ **warning** *pvaW*        variable 'PDVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:626)
+
+ **warning** *pvaW*        variable 'WDVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:627)
+
+ **warning** *pvaW*        variable 'P2DVT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:628)
+
+ **warning** *pvaW*        variable 'DVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:630)
+
+ **warning** *pvaW*        variable 'LDVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:631)
+
+ **warning** *pvaW*        variable 'NDVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:632)
+
+ **warning** *pvaW*        variable 'PDVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:633)
+
+ **warning** *pvaW*        variable 'WDVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:634)
+
+ **warning** *pvaW*        variable 'P2DVT1SS' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:635)
+
+ **warning** *pvaW*        variable 'DSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:637)
+
+ **warning** *pvaW*        variable 'LDSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:638)
+
+ **warning** *pvaW*        variable 'NDSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:639)
+
+ **warning** *pvaW*        variable 'PDSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:640)
+
+ **warning** *pvaW*        variable 'WDSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:641)
+
+ **warning** *pvaW*        variable 'P2DSUB' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:642)
+
+ **warning** *pvaW*        variable 'LPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:644)
+
+ **warning** *pvaW*        variable 'LLPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:645)
+
+ **warning** *pvaW*        variable 'NLPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:646)
+
+ **warning** *pvaW*        variable 'PLPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:647)
+
+ **warning** *pvaW*        variable 'WLPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:648)
+
+ **warning** *pvaW*        variable 'P2LPE0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:649)
+
+ **warning** *pvaW*        variable 'CDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:651)
+
+ **warning** *pvaW*        variable 'LCDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:652)
+
+ **warning** *pvaW*        variable 'NCDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:653)
+
+ **warning** *pvaW*        variable 'PCDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:654)
+
+ **warning** *pvaW*        variable 'WCDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:655)
+
+ **warning** *pvaW*        variable 'P2CDSC' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:656)
+
+ **warning** *pvaW*        variable 'CDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:658)
+
+ **warning** *pvaW*        variable 'LCDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:659)
+
+ **warning** *pvaW*        variable 'NCDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:660)
+
+ **warning** *pvaW*        variable 'PCDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:661)
+
+ **warning** *pvaW*        variable 'WCDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:662)
+
+ **warning** *pvaW*        variable 'P2CDSCD' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:663)
+
+ **warning** *pvaW*        variable 'CIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:665)
+
+ **warning** *pvaW*        variable 'LCIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:666)
+
+ **warning** *pvaW*        variable 'NCIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:667)
+
+ **warning** *pvaW*        variable 'PCIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:668)
+
+ **warning** *pvaW*        variable 'WCIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:669)
+
+ **warning** *pvaW*        variable 'P2CIT' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:670)
+
+ **warning** *pvaW*        variable 'DVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:672)
+
+ **warning** *pvaW*        variable 'LDVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:673)
+
+ **warning** *pvaW*        variable 'NDVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:674)
+
+ **warning** *pvaW*        variable 'PDVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:675)
+
+ **warning** *pvaW*        variable 'WDVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:676)
+
+ **warning** *pvaW*        variable 'P2DVT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:677)
+
+ **warning** *pvaW*        variable 'ETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:679)
+
+ **warning** *pvaW*        variable 'LETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:680)
+
+ **warning** *pvaW*        variable 'NETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:681)
+
+ **warning** *pvaW*        variable 'PETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:682)
+
+ **warning** *pvaW*        variable 'WETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:683)
+
+ **warning** *pvaW*        variable 'P2ETA0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:684)
+
+ **warning** *pvaW*        variable 'DVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:686)
+
+ **warning** *pvaW*        variable 'LDVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:687)
+
+ **warning** *pvaW*        variable 'NDVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:688)
+
+ **warning** *pvaW*        variable 'PDVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:689)
+
+ **warning** *pvaW*        variable 'WDVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:690)
+
+ **warning** *pvaW*        variable 'P2DVTP0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:691)
+
+ **warning** *pvaW*        variable 'DVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:693)
+
+ **warning** *pvaW*        variable 'LDVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:694)
+
+ **warning** *pvaW*        variable 'NDVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:695)
+
+ **warning** *pvaW*        variable 'PDVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:696)
+
+ **warning** *pvaW*        variable 'WDVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:697)
+
+ **warning** *pvaW*        variable 'P2DVTP1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:698)
+
+ **warning** *pvaW*        variable 'K1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:700)
+
+ **warning** *pvaW*        variable 'LK1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:701)
+
+ **warning** *pvaW*        variable 'NK1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:702)
+
+ **warning** *pvaW*        variable 'PK1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:703)
+
+ **warning** *pvaW*        variable 'WK1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:704)
+
+ **warning** *pvaW*        variable 'P2K1RSCE' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:705)
+
+ **warning** *pvaW*        variable 'CKAPPAS_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:712)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_1_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:905)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_2_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:906)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_3_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:907)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_1_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:908)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_2_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:909)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_3_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:910)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_1_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:911)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_2_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:912)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_3_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:913)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_1_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:914)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_2_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:915)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_3_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:916)
+
+ **warning** *pvaW*        variable 'nnquab3_4_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:932)
+
+ **warning** *pvaW*        variable 'nnquab3_5_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:933)
+
+ **warning** *pvaW*        variable 'nnquab3_6_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:934)
+
+ **warning** *pvaW*        variable 'nnquab3_7_cap' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:935)
+
+ **warning** *pvaW*        variable 'gidl_output6' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1451)
+
+ **warning** *pvaW*        variable 'gidl_output7' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1452)
+
+ **warning** *pvaW*        variable 'cv_output15' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2242)
+
+ **warning** *pvaW*        variable 'CGG' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2705)
+
+ **warning** *pvaW*        variable 'CGD' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2706)
+
+ **warning** *pvaW*        variable 'CGS' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2707)
+
+ **warning** *pvaW*        variable 'CDG' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2708)
+
+ **warning** *pvaW*        variable 'CDD' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2709)
+
+ **warning** *pvaW*        variable 'CDS' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2710)
+
+ **warning** *pvaW*        variable 'CSG' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2711)
+
+ **warning** *pvaW*        variable 'CSD' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2712)
+
+ **warning** *pvaW*        variable 'CSS' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2713)
+
+ **warning** *pvaW*        variable 'tmp1_pku' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1994)
+
+ **warning** *pvaW*        variable 'tmp2_pku' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1995)
+
+ **warning** *pvaW*        variable 'tmp3_pku' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1996)
+
+ **warning** *pvaW*        variable 'tmp4_pku' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1997)
+
+ **warning** *pvaW*        variable 'tmp5_pku' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1998)
+
+ **warning** *pvaW*        variable 'vfbsd1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1199)
+
+ **warning** *pvaW*        variable 'vgs_a' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1199)
+
+ **warning** *pvaW*        variable 'vgd_a' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1199)
+
+ **warning** *pvaW*        variable 'WeffB' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2317)
+
+ **warning** *pvaW*        variable 'd1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'd2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'd3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'p1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'p2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'p3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Tp1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Tp2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Tp3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Wp1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Wp2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'Wp3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1203)
+
+ **warning** *pvaW*        variable 'VnD1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'VnD2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'VnD3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3d0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3d' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'ncq' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'QT0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'QT1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'ne2h' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'pe2h' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'ne3h' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'pe3h' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc1l0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'pnc1l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc2l0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'pnc2l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3l0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'pnc3l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qe2n' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qe3n' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qe2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qe3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc1l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc1ln' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc2l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc2ln' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3l' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3ln' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'nc3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qnd10' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qnd20' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'qnd30' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1211)
+
+ **warning** *pvaW*        variable 'GM' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2702)
+
+ **warning** *pvaW*        variable 'GDS' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2703)
+
+ **warning** *pvaW*        variable 'qndd1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1215)
+
+ **warning** *pvaW*        variable 'qndd2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1215)
+
+ **warning** *pvaW*        variable 'qndd3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1215)
+
+ **warning** *pvaW*        variable 'QT2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT4' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'qnds1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT5' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT6' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT7' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'qnds2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT8' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT9' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'QT10' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'qnds3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'TOXG1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'igtemp' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'Tox_ratio' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'T0_g' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'igc' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'igs' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'igd' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'ig' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'vgd' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1234)
+
+ **warning** *pvaW*        variable 'NTOX_i' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut0' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut1' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut2' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut3' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut4' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut5' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'mut6' declared but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:1240)
+
+ **warning** *pvaW*        variable 'ids_tmp' initialized but not used in RHS, deleted (../../va/cfet_nmos_lvt.va:2652)
+
+ **info** *pvaI*        port 'B' at 4 declared, but not used
+
+ **info** *pvaI*        generated 0 flow node(s) during compilation.
+
+ **info** *pvaI* #### Total 2188 line-size(s), 136/1414 expr(s), 4 contr(s), 0 init(s), 980 behav(s), 4 port(s)
+
+ Loading pVA library C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\nfet_given_param_idvg\results\given_nfet_idvg.pvadir\pvaRTL_win64.dll...
+1****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+ ******  
+ ***********************************************************************
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xmn.                            cfet_nmos_lvt(va)
+                                                                 1.00 
+ **info** *pvaI* Creating VA module (cfet_nmos_lvt) for instance XMN with gmd reduction
+
+ **info** *pvaI*        termCount=4 diwSize=16 probeSize=1086 Qsize=2 Isize=1
+
+ End of GMD creation on Mon Jul 13 17:26:52 2026	
+
+
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+  Opening plot unit= 79
+ file=C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\nfet_given_param_idvg\results\given_nfet_idvg.pa0
+
+ End of pVA setup    on Mon Jul 13 17:26:52 2026	
+
+
+ Begin of pVA simulation on Mon Jul 13 17:26:52 2026	
+
+
+ ******
+ ***********************************************************************
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+  *** parameter 0:vd  =   5.000e-02       ***
+  
+x
+
+ volt         voltage    voltage    current    param     
+             g          d          vd         -i(vd)     
+ -1.2000e-01 -1.200e-01  5.000e-02 -1.796e-11  1.796e-11 
+ -1.1500e-01 -1.150e-01  5.000e-02 -2.134e-11  2.134e-11 
+ -1.1000e-01 -1.100e-01  5.000e-02 -2.534e-11  2.534e-11 
+ -1.0500e-01 -1.050e-01  5.000e-02 -3.010e-11  3.010e-11 
+ -1.0000e-01 -1.000e-01  5.000e-02 -3.575e-11  3.575e-11 
+ -9.5000e-02 -9.500e-02  5.000e-02 -4.246e-11  4.246e-11 
+ -9.0000e-02 -9.000e-02  5.000e-02 -5.043e-11  5.043e-11 
+ -8.5000e-02 -8.500e-02  5.000e-02 -5.990e-11  5.990e-11 
+ -8.0000e-02 -8.000e-02  5.000e-02 -7.115e-11  7.115e-11 
+ -7.5000e-02 -7.500e-02  5.000e-02 -8.451e-11  8.451e-11 
+ -7.0000e-02 -7.000e-02  5.000e-02 -1.004e-10  1.004e-10 
+ -6.5000e-02 -6.500e-02  5.000e-02 -1.192e-10  1.192e-10 
+ -6.0000e-02 -6.000e-02  5.000e-02 -1.416e-10  1.416e-10 
+ -5.5000e-02 -5.500e-02  5.000e-02 -1.682e-10  1.682e-10 
+ -5.0000e-02 -5.000e-02  5.000e-02 -1.998e-10  1.998e-10 
+ -4.5000e-02 -4.500e-02  5.000e-02 -2.373e-10  2.373e-10 
+ -4.0000e-02 -4.000e-02  5.000e-02 -2.818e-10  2.818e-10 
+ -3.5000e-02 -3.500e-02  5.000e-02 -3.347e-10  3.347e-10 
+ -3.0000e-02 -3.000e-02  5.000e-02 -3.975e-10  3.975e-10 
+ -2.5000e-02 -2.500e-02  5.000e-02 -4.722e-10  4.722e-10 
+ -2.0000e-02 -2.000e-02  5.000e-02 -5.608e-10  5.608e-10 
+ -1.5000e-02 -1.500e-02  5.000e-02 -6.660e-10  6.660e-10 
+ -1.0000e-02 -1.000e-02  5.000e-02 -7.911e-10  7.911e-10 
+ -5.0000e-03 -5.000e-03  5.000e-02 -9.395e-10  9.395e-10 
+  0.0000e+00  0.000e+00  5.000e-02 -1.116e-09  1.116e-09 
+  5.0000e-03  5.000e-03  5.000e-02 -1.325e-09  1.325e-09 
+  1.0000e-02  1.000e-02  5.000e-02 -1.574e-09  1.574e-09 
+  1.5000e-02  1.500e-02  5.000e-02 -1.869e-09  1.869e-09 
+  2.0000e-02  2.000e-02  5.000e-02 -2.220e-09  2.220e-09 
+  2.5000e-02  2.500e-02  5.000e-02 -2.636e-09  2.636e-09 
+  3.0000e-02  3.000e-02  5.000e-02 -3.131e-09  3.131e-09 
+  3.5000e-02  3.500e-02  5.000e-02 -3.718e-09  3.718e-09 
+  4.0000e-02  4.000e-02  5.000e-02 -4.415e-09  4.415e-09 
+  4.5000e-02  4.500e-02  5.000e-02 -5.243e-09  5.243e-09 
+  5.0000e-02  5.000e-02  5.000e-02 -6.225e-09  6.225e-09 
+  5.5000e-02  5.500e-02  5.000e-02 -7.391e-09  7.391e-09 
+  6.0000e-02  6.000e-02  5.000e-02 -8.774e-09  8.774e-09 
+  6.5000e-02  6.500e-02  5.000e-02 -1.042e-08  1.042e-08 
+  7.0000e-02  7.000e-02  5.000e-02 -1.236e-08  1.236e-08 
+  7.5000e-02  7.500e-02  5.000e-02 -1.467e-08  1.467e-08 
+  8.0000e-02  8.000e-02  5.000e-02 -1.741e-08  1.741e-08 
+  8.5000e-02  8.500e-02  5.000e-02 -2.066e-08  2.066e-08 
+  9.0000e-02  9.000e-02  5.000e-02 -2.451e-08  2.451e-08 
+  9.5000e-02  9.500e-02  5.000e-02 -2.907e-08  2.907e-08 
+  1.0000e-01  1.000e-01  5.000e-02 -3.447e-08  3.447e-08 
+  1.0500e-01  1.050e-01  5.000e-02 -4.085e-08  4.085e-08 
+  1.1000e-01  1.100e-01  5.000e-02 -4.840e-08  4.840e-08 
+  1.1500e-01  1.150e-01  5.000e-02 -5.733e-08  5.733e-08 
+  1.2000e-01  1.200e-01  5.000e-02 -6.786e-08  6.786e-08 
+  1.2500e-01  1.250e-01  5.000e-02 -8.028e-08  8.028e-08 
+  1.3000e-01  1.300e-01  5.000e-02 -9.491e-08  9.491e-08 
+  1.3500e-01  1.350e-01  5.000e-02 -1.121e-07  1.121e-07 
+  1.4000e-01  1.400e-01  5.000e-02 -1.323e-07  1.323e-07 
+  1.4500e-01  1.450e-01  5.000e-02 -1.560e-07  1.560e-07 
+  1.5000e-01  1.500e-01  5.000e-02 -1.837e-07  1.837e-07 
+  1.5500e-01  1.550e-01  5.000e-02 -2.160e-07  2.160e-07 
+  1.6000e-01  1.600e-01  5.000e-02 -2.535e-07  2.535e-07 
+  1.6500e-01  1.650e-01  5.000e-02 -2.971e-07  2.971e-07 
+  1.7000e-01  1.700e-01  5.000e-02 -3.475e-07  3.475e-07 
+  1.7500e-01  1.750e-01  5.000e-02 -4.054e-07  4.054e-07 
+  1.8000e-01  1.800e-01  5.000e-02 -4.720e-07  4.720e-07 
+  1.8500e-01  1.850e-01  5.000e-02 -5.479e-07  5.479e-07 
+  1.9000e-01  1.900e-01  5.000e-02 -6.342e-07  6.342e-07 
+  1.9500e-01  1.950e-01  5.000e-02 -7.319e-07  7.319e-07 
+  2.0000e-01  2.000e-01  5.000e-02 -8.417e-07  8.417e-07 
+  2.0500e-01  2.050e-01  5.000e-02 -9.647e-07  9.647e-07 
+  2.1000e-01  2.100e-01  5.000e-02 -1.102e-06  1.102e-06 
+  2.1500e-01  2.150e-01  5.000e-02 -1.253e-06  1.253e-06 
+  2.2000e-01  2.200e-01  5.000e-02 -1.420e-06  1.420e-06 
+  2.2500e-01  2.250e-01  5.000e-02 -1.602e-06  1.602e-06 
+  2.3000e-01  2.300e-01  5.000e-02 -1.801e-06  1.801e-06 
+  2.3500e-01  2.350e-01  5.000e-02 -2.017e-06  2.017e-06 
+  2.4000e-01  2.400e-01  5.000e-02 -2.249e-06  2.249e-06 
+  2.4500e-01  2.450e-01  5.000e-02 -2.497e-06  2.497e-06 
+  2.5000e-01  2.500e-01  5.000e-02 -2.762e-06  2.762e-06 
+  2.5500e-01  2.550e-01  5.000e-02 -3.043e-06  3.043e-06 
+  2.6000e-01  2.600e-01  5.000e-02 -3.341e-06  3.341e-06 
+  2.6500e-01  2.650e-01  5.000e-02 -3.654e-06  3.654e-06 
+  2.7000e-01  2.700e-01  5.000e-02 -3.981e-06  3.981e-06 
+  2.7500e-01  2.750e-01  5.000e-02 -4.323e-06  4.323e-06 
+  2.8000e-01  2.800e-01  5.000e-02 -4.679e-06  4.679e-06 
+  2.8500e-01  2.850e-01  5.000e-02 -5.047e-06  5.047e-06 
+  2.9000e-01  2.900e-01  5.000e-02 -5.428e-06  5.428e-06 
+  2.9500e-01  2.950e-01  5.000e-02 -5.819e-06  5.819e-06 
+  3.0000e-01  3.000e-01  5.000e-02 -6.221e-06  6.221e-06 
+  3.0500e-01  3.050e-01  5.000e-02 -6.633e-06  6.633e-06 
+  3.1000e-01  3.100e-01  5.000e-02 -7.053e-06  7.053e-06 
+  3.1500e-01  3.150e-01  5.000e-02 -7.481e-06  7.481e-06 
+  3.2000e-01  3.200e-01  5.000e-02 -7.917e-06  7.917e-06 
+  3.2500e-01  3.250e-01  5.000e-02 -8.358e-06  8.358e-06 
+  3.3000e-01  3.300e-01  5.000e-02 -8.805e-06  8.805e-06 
+  3.3500e-01  3.350e-01  5.000e-02 -9.256e-06  9.256e-06 
+  3.4000e-01  3.400e-01  5.000e-02 -9.712e-06  9.712e-06 
+  3.4500e-01  3.450e-01  5.000e-02 -1.017e-05  1.017e-05 
+  3.5000e-01  3.500e-01  5.000e-02 -1.063e-05  1.063e-05 
+  3.5500e-01  3.550e-01  5.000e-02 -1.110e-05  1.110e-05 
+  3.6000e-01  3.600e-01  5.000e-02 -1.156e-05  1.156e-05 
+  3.6500e-01  3.650e-01  5.000e-02 -1.203e-05  1.203e-05 
+  3.7000e-01  3.700e-01  5.000e-02 -1.249e-05  1.249e-05 
+  3.7500e-01  3.750e-01  5.000e-02 -1.296e-05  1.296e-05 
+  3.8000e-01  3.800e-01  5.000e-02 -1.342e-05  1.342e-05 
+  3.8500e-01  3.850e-01  5.000e-02 -1.389e-05  1.389e-05 
+  3.9000e-01  3.900e-01  5.000e-02 -1.435e-05  1.435e-05 
+  3.9500e-01  3.950e-01  5.000e-02 -1.481e-05  1.481e-05 
+  4.0000e-01  4.000e-01  5.000e-02 -1.527e-05  1.527e-05 
+  4.0500e-01  4.050e-01  5.000e-02 -1.573e-05  1.573e-05 
+  4.1000e-01  4.100e-01  5.000e-02 -1.618e-05  1.618e-05 
+  4.1500e-01  4.150e-01  5.000e-02 -1.663e-05  1.663e-05 
+  4.2000e-01  4.200e-01  5.000e-02 -1.708e-05  1.708e-05 
+  4.2500e-01  4.250e-01  5.000e-02 -1.752e-05  1.752e-05 
+  4.3000e-01  4.300e-01  5.000e-02 -1.796e-05  1.796e-05 
+  4.3500e-01  4.350e-01  5.000e-02 -1.840e-05  1.840e-05 
+  4.4000e-01  4.400e-01  5.000e-02 -1.883e-05  1.883e-05 
+  4.4500e-01  4.450e-01  5.000e-02 -1.926e-05  1.926e-05 
+  4.5000e-01  4.500e-01  5.000e-02 -1.968e-05  1.968e-05 
+  4.5500e-01  4.550e-01  5.000e-02 -2.010e-05  2.010e-05 
+  4.6000e-01  4.600e-01  5.000e-02 -2.051e-05  2.051e-05 
+  4.6500e-01  4.650e-01  5.000e-02 -2.092e-05  2.092e-05 
+  4.7000e-01  4.700e-01  5.000e-02 -2.132e-05  2.132e-05 
+  4.7500e-01  4.750e-01  5.000e-02 -2.172e-05  2.172e-05 
+  4.8000e-01  4.800e-01  5.000e-02 -2.212e-05  2.212e-05 
+  4.8500e-01  4.850e-01  5.000e-02 -2.250e-05  2.250e-05 
+  4.9000e-01  4.900e-01  5.000e-02 -2.289e-05  2.289e-05 
+  4.9500e-01  4.950e-01  5.000e-02 -2.326e-05  2.326e-05 
+  5.0000e-01  5.000e-01  5.000e-02 -2.364e-05  2.364e-05 
+  5.0500e-01  5.050e-01  5.000e-02 -2.400e-05  2.400e-05 
+  5.1000e-01  5.100e-01  5.000e-02 -2.437e-05  2.437e-05 
+  5.1500e-01  5.150e-01  5.000e-02 -2.472e-05  2.472e-05 
+  5.2000e-01  5.200e-01  5.000e-02 -2.507e-05  2.507e-05 
+  5.2500e-01  5.250e-01  5.000e-02 -2.542e-05  2.542e-05 
+  5.3000e-01  5.300e-01  5.000e-02 -2.576e-05  2.576e-05 
+  5.3500e-01  5.350e-01  5.000e-02 -2.610e-05  2.610e-05 
+  5.4000e-01  5.400e-01  5.000e-02 -2.643e-05  2.643e-05 
+  5.4500e-01  5.450e-01  5.000e-02 -2.675e-05  2.675e-05 
+  5.5000e-01  5.500e-01  5.000e-02 -2.707e-05  2.707e-05 
+  5.5500e-01  5.550e-01  5.000e-02 -2.739e-05  2.739e-05 
+  5.6000e-01  5.600e-01  5.000e-02 -2.770e-05  2.770e-05 
+  5.6500e-01  5.650e-01  5.000e-02 -2.800e-05  2.800e-05 
+  5.7000e-01  5.700e-01  5.000e-02 -2.830e-05  2.830e-05 
+  5.7500e-01  5.750e-01  5.000e-02 -2.860e-05  2.860e-05 
+  5.8000e-01  5.800e-01  5.000e-02 -2.889e-05  2.889e-05 
+  5.8500e-01  5.850e-01  5.000e-02 -2.917e-05  2.917e-05 
+  5.9000e-01  5.900e-01  5.000e-02 -2.945e-05  2.945e-05 
+  5.9500e-01  5.950e-01  5.000e-02 -2.973e-05  2.973e-05 
+  6.0000e-01  6.000e-01  5.000e-02 -3.000e-05  3.000e-05 
+  6.0500e-01  6.050e-01  5.000e-02 -3.027e-05  3.027e-05 
+  6.1000e-01  6.100e-01  5.000e-02 -3.053e-05  3.053e-05 
+  6.1500e-01  6.150e-01  5.000e-02 -3.079e-05  3.079e-05 
+  6.2000e-01  6.200e-01  5.000e-02 -3.105e-05  3.105e-05 
+  6.2500e-01  6.250e-01  5.000e-02 -3.130e-05  3.130e-05 
+  6.3000e-01  6.300e-01  5.000e-02 -3.154e-05  3.154e-05 
+  6.3500e-01  6.350e-01  5.000e-02 -3.179e-05  3.179e-05 
+  6.4000e-01  6.400e-01  5.000e-02 -3.203e-05  3.203e-05 
+  6.4500e-01  6.450e-01  5.000e-02 -3.226e-05  3.226e-05 
+  6.5000e-01  6.500e-01  5.000e-02 -3.249e-05  3.249e-05 
+  6.5500e-01  6.550e-01  5.000e-02 -3.272e-05  3.272e-05 
+  6.6000e-01  6.600e-01  5.000e-02 -3.294e-05  3.294e-05 
+  6.6500e-01  6.650e-01  5.000e-02 -3.316e-05  3.316e-05 
+  6.7000e-01  6.700e-01  5.000e-02 -3.338e-05  3.338e-05 
+  6.7500e-01  6.750e-01  5.000e-02 -3.359e-05  3.359e-05 
+  6.8000e-01  6.800e-01  5.000e-02 -3.380e-05  3.380e-05 
+  6.8500e-01  6.850e-01  5.000e-02 -3.400e-05  3.400e-05 
+  6.9000e-01  6.900e-01  5.000e-02 -3.421e-05  3.421e-05 
+  6.9500e-01  6.950e-01  5.000e-02 -3.441e-05  3.441e-05 
+  7.0000e-01  7.000e-01  5.000e-02 -3.460e-05  3.460e-05 
+  7.0500e-01  7.050e-01  5.000e-02 -3.480e-05  3.480e-05 
+  7.1000e-01  7.100e-01  5.000e-02 -3.499e-05  3.499e-05 
+  7.1500e-01  7.150e-01  5.000e-02 -3.517e-05  3.517e-05 
+  7.2000e-01  7.200e-01  5.000e-02 -3.536e-05  3.536e-05 
+  7.2500e-01  7.250e-01  5.000e-02 -3.554e-05  3.554e-05 
+  7.3000e-01  7.300e-01  5.000e-02 -3.572e-05  3.572e-05 
+  7.3500e-01  7.350e-01  5.000e-02 -3.590e-05  3.590e-05 
+  7.4000e-01  7.400e-01  5.000e-02 -3.607e-05  3.607e-05 
+  7.4500e-01  7.450e-01  5.000e-02 -3.624e-05  3.624e-05 
+  7.5000e-01  7.500e-01  5.000e-02 -3.641e-05  3.641e-05 
+  7.5500e-01  7.550e-01  5.000e-02 -3.657e-05  3.657e-05 
+  7.6000e-01  7.600e-01  5.000e-02 -3.674e-05  3.674e-05 
+  7.6500e-01  7.650e-01  5.000e-02 -3.690e-05  3.690e-05 
+  7.7000e-01  7.700e-01  5.000e-02 -3.706e-05  3.706e-05 
+  7.7500e-01  7.750e-01  5.000e-02 -3.721e-05  3.721e-05 
+  7.8000e-01  7.800e-01  5.000e-02 -3.737e-05  3.737e-05 
+  7.8500e-01  7.850e-01  5.000e-02 -3.752e-05  3.752e-05 
+  7.9000e-01  7.900e-01  5.000e-02 -3.767e-05  3.767e-05 
+  7.9500e-01  7.950e-01  5.000e-02 -3.782e-05  3.782e-05 
+  8.0000e-01  8.000e-01  5.000e-02 -3.796e-05  3.796e-05 
+  8.0500e-01  8.050e-01  5.000e-02 -3.811e-05  3.811e-05 
+  8.1000e-01  8.100e-01  5.000e-02 -3.825e-05  3.825e-05 
+  8.1500e-01  8.150e-01  5.000e-02 -3.839e-05  3.839e-05 
+  8.2000e-01  8.200e-01  5.000e-02 -3.852e-05  3.852e-05 
+  8.2500e-01  8.250e-01  5.000e-02 -3.866e-05  3.866e-05 
+  8.3000e-01  8.300e-01  5.000e-02 -3.879e-05  3.879e-05 
+  8.3500e-01  8.350e-01  5.000e-02 -3.893e-05  3.893e-05 
+  8.4000e-01  8.400e-01  5.000e-02 -3.906e-05  3.906e-05 
+  8.4500e-01  8.450e-01  5.000e-02 -3.919e-05  3.919e-05 
+  8.5000e-01  8.500e-01  5.000e-02 -3.931e-05  3.931e-05 
+  8.5500e-01  8.550e-01  5.000e-02 -3.944e-05  3.944e-05 
+  8.6000e-01  8.600e-01  5.000e-02 -3.956e-05  3.956e-05 
+  8.6500e-01  8.650e-01  5.000e-02 -3.968e-05  3.968e-05 
+  8.7000e-01  8.700e-01  5.000e-02 -3.980e-05  3.980e-05 
+  8.7500e-01  8.750e-01  5.000e-02 -3.992e-05  3.992e-05 
+  8.8000e-01  8.800e-01  5.000e-02 -4.004e-05  4.004e-05 
+  8.8500e-01  8.850e-01  5.000e-02 -4.015e-05  4.015e-05 
+  8.9000e-01  8.900e-01  5.000e-02 -4.027e-05  4.027e-05 
+  8.9500e-01  8.950e-01  5.000e-02 -4.038e-05  4.038e-05 
+  9.0000e-01  9.000e-01  5.000e-02 -4.049e-05  4.049e-05 
+  9.0500e-01  9.050e-01  5.000e-02 -4.060e-05  4.060e-05 
+  9.1000e-01  9.100e-01  5.000e-02 -4.071e-05  4.071e-05 
+  9.1500e-01  9.150e-01  5.000e-02 -4.082e-05  4.082e-05 
+  9.2000e-01  9.200e-01  5.000e-02 -4.093e-05  4.093e-05 
+  9.2500e-01  9.250e-01  5.000e-02 -4.103e-05  4.103e-05 
+  9.3000e-01  9.300e-01  5.000e-02 -4.113e-05  4.113e-05 
+  9.3500e-01  9.350e-01  5.000e-02 -4.124e-05  4.124e-05 
+  9.4000e-01  9.400e-01  5.000e-02 -4.134e-05  4.134e-05 
+  9.4500e-01  9.450e-01  5.000e-02 -4.144e-05  4.144e-05 
+  9.5000e-01  9.500e-01  5.000e-02 -4.154e-05  4.154e-05 
+  9.5500e-01  9.550e-01  5.000e-02 -4.163e-05  4.163e-05 
+  9.6000e-01  9.600e-01  5.000e-02 -4.173e-05  4.173e-05 
+  9.6500e-01  9.650e-01  5.000e-02 -4.183e-05  4.183e-05 
+  9.7000e-01  9.700e-01  5.000e-02 -4.192e-05  4.192e-05 
+  9.7500e-01  9.750e-01  5.000e-02 -4.201e-05  4.201e-05 
+  9.8000e-01  9.800e-01  5.000e-02 -4.211e-05  4.211e-05 
+  9.8500e-01  9.850e-01  5.000e-02 -4.220e-05  4.220e-05 
+  9.9000e-01  9.900e-01  5.000e-02 -4.229e-05  4.229e-05 
+  9.9500e-01  9.950e-01  5.000e-02 -4.238e-05  4.238e-05 
+  1.0000e+00  1.000e+00  5.000e-02 -4.246e-05  4.246e-05 
+  1.0050e+00  1.005e+00  5.000e-02 -4.255e-05  4.255e-05 
+  1.0100e+00  1.010e+00  5.000e-02 -4.264e-05  4.264e-05 
+  1.0150e+00  1.015e+00  5.000e-02 -4.272e-05  4.272e-05 
+  1.0200e+00  1.020e+00  5.000e-02 -4.281e-05  4.281e-05 
+  1.0250e+00  1.025e+00  5.000e-02 -4.289e-05  4.289e-05 
+  1.0300e+00  1.030e+00  5.000e-02 -4.297e-05  4.297e-05 
+  1.0350e+00  1.035e+00  5.000e-02 -4.306e-05  4.306e-05 
+  1.0400e+00  1.040e+00  5.000e-02 -4.314e-05  4.314e-05 
+  1.0450e+00  1.045e+00  5.000e-02 -4.322e-05  4.322e-05 
+  1.0500e+00  1.050e+00  5.000e-02 -4.330e-05  4.330e-05 
+  1.0550e+00  1.055e+00  5.000e-02 -4.337e-05  4.337e-05 
+  1.0600e+00  1.060e+00  5.000e-02 -4.345e-05  4.345e-05 
+  1.0650e+00  1.065e+00  5.000e-02 -4.353e-05  4.353e-05 
+  1.0700e+00  1.070e+00  5.000e-02 -4.361e-05  4.361e-05 
+  1.0750e+00  1.075e+00  5.000e-02 -4.368e-05  4.368e-05 
+  1.0800e+00  1.080e+00  5.000e-02 -4.376e-05  4.376e-05 
+  1.0850e+00  1.085e+00  5.000e-02 -4.383e-05  4.383e-05 
+  1.0900e+00  1.090e+00  5.000e-02 -4.390e-05  4.390e-05 
+  1.0950e+00  1.095e+00  5.000e-02 -4.398e-05  4.398e-05 
+  1.1000e+00  1.100e+00  5.000e-02 -4.405e-05  4.405e-05 
+  1.1050e+00  1.105e+00  5.000e-02 -4.412e-05  4.412e-05 
+  1.1100e+00  1.110e+00  5.000e-02 -4.419e-05  4.419e-05 
+  1.1150e+00  1.115e+00  5.000e-02 -4.426e-05  4.426e-05 
+  1.1200e+00  1.120e+00  5.000e-02 -4.433e-05  4.433e-05 
+  1.1250e+00  1.125e+00  5.000e-02 -4.440e-05  4.440e-05 
+  1.1300e+00  1.130e+00  5.000e-02 -4.446e-05  4.446e-05 
+  1.1350e+00  1.135e+00  5.000e-02 -4.453e-05  4.453e-05 
+  1.1400e+00  1.140e+00  5.000e-02 -4.460e-05  4.460e-05 
+  1.1450e+00  1.145e+00  5.000e-02 -4.466e-05  4.466e-05 
+  1.1500e+00  1.150e+00  5.000e-02 -4.473e-05  4.473e-05 
+  1.1550e+00  1.155e+00  5.000e-02 -4.480e-05  4.480e-05 
+  1.1600e+00  1.160e+00  5.000e-02 -4.486e-05  4.486e-05 
+  1.1650e+00  1.165e+00  5.000e-02 -4.492e-05  4.492e-05 
+  1.1700e+00  1.170e+00  5.000e-02 -4.499e-05  4.499e-05 
+  1.1750e+00  1.175e+00  5.000e-02 -4.505e-05  4.505e-05 
+  1.1800e+00  1.180e+00  5.000e-02 -4.511e-05  4.511e-05 
+  1.1850e+00  1.185e+00  5.000e-02 -4.517e-05  4.517e-05 
+  1.1900e+00  1.190e+00  5.000e-02 -4.523e-05  4.523e-05 
+  1.1950e+00  1.195e+00  5.000e-02 -4.529e-05  4.529e-05 
+  1.2000e+00  1.200e+00  5.000e-02 -4.535e-05  4.535e-05 
+  1.2050e+00  1.205e+00  5.000e-02 -4.541e-05  4.541e-05 
+  1.2100e+00  1.210e+00  5.000e-02 -4.547e-05  4.547e-05 
+  1.2150e+00  1.215e+00  5.000e-02 -4.553e-05  4.553e-05 
+  1.2200e+00  1.220e+00  5.000e-02 -4.559e-05  4.559e-05 
+  1.2250e+00  1.225e+00  5.000e-02 -4.565e-05  4.565e-05 
+  1.2300e+00  1.230e+00  5.000e-02 -4.570e-05  4.570e-05 
+  1.2350e+00  1.235e+00  5.000e-02 -4.576e-05  4.576e-05 
+  1.2400e+00  1.240e+00  5.000e-02 -4.582e-05  4.582e-05 
+  1.2450e+00  1.245e+00  5.000e-02 -4.587e-05  4.587e-05 
+  1.2500e+00  1.250e+00  5.000e-02 -4.593e-05  4.593e-05 
+  1.2550e+00  1.255e+00  5.000e-02 -4.598e-05  4.598e-05 
+  1.2600e+00  1.260e+00  5.000e-02 -4.604e-05  4.604e-05 
+  1.2650e+00  1.265e+00  5.000e-02 -4.609e-05  4.609e-05 
+  1.2700e+00  1.270e+00  5.000e-02 -4.615e-05  4.615e-05 
+  1.2750e+00  1.275e+00  5.000e-02 -4.620e-05  4.620e-05 
+  1.2800e+00  1.280e+00  5.000e-02 -4.625e-05  4.625e-05 
+  1.2850e+00  1.285e+00  5.000e-02 -4.630e-05  4.630e-05 
+  1.2900e+00  1.290e+00  5.000e-02 -4.636e-05  4.636e-05 
+  1.2950e+00  1.295e+00  5.000e-02 -4.641e-05  4.641e-05 
+  1.3000e+00  1.300e+00  5.000e-02 -4.646e-05  4.646e-05 
+  1.3050e+00  1.305e+00  5.000e-02 -4.651e-05  4.651e-05 
+  1.3100e+00  1.310e+00  5.000e-02 -4.656e-05  4.656e-05 
+  1.3150e+00  1.315e+00  5.000e-02 -4.661e-05  4.661e-05 
+  1.3200e+00  1.320e+00  5.000e-02 -4.666e-05  4.666e-05 
+  1.3250e+00  1.325e+00  5.000e-02 -4.671e-05  4.671e-05 
+  1.3300e+00  1.330e+00  5.000e-02 -4.676e-05  4.676e-05 
+  1.3350e+00  1.335e+00  5.000e-02 -4.681e-05  4.681e-05 
+  1.3400e+00  1.340e+00  5.000e-02 -4.685e-05  4.685e-05 
+  1.3450e+00  1.345e+00  5.000e-02 -4.690e-05  4.690e-05 
+  1.3500e+00  1.350e+00  5.000e-02 -4.695e-05  4.695e-05 
+  1.3550e+00  1.355e+00  5.000e-02 -4.700e-05  4.700e-05 
+  1.3600e+00  1.360e+00  5.000e-02 -4.704e-05  4.704e-05 
+  1.3650e+00  1.365e+00  5.000e-02 -4.709e-05  4.709e-05 
+  1.3700e+00  1.370e+00  5.000e-02 -4.714e-05  4.714e-05 
+  1.3750e+00  1.375e+00  5.000e-02 -4.718e-05  4.718e-05 
+  1.3800e+00  1.380e+00  5.000e-02 -4.723e-05  4.723e-05 
+  1.3850e+00  1.385e+00  5.000e-02 -4.727e-05  4.727e-05 
+  1.3900e+00  1.390e+00  5.000e-02 -4.732e-05  4.732e-05 
+  1.3950e+00  1.395e+00  5.000e-02 -4.736e-05  4.736e-05 
+  1.4000e+00  1.400e+00  5.000e-02 -4.741e-05  4.741e-05 
+  1.4050e+00  1.405e+00  5.000e-02 -4.745e-05  4.745e-05 
+  1.4100e+00  1.410e+00  5.000e-02 -4.750e-05  4.750e-05 
+  1.4150e+00  1.415e+00  5.000e-02 -4.754e-05  4.754e-05 
+  1.4200e+00  1.420e+00  5.000e-02 -4.758e-05  4.758e-05 
+y
+ ******
+ ***********************************************************************
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+  *** parameter 0:vd  =   7.000e-01       ***
+  
+x
+
+ volt         voltage    voltage    current    param     
+             g          d          vd         -i(vd)     
+ -1.2000e-01 -1.200e-01  7.000e-01 -3.389e-11  3.389e-11 
+ -1.1500e-01 -1.150e-01  7.000e-01 -4.014e-11  4.014e-11 
+ -1.1000e-01 -1.100e-01  7.000e-01 -4.756e-11  4.756e-11 
+ -1.0500e-01 -1.050e-01  7.000e-01 -5.634e-11  5.634e-11 
+ -1.0000e-01 -1.000e-01  7.000e-01 -6.675e-11  6.675e-11 
+ -9.5000e-02 -9.500e-02  7.000e-01 -7.907e-11  7.907e-11 
+ -9.0000e-02 -9.000e-02  7.000e-01 -9.368e-11  9.368e-11 
+ -8.5000e-02 -8.500e-02  7.000e-01 -1.110e-10  1.110e-10 
+ -8.0000e-02 -8.000e-02  7.000e-01 -1.315e-10  1.315e-10 
+ -7.5000e-02 -7.500e-02  7.000e-01 -1.558e-10  1.558e-10 
+ -7.0000e-02 -7.000e-02  7.000e-01 -1.845e-10  1.845e-10 
+ -6.5000e-02 -6.500e-02  7.000e-01 -2.186e-10  2.186e-10 
+ -6.0000e-02 -6.000e-02  7.000e-01 -2.590e-10  2.590e-10 
+ -5.5000e-02 -5.500e-02  7.000e-01 -3.068e-10  3.068e-10 
+ -5.0000e-02 -5.000e-02  7.000e-01 -3.635e-10  3.635e-10 
+ -4.5000e-02 -4.500e-02  7.000e-01 -4.306e-10  4.306e-10 
+ -4.0000e-02 -4.000e-02  7.000e-01 -5.102e-10  5.102e-10 
+ -3.5000e-02 -3.500e-02  7.000e-01 -6.044e-10  6.044e-10 
+ -3.0000e-02 -3.000e-02  7.000e-01 -7.160e-10  7.160e-10 
+ -2.5000e-02 -2.500e-02  7.000e-01 -8.482e-10  8.482e-10 
+ -2.0000e-02 -2.000e-02  7.000e-01 -1.005e-09  1.005e-09 
+ -1.5000e-02 -1.500e-02  7.000e-01 -1.190e-09  1.190e-09 
+ -1.0000e-02 -1.000e-02  7.000e-01 -1.410e-09  1.410e-09 
+ -5.0000e-03 -5.000e-03  7.000e-01 -1.671e-09  1.671e-09 
+  0.0000e+00  0.000e+00  7.000e-01 -1.979e-09  1.979e-09 
+  5.0000e-03  5.000e-03  7.000e-01 -2.344e-09  2.344e-09 
+  1.0000e-02  1.000e-02  7.000e-01 -2.777e-09  2.777e-09 
+  1.5000e-02  1.500e-02  7.000e-01 -3.290e-09  3.290e-09 
+  2.0000e-02  2.000e-02  7.000e-01 -3.897e-09  3.897e-09 
+  2.5000e-02  2.500e-02  7.000e-01 -4.616e-09  4.616e-09 
+  3.0000e-02  3.000e-02  7.000e-01 -5.468e-09  5.468e-09 
+  3.5000e-02  3.500e-02  7.000e-01 -6.476e-09  6.476e-09 
+  4.0000e-02  4.000e-02  7.000e-01 -7.671e-09  7.671e-09 
+  4.5000e-02  4.500e-02  7.000e-01 -9.085e-09  9.085e-09 
+  5.0000e-02  5.000e-02  7.000e-01 -1.076e-08  1.076e-08 
+  5.5000e-02  5.500e-02  7.000e-01 -1.274e-08  1.274e-08 
+  6.0000e-02  6.000e-02  7.000e-01 -1.509e-08  1.509e-08 
+  6.5000e-02  6.500e-02  7.000e-01 -1.786e-08  1.786e-08 
+  7.0000e-02  7.000e-02  7.000e-01 -2.115e-08  2.115e-08 
+  7.5000e-02  7.500e-02  7.000e-01 -2.504e-08  2.504e-08 
+  8.0000e-02  8.000e-02  7.000e-01 -2.963e-08  2.963e-08 
+  8.5000e-02  8.500e-02  7.000e-01 -3.507e-08  3.507e-08 
+  9.0000e-02  9.000e-02  7.000e-01 -4.149e-08  4.149e-08 
+  9.5000e-02  9.500e-02  7.000e-01 -4.908e-08  4.908e-08 
+  1.0000e-01  1.000e-01  7.000e-01 -5.804e-08  5.804e-08 
+  1.0500e-01  1.050e-01  7.000e-01 -6.862e-08  6.862e-08 
+  1.1000e-01  1.100e-01  7.000e-01 -8.109e-08  8.109e-08 
+  1.1500e-01  1.150e-01  7.000e-01 -9.578e-08  9.578e-08 
+  1.2000e-01  1.200e-01  7.000e-01 -1.131e-07  1.131e-07 
+  1.2500e-01  1.250e-01  7.000e-01 -1.334e-07  1.334e-07 
+  1.3000e-01  1.300e-01  7.000e-01 -1.573e-07  1.573e-07 
+  1.3500e-01  1.350e-01  7.000e-01 -1.854e-07  1.854e-07 
+  1.4000e-01  1.400e-01  7.000e-01 -2.182e-07  2.182e-07 
+  1.4500e-01  1.450e-01  7.000e-01 -2.567e-07  2.567e-07 
+  1.5000e-01  1.500e-01  7.000e-01 -3.015e-07  3.015e-07 
+  1.5500e-01  1.550e-01  7.000e-01 -3.537e-07  3.537e-07 
+  1.6000e-01  1.600e-01  7.000e-01 -4.143e-07  4.143e-07 
+  1.6500e-01  1.650e-01  7.000e-01 -4.845e-07  4.845e-07 
+  1.7000e-01  1.700e-01  7.000e-01 -5.655e-07  5.655e-07 
+  1.7500e-01  1.750e-01  7.000e-01 -6.588e-07  6.588e-07 
+  1.8000e-01  1.800e-01  7.000e-01 -7.659e-07  7.659e-07 
+  1.8500e-01  1.850e-01  7.000e-01 -8.882e-07  8.882e-07 
+  1.9000e-01  1.900e-01  7.000e-01 -1.027e-06  1.027e-06 
+  1.9500e-01  1.950e-01  7.000e-01 -1.185e-06  1.185e-06 
+  2.0000e-01  2.000e-01  7.000e-01 -1.363e-06  1.363e-06 
+  2.0500e-01  2.050e-01  7.000e-01 -1.564e-06  1.564e-06 
+  2.1000e-01  2.100e-01  7.000e-01 -1.788e-06  1.788e-06 
+  2.1500e-01  2.150e-01  7.000e-01 -2.038e-06  2.038e-06 
+  2.2000e-01  2.200e-01  7.000e-01 -2.316e-06  2.316e-06 
+  2.2500e-01  2.250e-01  7.000e-01 -2.623e-06  2.623e-06 
+  2.3000e-01  2.300e-01  7.000e-01 -2.961e-06  2.961e-06 
+  2.3500e-01  2.350e-01  7.000e-01 -3.331e-06  3.331e-06 
+  2.4000e-01  2.400e-01  7.000e-01 -3.736e-06  3.736e-06 
+  2.4500e-01  2.450e-01  7.000e-01 -4.176e-06  4.176e-06 
+  2.5000e-01  2.500e-01  7.000e-01 -4.654e-06  4.654e-06 
+  2.5500e-01  2.550e-01  7.000e-01 -5.170e-06  5.170e-06 
+  2.6000e-01  2.600e-01  7.000e-01 -5.726e-06  5.726e-06 
+  2.6500e-01  2.650e-01  7.000e-01 -6.323e-06  6.323e-06 
+  2.7000e-01  2.700e-01  7.000e-01 -6.961e-06  6.961e-06 
+  2.7500e-01  2.750e-01  7.000e-01 -7.643e-06  7.643e-06 
+  2.8000e-01  2.800e-01  7.000e-01 -8.368e-06  8.368e-06 
+  2.8500e-01  2.850e-01  7.000e-01 -9.138e-06  9.138e-06 
+  2.9000e-01  2.900e-01  7.000e-01 -9.952e-06  9.952e-06 
+  2.9500e-01  2.950e-01  7.000e-01 -1.081e-05  1.081e-05 
+  3.0000e-01  3.000e-01  7.000e-01 -1.172e-05  1.172e-05 
+  3.0500e-01  3.050e-01  7.000e-01 -1.267e-05  1.267e-05 
+  3.1000e-01  3.100e-01  7.000e-01 -1.367e-05  1.367e-05 
+  3.1500e-01  3.150e-01  7.000e-01 -1.471e-05  1.471e-05 
+  3.2000e-01  3.200e-01  7.000e-01 -1.580e-05  1.580e-05 
+  3.2500e-01  3.250e-01  7.000e-01 -1.694e-05  1.694e-05 
+  3.3000e-01  3.300e-01  7.000e-01 -1.812e-05  1.812e-05 
+  3.3500e-01  3.350e-01  7.000e-01 -1.935e-05  1.935e-05 
+  3.4000e-01  3.400e-01  7.000e-01 -2.062e-05  2.062e-05 
+  3.4500e-01  3.450e-01  7.000e-01 -2.194e-05  2.194e-05 
+  3.5000e-01  3.500e-01  7.000e-01 -2.331e-05  2.331e-05 
+  3.5500e-01  3.550e-01  7.000e-01 -2.471e-05  2.471e-05 
+  3.6000e-01  3.600e-01  7.000e-01 -2.616e-05  2.616e-05 
+  3.6500e-01  3.650e-01  7.000e-01 -2.765e-05  2.765e-05 
+  3.7000e-01  3.700e-01  7.000e-01 -2.919e-05  2.919e-05 
+  3.7500e-01  3.750e-01  7.000e-01 -3.076e-05  3.076e-05 
+  3.8000e-01  3.800e-01  7.000e-01 -3.238e-05  3.238e-05 
+  3.8500e-01  3.850e-01  7.000e-01 -3.403e-05  3.403e-05 
+  3.9000e-01  3.900e-01  7.000e-01 -3.572e-05  3.572e-05 
+  3.9500e-01  3.950e-01  7.000e-01 -3.745e-05  3.745e-05 
+  4.0000e-01  4.000e-01  7.000e-01 -3.922e-05  3.922e-05 
+  4.0500e-01  4.050e-01  7.000e-01 -4.102e-05  4.102e-05 
+  4.1000e-01  4.100e-01  7.000e-01 -4.286e-05  4.286e-05 
+  4.1500e-01  4.150e-01  7.000e-01 -4.473e-05  4.473e-05 
+  4.2000e-01  4.200e-01  7.000e-01 -4.663e-05  4.663e-05 
+  4.2500e-01  4.250e-01  7.000e-01 -4.857e-05  4.857e-05 
+  4.3000e-01  4.300e-01  7.000e-01 -5.053e-05  5.053e-05 
+  4.3500e-01  4.350e-01  7.000e-01 -5.253e-05  5.253e-05 
+  4.4000e-01  4.400e-01  7.000e-01 -5.455e-05  5.455e-05 
+  4.4500e-01  4.450e-01  7.000e-01 -5.660e-05  5.660e-05 
+  4.5000e-01  4.500e-01  7.000e-01 -5.867e-05  5.867e-05 
+  4.5500e-01  4.550e-01  7.000e-01 -6.077e-05  6.077e-05 
+  4.6000e-01  4.600e-01  7.000e-01 -6.290e-05  6.290e-05 
+  4.6500e-01  4.650e-01  7.000e-01 -6.504e-05  6.504e-05 
+  4.7000e-01  4.700e-01  7.000e-01 -6.721e-05  6.721e-05 
+  4.7500e-01  4.750e-01  7.000e-01 -6.940e-05  6.940e-05 
+  4.8000e-01  4.800e-01  7.000e-01 -7.161e-05  7.161e-05 
+  4.8500e-01  4.850e-01  7.000e-01 -7.384e-05  7.384e-05 
+  4.9000e-01  4.900e-01  7.000e-01 -7.609e-05  7.609e-05 
+  4.9500e-01  4.950e-01  7.000e-01 -7.835e-05  7.835e-05 
+  5.0000e-01  5.000e-01  7.000e-01 -8.063e-05  8.063e-05 
+  5.0500e-01  5.050e-01  7.000e-01 -8.293e-05  8.293e-05 
+  5.1000e-01  5.100e-01  7.000e-01 -8.524e-05  8.524e-05 
+  5.1500e-01  5.150e-01  7.000e-01 -8.756e-05  8.756e-05 
+  5.2000e-01  5.200e-01  7.000e-01 -8.990e-05  8.990e-05 
+  5.2500e-01  5.250e-01  7.000e-01 -9.225e-05  9.225e-05 
+  5.3000e-01  5.300e-01  7.000e-01 -9.461e-05  9.461e-05 
+  5.3500e-01  5.350e-01  7.000e-01 -9.698e-05  9.698e-05 
+  5.4000e-01  5.400e-01  7.000e-01 -9.936e-05  9.936e-05 
+  5.4500e-01  5.450e-01  7.000e-01 -1.018e-04  1.018e-04 
+  5.5000e-01  5.500e-01  7.000e-01 -1.041e-04  1.041e-04 
+  5.5500e-01  5.550e-01  7.000e-01 -1.066e-04  1.066e-04 
+  5.6000e-01  5.600e-01  7.000e-01 -1.090e-04  1.090e-04 
+  5.6500e-01  5.650e-01  7.000e-01 -1.114e-04  1.114e-04 
+  5.7000e-01  5.700e-01  7.000e-01 -1.138e-04  1.138e-04 
+  5.7500e-01  5.750e-01  7.000e-01 -1.163e-04  1.163e-04 
+  5.8000e-01  5.800e-01  7.000e-01 -1.187e-04  1.187e-04 
+  5.8500e-01  5.850e-01  7.000e-01 -1.211e-04  1.211e-04 
+  5.9000e-01  5.900e-01  7.000e-01 -1.236e-04  1.236e-04 
+  5.9500e-01  5.950e-01  7.000e-01 -1.260e-04  1.260e-04 
+  6.0000e-01  6.000e-01  7.000e-01 -1.285e-04  1.285e-04 
+  6.0500e-01  6.050e-01  7.000e-01 -1.310e-04  1.310e-04 
+  6.1000e-01  6.100e-01  7.000e-01 -1.334e-04  1.334e-04 
+  6.1500e-01  6.150e-01  7.000e-01 -1.359e-04  1.359e-04 
+  6.2000e-01  6.200e-01  7.000e-01 -1.383e-04  1.383e-04 
+  6.2500e-01  6.250e-01  7.000e-01 -1.408e-04  1.408e-04 
+  6.3000e-01  6.300e-01  7.000e-01 -1.433e-04  1.433e-04 
+  6.3500e-01  6.350e-01  7.000e-01 -1.458e-04  1.458e-04 
+  6.4000e-01  6.400e-01  7.000e-01 -1.482e-04  1.482e-04 
+  6.4500e-01  6.450e-01  7.000e-01 -1.507e-04  1.507e-04 
+  6.5000e-01  6.500e-01  7.000e-01 -1.532e-04  1.532e-04 
+  6.5500e-01  6.550e-01  7.000e-01 -1.556e-04  1.556e-04 
+  6.6000e-01  6.600e-01  7.000e-01 -1.581e-04  1.581e-04 
+  6.6500e-01  6.650e-01  7.000e-01 -1.606e-04  1.606e-04 
+  6.7000e-01  6.700e-01  7.000e-01 -1.631e-04  1.631e-04 
+  6.7500e-01  6.750e-01  7.000e-01 -1.655e-04  1.655e-04 
+  6.8000e-01  6.800e-01  7.000e-01 -1.680e-04  1.680e-04 
+  6.8500e-01  6.850e-01  7.000e-01 -1.705e-04  1.705e-04 
+  6.9000e-01  6.900e-01  7.000e-01 -1.729e-04  1.729e-04 
+  6.9500e-01  6.950e-01  7.000e-01 -1.754e-04  1.754e-04 
+  7.0000e-01  7.000e-01  7.000e-01 -1.779e-04  1.779e-04 
+  7.0500e-01  7.050e-01  7.000e-01 -1.803e-04  1.803e-04 
+  7.1000e-01  7.100e-01  7.000e-01 -1.828e-04  1.828e-04 
+  7.1500e-01  7.150e-01  7.000e-01 -1.853e-04  1.853e-04 
+  7.2000e-01  7.200e-01  7.000e-01 -1.877e-04  1.877e-04 
+  7.2500e-01  7.250e-01  7.000e-01 -1.902e-04  1.902e-04 
+  7.3000e-01  7.300e-01  7.000e-01 -1.926e-04  1.926e-04 
+  7.3500e-01  7.350e-01  7.000e-01 -1.951e-04  1.951e-04 
+  7.4000e-01  7.400e-01  7.000e-01 -1.975e-04  1.975e-04 
+  7.4500e-01  7.450e-01  7.000e-01 -2.000e-04  2.000e-04 
+  7.5000e-01  7.500e-01  7.000e-01 -2.024e-04  2.024e-04 
+  7.5500e-01  7.550e-01  7.000e-01 -2.048e-04  2.048e-04 
+  7.6000e-01  7.600e-01  7.000e-01 -2.073e-04  2.073e-04 
+  7.6500e-01  7.650e-01  7.000e-01 -2.097e-04  2.097e-04 
+  7.7000e-01  7.700e-01  7.000e-01 -2.121e-04  2.121e-04 
+  7.7500e-01  7.750e-01  7.000e-01 -2.146e-04  2.146e-04 
+  7.8000e-01  7.800e-01  7.000e-01 -2.170e-04  2.170e-04 
+  7.8500e-01  7.850e-01  7.000e-01 -2.194e-04  2.194e-04 
+  7.9000e-01  7.900e-01  7.000e-01 -2.218e-04  2.218e-04 
+  7.9500e-01  7.950e-01  7.000e-01 -2.243e-04  2.243e-04 
+  8.0000e-01  8.000e-01  7.000e-01 -2.267e-04  2.267e-04 
+  8.0500e-01  8.050e-01  7.000e-01 -2.291e-04  2.291e-04 
+  8.1000e-01  8.100e-01  7.000e-01 -2.315e-04  2.315e-04 
+  8.1500e-01  8.150e-01  7.000e-01 -2.339e-04  2.339e-04 
+  8.2000e-01  8.200e-01  7.000e-01 -2.363e-04  2.363e-04 
+  8.2500e-01  8.250e-01  7.000e-01 -2.387e-04  2.387e-04 
+  8.3000e-01  8.300e-01  7.000e-01 -2.411e-04  2.411e-04 
+  8.3500e-01  8.350e-01  7.000e-01 -2.434e-04  2.434e-04 
+  8.4000e-01  8.400e-01  7.000e-01 -2.458e-04  2.458e-04 
+  8.4500e-01  8.450e-01  7.000e-01 -2.482e-04  2.482e-04 
+  8.5000e-01  8.500e-01  7.000e-01 -2.506e-04  2.506e-04 
+  8.5500e-01  8.550e-01  7.000e-01 -2.530e-04  2.530e-04 
+  8.6000e-01  8.600e-01  7.000e-01 -2.553e-04  2.553e-04 
+  8.6500e-01  8.650e-01  7.000e-01 -2.577e-04  2.577e-04 
+  8.7000e-01  8.700e-01  7.000e-01 -2.600e-04  2.600e-04 
+  8.7500e-01  8.750e-01  7.000e-01 -2.624e-04  2.624e-04 
+  8.8000e-01  8.800e-01  7.000e-01 -2.647e-04  2.647e-04 
+  8.8500e-01  8.850e-01  7.000e-01 -2.671e-04  2.671e-04 
+  8.9000e-01  8.900e-01  7.000e-01 -2.694e-04  2.694e-04 
+  8.9500e-01  8.950e-01  7.000e-01 -2.718e-04  2.718e-04 
+  9.0000e-01  9.000e-01  7.000e-01 -2.741e-04  2.741e-04 
+  9.0500e-01  9.050e-01  7.000e-01 -2.764e-04  2.764e-04 
+  9.1000e-01  9.100e-01  7.000e-01 -2.788e-04  2.788e-04 
+  9.1500e-01  9.150e-01  7.000e-01 -2.811e-04  2.811e-04 
+  9.2000e-01  9.200e-01  7.000e-01 -2.834e-04  2.834e-04 
+  9.2500e-01  9.250e-01  7.000e-01 -2.857e-04  2.857e-04 
+  9.3000e-01  9.300e-01  7.000e-01 -2.880e-04  2.880e-04 
+  9.3500e-01  9.350e-01  7.000e-01 -2.903e-04  2.903e-04 
+  9.4000e-01  9.400e-01  7.000e-01 -2.926e-04  2.926e-04 
+  9.4500e-01  9.450e-01  7.000e-01 -2.949e-04  2.949e-04 
+  9.5000e-01  9.500e-01  7.000e-01 -2.972e-04  2.972e-04 
+  9.5500e-01  9.550e-01  7.000e-01 -2.995e-04  2.995e-04 
+  9.6000e-01  9.600e-01  7.000e-01 -3.017e-04  3.017e-04 
+  9.6500e-01  9.650e-01  7.000e-01 -3.040e-04  3.040e-04 
+  9.7000e-01  9.700e-01  7.000e-01 -3.063e-04  3.063e-04 
+  9.7500e-01  9.750e-01  7.000e-01 -3.085e-04  3.085e-04 
+  9.8000e-01  9.800e-01  7.000e-01 -3.108e-04  3.108e-04 
+  9.8500e-01  9.850e-01  7.000e-01 -3.130e-04  3.130e-04 
+  9.9000e-01  9.900e-01  7.000e-01 -3.153e-04  3.153e-04 
+  9.9500e-01  9.950e-01  7.000e-01 -3.175e-04  3.175e-04 
+  1.0000e+00  1.000e+00  7.000e-01 -3.198e-04  3.198e-04 
+  1.0050e+00  1.005e+00  7.000e-01 -3.220e-04  3.220e-04 
+  1.0100e+00  1.010e+00  7.000e-01 -3.242e-04  3.242e-04 
+  1.0150e+00  1.015e+00  7.000e-01 -3.264e-04  3.264e-04 
+  1.0200e+00  1.020e+00  7.000e-01 -3.287e-04  3.287e-04 
+  1.0250e+00  1.025e+00  7.000e-01 -3.309e-04  3.309e-04 
+  1.0300e+00  1.030e+00  7.000e-01 -3.331e-04  3.331e-04 
+  1.0350e+00  1.035e+00  7.000e-01 -3.353e-04  3.353e-04 
+  1.0400e+00  1.040e+00  7.000e-01 -3.375e-04  3.375e-04 
+  1.0450e+00  1.045e+00  7.000e-01 -3.396e-04  3.396e-04 
+  1.0500e+00  1.050e+00  7.000e-01 -3.418e-04  3.418e-04 
+  1.0550e+00  1.055e+00  7.000e-01 -3.440e-04  3.440e-04 
+  1.0600e+00  1.060e+00  7.000e-01 -3.462e-04  3.462e-04 
+  1.0650e+00  1.065e+00  7.000e-01 -3.483e-04  3.483e-04 
+  1.0700e+00  1.070e+00  7.000e-01 -3.505e-04  3.505e-04 
+  1.0750e+00  1.075e+00  7.000e-01 -3.526e-04  3.526e-04 
+  1.0800e+00  1.080e+00  7.000e-01 -3.548e-04  3.548e-04 
+  1.0850e+00  1.085e+00  7.000e-01 -3.569e-04  3.569e-04 
+  1.0900e+00  1.090e+00  7.000e-01 -3.590e-04  3.590e-04 
+  1.0950e+00  1.095e+00  7.000e-01 -3.611e-04  3.611e-04 
+  1.1000e+00  1.100e+00  7.000e-01 -3.633e-04  3.633e-04 
+  1.1050e+00  1.105e+00  7.000e-01 -3.654e-04  3.654e-04 
+  1.1100e+00  1.110e+00  7.000e-01 -3.675e-04  3.675e-04 
+  1.1150e+00  1.115e+00  7.000e-01 -3.696e-04  3.696e-04 
+  1.1200e+00  1.120e+00  7.000e-01 -3.717e-04  3.717e-04 
+  1.1250e+00  1.125e+00  7.000e-01 -3.737e-04  3.737e-04 
+  1.1300e+00  1.130e+00  7.000e-01 -3.758e-04  3.758e-04 
+  1.1350e+00  1.135e+00  7.000e-01 -3.779e-04  3.779e-04 
+  1.1400e+00  1.140e+00  7.000e-01 -3.799e-04  3.799e-04 
+  1.1450e+00  1.145e+00  7.000e-01 -3.820e-04  3.820e-04 
+  1.1500e+00  1.150e+00  7.000e-01 -3.840e-04  3.840e-04 
+  1.1550e+00  1.155e+00  7.000e-01 -3.861e-04  3.861e-04 
+  1.1600e+00  1.160e+00  7.000e-01 -3.881e-04  3.881e-04 
+  1.1650e+00  1.165e+00  7.000e-01 -3.901e-04  3.901e-04 
+  1.1700e+00  1.170e+00  7.000e-01 -3.922e-04  3.922e-04 
+  1.1750e+00  1.175e+00  7.000e-01 -3.942e-04  3.942e-04 
+  1.1800e+00  1.180e+00  7.000e-01 -3.962e-04  3.962e-04 
+  1.1850e+00  1.185e+00  7.000e-01 -3.982e-04  3.982e-04 
+  1.1900e+00  1.190e+00  7.000e-01 -4.002e-04  4.002e-04 
+  1.1950e+00  1.195e+00  7.000e-01 -4.021e-04  4.021e-04 
+  1.2000e+00  1.200e+00  7.000e-01 -4.041e-04  4.041e-04 
+  1.2050e+00  1.205e+00  7.000e-01 -4.061e-04  4.061e-04 
+  1.2100e+00  1.210e+00  7.000e-01 -4.080e-04  4.080e-04 
+  1.2150e+00  1.215e+00  7.000e-01 -4.100e-04  4.100e-04 
+  1.2200e+00  1.220e+00  7.000e-01 -4.119e-04  4.119e-04 
+  1.2250e+00  1.225e+00  7.000e-01 -4.139e-04  4.139e-04 
+  1.2300e+00  1.230e+00  7.000e-01 -4.158e-04  4.158e-04 
+  1.2350e+00  1.235e+00  7.000e-01 -4.177e-04  4.177e-04 
+  1.2400e+00  1.240e+00  7.000e-01 -4.196e-04  4.196e-04 
+  1.2450e+00  1.245e+00  7.000e-01 -4.215e-04  4.215e-04 
+  1.2500e+00  1.250e+00  7.000e-01 -4.234e-04  4.234e-04 
+  1.2550e+00  1.255e+00  7.000e-01 -4.253e-04  4.253e-04 
+  1.2600e+00  1.260e+00  7.000e-01 -4.272e-04  4.272e-04 
+  1.2650e+00  1.265e+00  7.000e-01 -4.291e-04  4.291e-04 
+  1.2700e+00  1.270e+00  7.000e-01 -4.309e-04  4.309e-04 
+  1.2750e+00  1.275e+00  7.000e-01 -4.328e-04  4.328e-04 
+  1.2800e+00  1.280e+00  7.000e-01 -4.346e-04  4.346e-04 
+  1.2850e+00  1.285e+00  7.000e-01 -4.365e-04  4.365e-04 
+  1.2900e+00  1.290e+00  7.000e-01 -4.383e-04  4.383e-04 
+  1.2950e+00  1.295e+00  7.000e-01 -4.401e-04  4.401e-04 
+  1.3000e+00  1.300e+00  7.000e-01 -4.419e-04  4.419e-04 
+  1.3050e+00  1.305e+00  7.000e-01 -4.438e-04  4.438e-04 
+  1.3100e+00  1.310e+00  7.000e-01 -4.456e-04  4.456e-04 
+  1.3150e+00  1.315e+00  7.000e-01 -4.473e-04  4.473e-04 
+  1.3200e+00  1.320e+00  7.000e-01 -4.491e-04  4.491e-04 
+  1.3250e+00  1.325e+00  7.000e-01 -4.509e-04  4.509e-04 
+  1.3300e+00  1.330e+00  7.000e-01 -4.527e-04  4.527e-04 
+  1.3350e+00  1.335e+00  7.000e-01 -4.544e-04  4.544e-04 
+  1.3400e+00  1.340e+00  7.000e-01 -4.562e-04  4.562e-04 
+  1.3450e+00  1.345e+00  7.000e-01 -4.579e-04  4.579e-04 
+  1.3500e+00  1.350e+00  7.000e-01 -4.596e-04  4.596e-04 
+  1.3550e+00  1.355e+00  7.000e-01 -4.614e-04  4.614e-04 
+  1.3600e+00  1.360e+00  7.000e-01 -4.631e-04  4.631e-04 
+  1.3650e+00  1.365e+00  7.000e-01 -4.648e-04  4.648e-04 
+  1.3700e+00  1.370e+00  7.000e-01 -4.665e-04  4.665e-04 
+  1.3750e+00  1.375e+00  7.000e-01 -4.682e-04  4.682e-04 
+  1.3800e+00  1.380e+00  7.000e-01 -4.698e-04  4.698e-04 
+  1.3850e+00  1.385e+00  7.000e-01 -4.715e-04  4.715e-04 
+  1.3900e+00  1.390e+00  7.000e-01 -4.732e-04  4.732e-04 
+  1.3950e+00  1.395e+00  7.000e-01 -4.748e-04  4.748e-04 
+  1.4000e+00  1.400e+00  7.000e-01 -4.765e-04  4.765e-04 
+  1.4050e+00  1.405e+00  7.000e-01 -4.781e-04  4.781e-04 
+  1.4100e+00  1.410e+00  7.000e-01 -4.797e-04  4.797e-04 
+  1.4150e+00  1.415e+00  7.000e-01 -4.814e-04  4.814e-04 
+  1.4200e+00  1.420e+00  7.000e-01 -4.830e-04  4.830e-04 
+y
+
+          ***** job concluded
+ ******  
+ ***********************************************************************
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    20
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       5 # elements   =       5
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       4
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       1
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  dc sweep           0.06         618        1238
+  readin             2.42
+  errchk             0.01
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         80.34 megabytes
+           total cpu time            2.50 seconds
+           total elapsed time        2.55 seconds
+           job started at     17:26:50 07/13/2026
+           job ended   at     17:26:52 07/13/2026
+           job total runtime         2.55 seconds
+
+
+  lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.04(s)

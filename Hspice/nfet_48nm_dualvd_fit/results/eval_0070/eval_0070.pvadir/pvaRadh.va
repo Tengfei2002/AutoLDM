@@ -1,0 +1,3831 @@
+// pvaRad.va : PVADB_VERSION 00.20
+//     Written by pva on Mon Jul 13 18:11:34 2026
+// path: C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\nfet_48nm_dualvd_fit\decks
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 28
+// ###################################################################
+nature Current
+    units = "A";
+    access = I;
+    idt_nature = Charge;
+    abstol = 1e-12;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 39
+// ###################################################################
+nature Charge
+    units = "coul";
+    access = Q;
+    ddt_nature = Current;
+    abstol = 1e-14;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 50
+// ###################################################################
+nature Voltage
+    units = "V";
+    access = V;
+    idt_nature = Flux;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 61
+// ###################################################################
+nature Flux
+    units = "Wb";
+    access = Phi;
+    ddt_nature = Voltage;
+    abstol = 1e-09;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 86
+// ###################################################################
+nature Magneto_Motive_Force
+    units = "A*turn";
+    access = MMF;
+    abstol = 1e-12;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 102
+// ###################################################################
+nature Temperature
+    units = "K";
+    access = Temp;
+    abstol = 0.0001;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 112
+// ###################################################################
+nature Power
+    units = "W";
+    access = Pwr;
+    abstol = 1e-09;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 129
+// ###################################################################
+nature Position
+    units = "m";
+    access = Pos;
+    ddt_nature = Velocity;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 140
+// ###################################################################
+nature Velocity
+    units = "m/s";
+    access = Vel;
+    ddt_nature = Acceleration;
+    idt_nature = Position;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 152
+// ###################################################################
+nature Acceleration
+    units = "m/s^2";
+    access = Acc;
+    ddt_nature = Impulse;
+    idt_nature = Velocity;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 164
+// ###################################################################
+nature Impulse
+    units = "m/s^3";
+    access = Imp;
+    idt_nature = Acceleration;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 175
+// ###################################################################
+nature Force
+    units = "N";
+    access = F;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 195
+// ###################################################################
+nature Angle
+    units = "rads";
+    access = Theta;
+    ddt_nature = Angular_Velocity;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 206
+// ###################################################################
+nature Angular_Velocity
+    units = "rads/s";
+    access = Omega;
+    ddt_nature = Angular_Acceleration;
+    idt_nature = Angle;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 218
+// ###################################################################
+nature Angular_Acceleration
+    units = "rads/s^2";
+    access = Alpha;
+    idt_nature = Angular_Velocity;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 229
+// ###################################################################
+nature Angular_Force
+    units = "N*m";
+    access = Tau;
+    abstol = 1e-06;
+endnature
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 16
+// ###################################################################
+discipline logic
+    domain discrete;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 20
+// ###################################################################
+discipline logical
+    domain discrete;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 75
+// ###################################################################
+discipline electrical
+    potential Voltage;
+    flow Current;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 79
+// ###################################################################
+discipline voltage
+    potential Voltage;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 82
+// ###################################################################
+discipline current
+    potential Current;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 99
+// ###################################################################
+discipline magnetic
+    potential Magneto_Motive_Force;
+    flow Flux;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 125
+// ###################################################################
+discipline thermal
+    potential Temperature;
+    flow Power;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 188
+// ###################################################################
+discipline kinematic
+    potential Position;
+    flow Force;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 192
+// ###################################################################
+discipline kinematic_v
+    potential Velocity;
+    flow Force;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 242
+// ###################################################################
+discipline rotational
+    potential Angle;
+    flow Angular_Force;
+enddiscipline
+
+// ###################################################################
+// file "C:/synopsys/Hspice_P-2019.06-SP1-1/include/std.va", line 246
+// ###################################################################
+discipline rotational_omega
+    potential Angular_Velocity;
+    flow Angular_Force;
+enddiscipline
+
+// ###########################################
+// file "../../va/cfet_nmos_lvt.va", line 29
+// ###########################################
+module cfet_nmos_lvt (D, G, S, B);
+
+inout D, G, S, B;
+electrical D, G, S, B;
+parameter real L = 1.6e-08;
+parameter real W = 2.5e-08;
+parameter real NF = 1;
+parameter real U0 = 0.03;
+parameter real XL = 1.2e-08;
+parameter real DVTSHIFT = 0.0;
+parameter real DeltaWGAA = 0;
+parameter real DeltaTGAA = 0;
+parameter real EOT_0 = 1.1e-09;
+real tgaamax = 5e-09;
+real tgaamin = 5e-09;
+real wgaamax = 4e-08;
+real wgaamin = 1e-08;
+real lgaamax = 1e-07;
+real lgaamin = 1.6e-08;
+real netmax = 1.0;
+real netmin = -1.0;
+real nnscew1_1_1 = 0.002874597888755869;
+real nnscew1_1_2 = 2.610946811045464;
+real nnscew1_2_1 = -0.03088303909715982;
+real nnscew1_2_2 = 1.800668930096331;
+real nnscew2_1_1 = 4.100898264939784;
+real nnscew2_1_2 = 3.302752935870161;
+real nnscew2_2_1 = 1.922296171764937;
+real nnscew2_2_2 = 2.602923283800941;
+real nnscew3_1_1 = -1.389085468611042;
+real nnscew3_1_2 = -1.718936533598213;
+real nnscew3_2_1 = 0.4600063606944501;
+real nnscew3_2_2 = -0.2144325995432448;
+real nnscew3_3_1 = -11.17812137574058;
+real nnscew3_3_2 = -5.726941128616768;
+real nnscew3_4_1 = -10.3130074720705;
+real nnscew3_4_2 = -3.58628686944319;
+real nnscew3_5_1 = -9.636814782858998;
+real nnscew3_5_2 = -4.338071063835113;
+real nnsceb1_1 = 3.335260273888657;
+real nnsceb1_2 = -1.757599357852409;
+real nnsceb2_1 = -2.698415629952912;
+real nnsceb2_2 = -0.5192657141375376;
+real nnsceb3_1 = -2.199725110742352;
+real nnsceb3_2 = -2.036589254338232;
+real nnsceb3_3 = 3.015404295995864;
+real nnsceb3_4 = 0.395424241373883;
+real nnsceb3_5 = -0.9090160151939283;
+real nnclmw1_1_1 = -0.5400594596509707;
+real nnclmw1_1_2 = 1.80487712426099;
+real nnclmw1_2_1 = 0.6376873966762037;
+real nnclmw1_2_2 = -5.33730516544068;
+real nnclmw1_3_1 = -7.391454895042793;
+real nnclmw1_3_2 = 1.356711902049859;
+real nnclmw1_4_1 = 0.4581115224158577;
+real nnclmw1_4_2 = 0.131302803453627;
+real nnclmw2_1_1 = -3.976702214522559;
+real nnclmw2_1_2 = 3.151909108028226;
+real nnclmw2_1_3 = 6.508030740572996;
+real nnclmw2_1_4 = -1.764008861644126;
+real nnclmw2_2_1 = -1.991115224622532;
+real nnclmw2_2_2 = 2.924032316542302;
+real nnclmw2_2_3 = -2.423534980583645;
+real nnclmw2_2_4 = 0.3197791853649079;
+real nnclmw2_3_1 = 1.378617744736182;
+real nnclmw2_3_2 = -3.154777608374341;
+real nnclmw2_3_3 = -1.34980856894764;
+real nnclmw2_3_4 = 2.801971863119057;
+real nnclmw2_4_1 = 2.115736494601836;
+real nnclmw2_4_2 = 6.246546871865431;
+real nnclmw2_4_3 = 1.318548982943349;
+real nnclmw2_4_4 = -0.8794958531778193;
+real nnclmw3_1_1 = -0.8598010575942819;
+real nnclmw3_1_2 = 0.5463436497536845;
+real nnclmw3_1_3 = -4.761031894150254;
+real nnclmw3_1_4 = -2.122239932834767;
+real nnclmw3_2_1 = -2.309710430284572;
+real nnclmw3_2_2 = 0.8301918374332926;
+real nnclmw3_2_3 = -2.061520486177785;
+real nnclmw3_2_4 = 1.275219474922602;
+real nnclmw3_3_1 = 1.058349220514687;
+real nnclmw3_3_2 = -1.247000636309088;
+real nnclmw3_3_3 = 1.142468908251904;
+real nnclmw3_3_4 = 1.049528442599665;
+real nnclmw3_4_1 = 2.727897096047811;
+real nnclmw3_4_2 = -3.842739345742231;
+real nnclmw3_4_3 = -1.057828258863177;
+real nnclmw3_4_4 = -1.279205987200672;
+real nnclmw3_5_1 = 1.468812692397136;
+real nnclmw3_5_2 = -6.018159456637017;
+real nnclmw3_5_3 = -2.748844512648207;
+real nnclmw3_5_4 = 2.060687912761842;
+real nnclmw3_6_1 = -1.02611790880324;
+real nnclmw3_6_2 = -1.85882744121046;
+real nnclmw3_6_3 = 0.2175627711639233;
+real nnclmw3_6_4 = 2.145268465319828;
+real nnclmw3_7_1 = -0.061679698297301;
+real nnclmw3_7_2 = -0.3035588935122202;
+real nnclmw3_7_3 = 0.4324179978802781;
+real nnclmw3_7_4 = 0.0767890645641626;
+real nnclmw3_8_1 = 0.405451229950498;
+real nnclmw3_8_2 = -0.2546956167700526;
+real nnclmw3_8_3 = 0.8466608085062101;
+real nnclmw3_8_4 = -1.717592956029778;
+real nnclmw3_9_1 = -1.399547951854898;
+real nnclmw3_9_2 = -0.1602807446465055;
+real nnclmw3_9_3 = -0.1704996405911706;
+real nnclmw3_9_4 = 0.2195162200577324;
+real nnclmw3_10_1 = -0.229145225845978;
+real nnclmw3_10_2 = -0.8095235924543516;
+real nnclmw3_10_3 = 0.7059861735749444;
+real nnclmw3_10_4 = -1.168179097821227;
+real nnclmw3_11_1 = 0.3378220639773371;
+real nnclmw3_11_2 = -2.41992046684523;
+real nnclmw3_11_3 = 1.67374901491173;
+real nnclmw3_11_4 = -1.926378514530893;
+real nnclmw3_12_1 = -0.2108162229482632;
+real nnclmw3_12_2 = 0.7273522341459785;
+real nnclmw3_12_3 = 0.8767480629816712;
+real nnclmw3_12_4 = 0.3259948372575737;
+real nnclmw3_13_1 = -1.630806634713519;
+real nnclmw3_13_2 = -2.112186453879924;
+real nnclmw3_13_3 = -0.5445407565792832;
+real nnclmw3_13_4 = 0.30753321126582;
+real nnclmb1_1 = -0.2495208150901752;
+real nnclmb1_2 = -5.458580186040735;
+real nnclmb1_3 = -6.438169098690727;
+real nnclmb1_4 = 0.7284954136216386;
+real nnclmb2_1 = -1.799704995394712;
+real nnclmb2_2 = 0.3478108082699635;
+real nnclmb2_3 = -0.9668218968999922;
+real nnclmb2_4 = -2.005141910382318;
+real nnclmb3_1 = -1.003567635994221;
+real nnclmb3_2 = -0.3923765842612897;
+real nnclmb3_3 = -0.05884463800359053;
+real nnclmb3_4 = -0.1778035974150634;
+real nnclmb3_5 = -5.485667014784214;
+real nnclmb3_6 = -0.1453094923349623;
+real nnclmb3_7 = -1.219845765159127;
+real nnclmb3_8 = -0.5725129191607548;
+real nnclmb3_9 = -1.36221650442067;
+real nnclmb3_10 = 0.2680186185376293;
+real nnclmb3_11 = -1.409585745338534;
+real nnclmb3_12 = 1.148587204903328;
+real nnclmb3_13 = -0.8769147972673021;
+real nnquaw1_1_1 = -1.30976532971403;
+real nnquaw1_1_2 = -0.8495800182992986;
+real nnquaw1_2_1 = 0.3753138360385015;
+real nnquaw1_2_2 = -4.869959969379122;
+real nnquaw1_3_1 = -0.07108342703959258;
+real nnquaw1_3_2 = 6.182995818573351;
+real nnquaw2_1_1 = 0.3078127819236097;
+real nnquaw2_1_2 = 1.061338047007004;
+real nnquaw2_1_3 = 1.597143409818876;
+real nnquaw2_2_1 = 1.239858325888543;
+real nnquaw2_2_2 = 1.462010552855574;
+real nnquaw2_2_3 = 2.438694807044006;
+real nnquaw2_3_1 = 0.8173575727581419;
+real nnquaw2_3_2 = 1.70572028792441;
+real nnquaw2_3_3 = 2.636466275657811;
+real nnquaw3_1_1 = -0.9640797316168019;
+real nnquaw3_1_2 = -2.54365247434436;
+real nnquaw3_1_3 = -1.908737457248064;
+real nnquaw3_2_1 = 1.0346865713630968e-213;
+real nnquaw3_2_2 = -1.096145309066549e-214;
+real nnquaw3_2_3 = -8.5822982584142891e-213;
+real nnquaw3_3_1 = 1.9140516207854393e-213;
+real nnquaw3_3_2 = -1.5992612456084066e-216;
+real nnquaw3_3_3 = 6.058206820077861e-218;
+real nnquaw3_4_1 = 0.764166871609068;
+real nnquaw3_4_2 = 0.7639996845169159;
+real nnquaw3_4_3 = 0.7175874748324936;
+real nnquaw3_5_1 = -0.9227388222494269;
+real nnquaw3_5_2 = -0.9530964272475477;
+real nnquaw3_5_3 = -0.9045317412243281;
+real nnquaw3_6_1 = -3.8968268457519103e-212;
+real nnquaw3_6_2 = -4.3354150100812236e-217;
+real nnquaw3_6_3 = -2.979050019937019e-215;
+real nnquaw3_7_1 = -7.9626496877435586e-214;
+real nnquaw3_7_2 = -1.3353398316239517e-214;
+real nnquaw3_7_3 = 3.0977473266175432e-214;
+real nnquab1_1 = -1.114033482558053;
+real nnquab1_2 = -2.340532035271589;
+real nnquab1_3 = -1.924960104496762;
+real nnquab2_1 = -0.3176882254438907;
+real nnquab2_2 = -1.026150854297843;
+real nnquab2_3 = -1.135741254090852;
+real nnquab3_1 = -0.6338020364094521;
+real nnquab3_2 = -2.8278176937208883e-215;
+real nnquab3_3 = 5.4855245563936536e-214;
+real nnquab3_4 = 1.123543989712167;
+real nnquab3_5 = -1.368201786667232;
+real nnquab3_6 = -4.5558557362627825e-213;
+real nnquab3_7 = 5.8775465107005421e-216;
+real nnmobw1_1_1 = -0.5739549764148305;
+real nnmobw1_1_2 = 1.328111775145421;
+real nnmobw1_1_3 = 1.893790235390601;
+real nnmobw1_2_1 = 0.3878595013073769;
+real nnmobw1_2_2 = 0.05129796442769442;
+real nnmobw1_2_3 = 1.354935792982044;
+real nnmobw2_1_1 = -1.668037245897186;
+real nnmobw2_1_2 = -1.510572538747249;
+real nnmobw2_2_1 = -2.013868827566939;
+real nnmobw2_2_2 = 3.975680918145699;
+real nnmobw3_1_1 = 3.543790786819479;
+real nnmobw3_1_2 = -2.020589832962608;
+real nnmobw3_2_1 = -0.01192778385878338;
+real nnmobw3_2_2 = -1.312900279397141;
+real nnmobw3_3_1 = -1.62598893480369;
+real nnmobw3_3_2 = 1.658469748302545;
+real nnmobw3_4_1 = 1.897138354887981;
+real nnmobw3_4_2 = -1.377448350297031;
+real nnmobw3_5_1 = 2.544351119188152;
+real nnmobw3_5_2 = -0.4945480553936905;
+real nnmobb1_1 = -0.425104549844339;
+real nnmobb1_2 = 1.074021518144585;
+real nnmobb2_1 = 2.273134304382901;
+real nnmobb2_2 = -1.715560377332873;
+real nnmobb3_1 = -0.9591518359293196;
+real nnmobb3_2 = -0.7996280387247734;
+real nnmobb3_3 = 0.2588999954064644;
+real nnmobb3_4 = -0.3014176559431903;
+real nnmobb3_5 = 1.943208648404664;
+real nncvw1_1_1 = -0.9651128196993672;
+real nncvw1_1_2 = 0.5662567419234997;
+real nncvw1_1_3 = 2.957343593987137;
+real nncvw1_2_1 = 0.5828024173506431;
+real nncvw1_2_2 = 0.849696567376411;
+real nncvw1_2_3 = 3.898121333571543;
+real nncvw1_3_1 = 0.7048840575225495;
+real nncvw1_3_2 = -5.884428456659883;
+real nncvw1_3_3 = -0.2883262712622359;
+real nncvw1_4_1 = -0.3967453391895563;
+real nncvw1_4_2 = -1.433787465352769;
+real nncvw1_4_3 = 0.05121876151544964;
+real nncvw2_1_1 = -1.376721839749985;
+real nncvw2_1_2 = -0.5589040728735171;
+real nncvw2_1_3 = 0.2642406459501294;
+real nncvw2_1_4 = -1.989990268588788;
+real nncvw2_2_1 = -2.442470071984125;
+real nncvw2_2_2 = -0.8901337186656325;
+real nncvw2_2_3 = -0.2390293823550192;
+real nncvw2_2_4 = -1.592134473685443;
+real nncvw2_3_1 = -0.3195744105765556;
+real nncvw2_3_2 = -0.04681507045260434;
+real nncvw2_3_3 = 0.7144878563720405;
+real nncvw2_3_4 = -0.7918363056276361;
+real nncvw2_4_1 = 0.3805968748594233;
+real nncvw2_4_2 = 1.23432523658504;
+real nncvw2_4_3 = 2.4262837689733;
+real nncvw2_4_4 = -3.440343354567571;
+real nncvw3_1_1 = 1.6089468776473669e-213;
+real nncvw3_1_2 = -2.1052049250691363e-215;
+real nncvw3_1_3 = -3.54814665697562e-217;
+real nncvw3_1_4 = 9.366047894974987e-218;
+real nncvw3_2_1 = 5.9187063242214469e-216;
+real nncvw3_2_2 = 2.3601652542403581e-215;
+real nncvw3_2_3 = 1.0867469939295077e-213;
+real nncvw3_2_4 = -1.786645764871571e-215;
+real nncvw3_3_1 = -1.0877073754063122e-213;
+real nncvw3_3_2 = -2.967095886561347e-218;
+real nncvw3_3_3 = 6.2668949907574729e-214;
+real nncvw3_3_4 = 4.5151867046009093e-213;
+real nncvw3_4_1 = -1.7788244200296659e-214;
+real nncvw3_4_2 = -1.004853882462983e-212;
+real nncvw3_4_3 = 7.7097733968365814e-216;
+real nncvw3_4_4 = -5.4920634336435852e-217;
+real nncvw3_5_1 = -1.258437280423861e-217;
+real nncvw3_5_2 = -6.6627275497995672e-213;
+real nncvw3_5_3 = -7.9796993213002602e-219;
+real nncvw3_5_4 = 3.766079351446887e-213;
+real nncvw3_6_1 = -1.4298936710386185e-214;
+real nncvw3_6_2 = 8.4546370941180859e-216;
+real nncvw3_6_3 = 9.4905607716075716e-215;
+real nncvw3_6_4 = 7.5560302388646676e-218;
+real nncvw3_7_1 = -3.3474108206769885e-217;
+real nncvw3_7_2 = -1.6113360680128945e-217;
+real nncvw3_7_3 = 3.7929361641546666e-213;
+real nncvw3_7_4 = -4.1741209021312032e-213;
+real nncvw3_8_1 = -7.0584273968551932e-214;
+real nncvw3_8_2 = -6.7136371286943089e-217;
+real nncvw3_8_3 = 3.0480455596373792e-214;
+real nncvw3_8_4 = -3.0630043612211898e-217;
+real nncvw3_9_1 = 4.6708332128700134e-213;
+real nncvw3_9_2 = -3.91436636441442e-216;
+real nncvw3_9_3 = -3.9196036076591906e-216;
+real nncvw3_9_4 = 4.92042361775773e-213;
+real nncvw3_10_1 = 4.855989521182996e-216;
+real nncvw3_10_2 = -1.8180213248816192e-215;
+real nncvw3_10_3 = -8.2928920161919855e-213;
+real nncvw3_10_4 = -1.586644637122586e-217;
+real nncvw3_11_1 = -1.1386917485302162e-215;
+real nncvw3_11_2 = 1.7576406405955825e-213;
+real nncvw3_11_3 = 2.433572532222696e-216;
+real nncvw3_11_4 = 7.8132927728700511e-215;
+real nncvw3_12_1 = -1.1013097302345851e-214;
+real nncvw3_12_2 = 1.1773373577465412e-216;
+real nncvw3_12_3 = -3.5273072093830745e-214;
+real nncvw3_12_4 = -2.6111806145987059e-217;
+real nncvw3_13_1 = -1.5298273603085216e-215;
+real nncvw3_13_2 = -1.8651906261509343e-213;
+real nncvw3_13_3 = -1.192387982785786e-216;
+real nncvw3_13_4 = 7.2615338790642798e-217;
+real nncvw3_14_1 = -0.6563300067454617;
+real nncvw3_14_2 = -1.023732950245352;
+real nncvw3_14_3 = -1.313717955471486;
+real nncvw3_14_4 = 1.853997373965083;
+real nncvw3_15_1 = -9.3678715141897987e-214;
+real nncvw3_15_2 = -7.4413544026048242e-214;
+real nncvw3_15_3 = -1.9968003856317264e-213;
+real nncvw3_15_4 = 2.8224068018168606e-216;
+real nncvb1_1 = -0.8350519182299336;
+real nncvb1_2 = 1.198112192160916;
+real nncvb1_3 = 1.036648403736971;
+real nncvb1_4 = 0.1682333682682584;
+real nncvb2_1 = -0.2533395781665462;
+real nncvb2_2 = 1.178705813768048;
+real nncvb2_3 = 1.243801245141128;
+real nncvb2_4 = -3.043966541425312;
+real nncvb3_1 = 5.8630872603302808e-217;
+real nncvb3_2 = 2.3096509926273318e-215;
+real nncvb3_3 = 1.9325449783489256e-215;
+real nncvb3_4 = -7.8345588373662653e-215;
+real nncvb3_5 = 5.6919946357807283e-215;
+real nncvb3_6 = 5.5956328340041914e-215;
+real nncvb3_7 = -9.9084255791323419e-218;
+real nncvb3_8 = -1.6963010560050351e-213;
+real nncvb3_9 = -1.6462271234510912e-214;
+real nncvb3_10 = -1.089001807066844e-214;
+real nncvb3_11 = 2.550079158094544e-217;
+real nncvb3_12 = 5.7524816626989716e-213;
+real nncvb3_13 = 4.6161864933908031e-217;
+real nncvb3_14 = -0.2174019615037897;
+real nncvb3_15 = 7.0640671967916261e-213;
+real TGAA = 5e-09;
+real WGAA = W;
+real TFIN = 6e-09;
+real HFIN = 3.3e-08;
+real NFIN = 1.0;
+real TOXP = 1.07464e-09;
+real DevTemp = 300;
+real NGAA = 3.0;
+real TOXG = 1.46e-09;
+real type = 1.0;
+real mode;
+real Inv_L, Inv_NFIN, Inv_LNFIN, Inv_W, Inv_WL;
+real q = 1.6021899999999999e-19;
+real KboQ = 8.617087e-05;
+real pi = 3.1415926;
+real HBAR = 1.05457e-34;
+real DELTA_1 = 0.02;
+real MEL = 9.1100000000000003e-31;
+real mx = 0.916 * MEL;
+real mxprime = 0.19 * MEL;
+real md = 0.19 * MEL;
+real mdprime = 0.417 * MEL;
+real gprime = 4.0;
+real gfactor = 2.0;
+real WDIM0 = 9.500000000000001e-09;
+real WDIMR = 0.1;
+real WSSP0 = 9.500000000000001e-09;
+real WSSPR = 0.1;
+real DIM1H = 3.0;
+real DIMENSION1_i = 2.0;
+real DIM2H = 3.0;
+real DIMENSION2_i = 2.6;
+real DIM3H = 3.0;
+real DIMENSION3_i = 2.6;
+real DSSP1 = 2.0;
+real DSSP2 = 0.0;
+real DSSP3 = 0.0;
+real SSP1_i = 14.0;
+real SSP2_i = 24.0;
+real SSP3_i = 24.0;
+real TSRE2 = 1.8;
+real TDWSE2 = 1.0;
+real TSRE3 = 0.67;
+real TDWSE3 = 0.23;
+real TSRQ1 = 1.1;
+real TDWSQ1 = 2.4;
+real TSRQ2 = 2.0;
+real TDWSQ2 = 2.0;
+real TSRQ3 = 6.0;
+real TDWSQ3 = 2.4;
+real WGAANOM = 8e-09;
+real WSFE2 = 1.0;
+real WSFE3 = 1.0;
+real E2NOM_i = 0.139;
+real E3NOM_i = 2.0;
+real MFE2 = 1.0;
+real MFE3 = 1.0;
+real MFQ1 = 1.0;
+real MFQ2 = 1.0;
+real MFQ3 = 1.0;
+real WSFQ1 = 1.0;
+real WSFQ2 = 1.0;
+real WSFQ3 = 1.0;
+real MFQ1NOM_i = 11.2;
+real MFQ2NOM_i = 8.02;
+real MFQ3NOM_i = 6.18;
+real QMFACTOR_i = 2.5;
+real QMTCENCV_i = 0.0;
+real AQMTCEN = 0.0;
+real BQMTCEN = 1.2e-08;
+real QM0 = 0.001;
+real PQM = 0.66;
+real ETAMOBTHIN = 2.0;
+real ETAMOB = 2.0;
+real ETAMOBTNI = 7.499999999999999e-09;
+real ETAMOBIR = 0.1;
+real UA = 0.3;
+real UATHIN = 0.3;
+real UATSAT = 9e-09;
+real UARTSC = 0.09;
+real UATNI = 6.4e-09;
+real UAIR = 0.2;
+real EUTHIN = 2.6;
+real EU = 2.5;
+real EUPTSC = 3.5;
+real EUTNI = 6e-09;
+real EUIR = 0.2;
+real U0ETAWSC = 1.5;
+real EGBULK = 1.1;
+real U0EMSM1 = 26.6;
+real U0EMSM2 = 4.0;
+real UDTHIN = 0.6;
+real UD = 0.5;
+real UDTSAT = 8.1e-09;
+real UDPTSC = 1.3;
+real UCS_t = 1.0;
+real DMOBCLAMP = 0.01;
+real U0MULT = 1.0;
+real VSAT1 = 85000.0;
+real PSAT_i = 1.0;
+real PSATCV_i = 2.0;
+real DELTAVSAT_i = 1.0;
+real DELTAVSATCV_i = 1.0;
+real PTWG_a = 0.5;
+real A1_t = 0.0;
+real A2_t = 0.0;
+real DVSATCLAMP = 0.01;
+real NBODY = 1.000000000000e+23;
+real NSD = 2.000000000000e+26;
+real EPSROX = 3.9;
+real EPS0 = 8.8542e-12;
+real NC0SUB = 2.860000000000e+25;
+real EPSRSUB = 11.9;
+real epsratio = EPSRSUB / EPSROX;
+real QMFACTORCVfinal = 0.0;
+real EASUB = 4.05;
+real PHIG = 4.47;
+real ALPHA_UFCM = 0.5556;
+real VSAT = 85000.0;
+real VSATCV_t = 85000.0;
+real KSATIV = 1.0;
+real MEXP = 4.0;
+real DROUT = 1.06;
+real PVAG = 1.0;
+real PDIBL1 = 1.3;
+real PDIBL2 = 0.0002;
+real devsign = 1.0;
+real PCLMG = 0.0;
+real NI0SUB = 1.100000000000e+16;
+real BG0SUB = 1.12;
+real PHIN_i = 0.05;
+real PCLM = 0.013;
+real LPCLM = 0.0005;
+real NPCLM = 0.0001;
+real PPCLM = 0.0001;
+real WPCLM = 5e-05;
+real P2PCLM = 5e-05;
+real PCLMCV_i = 0.013;
+real DVT1 = 0.475;
+real LDVT1 = 0.0;
+real NDVT1 = 0.0;
+real PDVT1 = 0.0;
+real WDVT1 = 0.0;
+real P2DVT1 = 0.0;
+real DVT1SS = 0.6;
+real LDVT1SS = 0.0;
+real NDVT1SS = 0.0;
+real PDVT1SS = 0.0;
+real WDVT1SS = 0.0;
+real P2DVT1SS = 0.0;
+real DSUB = 0.35;
+real LDSUB = 0.0;
+real NDSUB = 0.0;
+real PDSUB = 0.0;
+real WDSUB = 0.0;
+real P2DSUB = 0.0;
+real LPE0 = 0.0;
+real LLPE0 = 0.0;
+real NLPE0 = 0.0;
+real PLPE0 = 0.0;
+real WLPE0 = 0.0;
+real P2LPE0 = 0.0;
+real CDSC = 0.01;
+real LCDSC = 0.0;
+real NCDSC = 0.0;
+real PCDSC = 0.0;
+real WCDSC = 0.0;
+real P2CDSC = 0.0;
+real CDSCD = 0.01;
+real LCDSCD = 0.0;
+real NCDSCD = 0.0;
+real PCDSCD = 0.0;
+real WCDSCD = 0.0;
+real P2CDSCD = 0.0;
+real CIT = 0.0;
+real LCIT = 0.0;
+real NCIT = 0.0;
+real PCIT = 0.0;
+real WCIT = 0.0;
+real P2CIT = 0.0;
+real DVT0 = 0.05;
+real LDVT0 = 0.0;
+real NDVT0 = 0.0;
+real PDVT0 = 0.0;
+real WDVT0 = 0.0;
+real P2DVT0 = 0.0;
+real ETA0 = 0.068;
+real LETA0 = 0.0;
+real NETA0 = 0.0;
+real PETA0 = 0.0;
+real WETA0 = 0.0;
+real P2ETA0 = 0.0;
+real DVTP0 = 0.0;
+real LDVTP0 = 0.0;
+real NDVTP0 = 0.0;
+real PDVTP0 = 0.0;
+real WDVTP0 = 0.0;
+real P2DVTP0 = 0.0;
+real DVTP1 = 0.0;
+real LDVTP1 = 0.0;
+real NDVTP1 = 0.0;
+real PDVTP1 = 0.0;
+real WDVTP1 = 0.0;
+real P2DVTP1 = 0.0;
+real K1RSCE = 0.0;
+real LK1RSCE = 0.0;
+real NK1RSCE = 0.0;
+real PK1RSCE = 0.0;
+real WK1RSCE = 0.0;
+real P2K1RSCE = 0.0;
+real CFS_i = 2.5e-10;
+real CFD_i = 2.5e-10;
+real vfbsdcv = 0.0;
+real CGSL_i = 1e-10;
+real CKAPPAS_i = 0.6;
+real nnscew1_1_1_cap = -2.807141468059602;
+real nnscew1_1_2_cap = 0.2005727230936477;
+real nnscew1_2_1_cap = -0.3642857215227009;
+real nnscew1_2_2_cap = 0.8093870301922018;
+real nnscew2_1_1_cap = -2.316137004158298;
+real nnscew2_1_2_cap = 3.001801643248602;
+real nnscew2_2_1_cap = 2.337674302610664;
+real nnscew2_2_2_cap = 1.394629183610231;
+real nnscew3_1_1_cap = -2.70237702555722;
+real nnscew3_1_2_cap = -3.183089089522999;
+real nnscew3_2_1_cap = 1.794390685893114;
+real nnscew3_2_2_cap = 1.210245629300778;
+real nnscew3_3_1_cap = -4.171290799636046;
+real nnscew3_3_2_cap = -2.909058649843198;
+real nnscew3_4_1_cap = -6.258367734597264;
+real nnscew3_4_2_cap = -2.593148076509858;
+real nnscew3_5_1_cap = -4.195255953200761;
+real nnscew3_5_2_cap = 4.131417908870202;
+real nnsceb1_1_cap = -3.695509761355575;
+real nnsceb1_2_cap = 0.1809525382143838;
+real nnsceb2_1_cap = -0.7244849958949294;
+real nnsceb2_2_cap = -0.8761911098275185;
+real nnsceb3_1_cap = -1.259721005149525;
+real nnsceb3_2_cap = -3.379587342018289;
+real nnsceb3_3_cap = -5.571317024497604;
+real nnsceb3_4_cap = -1.259174394314517;
+real nnsceb3_5_cap = -4.308248248524074;
+real nnclmw1_1_1_cap = -2.786510741039809;
+real nnclmw1_1_2_cap = 0.4897414312203854;
+real nnclmw1_2_1_cap = -3.036492135760273;
+real nnclmw1_2_2_cap = 0.9625093788144216;
+real nnclmw1_3_1_cap = 0.3392081704722974;
+real nnclmw1_3_2_cap = 1.081913640262363;
+real nnclmw1_4_1_cap = -0.0611650112428551;
+real nnclmw1_4_2_cap = 1.595440206890743;
+real nnclmw2_1_1_cap = 0.9634247867658223;
+real nnclmw2_1_2_cap = 1.666034628465017;
+real nnclmw2_1_3_cap = 0.1408883084646279;
+real nnclmw2_1_4_cap = 0.6140916319062513;
+real nnclmw2_2_1_cap = 1.290694583063177;
+real nnclmw2_2_2_cap = 0.5800391945018969;
+real nnclmw2_2_3_cap = 0.7878828717599904;
+real nnclmw2_2_4_cap = 1.153228568956042;
+real nnclmw2_3_1_cap = 1.3897731653517;
+real nnclmw2_3_2_cap = 0.4436792638534017;
+real nnclmw2_3_3_cap = 1.217159693017312;
+real nnclmw2_3_4_cap = 0.6746970832476926;
+real nnclmw2_4_1_cap = 1.213986160144251;
+real nnclmw2_4_2_cap = -1.167296661468061;
+real nnclmw2_4_3_cap = -1.048151522457412;
+real nnclmw2_4_4_cap = 1.28309658223046;
+real nnclmw3_1_1_cap = 3.5227117394026642e-84;
+real nnclmw3_1_2_cap = -2.251664904025604e-86;
+real nnclmw3_1_3_cap = 8.3775340675808316e-84;
+real nnclmw3_1_4_cap = 1.6272868913526473e-88;
+real nnclmw3_2_1_cap = -1.4422831622751052e-86;
+real nnclmw3_2_2_cap = 6.8321100961002477e-91;
+real nnclmw3_2_3_cap = 6.9301152936043357e-86;
+real nnclmw3_2_4_cap = -3.8817582342486842e-84;
+real nnclmw3_3_1_cap = 3.5185342457269861e-86;
+real nnclmw3_3_2_cap = -6.2348058054207327e-84;
+real nnclmw3_3_3_cap = 4.9378856966007583e-88;
+real nnclmw3_3_4_cap = 3.0353720351655261e-86;
+real nnclmw3_4_1_cap = -8.006248645757367e-87;
+real nnclmw3_4_2_cap = 9.7985939901118333e-88;
+real nnclmw3_4_3_cap = 8.2356621046648854e-84;
+real nnclmw3_4_4_cap = 2.4243458103078551e-85;
+real nnclmw3_5_1_cap = -2.1480193723855085e-86;
+real nnclmw3_5_2_cap = -2.8966915446509838e-86;
+real nnclmw3_5_3_cap = -1.4901933807317242e-84;
+real nnclmw3_5_4_cap = -1.5456320162517154e-85;
+real nnclmw3_6_1_cap = -1.167462905809786;
+real nnclmw3_6_2_cap = -1.635534822547542;
+real nnclmw3_6_3_cap = -1.453322639093042;
+real nnclmw3_6_4_cap = -0.8239031594534196;
+real nnclmw3_7_1_cap = -0.2442916993993599;
+real nnclmw3_7_2_cap = 0.311260217239058;
+real nnclmw3_7_3_cap = -0.04614777340848358;
+real nnclmw3_7_4_cap = 2.40088356867836;
+real nnclmw3_8_1_cap = -1.413041356880611;
+real nnclmw3_8_2_cap = 0.1604998815564176;
+real nnclmw3_8_3_cap = 0.3381364616725646;
+real nnclmw3_8_4_cap = 1.076018874196679;
+real nnclmw3_9_1_cap = -1.5802218477319032e-88;
+real nnclmw3_9_2_cap = 9.5129373760277486e-86;
+real nnclmw3_9_3_cap = 2.0126624529885194e-86;
+real nnclmw3_9_4_cap = 3.0416492144313334e-88;
+real nnclmw3_10_1_cap = 1.2466001333324356e-86;
+real nnclmw3_10_2_cap = -5.8012620231866561e-87;
+real nnclmw3_10_3_cap = -4.1967797484613718e-84;
+real nnclmw3_10_4_cap = 1.131658319367598e-84;
+real nnclmw3_11_1_cap = -8.7717354846295065e-85;
+real nnclmw3_11_2_cap = -1.2043556032666289e-86;
+real nnclmw3_11_3_cap = -2.8474522755473103e-84;
+real nnclmw3_11_4_cap = -2.7780414875155339e-84;
+real nnclmw3_12_1_cap = 2.8962004926797326e-85;
+real nnclmw3_12_2_cap = 2.959095240365754e-85;
+real nnclmw3_12_3_cap = 3.4645233545262902e-86;
+real nnclmw3_12_4_cap = -1.3858771355349743e-84;
+real nnclmw3_13_1_cap = -1.5900506230761718e-84;
+real nnclmw3_13_2_cap = -1.9845766088626785e-86;
+real nnclmw3_13_3_cap = -1.2222306493778639e-85;
+real nnclmw3_13_4_cap = -3.4128612621587696e-85;
+real nnclmb1_1_cap = -3.400940606365421;
+real nnclmb1_2_cap = 1.478617947498831;
+real nnclmb1_3_cap = 0.03967078460889967;
+real nnclmb1_4_cap = -0.2087136356270901;
+real nnclmb2_1_cap = -1.285704530034231;
+real nnclmb2_2_cap = -1.212897122241031;
+real nnclmb2_3_cap = -1.317816663861545;
+real nnclmb2_4_cap = 1.030278120399971;
+real nnclmb3_1_cap = -2.6692098194778644e-86;
+real nnclmb3_2_cap = -1.8410529625188273e-86;
+real nnclmb3_3_cap = -1.3008247734118455e-87;
+real nnclmb3_4_cap = -6.0397998747609089e-87;
+real nnclmb3_5_cap = 5.3360675441969424e-86;
+real nnclmb3_6_cap = 0.2070379843457658;
+real nnclmb3_7_cap = 1.181536005956697;
+real nnclmb3_8_cap = 0.6799524800473496;
+real nnclmb3_9_cap = -4.350434714756719e-86;
+real nnclmb3_10_cap = -2.9950708657497814e-87;
+real nnclmb3_11_cap = -6.3271634689292472e-87;
+real nnclmb3_12_cap = -1.1129429927523708e-84;
+real nnclmb3_13_cap = 5.5604717320339085e-84;
+real nnquaw1_1_1_cap = 4.016289203096033;
+real nnquaw1_1_2_cap = -0.02501361472059693;
+real nnquaw1_2_1_cap = 1.934308657741926;
+real nnquaw1_2_2_cap = -0.3229503383189296;
+real nnquaw1_3_1_cap = 2.198089932869272;
+real nnquaw1_3_2_cap = -0.1699407761946856;
+real nnquaw2_1_1_cap = -0.9882433454279294;
+real nnquaw2_1_2_cap = -0.4130395555260659;
+real nnquaw2_1_3_cap = -1.248692577600311;
+real nnquaw2_2_1_cap = 1.858436483497438;
+real nnquaw2_2_2_cap = 1.535292738205986;
+real nnquaw2_2_3_cap = 0.980924705504842;
+real nnquaw2_3_1_cap = 1.657157963846685;
+real nnquaw2_3_2_cap = 1.185371068505957;
+real nnquaw2_3_3_cap = 1.079613270270253;
+real nnquaw3_1_1_cap = 0.3576102014363403;
+real nnquaw3_1_2_cap = -1.350803423499315;
+real nnquaw3_1_3_cap = -1.488939109195112;
+real nnquaw3_2_1_cap = 0.8603207667231917;
+real nnquaw3_2_2_cap = -0.8400051935295095;
+real nnquaw3_2_3_cap = -1.07948678028497;
+real nnquaw3_3_1_cap = 0.3027280751229967;
+real nnquaw3_3_2_cap = 2.339432104764656;
+real nnquaw3_3_3_cap = 2.220603792446576;
+real nnquaw3_4_1_cap = -2.7777235136722023e-86;
+real nnquaw3_4_2_cap = 4.2111130927741991e-84;
+real nnquaw3_4_3_cap = -6.1480538606692008e-84;
+real nnquaw3_5_1_cap = -9.7132973575319142e-87;
+real nnquaw3_5_2_cap = 2.9546179250000056e-84;
+real nnquaw3_5_3_cap = 4.4144598514673306e-84;
+real nnquaw3_6_1_cap = 1.6757227030411547e-84;
+real nnquaw3_6_2_cap = -9.7867858797324864e-89;
+real nnquaw3_6_3_cap = 2.2135500600871567e-84;
+real nnquaw3_7_1_cap = 3.8609839287261003e-85;
+real nnquaw3_7_2_cap = -2.4768936099413106e-83;
+real nnquaw3_7_3_cap = -2.2169694301888356e-87;
+real nnquab1_1_cap = 4.266658221004191;
+real nnquab1_2_cap = 1.117586686511211;
+real nnquab1_3_cap = -0.8790321330557342;
+real nnquab2_1_cap = -0.08161904160464782;
+real nnquab2_2_cap = -0.6927175916007325;
+real nnquab2_3_cap = -0.5241957529997318;
+real nnquab3_1_cap = -0.6598747160152487;
+real nnquab3_2_cap = -0.08208180010956991;
+real nnquab3_3_cap = 2.064385582656368;
+real nnquab3_4_cap = 3.1333303599158726e-88;
+real nnquab3_5_cap = -7.1767646897552574e-87;
+real nnquab3_6_cap = -1.3968632293260194e-86;
+real nnquab3_7_cap = 4.562618979483409e-85;
+real nnmobw1_1_1_cap = 0.9143788929283164;
+real nnmobw1_1_2_cap = 1.161486675947321;
+real nnmobw1_1_3_cap = -2.913489382183325;
+real nnmobw1_2_1_cap = -1.570358097501556;
+real nnmobw1_2_2_cap = 8.340574204604062;
+real nnmobw1_2_3_cap = 0.383753130565512;
+real nnmobw2_1_1_cap = -4.714952991489806;
+real nnmobw2_1_2_cap = 3.262743514112805;
+real nnmobw2_2_1_cap = 2.362354697144822;
+real nnmobw2_2_2_cap = -2.565109291832806;
+real nnmobw3_1_1_cap = 0.620230836996848;
+real nnmobw3_1_2_cap = -0.1070106319497864;
+real nnmobw3_2_1_cap = -1.160124970013573;
+real nnmobw3_2_2_cap = -1.207733303875273;
+real nnmobw3_3_1_cap = 0.537867322169182;
+real nnmobw3_3_2_cap = -1.272241058869377;
+real nnmobw3_4_1_cap = -3.246249306858546;
+real nnmobw3_4_2_cap = 0.9899717421478899;
+real nnmobw3_5_1_cap = 0.9603983250566021;
+real nnmobw3_5_2_cap = -0.5479393608809305;
+real nnmobb1_1_cap = -0.9253103154942077;
+real nnmobb1_2_cap = 1.569766361725261;
+real nnmobb2_1_cap = -0.5000607775591538;
+real nnmobb2_2_cap = 2.088466863836626;
+real nnmobb3_1_cap = -0.0785227122618877;
+real nnmobb3_2_cap = 0.3613958907528879;
+real nnmobb3_3_cap = -0.1833930317409315;
+real nnmobb3_4_cap = -0.7966954995063762;
+real nnmobb3_5_cap = -1.375794951371224;
+real nncvw1_1_1_cap = -1.477680276268243;
+real nncvw1_1_2_cap = -0.2593098022600569;
+real nncvw1_1_3_cap = 3.736199508942185;
+real nncvw1_2_1_cap = -1.24993881699634;
+real nncvw1_2_2_cap = -0.5083324243824245;
+real nncvw1_2_3_cap = 2.9695854321243;
+real nncvw1_3_1_cap = 1.410172079957072;
+real nncvw1_3_2_cap = -3.165032603370475;
+real nncvw1_3_3_cap = 0.468281018745854;
+real nncvw1_4_1_cap = 0.5635541901871743;
+real nncvw1_4_2_cap = 2.065960096358938;
+real nncvw1_4_3_cap = -0.9172882530886594;
+real nncvw2_1_1_cap = -1.515216220721743;
+real nncvw2_1_2_cap = 0.8617455821042312;
+real nncvw2_1_3_cap = -3.311704890872791;
+real nncvw2_1_4_cap = 0.2749668128598813;
+real nncvw2_2_1_cap = -1.743667090777997;
+real nncvw2_2_2_cap = -1.314320417029965;
+real nncvw2_2_3_cap = -1.543401598989591;
+real nncvw2_2_4_cap = -0.4613366555302799;
+real nncvw2_3_1_cap = 1.119227189770506;
+real nncvw2_3_2_cap = -0.3290640813881218;
+real nncvw2_3_3_cap = 1.874783076672007;
+real nncvw2_3_4_cap = -0.7738413831271477;
+real nncvw2_4_1_cap = -0.766108147045876;
+real nncvw2_4_2_cap = 1.921812286975462;
+real nncvw2_4_3_cap = -1.553277340891951;
+real nncvw2_4_4_cap = 2.445764602830223;
+real nncvw3_1_1_cap = 1.658683911124089;
+real nncvw3_1_2_cap = 1.132198340281184;
+real nncvw3_1_3_cap = -0.2219243986520971;
+real nncvw3_1_4_cap = -0.597705096498274;
+real nncvw3_2_1_cap = 0.7659547140548918;
+real nncvw3_2_2_cap = -0.8602335861481639;
+real nncvw3_2_3_cap = -1.810056568597984;
+real nncvw3_2_4_cap = -0.07574418755763471;
+real nncvw3_3_1_cap = 0.6070765753315603;
+real nncvw3_3_2_cap = 0.1657186092140449;
+real nncvw3_3_3_cap = 0.6707718984599366;
+real nncvw3_3_4_cap = 0.7783781084817352;
+real nncvw3_4_1_cap = 0.3339953560641163;
+real nncvw3_4_2_cap = 0.09279607149740152;
+real nncvw3_4_3_cap = 0.3576879036496737;
+real nncvw3_4_4_cap = 0.4265096924025606;
+real nncvw3_5_1_cap = 0.9677223560341873;
+real nncvw3_5_2_cap = 2.161195941636163;
+real nncvw3_5_3_cap = -3.03810908017516;
+real nncvw3_5_4_cap = -1.957602713814791;
+real nncvw3_6_1_cap = -1.107417151387345;
+real nncvw3_6_2_cap = -1.403750715502004;
+real nncvw3_6_3_cap = 0.4189301570797581;
+real nncvw3_6_4_cap = -0.2276088864758812;
+real nncvw3_7_1_cap = -8.7061637985511795e-87;
+real nncvw3_7_2_cap = 2.7199732590802699e-87;
+real nncvw3_7_3_cap = 4.3989471710606568e-86;
+real nncvw3_7_4_cap = 9.4604924835606883e-84;
+real nncvw3_8_1_cap = -1.877601605796973;
+real nncvw3_8_2_cap = -1.021587273366683;
+real nncvw3_8_3_cap = -1.503864702422681;
+real nncvw3_8_4_cap = -1.688432614024117;
+real nncvw3_9_1_cap = 0.2607894390676604;
+real nncvw3_9_2_cap = 0.06594105509615777;
+real nncvw3_9_3_cap = 0.3682768954631435;
+real nncvw3_9_4_cap = 0.3383107712785421;
+real nncvw3_10_1_cap = -1.12466837600159;
+real nncvw3_10_2_cap = -1.198188533372414;
+real nncvw3_10_3_cap = 0.03504433625853478;
+real nncvw3_10_4_cap = -0.4695774012838742;
+real nncvw3_11_1_cap = -1.429569714500185;
+real nncvw3_11_2_cap = -2.608929689246689;
+real nncvw3_11_3_cap = -0.848515734385595;
+real nncvw3_11_4_cap = 1.238174747663012;
+real nncvw3_12_1_cap = -2.654055242505668;
+real nncvw3_12_2_cap = -0.9776006485137561;
+real nncvw3_12_3_cap = -3.634265588185174;
+real nncvw3_12_4_cap = -3.145748556273618;
+real nncvw3_13_1_cap = -1.008023974557149;
+real nncvw3_13_2_cap = -1.251396258973602;
+real nncvw3_13_3_cap = 0.3075162390032539;
+real nncvw3_13_4_cap = -0.7411326780053902;
+real nncvw3_14_1_cap = -0.01175301687451843;
+real nncvw3_14_2_cap = -1.788077421536435;
+real nncvw3_14_3_cap = -1.97003052063535;
+real nncvw3_14_4_cap = 1.301271431323775;
+real nncvw3_15_1_cap = 5.3605595524535938e-88;
+real nncvw3_15_2_cap = 2.2661198899706513e-85;
+real nncvw3_15_3_cap = 7.8918129090217889e-86;
+real nncvw3_15_4_cap = 1.7128233186199987e-84;
+real nncvb1_1_cap = 1.858675900350107;
+real nncvb1_2_cap = 1.083506371067597;
+real nncvb1_3_cap = -1.494396295995843;
+real nncvb1_4_cap = -0.6710482884876572;
+real nncvb2_1_cap = 0.7882472860419766;
+real nncvb2_2_cap = 1.311197043962685;
+real nncvb2_3_cap = -0.4210111404722898;
+real nncvb2_4_cap = -1.048171449931981;
+real nncvb3_1_cap = -0.804674080111078;
+real nncvb3_2_cap = -1.451165970006364;
+real nncvb3_3_cap = 1.230951802971229;
+real nncvb3_4_cap = 0.6604929186573339;
+real nncvb3_5_cap = -2.347905115981367;
+real nncvb3_6_cap = -0.804206946915855;
+real nncvb3_7_cap = 1.096922150139406e-84;
+real nncvb3_8_cap = -2.169756044343099;
+real nncvb3_9_cap = 0.6034497915629263;
+real nncvb3_10_cap = -0.9308883216073821;
+real nncvb3_11_cap = -0.362189192123478;
+real nncvb3_12_cap = -4.724366819148199;
+real nncvb3_13_cap = -1.020354686814446;
+real nncvb3_14_cap = -1.640125347767746;
+real nncvb3_15_cap = 4.6997577384658548e-84;
+real tgaa_nor, w_nor, l_nor;
+real neuronsce1_1_in, neuronsce1_1_out;
+real neuronsce1_2_in, neuronsce1_2_out;
+real neuronsce2_1_in, neuronsce2_1_out;
+real neuronsce2_2_in, neuronsce2_2_out;
+real neuronsce3_1_in, neuronsce3_1_out;
+real neuronsce3_2_in, neuronsce3_2_out;
+real neuronsce3_3_in, neuronsce3_3_out;
+real neuronsce3_4_in, neuronsce3_4_out;
+real neuronsce3_5_in, neuronsce3_5_out;
+real sce_output1, sce_output2, sce_output3, sce_output4, sce_output5;
+real neuronclm1_1_in, neuronclm1_1_out;
+real neuronclm1_2_in, neuronclm1_2_out;
+real neuronclm1_3_in, neuronclm1_3_out;
+real neuronclm1_4_in, neuronclm1_4_out;
+real neuronclm2_1_in, neuronclm2_1_out;
+real neuronclm2_2_in, neuronclm2_2_out;
+real neuronclm2_3_in, neuronclm2_3_out;
+real neuronclm2_4_in, neuronclm2_4_out;
+real neuronclm3_1_in, neuronclm3_1_out;
+real neuronclm3_2_in, neuronclm3_2_out;
+real neuronclm3_3_in, neuronclm3_3_out;
+real neuronclm3_4_in, neuronclm3_4_out;
+real neuronclm3_5_in, neuronclm3_5_out;
+real neuronclm3_6_in, neuronclm3_6_out;
+real neuronclm3_7_in, neuronclm3_7_out;
+real neuronclm3_8_in, neuronclm3_8_out;
+real neuronclm3_9_in, neuronclm3_9_out;
+real neuronclm3_10_in, neuronclm3_10_out;
+real neuronclm3_11_in, neuronclm3_11_out;
+real neuronclm3_12_in, neuronclm3_12_out;
+real neuronclm3_13_in, neuronclm3_13_out;
+real clm_output1, clm_output2, clm_output3, clm_output4, clm_output5, clm_output6, clm_output7, clm_output8, clm_output9, clm_output10, clm_output11, clm_output12, clm_output13;
+real neuronqua1_1_in, neuronqua1_1_out;
+real neuronqua1_2_in, neuronqua1_2_out;
+real neuronqua1_3_in, neuronqua1_3_out;
+real neuronqua2_1_in, neuronqua2_1_out;
+real neuronqua2_2_in, neuronqua2_2_out;
+real neuronqua2_3_in, neuronqua2_3_out;
+real neuronqua3_1_in, neuronqua3_1_out;
+real neuronqua3_2_in, neuronqua3_2_out;
+real neuronqua3_3_in, neuronqua3_3_out;
+real neuronqua3_4_in, neuronqua3_4_out;
+real neuronqua3_5_in, neuronqua3_5_out;
+real neuronqua3_6_in, neuronqua3_6_out;
+real neuronqua3_7_in, neuronqua3_7_out;
+real qua_output1, qua_output2, qua_output3, gidl_output4, gidl_output5, gidl_output6, gidl_output7;
+real neuronmob1_1_in, neuronmob1_1_out;
+real neuronmob1_2_in, neuronmob1_2_out;
+real neuronmob2_1_in, neuronmob2_1_out;
+real neuronmob2_2_in, neuronmob2_2_out;
+real neuronmob3_1_in, neuronmob3_1_out;
+real neuronmob3_2_in, neuronmob3_2_out;
+real neuronmob3_3_in, neuronmob3_3_out;
+real neuronmob3_4_in, neuronmob3_4_out;
+real neuronmob3_5_in, neuronmob3_5_out;
+real mob_output1, mob_output2, mob_output3, mob_output4, mob_output5;
+real neuroncv1_1_in, neuroncv1_1_out;
+real neuroncv1_2_in, neuroncv1_2_out;
+real neuroncv1_3_in, neuroncv1_3_out;
+real neuroncv1_4_in, neuroncv1_4_out;
+real neuroncv2_1_in, neuroncv2_1_out;
+real neuroncv2_2_in, neuroncv2_2_out;
+real neuroncv2_3_in, neuroncv2_3_out;
+real neuroncv2_4_in, neuroncv2_4_out;
+real neuroncv3_1_in, neuroncv3_1_out;
+real neuroncv3_2_in, neuroncv3_2_out;
+real neuroncv3_3_in, neuroncv3_3_out;
+real neuroncv3_4_in, neuroncv3_4_out;
+real neuroncv3_5_in, neuroncv3_5_out;
+real neuroncv3_6_in, neuroncv3_6_out;
+real neuroncv3_7_in, neuroncv3_7_out;
+real neuroncv3_8_in, neuroncv3_8_out;
+real neuroncv3_9_in, neuroncv3_9_out;
+real neuroncv3_10_in, neuroncv3_10_out;
+real neuroncv3_11_in, neuroncv3_11_out;
+real neuroncv3_12_in, neuroncv3_12_out;
+real neuroncv3_13_in, neuroncv3_13_out;
+real neuroncv3_14_in, neuroncv3_14_out;
+real neuroncv3_15_in, neuroncv3_15_out;
+real cv_output1, cv_output2, cv_output3, cv_output4, cv_output5, cv_output6, cv_output7, cv_output8, cv_output9, cv_output10, cv_output11, cv_output12, cv_output13, cv_output14, cv_output15;
+real CGG, CGD, CGS, CDG, CDD, CDS, CSG, CSD, CSS;
+real tmp1_pku, tmp2_pku, tmp3_pku, tmp4_pku, tmp5_pku, NBODY_CV, NSD_CV, PHIG_CV, CFS_i_CV, CFD_i_CV;
+real Lg, nnquaw3_1_4, nnquaw3_2_4, nnquaw3_3_4, nnquaw3_4_4, nnquaw3_5_4, nnquaw3_6_4, nnquaw3_7_4, neuronqua2_4_out, vgs, vds;
+real WGAAeff, Weff1, Weff_UFCM;
+real vfbsd1, vgs_a, vgd_a, Ach1, Ach, Weff2, Weff3, Weff4, Weff5, Weff6, Ach2, Ach3, Ach4, Ach5, Ach6, WeffB, Cins, MTcen, Tcen0, T0, Weff0, WeffCV0;
+real d1, d2, d3, p1, p2, p3, Tp1, Tp2, Tp3, Wp1, Wp2, Wp3;
+real VnD1, qndnf1, VnD2, qndnf2, VnD3, qndnf3, nc3d0, nc3d, ncq, QT0, QT1, ne2h, pe2h, ne3h, pe3h, nc1l0, pnc1l, nc2l0, pnc2l, nc3l0, pnc3l, qe2n, qe3n, qe2, qe3, nc1l, nc1ln, nc1, nc2l, nc2ln, nc2, nc3l, nc3ln, nc3, qnd10, qnd20, qnd30;
+real T1, T2, T3, T4, T5, T7, T8, T11;
+real GM, GDS;
+real qndd1, qndd2, qndd3;
+real Vtm, nVtm, Nc, epssub, rc, cox, qbs, Qdep_ov_Cins, qdep, vth_fixed_factor_SI, vth_fixed_factor_Sub, q0, scl, Eg, ni, phib, vbi, Theta_SCE, Theta_SW, Theta_DIBL, Theta_RSCE, ThetaSS, phist, vdsx, cdsc, kT, E0, E0prime, E1, E1prime, gam0, gam1, dvth_vtroll, dvth_dibl, dvth_rsce, dvth_all, deltaPhi, vgsfb, vgsfbeff, qm, qm_ln, e0, e1, e2, QT2, QT3, QT4, qnds1, QT5, QT6, QT7, qnds2, QT8, QT9, QT10, qnds3, eta_mu, eta_mu_cv, EeffFactor, Eeffs, qb0, Dmobs, Esat, EsatL, T6, Vdsat, Vdseff, qia, dqi, ids0_ov_dqi, ids0, Leff, LeffCV, tmp, DIBLfactor, PVAGfactor, diffVds, Vgst2Vtm, VaDIBL, Moc, Mclm, Tcen, coxeff, beta, qia2, Eeffm, Dmob, ueff, Eeffm_cv, Dmob_cv, Esat1, Esat1L, Dvsat, Nsat, EsatCV, EsatCVL, DvsatCV, Ta, MclmCV, igidl, ids, TOXG1, igtemp, Tox_ratio, T0_g, igc, igs, igd, ig, vgd, qg, qd, qs, CGSO_i, CGDO_i, vgs_overlap, qgs_ov, vgd_overlap, qgd_ov, qgs_fr, qgd_fr, qgs_parasitic, qgd_parasitic, QG, QD, QS, dvch_qm, vch, F0, qis, qid, etaiv, inv_MclmCV, EOT;
+real UA_i, UD_i, VSAT1_a, U0_i;
+real CIT_i, DVTP0_i, DVTP1_i, K1RSCE_i, NTOX_i, LPE0_i, ETAMOB_i, mut0, mut1, mut2, mut3, mut4, mut5, mut6, EU_i, VSAT_a, KSATIV_a, MEXP_a, DROUT_i, PDIBL1_a, PDIBL2_a, PVAG_i, ids_tmp;
+function real Tanh;
+input var_g;
+real var_g;
+
+begin
+    Tanh = (1.0 - exp(-2.0 * var_g)) / (1.0 + exp(-2.0 * var_g));
+end
+endfunction
+
+function real Sigmoid;
+input var_l;
+real var_l;
+
+begin
+    Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l));
+end
+endfunction
+
+real SigmoidE01;
+real SigmoidE02;
+real SigmoidE03;
+real SigmoidE04;
+real SigmoidE05;
+real SigmoidE06;
+real SigmoidE07;
+real SigmoidE08;
+real SigmoidE09;
+real SigmoidE10;
+real SigmoidE11;
+real SigmoidE12;
+real SigmoidE13;
+real SigmoidE14;
+real SigmoidE15;
+real SigmoidE16;
+real SigmoidE17;
+real SigmoidE18;
+real SigmoidE19;
+real SigmoidE20;
+real SigmoidE21;
+real SigmoidE22;
+real SigmoidE23;
+real SigmoidE24;
+real SigmoidE25;
+real SigmoidE26;
+real SigmoidE27;
+real SigmoidE28;
+real SigmoidE29;
+real SigmoidE30;
+real SigmoidE31;
+real SigmoidE32;
+real SigmoidE33;
+real SigmoidE34;
+real SigmoidE35;
+real SigmoidE36;
+real SigmoidE37;
+real SigmoidE38;
+real SigmoidE39;
+real SigmoidE40;
+real SigmoidE41;
+real SigmoidE42;
+real SigmoidE43;
+real SigmoidE44;
+real SigmoidE45;
+real SigmoidE46;
+real SigmoidE47;
+real SigmoidE48;
+real SigmoidE49;
+real SigmoidE50;
+real SigmoidE51;
+real SigmoidE52;
+real SigmoidE53;
+real SigmoidE54;
+real SigmoidE55;
+real SigmoidE56;
+real SigmoidE57;
+real SigmoidE58;
+real SigmoidE59;
+real SigmoidE60;
+real SigmoidE61;
+real SigmoidE62;
+real SigmoidE63;
+real SigmoidE64;
+real SigmoidE65;
+real SigmoidE66;
+real SigmoidE67;
+real SigmoidE68;
+real SigmoidE69;
+real SigmoidE70;
+real SigmoidE71;
+real SigmoidE72;
+real SigmoidE73;
+real SigmoidE74;
+real SigmoidE75;
+real SigmoidE76;
+real SigmoidE77;
+real SigmoidE78;
+real SigmoidE79;
+real SigmoidE80;
+real SigmoidE81;
+real SigmoidE82;
+real SigmoidE83;
+real SigmoidE84;
+real SigmoidE85;
+real SigmoidE86;
+real SigmoidE87;
+real SigmoidE88;
+real SigmoidE89;
+real SigmoidE90;
+real SigmoidE91;
+real SigmoidE92;
+real SigmoidE93;
+real SigmoidE94;
+real SigmoidE95;
+real SigmoidE96;
+real SigmoidE97;
+real SigmoidE98;
+real SigmoidE99;
+real SigmoidE100;
+real SigmoidE101;
+real SigmoidE102;
+real SigmoidE103;
+real SigmoidE104;
+real SigmoidE105;
+real SigmoidE106;
+real SigmoidE107;
+real SigmoidE108;
+real SigmoidE109;
+real SigmoidE110;
+real SigmoidE111;
+real SigmoidE112;
+real SigmoidE113;
+real SigmoidE114;
+real SigmoidE115;
+real SigmoidE116;
+real SigmoidE117;
+real SigmoidE118;
+real SigmoidE119;
+real SigmoidE120;
+real SigmoidE121;
+real SigmoidE122;
+real SigmoidE123;
+real SigmoidE124;
+real SigmoidE125;
+real SigmoidE126;
+real SigmoidE127;
+real SigmoidE128;
+real SigmoidE129;
+real SigmoidE130;
+real SigmoidE131;
+real SigmoidE132;
+real SigmoidE133;
+real SigmoidE134;
+real SigmoidE135;
+real SigmoidE136;
+real SigmoidE137;
+real SigmoidE138;
+real SigmoidE139;
+real SigmoidE140;
+real SigmoidE141;
+real SigmoidE142;
+real SigmoidE143;
+real SigmoidE144;
+real SigmoidE145;
+real SigmoidE146;
+real _argR1_1_;
+real _argR2_1_;
+real _argR3_1_;
+real _argR4_1_;
+real _argR5_1_;
+real _argR6_1_;
+real _argR7_1_;
+real _argR8_1_;
+real _argR9_1_;
+real _argR10_1_;
+real _argR11_1_;
+real _argR12_1_;
+real _argR13_1_;
+real _argR14_1_;
+real _argR15_1_;
+real _argR16_1_;
+real _argR17_1_;
+real _argR18_1_;
+real _argR19_1_;
+real _argR20_1_;
+real _argR21_1_;
+real _argR22_1_;
+real _argR23_1_;
+real _argR24_1_;
+real _argR25_1_;
+real _argR26_1_;
+real _argR27_1_;
+real _argR28_1_;
+real _argR29_1_;
+real _argR30_1_;
+real _argR31_1_;
+real _argR32_1_;
+real _argR33_1_;
+real _argR34_1_;
+real _argR35_1_;
+real _argR36_1_;
+real _argR37_1_;
+real _argR38_1_;
+real _argR39_1_;
+real _argR40_1_;
+real _argR41_1_;
+real _argR42_1_;
+real _argR43_1_;
+real _argR44_1_;
+real _argR45_1_;
+real _argR46_1_;
+real _argR47_1_;
+real _argR48_1_;
+real _argR49_1_;
+real _argR50_1_;
+real _argR51_1_;
+real _argR52_1_;
+real _argR53_1_;
+real _argR54_1_;
+real _argR55_1_;
+real _argR56_1_;
+real _argR57_1_;
+real _argR58_1_;
+real _argR59_1_;
+real _argR60_1_;
+real _argR61_1_;
+real _argR62_1_;
+real _argR63_1_;
+real _argR64_1_;
+real _argR65_1_;
+real _argR66_1_;
+real _argR67_1_;
+real _argR68_1_;
+real _argR69_1_;
+real _argR70_1_;
+real _argR71_1_;
+real _argR72_1_;
+real _argR73_1_;
+real _argR74_1_;
+real _argR75_1_;
+real _argR76_1_;
+real _argR77_1_;
+real _argR78_1_;
+real _argR79_1_;
+real _argR80_1_;
+real _argR81_1_;
+real _argR82_1_;
+real _argR83_1_;
+real _argR84_1_;
+real _argR85_1_;
+real _argR86_1_;
+real _argR87_1_;
+real _argR88_1_;
+real _argR89_1_;
+real _argR90_1_;
+real _argR91_1_;
+real _argR92_1_;
+real _argR93_1_;
+real _argR94_1_;
+real _argR95_1_;
+real _argR96_1_;
+real _argR97_1_;
+real _argR98_1_;
+real _argR99_1_;
+real _argR100_1_;
+real _argR101_1_;
+real _argR102_1_;
+real _argR103_1_;
+real _argR104_1_;
+real _argR105_1_;
+real _argR106_1_;
+real _argR107_1_;
+real _argR108_1_;
+real _argR109_1_;
+real _argR110_1_;
+real _argR111_1_;
+real _argR112_1_;
+real _argR113_1_;
+real _argR114_1_;
+real _argR115_1_;
+real _argR116_1_;
+real _argR117_1_;
+real _argR118_1_;
+real _argR119_1_;
+real _argR120_1_;
+real _argR121_1_;
+real _argR122_1_;
+real _argR123_1_;
+real _argR124_1_;
+real _argR125_1_;
+real _argR126_1_;
+real _argR127_1_;
+real _argR128_1_;
+real _argR129_1_;
+real _argR130_1_;
+real _argR131_1_;
+real _argR132_1_;
+real _argR133_1_;
+real _argR134_1_;
+real _argR135_1_;
+real _argR136_1_;
+real _argR137_1_;
+real _argR138_1_;
+real _argR139_1_;
+real _argR140_1_;
+real _argR141_1_;
+real _argR142_1_;
+real _argR143_1_;
+real _argR144_1_;
+real _argR145_1_;
+real _argR146_1_;
+
+analog begin
+    Lg = L + XL;
+    tgaa_nor = 1.0;
+    w_nor = ((WGAA - wgaamin) / (wgaamax - wgaamin)) * (netmax - netmin) + netmin;
+    tgaa_nor = 1;
+    l_nor = ((L - lgaamin) / (lgaamax - lgaamin)) * (netmax - netmin) + netmin;
+    neuronsce1_1_in = nnscew1_1_1 * w_nor + nnscew1_1_2 * l_nor + nnsceb1_1;
+    neuronsce1_2_in = nnscew1_2_1 * w_nor + nnscew1_2_2 * l_nor + nnsceb1_2;
+    _argR1_1_ = neuronsce1_1_in;
+    begin : SigmoidE01
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR1_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE01 = Sigmoid;
+    end
+    neuronsce1_1_out = SigmoidE01;
+    _argR2_1_ = neuronsce1_2_in;
+    begin : SigmoidE02
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR2_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE02 = Sigmoid;
+    end
+    neuronsce1_2_out = SigmoidE02;
+    neuronsce2_1_in = nnscew2_1_1 * neuronsce1_1_out + nnscew2_1_2 * neuronsce1_2_out + nnsceb2_1;
+    neuronsce2_2_in = nnscew2_2_1 * neuronsce1_1_out + nnscew2_2_2 * neuronsce1_2_out + nnsceb2_2;
+    _argR3_1_ = neuronsce2_1_in;
+    begin : SigmoidE03
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR3_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE03 = Sigmoid;
+    end
+    neuronsce2_1_out = SigmoidE03;
+    _argR4_1_ = neuronsce2_2_in;
+    begin : SigmoidE04
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR4_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE04 = Sigmoid;
+    end
+    neuronsce2_2_out = SigmoidE04;
+    neuronsce3_1_in = nnscew3_1_1 * neuronsce2_1_out + nnscew3_1_2 * neuronsce2_2_out + nnsceb3_1;
+    neuronsce3_2_in = nnscew3_2_1 * neuronsce2_1_out + nnscew3_2_2 * neuronsce2_2_out + nnsceb3_2;
+    neuronsce3_3_in = nnscew3_3_1 * neuronsce2_1_out + nnscew3_3_2 * neuronsce2_2_out + nnsceb3_3;
+    neuronsce3_4_in = nnscew3_4_1 * neuronsce2_1_out + nnscew3_4_2 * neuronsce2_2_out + nnsceb3_4;
+    neuronsce3_5_in = nnscew3_5_1 * neuronsce2_1_out + nnscew3_5_2 * neuronsce2_2_out + nnsceb3_5;
+    _argR5_1_ = neuronsce3_1_in;
+    begin : SigmoidE05
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR5_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE05 = Sigmoid;
+    end
+    neuronsce3_1_out = SigmoidE05;
+    _argR6_1_ = neuronsce3_2_in;
+    begin : SigmoidE06
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR6_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE06 = Sigmoid;
+    end
+    neuronsce3_2_out = SigmoidE06;
+    _argR7_1_ = neuronsce3_3_in;
+    begin : SigmoidE07
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR7_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE07 = Sigmoid;
+    end
+    neuronsce3_3_out = SigmoidE07;
+    _argR8_1_ = neuronsce3_4_in;
+    begin : SigmoidE08
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR8_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE08 = Sigmoid;
+    end
+    neuronsce3_4_out = SigmoidE08;
+    _argR9_1_ = neuronsce3_5_in;
+    begin : SigmoidE09
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR9_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE09 = Sigmoid;
+    end
+    neuronsce3_5_out = SigmoidE09;
+    sce_output1 = 5 * neuronsce3_1_out;
+    sce_output2 = 5 * neuronsce3_2_out;
+    sce_output3 = 5 * neuronsce3_3_out;
+    sce_output4 = 5 * neuronsce3_4_out;
+    sce_output5 = 5 * neuronsce3_5_out;
+    neuronclm1_1_in = nnclmw1_1_1 * w_nor + nnclmw1_1_2 * l_nor + nnclmb1_1;
+    neuronclm1_2_in = nnclmw1_2_1 * w_nor + nnclmw1_2_2 * l_nor + nnclmb1_2;
+    neuronclm1_3_in = nnclmw1_3_1 * w_nor + nnclmw1_3_2 * l_nor + nnclmb1_3;
+    neuronclm1_4_in = nnclmw1_4_1 * w_nor + nnclmw1_4_2 * l_nor + nnclmb1_4;
+    _argR10_1_ = neuronclm1_1_in;
+    begin : SigmoidE10
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR10_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE10 = Sigmoid;
+    end
+    neuronclm1_1_out = SigmoidE10;
+    _argR11_1_ = neuronclm1_2_in;
+    begin : SigmoidE11
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR11_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE11 = Sigmoid;
+    end
+    neuronclm1_2_out = SigmoidE11;
+    _argR12_1_ = neuronclm1_3_in;
+    begin : SigmoidE12
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR12_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE12 = Sigmoid;
+    end
+    neuronclm1_3_out = SigmoidE12;
+    _argR13_1_ = neuronclm1_4_in;
+    begin : SigmoidE13
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR13_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE13 = Sigmoid;
+    end
+    neuronclm1_4_out = SigmoidE13;
+    neuronclm2_1_in = nnclmw2_1_1 * neuronclm1_1_out + nnclmw2_1_2 * neuronclm1_2_out + nnclmw2_1_3 * neuronclm1_3_out + nnclmw2_1_4 * neuronclm1_4_out + nnclmb2_1;
+    neuronclm2_2_in = nnclmw2_2_1 * neuronclm1_1_out + nnclmw2_2_2 * neuronclm1_2_out + nnclmw2_2_3 * neuronclm1_3_out + nnclmw2_2_4 * neuronclm1_4_out + nnclmb2_2;
+    neuronclm2_3_in = nnclmw2_3_1 * neuronclm1_1_out + nnclmw2_3_2 * neuronclm1_2_out + nnclmw2_3_3 * neuronclm1_3_out + nnclmw2_3_4 * neuronclm1_4_out + nnclmb2_3;
+    neuronclm2_4_in = nnclmw2_4_1 * neuronclm1_1_out + nnclmw2_4_2 * neuronclm1_2_out + nnclmw2_4_3 * neuronclm1_3_out + nnclmw2_4_4 * neuronclm1_4_out + nnclmb2_4;
+    _argR14_1_ = neuronclm2_1_in;
+    begin : SigmoidE14
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR14_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE14 = Sigmoid;
+    end
+    neuronclm2_1_out = SigmoidE14;
+    _argR15_1_ = neuronclm2_2_in;
+    begin : SigmoidE15
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR15_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE15 = Sigmoid;
+    end
+    neuronclm2_2_out = SigmoidE15;
+    _argR16_1_ = neuronclm2_3_in;
+    begin : SigmoidE16
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR16_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE16 = Sigmoid;
+    end
+    neuronclm2_3_out = SigmoidE16;
+    _argR17_1_ = neuronclm2_4_in;
+    begin : SigmoidE17
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR17_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE17 = Sigmoid;
+    end
+    neuronclm2_4_out = SigmoidE17;
+    neuronclm3_1_in = nnclmw3_1_1 * neuronclm2_1_out + nnclmw3_1_2 * neuronclm2_2_out + nnclmw3_1_3 * neuronclm2_3_out + nnclmw3_1_4 * neuronclm2_4_out + nnclmb3_1;
+    neuronclm3_2_in = nnclmw3_2_1 * neuronclm2_1_out + nnclmw3_2_2 * neuronclm2_2_out + nnclmw3_2_3 * neuronclm2_3_out + nnclmw3_2_4 * neuronclm2_4_out + nnclmb3_2;
+    neuronclm3_3_in = nnclmw3_3_1 * neuronclm2_1_out + nnclmw3_3_2 * neuronclm2_2_out + nnclmw3_3_3 * neuronclm2_3_out + nnclmw3_3_4 * neuronclm2_4_out + nnclmb3_3;
+    neuronclm3_4_in = nnclmw3_4_1 * neuronclm2_1_out + nnclmw3_4_2 * neuronclm2_2_out + nnclmw3_4_3 * neuronclm2_3_out + nnclmw3_4_4 * neuronclm2_4_out + nnclmb3_4;
+    neuronclm3_5_in = nnclmw3_5_1 * neuronclm2_1_out + nnclmw3_5_2 * neuronclm2_2_out + nnclmw3_5_3 * neuronclm2_3_out + nnclmw3_5_4 * neuronclm2_4_out + nnclmb3_5;
+    neuronclm3_6_in = nnclmw3_6_1 * neuronclm2_1_out + nnclmw3_6_2 * neuronclm2_2_out + nnclmw3_6_3 * neuronclm2_3_out + nnclmw3_6_4 * neuronclm2_4_out + nnclmb3_6;
+    neuronclm3_7_in = nnclmw3_7_1 * neuronclm2_1_out + nnclmw3_7_2 * neuronclm2_2_out + nnclmw3_7_3 * neuronclm2_3_out + nnclmw3_7_4 * neuronclm2_4_out + nnclmb3_7;
+    neuronclm3_8_in = nnclmw3_8_1 * neuronclm2_1_out + nnclmw3_8_2 * neuronclm2_2_out + nnclmw3_8_3 * neuronclm2_3_out + nnclmw3_8_4 * neuronclm2_4_out + nnclmb3_8;
+    neuronclm3_9_in = nnclmw3_9_1 * neuronclm2_1_out + nnclmw3_9_2 * neuronclm2_2_out + nnclmw3_9_3 * neuronclm2_3_out + nnclmw3_9_4 * neuronclm2_4_out + nnclmb3_9;
+    neuronclm3_10_in = nnclmw3_10_1 * neuronclm2_1_out + nnclmw3_10_2 * neuronclm2_2_out + nnclmw3_10_3 * neuronclm2_3_out + nnclmw3_10_4 * neuronclm2_4_out + nnclmb3_10;
+    neuronclm3_11_in = nnclmw3_11_1 * neuronclm2_1_out + nnclmw3_11_2 * neuronclm2_2_out + nnclmw3_11_3 * neuronclm2_3_out + nnclmw3_11_4 * neuronclm2_4_out + nnclmb3_11;
+    neuronclm3_12_in = nnclmw3_12_1 * neuronclm2_1_out + nnclmw3_12_2 * neuronclm2_2_out + nnclmw3_12_3 * neuronclm2_3_out + nnclmw3_12_4 * neuronclm2_4_out + nnclmb3_12;
+    neuronclm3_13_in = nnclmw3_13_1 * neuronclm2_1_out + nnclmw3_13_2 * neuronclm2_2_out + nnclmw3_13_3 * neuronclm2_3_out + nnclmw3_13_4 * neuronclm2_4_out + nnclmb3_13;
+    _argR18_1_ = neuronclm3_1_in;
+    begin : SigmoidE18
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR18_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE18 = Sigmoid;
+    end
+    neuronclm3_1_out = SigmoidE18;
+    _argR19_1_ = neuronclm3_2_in;
+    begin : SigmoidE19
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR19_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE19 = Sigmoid;
+    end
+    neuronclm3_2_out = SigmoidE19;
+    _argR20_1_ = neuronclm3_3_in;
+    begin : SigmoidE20
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR20_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE20 = Sigmoid;
+    end
+    neuronclm3_3_out = SigmoidE20;
+    _argR21_1_ = neuronclm3_4_in;
+    begin : SigmoidE21
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR21_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE21 = Sigmoid;
+    end
+    neuronclm3_4_out = SigmoidE21;
+    _argR22_1_ = neuronclm3_5_in;
+    begin : SigmoidE22
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR22_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE22 = Sigmoid;
+    end
+    neuronclm3_5_out = SigmoidE22;
+    _argR23_1_ = neuronclm3_6_in;
+    begin : SigmoidE23
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR23_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE23 = Sigmoid;
+    end
+    neuronclm3_6_out = SigmoidE23;
+    _argR24_1_ = neuronclm3_7_in;
+    begin : SigmoidE24
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR24_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE24 = Sigmoid;
+    end
+    neuronclm3_7_out = SigmoidE24;
+    _argR25_1_ = neuronclm3_8_in;
+    begin : SigmoidE25
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR25_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE25 = Sigmoid;
+    end
+    neuronclm3_8_out = SigmoidE25;
+    _argR26_1_ = neuronclm3_9_in;
+    begin : SigmoidE26
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR26_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE26 = Sigmoid;
+    end
+    neuronclm3_9_out = SigmoidE26;
+    _argR27_1_ = neuronclm3_10_in;
+    begin : SigmoidE27
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR27_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE27 = Sigmoid;
+    end
+    neuronclm3_10_out = SigmoidE27;
+    _argR28_1_ = neuronclm3_11_in;
+    begin : SigmoidE28
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR28_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE28 = Sigmoid;
+    end
+    neuronclm3_11_out = SigmoidE28;
+    _argR29_1_ = neuronclm3_12_in;
+    begin : SigmoidE29
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR29_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE29 = Sigmoid;
+    end
+    neuronclm3_12_out = SigmoidE29;
+    _argR30_1_ = neuronclm3_13_in;
+    begin : SigmoidE30
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR30_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE30 = Sigmoid;
+    end
+    neuronclm3_13_out = SigmoidE30;
+    clm_output1 = 5 * neuronclm3_1_out;
+    clm_output2 = 5 * neuronclm3_2_out;
+    clm_output3 = 5 * neuronclm3_3_out;
+    clm_output4 = 5 * neuronclm3_4_out;
+    clm_output5 = 5 * neuronclm3_5_out;
+    clm_output6 = 5 * neuronclm3_6_out;
+    clm_output7 = 5 * neuronclm3_7_out;
+    clm_output8 = 5 * neuronclm3_8_out;
+    clm_output9 = 5 * neuronclm3_9_out;
+    clm_output10 = 5 * neuronclm3_10_out;
+    clm_output11 = 5 * neuronclm3_11_out;
+    clm_output12 = 5 * neuronclm3_12_out;
+    clm_output13 = 5 * neuronclm3_13_out;
+    neuronqua1_1_in = nnquaw1_1_1 * l_nor + nnquaw1_1_2 * w_nor + nnquab1_1;
+    neuronqua1_2_in = nnquaw1_2_1 * l_nor + nnquaw1_2_2 * w_nor + nnquab1_2;
+    neuronqua1_3_in = nnquaw1_3_1 * l_nor + nnquaw1_3_2 * w_nor + nnquab1_3;
+    _argR31_1_ = neuronqua1_1_in;
+    begin : SigmoidE31
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR31_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE31 = Sigmoid;
+    end
+    neuronqua1_1_out = SigmoidE31;
+    _argR32_1_ = neuronqua1_2_in;
+    begin : SigmoidE32
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR32_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE32 = Sigmoid;
+    end
+    neuronqua1_2_out = SigmoidE32;
+    _argR33_1_ = neuronqua1_3_in;
+    begin : SigmoidE33
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR33_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE33 = Sigmoid;
+    end
+    neuronqua1_3_out = SigmoidE33;
+    neuronqua2_1_in = nnquaw2_1_1 * neuronqua1_1_out + nnquaw2_1_2 * neuronqua1_2_out + nnquaw2_1_3 * neuronqua1_3_out + nnquab2_1;
+    neuronqua2_2_in = nnquaw2_2_1 * neuronqua1_1_out + nnquaw2_2_2 * neuronqua1_2_out + nnquaw2_2_3 * neuronqua1_3_out + nnquab2_2;
+    neuronqua2_3_in = nnquaw2_3_1 * neuronqua1_1_out + nnquaw2_3_2 * neuronqua1_2_out + nnquaw2_3_3 * neuronqua1_3_out + nnquab2_3;
+    _argR34_1_ = neuronqua2_1_in;
+    begin : SigmoidE34
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR34_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE34 = Sigmoid;
+    end
+    neuronqua2_1_out = SigmoidE34;
+    _argR35_1_ = neuronqua2_2_in;
+    begin : SigmoidE35
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR35_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE35 = Sigmoid;
+    end
+    neuronqua2_2_out = SigmoidE35;
+    _argR36_1_ = neuronqua2_3_in;
+    begin : SigmoidE36
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR36_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE36 = Sigmoid;
+    end
+    neuronqua2_3_out = SigmoidE36;
+    neuronqua3_1_in = nnquaw3_1_1 * neuronqua2_1_out + nnquaw3_1_2 * neuronqua2_2_out + nnquaw3_1_3 * neuronqua2_3_out + nnquaw3_1_4 * neuronqua2_4_out + nnquab3_1;
+    neuronqua3_2_in = nnquaw3_2_1 * neuronqua2_1_out + nnquaw3_2_2 * neuronqua2_2_out + nnquaw3_2_3 * neuronqua2_3_out + nnquaw3_2_4 * neuronqua2_4_out + nnquab3_2;
+    neuronqua3_3_in = nnquaw3_3_1 * neuronqua2_1_out + nnquaw3_3_2 * neuronqua2_2_out + nnquaw3_3_3 * neuronqua2_3_out + nnquaw3_3_4 * neuronqua2_4_out + nnquab3_3;
+    neuronqua3_4_in = nnquaw3_4_1 * neuronqua2_1_out + nnquaw3_4_2 * neuronqua2_2_out + nnquaw3_4_3 * neuronqua2_3_out + nnquaw3_4_4 * neuronqua2_4_out + nnquab3_4;
+    neuronqua3_5_in = nnquaw3_5_1 * neuronqua2_1_out + nnquaw3_5_2 * neuronqua2_2_out + nnquaw3_5_3 * neuronqua2_3_out + nnquaw3_5_4 * neuronqua2_4_out + nnquab3_5;
+    neuronqua3_6_in = nnquaw3_6_1 * neuronqua2_1_out + nnquaw3_6_2 * neuronqua2_2_out + nnquaw3_6_3 * neuronqua2_3_out + nnquaw3_6_4 * neuronqua2_4_out + nnquab3_6;
+    neuronqua3_7_in = nnquaw3_7_1 * neuronqua2_1_out + nnquaw3_7_2 * neuronqua2_2_out + nnquaw3_7_3 * neuronqua2_3_out + nnquaw3_7_4 * neuronqua2_4_out + nnquab3_7;
+    _argR37_1_ = neuronqua3_1_in;
+    begin : SigmoidE37
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR37_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE37 = Sigmoid;
+    end
+    neuronqua3_1_out = SigmoidE37;
+    _argR38_1_ = neuronqua3_2_in;
+    begin : SigmoidE38
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR38_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE38 = Sigmoid;
+    end
+    neuronqua3_2_out = SigmoidE38;
+    _argR39_1_ = neuronqua3_3_in;
+    begin : SigmoidE39
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR39_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE39 = Sigmoid;
+    end
+    neuronqua3_3_out = SigmoidE39;
+    _argR40_1_ = neuronqua3_4_in;
+    begin : SigmoidE40
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR40_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE40 = Sigmoid;
+    end
+    neuronqua3_4_out = SigmoidE40;
+    _argR41_1_ = neuronqua3_5_in;
+    begin : SigmoidE41
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR41_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE41 = Sigmoid;
+    end
+    neuronqua3_5_out = SigmoidE41;
+    _argR42_1_ = neuronqua3_6_in;
+    begin : SigmoidE42
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR42_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE42 = Sigmoid;
+    end
+    neuronqua3_6_out = SigmoidE42;
+    _argR43_1_ = neuronqua3_7_in;
+    begin : SigmoidE43
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR43_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE43 = Sigmoid;
+    end
+    neuronqua3_7_out = SigmoidE43;
+    qua_output1 = 5 * neuronqua3_1_out;
+    qua_output2 = 5 * neuronqua3_2_out;
+    qua_output3 = 5 * neuronqua3_3_out;
+    gidl_output4 = 5 * neuronqua3_4_out;
+    gidl_output5 = 5 * neuronqua3_5_out;
+    gidl_output6 = 5 * neuronqua3_6_out;
+    gidl_output7 = 5 * neuronqua3_7_out;
+    neuronmob1_1_in = nnmobw1_1_1 * tgaa_nor + nnmobw1_1_2 * w_nor + nnmobw1_1_3 * l_nor + nnmobb1_1;
+    neuronmob1_2_in = nnmobw1_2_1 * tgaa_nor + nnmobw1_2_2 * w_nor + nnmobw1_2_3 * l_nor + nnmobb1_2;
+    _argR44_1_ = neuronmob1_1_in;
+    begin : SigmoidE44
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR44_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE44 = Sigmoid;
+    end
+    neuronmob1_1_out = SigmoidE44;
+    _argR45_1_ = neuronmob1_2_in;
+    begin : SigmoidE45
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR45_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE45 = Sigmoid;
+    end
+    neuronmob1_2_out = SigmoidE45;
+    neuronmob2_1_in = nnmobw2_1_1 * neuronmob1_1_out + nnmobw2_1_2 * neuronmob1_2_out + nnmobb2_1;
+    neuronmob2_2_in = nnmobw2_2_1 * neuronmob1_1_out + nnmobw2_2_2 * neuronmob1_2_out + nnmobb2_2;
+    _argR46_1_ = neuronmob2_1_in;
+    begin : SigmoidE46
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR46_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE46 = Sigmoid;
+    end
+    neuronmob2_1_out = SigmoidE46;
+    _argR47_1_ = neuronmob2_2_in;
+    begin : SigmoidE47
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR47_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE47 = Sigmoid;
+    end
+    neuronmob2_2_out = SigmoidE47;
+    neuronmob3_1_in = nnmobw3_1_1 * neuronmob2_1_out + nnmobw3_1_2 * neuronmob2_2_out + nnmobb3_1;
+    neuronmob3_2_in = nnmobw3_2_1 * neuronmob2_1_out + nnmobw3_2_2 * neuronmob2_2_out + nnmobb3_2;
+    neuronmob3_3_in = nnmobw3_3_1 * neuronmob2_1_out + nnmobw3_3_2 * neuronmob2_2_out + nnmobb3_3;
+    neuronmob3_4_in = nnmobw3_4_1 * neuronmob2_1_out + nnmobw3_4_2 * neuronmob2_2_out + nnmobb3_4;
+    neuronmob3_5_in = nnmobw3_5_1 * neuronmob2_1_out + nnmobw3_5_2 * neuronmob2_2_out + nnmobb3_5;
+    _argR48_1_ = neuronmob3_1_in;
+    begin : SigmoidE48
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR48_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE48 = Sigmoid;
+    end
+    neuronmob3_1_out = SigmoidE48;
+    _argR49_1_ = neuronmob3_2_in;
+    begin : SigmoidE49
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR49_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE49 = Sigmoid;
+    end
+    neuronmob3_2_out = SigmoidE49;
+    _argR50_1_ = neuronmob3_3_in;
+    begin : SigmoidE50
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR50_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE50 = Sigmoid;
+    end
+    neuronmob3_3_out = SigmoidE50;
+    _argR51_1_ = neuronmob3_4_in;
+    begin : SigmoidE51
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR51_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE51 = Sigmoid;
+    end
+    neuronmob3_4_out = SigmoidE51;
+    _argR52_1_ = neuronmob3_5_in;
+    begin : SigmoidE52
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR52_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE52 = Sigmoid;
+    end
+    neuronmob3_5_out = SigmoidE52;
+    mob_output1 = 5 * neuronmob3_1_out;
+    mob_output2 = 5 * neuronmob3_2_out;
+    mob_output3 = 5 * neuronmob3_3_out;
+    mob_output4 = 5 * neuronmob3_4_out;
+    mob_output5 = 5 * neuronmob3_5_out;
+    neuroncv1_1_in = nncvw1_1_1 * tgaa_nor + nncvw1_1_2 * w_nor + nncvw1_1_3 * l_nor + nncvb1_1;
+    neuroncv1_2_in = nncvw1_2_1 * tgaa_nor + nncvw1_2_2 * w_nor + nncvw1_2_3 * l_nor + nncvb1_2;
+    neuroncv1_3_in = nncvw1_3_1 * tgaa_nor + nncvw1_3_2 * w_nor + nncvw1_3_3 * l_nor + nncvb1_3;
+    neuroncv1_4_in = nncvw1_4_1 * tgaa_nor + nncvw1_4_2 * w_nor + nncvw1_4_3 * l_nor + nncvb1_4;
+    _argR53_1_ = neuroncv1_1_in;
+    begin : SigmoidE53
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR53_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE53 = Sigmoid;
+    end
+    neuroncv1_1_out = SigmoidE53;
+    _argR54_1_ = neuroncv1_2_in;
+    begin : SigmoidE54
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR54_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE54 = Sigmoid;
+    end
+    neuroncv1_2_out = SigmoidE54;
+    _argR55_1_ = neuroncv1_3_in;
+    begin : SigmoidE55
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR55_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE55 = Sigmoid;
+    end
+    neuroncv1_3_out = SigmoidE55;
+    _argR56_1_ = neuroncv1_4_in;
+    begin : SigmoidE56
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR56_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE56 = Sigmoid;
+    end
+    neuroncv1_4_out = SigmoidE56;
+    neuroncv2_1_in = nncvw2_1_1 * neuroncv1_1_out + nncvw2_1_2 * neuroncv1_2_out + nncvw2_1_3 * neuroncv1_3_out + nncvw2_1_4 * neuroncv1_4_out + nncvb2_1;
+    neuroncv2_2_in = nncvw2_2_1 * neuroncv1_1_out + nncvw2_2_2 * neuroncv1_2_out + nncvw2_2_3 * neuroncv1_3_out + nncvw2_2_4 * neuroncv1_4_out + nncvb2_2;
+    neuroncv2_3_in = nncvw2_3_1 * neuroncv1_1_out + nncvw2_3_2 * neuroncv1_2_out + nncvw2_3_3 * neuroncv1_3_out + nncvw2_3_4 * neuroncv1_4_out + nncvb2_3;
+    neuroncv2_4_in = nncvw2_4_1 * neuroncv1_1_out + nncvw2_4_2 * neuroncv1_2_out + nncvw2_4_3 * neuroncv1_3_out + nncvw2_4_4 * neuroncv1_4_out + nncvb2_4;
+    _argR57_1_ = neuroncv2_1_in;
+    begin : SigmoidE57
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR57_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE57 = Sigmoid;
+    end
+    neuroncv2_1_out = SigmoidE57;
+    _argR58_1_ = neuroncv2_2_in;
+    begin : SigmoidE58
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR58_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE58 = Sigmoid;
+    end
+    neuroncv2_2_out = SigmoidE58;
+    _argR59_1_ = neuroncv2_3_in;
+    begin : SigmoidE59
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR59_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE59 = Sigmoid;
+    end
+    neuroncv2_3_out = SigmoidE59;
+    _argR60_1_ = neuroncv2_4_in;
+    begin : SigmoidE60
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR60_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE60 = Sigmoid;
+    end
+    neuroncv2_4_out = SigmoidE60;
+    neuroncv3_1_in = nncvw3_1_1 * neuroncv2_1_out + nncvw3_1_2 * neuroncv2_2_out + nncvw3_1_3 * neuroncv2_3_out + nncvw3_1_4 * neuroncv2_4_out + nncvb3_1;
+    neuroncv3_2_in = nncvw3_2_1 * neuroncv2_1_out + nncvw3_2_2 * neuroncv2_2_out + nncvw3_2_3 * neuroncv2_3_out + nncvw3_2_4 * neuroncv2_4_out + nncvb3_2;
+    neuroncv3_3_in = nncvw3_3_1 * neuroncv2_1_out + nncvw3_3_2 * neuroncv2_2_out + nncvw3_3_3 * neuroncv2_3_out + nncvw3_3_4 * neuroncv2_4_out + nncvb3_3;
+    neuroncv3_4_in = nncvw3_4_1 * neuroncv2_1_out + nncvw3_4_2 * neuroncv2_2_out + nncvw3_4_3 * neuroncv2_3_out + nncvw3_4_4 * neuroncv2_4_out + nncvb3_4;
+    neuroncv3_5_in = nncvw3_5_1 * neuroncv2_1_out + nncvw3_5_2 * neuroncv2_2_out + nncvw3_5_3 * neuroncv2_3_out + nncvw3_5_4 * neuroncv2_4_out + nncvb3_5;
+    neuroncv3_6_in = nncvw3_6_1 * neuroncv2_1_out + nncvw3_6_2 * neuroncv2_2_out + nncvw3_6_3 * neuroncv2_3_out + nncvw3_6_4 * neuroncv2_4_out + nncvb3_6;
+    neuroncv3_7_in = nncvw3_7_1 * neuroncv2_1_out + nncvw3_7_2 * neuroncv2_2_out + nncvw3_7_3 * neuroncv2_3_out + nncvw3_7_4 * neuroncv2_4_out + nncvb3_7;
+    neuroncv3_8_in = nncvw3_8_1 * neuroncv2_1_out + nncvw3_8_2 * neuroncv2_2_out + nncvw3_8_3 * neuroncv2_3_out + nncvw3_8_4 * neuroncv2_4_out + nncvb3_8;
+    neuroncv3_9_in = nncvw3_9_1 * neuroncv2_1_out + nncvw3_9_2 * neuroncv2_2_out + nncvw3_9_3 * neuroncv2_3_out + nncvw3_9_4 * neuroncv2_4_out + nncvb3_9;
+    neuroncv3_10_in = nncvw3_10_1 * neuroncv2_1_out + nncvw3_10_2 * neuroncv2_2_out + nncvw3_10_3 * neuroncv2_3_out + nncvw3_10_4 * neuroncv2_4_out + nncvb3_10;
+    neuroncv3_11_in = nncvw3_11_1 * neuroncv2_1_out + nncvw3_11_2 * neuroncv2_2_out + nncvw3_11_3 * neuroncv2_3_out + nncvw3_11_4 * neuroncv2_4_out + nncvb3_11;
+    neuroncv3_12_in = nncvw3_12_1 * neuroncv2_1_out + nncvw3_12_2 * neuroncv2_2_out + nncvw3_12_3 * neuroncv2_3_out + nncvw3_12_4 * neuroncv2_4_out + nncvb3_12;
+    neuroncv3_13_in = nncvw3_13_1 * neuroncv2_1_out + nncvw3_13_2 * neuroncv2_2_out + nncvw3_13_3 * neuroncv2_3_out + nncvw3_13_4 * neuroncv2_4_out + nncvb3_13;
+    neuroncv3_14_in = nncvw3_14_1 * neuroncv2_1_out + nncvw3_14_2 * neuroncv2_2_out + nncvw3_14_3 * neuroncv2_3_out + nncvw3_14_4 * neuroncv2_4_out + nncvb3_14;
+    neuroncv3_15_in = nncvw3_15_1 * neuroncv2_1_out + nncvw3_15_2 * neuroncv2_2_out + nncvw3_15_3 * neuroncv2_3_out + nncvw3_15_4 * neuroncv2_4_out + nncvb3_15;
+    _argR61_1_ = neuroncv3_1_in;
+    begin : SigmoidE61
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR61_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE61 = Sigmoid;
+    end
+    neuroncv3_1_out = SigmoidE61;
+    _argR62_1_ = neuroncv3_2_in;
+    begin : SigmoidE62
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR62_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE62 = Sigmoid;
+    end
+    neuroncv3_2_out = SigmoidE62;
+    _argR63_1_ = neuroncv3_3_in;
+    begin : SigmoidE63
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR63_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE63 = Sigmoid;
+    end
+    neuroncv3_3_out = SigmoidE63;
+    _argR64_1_ = neuroncv3_4_in;
+    begin : SigmoidE64
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR64_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE64 = Sigmoid;
+    end
+    neuroncv3_4_out = SigmoidE64;
+    _argR65_1_ = neuroncv3_5_in;
+    begin : SigmoidE65
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR65_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE65 = Sigmoid;
+    end
+    neuroncv3_5_out = SigmoidE65;
+    _argR66_1_ = neuroncv3_6_in;
+    begin : SigmoidE66
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR66_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE66 = Sigmoid;
+    end
+    neuroncv3_6_out = SigmoidE66;
+    _argR67_1_ = neuroncv3_7_in;
+    begin : SigmoidE67
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR67_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE67 = Sigmoid;
+    end
+    neuroncv3_7_out = SigmoidE67;
+    _argR68_1_ = neuroncv3_8_in;
+    begin : SigmoidE68
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR68_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE68 = Sigmoid;
+    end
+    neuroncv3_8_out = SigmoidE68;
+    _argR69_1_ = neuroncv3_9_in;
+    begin : SigmoidE69
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR69_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE69 = Sigmoid;
+    end
+    neuroncv3_9_out = SigmoidE69;
+    _argR70_1_ = neuroncv3_10_in;
+    begin : SigmoidE70
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR70_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE70 = Sigmoid;
+    end
+    neuroncv3_10_out = SigmoidE70;
+    _argR71_1_ = neuroncv3_11_in;
+    begin : SigmoidE71
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR71_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE71 = Sigmoid;
+    end
+    neuroncv3_11_out = SigmoidE71;
+    _argR72_1_ = neuroncv3_12_in;
+    begin : SigmoidE72
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR72_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE72 = Sigmoid;
+    end
+    neuroncv3_12_out = SigmoidE72;
+    _argR73_1_ = neuroncv3_13_in;
+    begin : SigmoidE73
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR73_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE73 = Sigmoid;
+    end
+    neuroncv3_13_out = SigmoidE73;
+    _argR74_1_ = neuroncv3_14_in;
+    begin : SigmoidE74
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR74_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE74 = Sigmoid;
+    end
+    neuroncv3_14_out = SigmoidE74;
+    _argR75_1_ = neuroncv3_15_in;
+    begin : SigmoidE75
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR75_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE75 = Sigmoid;
+    end
+    neuroncv3_15_out = SigmoidE75;
+    cv_output1 = 5 * neuroncv3_1_out;
+    cv_output2 = 5 * neuroncv3_2_out;
+    cv_output3 = 5 * neuroncv3_3_out;
+    cv_output4 = 5 * neuroncv3_4_out;
+    cv_output5 = 5 * neuroncv3_5_out;
+    cv_output6 = 5 * neuroncv3_6_out;
+    cv_output7 = 5 * neuroncv3_7_out;
+    cv_output8 = 5 * neuroncv3_8_out;
+    cv_output9 = 5 * neuroncv3_9_out;
+    cv_output10 = 5 * neuroncv3_10_out;
+    cv_output11 = 5 * neuroncv3_11_out;
+    cv_output12 = 5 * neuroncv3_12_out;
+    cv_output13 = 5 * neuroncv3_13_out;
+    cv_output14 = 5 * neuroncv3_14_out;
+    cv_output15 = 5 * neuroncv3_15_out;
+    vgs = type * V(G,S);
+    vds = type * V(D,S);
+    if (vds >= 0.0) begin
+        mode = 1.0;
+        vds = vds;
+        vgs = vgs;
+    end
+    else begin
+        mode = -1.0;
+        vds = -vds;
+        vgs = vgs + vds;
+    end
+    Inv_L = 1e-06 / Lg;
+    Inv_NFIN = 1.0 / NFIN;
+    Inv_LNFIN = 1e-06 / (Lg * NFIN);
+    Inv_W = 1e-06 / WGAA;
+    Inv_WL = 1e-12 / (WGAA * Lg);
+    WGAAeff = WGAA;
+    Weff_UFCM = 2 * (WGAA + DeltaWGAA + TGAA + DeltaTGAA) * NGAA;
+    Ach = (WGAA + DeltaWGAA) * (TGAA + DeltaWGAA) * NGAA;
+    EOT = EOT_0 * cv_output14;
+    Cins = Weff_UFCM * EPSROX * EPS0 / EOT;
+    MTcen = 1.0 + AQMTCEN * (((-(2.0 * Ach / Weff_UFCM) / BQMTCEN > 80.0))?5.540622384000e+34 * (1.0 + -(2.0 * Ach / Weff_UFCM) / BQMTCEN - 80.0):((-(2.0 * Ach / Weff_UFCM) / BQMTCEN < -80.0))?1.804851387e-35:exp(-(2.0 * Ach / Weff_UFCM) / BQMTCEN));
+    Tcen0 = (2.0 * Ach / Weff_UFCM) * MTcen;
+    T0 = TOXG * TOXG;
+    Weff0 = Weff_UFCM;
+    WeffCV0 = Weff_UFCM;
+    ETAMOB_i = mob_output5;
+    UA_i = mob_output1;
+    EU_i = mob_output2;
+    U0_i = U0 * mob_output3;
+    UD_i = mob_output4;
+    Vtm = KboQ * DevTemp;
+    nVtm = Vtm;
+    Nc = NC0SUB;
+    epssub = EPSRSUB * EPS0;
+    rc = 2.0 * Cins / (Weff_UFCM * Weff_UFCM * epssub / Ach);
+    cox = Cins / Weff_UFCM;
+    qbs = q * NBODY * Ach / Cins;
+    Qdep_ov_Cins = -q * NBODY * Ach / Cins;
+    qdep = Qdep_ov_Cins / nVtm;
+    vth_fixed_factor_SI = (((Cins * nVtm / (q * Nc * 2.0 * Ach) > 9.9999999999999996e-39))?ln(Cins * nVtm / (q * Nc * 2.0 * Ach)):-87.49823353399999);
+    vth_fixed_factor_Sub = ((((qdep * rc) * (qdep * rc) / (((((qdep * rc > 80.0))?5.540622384000e+34 * (1.0 + qdep * rc - 80.0):((qdep * rc < -80.0))?1.804851387e-35:exp(qdep * rc)) - qdep * rc - 1.0)) > 9.9999999999999996e-39))?ln((qdep * rc) * (qdep * rc) / (((((qdep * rc > 80.0))?5.540622384000e+34 * (1.0 + qdep * rc - 80.0):((qdep * rc < -80.0))?1.804851387e-35:exp(qdep * rc)) - qdep * rc - 1.0))):-87.49823353399999) + vth_fixed_factor_SI;
+    q0 = 10.0 * nVtm / rc + 2.0 * qbs;
+    scl = sqrt((epssub * Ach / Cins) * (1.0 + Ach * Cins / (2.0 * epssub * Weff_UFCM * Weff_UFCM)));
+    Eg = BG0SUB;
+    ni = NI0SUB * (((BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) > 80.0))?5.540622384000e+34 * (1.0 + BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) - 80.0):((BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) < -80.0))?1.804851387e-35:exp(BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm)));
+    phib = Vtm * (((NBODY / ni > 9.9999999999999996e-39))?ln(NBODY / ni):-87.49823353399999);
+    vbi = Vtm * (((NBODY * NSD / (ni * ni) > 9.9999999999999996e-39))?ln(NBODY * NSD / (ni * ni)):-87.49823353399999);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_SCE = 0.5 / (cosh(tmp) - 1.0);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_SW = 0.5 / (cosh(tmp) - 1.0);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_DIBL = 0.5 / (cosh(tmp) - 1.0);
+    Theta_RSCE = sqrt(1.0 + LPE0_i / Lg) - 1.0;
+    ThetaSS = (0.5 * ((1.0 - 1e-06) + sqrt((1.0 - 1e-06) * (1.0 - 1e-06) + 4.0 * 0.001 * 0.001)));
+    phist = 0.4 + phib + PHIN_i;
+    T1 = 2.0 * (Cins / Weff_UFCM) / (rc + 2.0);
+    vdsx = sqrt(vds * vds + 0.01) - 0.1;
+    cdsc = Theta_SW * (sce_output4 + sce_output5 * vdsx);
+    nVtm = Vtm * ThetaSS * (1.0 + (CIT_i + cdsc) / T1);
+    kT = Vtm * q;
+    T0 = HBAR * pi / (2.0 * Ach / Weff_UFCM);
+    E0 = T0 * T0 / (2.0 * mx);
+    E0prime = T0 * T0 / (2.0 * mxprime);
+    E1 = 4.0 * E0;
+    E1prime = 4.0 * E0prime;
+    T1 = gprime * mdprime / (gfactor * md);
+    gam0 = 1.0 + T1 * exp((E0 - E0prime) / kT);
+    gam1 = gam0 + ((((E0 - E1) / kT > 80.0))?5.540622384000e+34 * (1.0 + (E0 - E1) / kT - 80.0):(((E0 - E1) / kT < -80.0))?1.804851387e-35:exp((E0 - E1) / kT)) + T1 * ((((E0 - E1prime) / kT > 80.0))?5.540622384000e+34 * (1.0 + (E0 - E1prime) / kT - 80.0):(((E0 - E1prime) / kT < -80.0))?1.804851387e-35:exp((E0 - E1prime) / kT));
+    T2 = -Vtm * (((gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1 > 9.9999999999999996e-39))?ln(gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1):-87.49823353399999);
+    dvch_qm = qua_output1 * (E0 / q + T2);
+    dvth_vtroll = -sce_output2 * Theta_SCE * (vbi - phist);
+    dvth_dibl = -sce_output3 * Theta_DIBL * vdsx + (DVTP0_i * pow(vdsx + 0.01,DVTP1_i));
+    dvth_rsce = K1RSCE_i * Theta_RSCE * sqrt(phist);
+    dvth_all = dvth_vtroll + dvth_dibl + dvth_rsce + DVTSHIFT;
+    deltaPhi = PHIG - EASUB;
+    vgsfb = vgs - deltaPhi;
+    vgsfbeff = vgsfb - dvth_all;
+    vch = dvch_qm;
+    T4 = pow(-qdep,(2.0 / 3));
+    T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T4;
+    T1 = -qdep + vth_fixed_factor_SI;
+    T2 = (vgsfbeff - vch) / nVtm;
+    F0 = -T2 + T1;
+    T3 = 0.5 * (T2 - T0);
+    qm = (((T3 > 80.0))?5.540622384000e+34 * (1.0 + T3 - 80.0):((T3 < -80.0))?1.804851387e-35:exp(T3));
+    T7 = ln(1.0 + qm);
+    qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / (exp(T8) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - 2 / 3 * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    qis = -qm * nVtm;
+    eta_mu = 0.5 * ETAMOB_i;
+    eta_mu_cv = 0.5 * cv_output1;
+    EeffFactor = 1e-08 / (epsratio * EOT);
+    Eeffs = EeffFactor * (qbs + eta_mu * qis);
+    qb0 = 0.01 / cox;
+    T2 = pow((0.5 * (1.0 + qis / qb0)),UCS_t);
+    T3 = pow(Eeffs,EU_i);
+    T3 = UA_i * T3 + UD_i / T2;
+    Dmobs = 1.0 + T3;
+    Dmobs = (0.5 * (Dmobs + 1.0 + sqrt((Dmobs - 1.0) * (Dmobs - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmobs = Dmobs / U0MULT;
+    VSAT_a = VSAT;
+    VSAT_a = VSAT_a * clm_output6;
+    Esat = 2.0 * VSAT_a / U0_i * Dmobs;
+    EsatL = Esat * Lg;
+    KSATIV_a = KSATIV;
+    KSATIV_a = KSATIV_a * clm_output7;
+    T6 = KSATIV_a * (qis + 2.0 * Vtm);
+    Vdsat = EsatL * T6 / (EsatL + T6);
+    Vdsat = (0.5 * ((Vdsat - 0.001) + sqrt((Vdsat - 0.001) * (Vdsat - 0.001) + 4.0 * 1e-05 * 1e-05))) + 0.001;
+    MEXP_a = MEXP;
+    MEXP_a = MEXP_a * clm_output8;
+    T7 = pow(((vds / Vdsat) + 1e-06),MEXP_a);
+    T8 = pow((1.0 + T7),(1 / MEXP_a));
+    Vdseff = min((vds / T8),vds);
+    vch = Vdseff + dvch_qm;
+    T2 = pow((-qdep),(2.0 / 3));
+    T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T2;
+    T1 = -qdep + vth_fixed_factor_SI;
+    T2 = (vgsfbeff - vch) / nVtm;
+    F0 = -T2 + T1;
+    T3 = (T2 - T0) * 0.5;
+    qm = (((T3 > 80.0))?5.540622384000e+34 * (1.0 + T3 - 80.0):((T3 < -80.0))?1.804851387e-35:exp(T3));
+    T7 = ln(1.0 + qm);
+    qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    qid = -qm * nVtm;
+    qia = 0.5 * (qis + qid);
+    dqi = qis - qid;
+    etaiv = q0 / (q0 + qia);
+    ids0_ov_dqi = qia + (2.0 - etaiv) * nVtm;
+    ids0 = ids0_ov_dqi * dqi;
+    Leff = Lg;
+    LeffCV = Lg;
+    DROUT_i = DROUT;
+    DROUT_i = DROUT_i * clm_output9;
+    tmp = DROUT_i * Leff / scl + 1e-06;
+    PDIBL1_a = PDIBL1;
+    PDIBL1_a = PDIBL1_a * clm_output10;
+    PDIBL2_a = PDIBL2;
+    PDIBL2_a = PDIBL2_a * clm_output11;
+    DIBLfactor = PDIBL1_a * exp(-tmp) + PDIBL2_a;
+    PVAG_i = PVAG;
+    PVAG_i = PVAG_i * clm_output12;
+    PVAGfactor = 1.0 + PVAG_i * qia / EsatL;
+    diffVds = vds - Vdseff;
+    Vgst2Vtm = qia + 2.0 * Vtm;
+    T1 = Vgst2Vtm;
+    T3 = T1 / (Vdsat + T1);
+    VaDIBL = T1 / DIBLfactor * T3 * PVAGfactor;
+    Moc = 1.0 + diffVds / VaDIBL;
+    T1 = clm_output1 + clm_output5 * qia;
+    Mclm = 1.0 + T1 * (((1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL) > 9.9999999999999996e-39))?ln(1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL)):-87.49823353399999);
+    Moc = Moc * Mclm;
+    T4 = qia / QM0;
+    T5 = 1.0 + pow(T4,PQM);
+    Tcen = Tcen0 / T5;
+    coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * qua_output2)) + Tcen * qua_output3 / epssub);
+    cox = Cins / Weff_UFCM;
+    beta = U0_i * cox * Weff_UFCM / Lg;
+    qia2 = 0.5 * (qis + qid);
+    Eeffm = EeffFactor * (qbs + eta_mu * qia2);
+    T2 = pow(0.5 * (1.0 + qia2 / qb0),UCS_t);
+    T0 = pow(Eeffm,EU_i);
+    T3 = UA_i * T0 + UD_i / T2;
+    Dmob = 1.0 + T3;
+    Dmob = (0.5 * (Dmob + 1.0 + sqrt((Dmob - 1.0) * (Dmob - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmob = Dmob / U0MULT;
+    ueff = U0_i / Dmob;
+    Eeffm_cv = EeffFactor * (qbs + eta_mu_cv * qia2);
+    T3 = UA_i * pow(Eeffm_cv,EU_i) + UD_i / T2;
+    Dmob_cv = 1.0 + T3;
+    Dmob_cv = (0.5 * (Dmob_cv + 1.0 + sqrt((Dmob_cv - 1.0) * (Dmob_cv - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmob_cv = Dmob_cv / U0MULT;
+    VSAT1_a = VSAT1;
+    VSAT1_a = VSAT1_a * clm_output13;
+    Esat1 = 2.0 * VSAT1_a / ueff;
+    Esat1L = Esat1 * Lg;
+    T0 = (((clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) - 80.0):((clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) < -80.0))?1.804851387e-35:exp(clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999)));
+    T1 = 1.0 / clm_output2;
+    Ta = 1.0 + (((T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) - 80.0):((T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) < -80.0))?1.804851387e-35:exp(T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999)));
+    Dvsat = (1.0 + (((T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) - 80.0):((T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) < -80.0))?1.804851387e-35:exp(T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999)))) / Ta;
+    Dvsat = Dvsat + 0.5 * clm_output4 * qia * dqi * dqi;
+    T0 = A1_t + A2_t / (qia + 2.0 * nVtm);
+    T1 = T0 * dqi * dqi;
+    T2 = T1 + 1.0 - 0.001;
+    T3 = -1.0 + 0.5 * (T2 + sqrt(T2 * T2 + 0.004));
+    Nsat = 0.5 * (1.0 + sqrt(1.0 + T3));
+    Dvsat = Dvsat * Nsat;
+    Dvsat = (0.5 * (Dvsat + 1.0 + sqrt((Dvsat - 1.0) * (Dvsat - 1.0) + 0.25 * DVSATCLAMP * DVSATCLAMP)));
+    EsatCV = 2.0 * VSATCV_t * cv_output2 * Dmob_cv / U0_i;
+    EsatCVL = EsatCV * LeffCV;
+    T0 = pow((dqi / EsatCVL),cv_output3);
+    T1 = 1.0 / cv_output3;
+    Ta = 1.0 + pow(cv_output4,T1);
+    DvsatCV = (1.0 + pow((cv_output4 + T0),T1)) / Ta;
+    MclmCV = 1.0 + cv_output5 * (((1.0 + (vds - Vdseff) / cv_output5 / (Vdsat + EsatCVL) > 9.9999999999999996e-39))?ln(1.0 + (vds - Vdseff) / cv_output5 / (Vdsat + EsatCVL)):-87.49823353399999);
+    T0 = epsratio * EOT;
+    T1 = (-(vgs - vds)) / T0;
+    T1 = (0.5 * (T1 + sqrt(T1 * T1 + 4.0 * 0.01 * 0.01)));
+    T2 = 10 * pow(10.0,8.0) * gidl_output4 / (T1 + 0.001);
+    T3 = pow(T1,1);
+    T6 = 6.05 * pow(10.0,-12.0) * Weff0 * T3 * (((-T2 > 80.0))?5.540622384000e+34 * (1.0 + -T2 - 80.0):((-T2 < -80.0))?1.804851387e-35:exp(-T2)) * vds * 4 * gidl_output5;
+    igidl = T6;
+    ids = NF * beta * ids0 * Moc / (Dmob * Dvsat) + igidl;
+    ids_tmp = beta * ids0 * Moc / (Dmob * Dvsat);
+    T11 = (2.0 * qia + nVtm) / DvsatCV;
+    qg = qia + dqi * dqi / (6.0 * T11);
+    qd = -0.5 * (qia - (dqi / 6.0) * (1.0 - (dqi / T11) * (1.0 + dqi / (5.0 * T11))));
+    inv_MclmCV = 1.0 / MclmCV;
+    qg = inv_MclmCV * qg + (MclmCV - 1.0) * qid;
+    qd = inv_MclmCV * inv_MclmCV * qd + 0.5 * (MclmCV - inv_MclmCV) * qid;
+    qs = -qg - qd;
+    T6 = WeffCV0 * LeffCV * coxeff;
+    qg = T6 * qg;
+    qd = T6 * qd;
+    qs = T6 * qs;
+    CGSO_i = 0.3 * TFIN * cox * cv_output10;
+    CGDO_i = 0.3 * TFIN * cox * cv_output13;
+    T1 = WeffCV0 * devsign;
+    T2 = devsign * vgs;
+    T0 = T2 - vfbsdcv + DELTA_1;
+    vgs_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+    qgs_ov = T1 * (CGSL_i * cv_output8 * (T2 - vfbsdcv - vgs_overlap - 0.5 * cv_output9 * (sqrt(1.0 - 4.0 * vgs_overlap / cv_output9) - 1.0)) + CGSO_i * T2);
+    T2 = devsign * (vgs - vds);
+    T0 = T2 - vfbsdcv + DELTA_1;
+    vgd_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+    qgd_ov = T1 * (CGSL_i * cv_output11 * (T2 - vfbsdcv - vgd_overlap - 0.5 * cv_output12 * (sqrt(1.0 - 4.0 * vgd_overlap / cv_output12) - 1.0)) + CGDO_i * T2);
+    T1 = WeffCV0;
+    qgs_fr = T1 * CFS_i * cv_output6 * vgs;
+    qgd_fr = T1 * CFD_i * cv_output7 * (vgs - vds);
+    qgs_parasitic = qgs_ov + qgs_fr;
+    qgd_parasitic = qgd_ov + qgd_fr;
+    QG = type * (devsign * qg + qgs_parasitic + qgd_parasitic);
+    QD = type * (devsign * qd - qgd_parasitic);
+    QS = type * (devsign * qs - qgs_parasitic);
+    GM = ddx(ids,V(G));
+    GDS = ddx(ids,V(D));
+    CGG = ddx(QG,V(G));
+    CGD = ddx(QG,V(D));
+    CGS = ddx(QG,V(S));
+    CDG = ddx(QD,V(G));
+    CDD = ddx(QD,V(D));
+    CDS = ddx(QD,V(S));
+    CSG = ddx(QS,V(G));
+    CSD = ddx(QS,V(D));
+    CSS = ddx(QS,V(S));
+    if (mode > 0.0) I(D,S) <+ type * ids;
+    else I(D,S) <+ -type * ids;
+    tmp1_pku = sce_output1;
+    tmp2_pku = sce_output2;
+    tmp3_pku = sce_output3;
+    tmp4_pku = sce_output4;
+    tmp5_pku = sce_output5;
+    NBODY_CV = 5.000000000000e+21;
+    NSD_CV = 1.000000000000e+26;
+    PHIG_CV = 4.37;
+    CFS_i_CV = 1e-10;
+    CFD_i_CV = 1e-10;
+    Lg = L + XL;
+    w_nor = ((WGAA - wgaamin) / (wgaamax - wgaamin)) * (netmax - netmin) + netmin;
+    tgaa_nor = -1;
+    l_nor = ((L - lgaamin) / (lgaamax - lgaamin)) * (netmax - netmin) + netmin;
+    neuronsce1_1_in = nnscew1_1_1_cap * w_nor + nnscew1_1_2_cap * l_nor + nnsceb1_1_cap;
+    neuronsce1_2_in = nnscew1_2_1_cap * w_nor + nnscew1_2_2_cap * l_nor + nnsceb1_2_cap;
+    _argR76_1_ = neuronsce1_1_in;
+    begin : SigmoidE76
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR76_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE76 = Sigmoid;
+    end
+    neuronsce1_1_out = SigmoidE76;
+    _argR77_1_ = neuronsce1_2_in;
+    begin : SigmoidE77
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR77_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE77 = Sigmoid;
+    end
+    neuronsce1_2_out = SigmoidE77;
+    neuronsce2_1_in = nnscew2_1_1_cap * neuronsce1_1_out + nnscew2_1_2_cap * neuronsce1_2_out + nnsceb2_1_cap;
+    neuronsce2_2_in = nnscew2_2_1_cap * neuronsce1_1_out + nnscew2_2_2_cap * neuronsce1_2_out + nnsceb2_2_cap;
+    _argR78_1_ = neuronsce2_1_in;
+    begin : SigmoidE78
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR78_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE78 = Sigmoid;
+    end
+    neuronsce2_1_out = SigmoidE78;
+    _argR79_1_ = neuronsce2_2_in;
+    begin : SigmoidE79
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR79_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE79 = Sigmoid;
+    end
+    neuronsce2_2_out = SigmoidE79;
+    neuronsce3_1_in = nnscew3_1_1_cap * neuronsce2_1_out + nnscew3_1_2_cap * neuronsce2_2_out + nnsceb3_1_cap;
+    neuronsce3_2_in = nnscew3_2_1_cap * neuronsce2_1_out + nnscew3_2_2_cap * neuronsce2_2_out + nnsceb3_2_cap;
+    neuronsce3_3_in = nnscew3_3_1_cap * neuronsce2_1_out + nnscew3_3_2_cap * neuronsce2_2_out + nnsceb3_3_cap;
+    neuronsce3_4_in = nnscew3_4_1_cap * neuronsce2_1_out + nnscew3_4_2_cap * neuronsce2_2_out + nnsceb3_4_cap;
+    neuronsce3_5_in = nnscew3_5_1_cap * neuronsce2_1_out + nnscew3_5_2_cap * neuronsce2_2_out + nnsceb3_5_cap;
+    _argR80_1_ = neuronsce3_1_in;
+    begin : SigmoidE80
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR80_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE80 = Sigmoid;
+    end
+    neuronsce3_1_out = SigmoidE80;
+    _argR81_1_ = neuronsce3_2_in;
+    begin : SigmoidE81
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR81_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE81 = Sigmoid;
+    end
+    neuronsce3_2_out = SigmoidE81;
+    _argR82_1_ = neuronsce3_3_in;
+    begin : SigmoidE82
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR82_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE82 = Sigmoid;
+    end
+    neuronsce3_3_out = SigmoidE82;
+    _argR83_1_ = neuronsce3_4_in;
+    begin : SigmoidE83
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR83_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE83 = Sigmoid;
+    end
+    neuronsce3_4_out = SigmoidE83;
+    _argR84_1_ = neuronsce3_5_in;
+    begin : SigmoidE84
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR84_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE84 = Sigmoid;
+    end
+    neuronsce3_5_out = SigmoidE84;
+    sce_output1 = 5 * neuronsce3_1_out;
+    sce_output2 = 5 * neuronsce3_2_out;
+    sce_output3 = 5 * neuronsce3_3_out;
+    sce_output4 = 5 * neuronsce3_4_out;
+    sce_output5 = 5 * neuronsce3_5_out;
+    neuronclm1_1_in = nnclmw1_1_1_cap * w_nor + nnclmw1_1_2_cap * l_nor + nnclmb1_1_cap;
+    neuronclm1_2_in = nnclmw1_2_1_cap * w_nor + nnclmw1_2_2_cap * l_nor + nnclmb1_2_cap;
+    neuronclm1_3_in = nnclmw1_3_1_cap * w_nor + nnclmw1_3_2_cap * l_nor + nnclmb1_3_cap;
+    neuronclm1_4_in = nnclmw1_4_1_cap * w_nor + nnclmw1_4_2_cap * l_nor + nnclmb1_4_cap;
+    _argR85_1_ = neuronclm1_1_in;
+    begin : SigmoidE85
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR85_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE85 = Sigmoid;
+    end
+    neuronclm1_1_out = SigmoidE85;
+    _argR86_1_ = neuronclm1_2_in;
+    begin : SigmoidE86
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR86_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE86 = Sigmoid;
+    end
+    neuronclm1_2_out = SigmoidE86;
+    _argR87_1_ = neuronclm1_3_in;
+    begin : SigmoidE87
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR87_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE87 = Sigmoid;
+    end
+    neuronclm1_3_out = SigmoidE87;
+    _argR88_1_ = neuronclm1_4_in;
+    begin : SigmoidE88
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR88_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE88 = Sigmoid;
+    end
+    neuronclm1_4_out = SigmoidE88;
+    neuronclm2_1_in = nnclmw2_1_1_cap * neuronclm1_1_out + nnclmw2_1_2_cap * neuronclm1_2_out + nnclmw2_1_3_cap * neuronclm1_3_out + nnclmw2_1_4_cap * neuronclm1_4_out + nnclmb2_1_cap;
+    neuronclm2_2_in = nnclmw2_2_1_cap * neuronclm1_1_out + nnclmw2_2_2_cap * neuronclm1_2_out + nnclmw2_2_3_cap * neuronclm1_3_out + nnclmw2_2_4_cap * neuronclm1_4_out + nnclmb2_2_cap;
+    neuronclm2_3_in = nnclmw2_3_1_cap * neuronclm1_1_out + nnclmw2_3_2_cap * neuronclm1_2_out + nnclmw2_3_3_cap * neuronclm1_3_out + nnclmw2_3_4_cap * neuronclm1_4_out + nnclmb2_3_cap;
+    neuronclm2_4_in = nnclmw2_4_1_cap * neuronclm1_1_out + nnclmw2_4_2_cap * neuronclm1_2_out + nnclmw2_4_3_cap * neuronclm1_3_out + nnclmw2_4_4_cap * neuronclm1_4_out + nnclmb2_4_cap;
+    _argR89_1_ = neuronclm2_1_in;
+    begin : SigmoidE89
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR89_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE89 = Sigmoid;
+    end
+    neuronclm2_1_out = SigmoidE89;
+    _argR90_1_ = neuronclm2_2_in;
+    begin : SigmoidE90
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR90_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE90 = Sigmoid;
+    end
+    neuronclm2_2_out = SigmoidE90;
+    _argR91_1_ = neuronclm2_3_in;
+    begin : SigmoidE91
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR91_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE91 = Sigmoid;
+    end
+    neuronclm2_3_out = SigmoidE91;
+    _argR92_1_ = neuronclm2_4_in;
+    begin : SigmoidE92
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR92_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE92 = Sigmoid;
+    end
+    neuronclm2_4_out = SigmoidE92;
+    neuronclm3_1_in = nnclmw3_1_1_cap * neuronclm2_1_out + nnclmw3_1_2_cap * neuronclm2_2_out + nnclmw3_1_3_cap * neuronclm2_3_out + nnclmw3_1_4_cap * neuronclm2_4_out + nnclmb3_1_cap;
+    neuronclm3_2_in = nnclmw3_2_1_cap * neuronclm2_1_out + nnclmw3_2_2_cap * neuronclm2_2_out + nnclmw3_2_3_cap * neuronclm2_3_out + nnclmw3_2_4_cap * neuronclm2_4_out + nnclmb3_2_cap;
+    neuronclm3_3_in = nnclmw3_3_1_cap * neuronclm2_1_out + nnclmw3_3_2_cap * neuronclm2_2_out + nnclmw3_3_3_cap * neuronclm2_3_out + nnclmw3_3_4_cap * neuronclm2_4_out + nnclmb3_3_cap;
+    neuronclm3_4_in = nnclmw3_4_1_cap * neuronclm2_1_out + nnclmw3_4_2_cap * neuronclm2_2_out + nnclmw3_4_3_cap * neuronclm2_3_out + nnclmw3_4_4_cap * neuronclm2_4_out + nnclmb3_4_cap;
+    neuronclm3_5_in = nnclmw3_5_1_cap * neuronclm2_1_out + nnclmw3_5_2_cap * neuronclm2_2_out + nnclmw3_5_3_cap * neuronclm2_3_out + nnclmw3_5_4_cap * neuronclm2_4_out + nnclmb3_5_cap;
+    neuronclm3_6_in = nnclmw3_6_1_cap * neuronclm2_1_out + nnclmw3_6_2_cap * neuronclm2_2_out + nnclmw3_6_3_cap * neuronclm2_3_out + nnclmw3_6_4_cap * neuronclm2_4_out + nnclmb3_6_cap;
+    neuronclm3_7_in = nnclmw3_7_1_cap * neuronclm2_1_out + nnclmw3_7_2_cap * neuronclm2_2_out + nnclmw3_7_3_cap * neuronclm2_3_out + nnclmw3_7_4_cap * neuronclm2_4_out + nnclmb3_7_cap;
+    neuronclm3_8_in = nnclmw3_8_1_cap * neuronclm2_1_out + nnclmw3_8_2_cap * neuronclm2_2_out + nnclmw3_8_3_cap * neuronclm2_3_out + nnclmw3_8_4_cap * neuronclm2_4_out + nnclmb3_8_cap;
+    neuronclm3_9_in = nnclmw3_9_1_cap * neuronclm2_1_out + nnclmw3_9_2_cap * neuronclm2_2_out + nnclmw3_9_3_cap * neuronclm2_3_out + nnclmw3_9_4_cap * neuronclm2_4_out + nnclmb3_9_cap;
+    neuronclm3_10_in = nnclmw3_10_1_cap * neuronclm2_1_out + nnclmw3_10_2_cap * neuronclm2_2_out + nnclmw3_10_3_cap * neuronclm2_3_out + nnclmw3_10_4_cap * neuronclm2_4_out + nnclmb3_10_cap;
+    neuronclm3_11_in = nnclmw3_11_1_cap * neuronclm2_1_out + nnclmw3_11_2_cap * neuronclm2_2_out + nnclmw3_11_3_cap * neuronclm2_3_out + nnclmw3_11_4_cap * neuronclm2_4_out + nnclmb3_11_cap;
+    neuronclm3_12_in = nnclmw3_12_1_cap * neuronclm2_1_out + nnclmw3_12_2_cap * neuronclm2_2_out + nnclmw3_12_3_cap * neuronclm2_3_out + nnclmw3_12_4_cap * neuronclm2_4_out + nnclmb3_12_cap;
+    neuronclm3_13_in = nnclmw3_13_1_cap * neuronclm2_1_out + nnclmw3_13_2_cap * neuronclm2_2_out + nnclmw3_13_3_cap * neuronclm2_3_out + nnclmw3_13_4_cap * neuronclm2_4_out + nnclmb3_13_cap;
+    _argR93_1_ = neuronclm3_1_in;
+    begin : SigmoidE93
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR93_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE93 = Sigmoid;
+    end
+    neuronclm3_1_out = SigmoidE93;
+    _argR94_1_ = neuronclm3_2_in;
+    begin : SigmoidE94
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR94_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE94 = Sigmoid;
+    end
+    neuronclm3_2_out = SigmoidE94;
+    _argR95_1_ = neuronclm3_3_in;
+    begin : SigmoidE95
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR95_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE95 = Sigmoid;
+    end
+    neuronclm3_3_out = SigmoidE95;
+    _argR96_1_ = neuronclm3_4_in;
+    begin : SigmoidE96
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR96_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE96 = Sigmoid;
+    end
+    neuronclm3_4_out = SigmoidE96;
+    _argR97_1_ = neuronclm3_5_in;
+    begin : SigmoidE97
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR97_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE97 = Sigmoid;
+    end
+    neuronclm3_5_out = SigmoidE97;
+    _argR98_1_ = neuronclm3_6_in;
+    begin : SigmoidE98
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR98_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE98 = Sigmoid;
+    end
+    neuronclm3_6_out = SigmoidE98;
+    _argR99_1_ = neuronclm3_7_in;
+    begin : SigmoidE99
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR99_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE99 = Sigmoid;
+    end
+    neuronclm3_7_out = SigmoidE99;
+    _argR100_1_ = neuronclm3_8_in;
+    begin : SigmoidE100
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR100_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE100 = Sigmoid;
+    end
+    neuronclm3_8_out = SigmoidE100;
+    _argR101_1_ = neuronclm3_9_in;
+    begin : SigmoidE101
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR101_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE101 = Sigmoid;
+    end
+    neuronclm3_9_out = SigmoidE101;
+    _argR102_1_ = neuronclm3_10_in;
+    begin : SigmoidE102
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR102_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE102 = Sigmoid;
+    end
+    neuronclm3_10_out = SigmoidE102;
+    _argR103_1_ = neuronclm3_11_in;
+    begin : SigmoidE103
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR103_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE103 = Sigmoid;
+    end
+    neuronclm3_11_out = SigmoidE103;
+    _argR104_1_ = neuronclm3_12_in;
+    begin : SigmoidE104
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR104_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE104 = Sigmoid;
+    end
+    neuronclm3_12_out = SigmoidE104;
+    _argR105_1_ = neuronclm3_13_in;
+    begin : SigmoidE105
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR105_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE105 = Sigmoid;
+    end
+    neuronclm3_13_out = SigmoidE105;
+    clm_output1 = 5 * neuronclm3_1_out;
+    clm_output2 = 5 * neuronclm3_2_out;
+    clm_output3 = 5 * neuronclm3_3_out;
+    clm_output4 = 5 * neuronclm3_4_out;
+    clm_output5 = 5 * neuronclm3_5_out;
+    clm_output6 = 5 * neuronclm3_6_out;
+    clm_output7 = 5 * neuronclm3_7_out;
+    clm_output8 = 5 * neuronclm3_8_out;
+    clm_output9 = 5 * neuronclm3_9_out;
+    clm_output10 = 5 * neuronclm3_10_out;
+    clm_output11 = 5 * neuronclm3_11_out;
+    clm_output12 = 5 * neuronclm3_12_out;
+    clm_output13 = 5 * neuronclm3_13_out;
+    neuronqua1_1_in = nnquaw1_1_1_cap * l_nor + nnquaw1_1_2_cap * w_nor + nnquab1_1_cap;
+    neuronqua1_2_in = nnquaw1_2_1_cap * l_nor + nnquaw1_2_2_cap * w_nor + nnquab1_2_cap;
+    neuronqua1_3_in = nnquaw1_3_1_cap * l_nor + nnquaw1_3_2_cap * w_nor + nnquab1_3_cap;
+    _argR106_1_ = neuronqua1_1_in;
+    begin : SigmoidE106
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR106_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE106 = Sigmoid;
+    end
+    neuronqua1_1_out = SigmoidE106;
+    _argR107_1_ = neuronqua1_2_in;
+    begin : SigmoidE107
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR107_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE107 = Sigmoid;
+    end
+    neuronqua1_2_out = SigmoidE107;
+    _argR108_1_ = neuronqua1_3_in;
+    begin : SigmoidE108
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR108_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE108 = Sigmoid;
+    end
+    neuronqua1_3_out = SigmoidE108;
+    neuronqua2_1_in = nnquaw2_1_1_cap * neuronqua1_1_out + nnquaw2_1_2_cap * neuronqua1_2_out + nnquaw2_1_3_cap * neuronqua1_3_out + nnquab2_1_cap;
+    neuronqua2_2_in = nnquaw2_2_1_cap * neuronqua1_1_out + nnquaw2_2_2_cap * neuronqua1_2_out + nnquaw2_2_3_cap * neuronqua1_3_out + nnquab2_2_cap;
+    neuronqua2_3_in = nnquaw2_3_1_cap * neuronqua1_1_out + nnquaw2_3_2_cap * neuronqua1_2_out + nnquaw2_3_3_cap * neuronqua1_3_out + nnquab2_3_cap;
+    _argR109_1_ = neuronqua2_1_in;
+    begin : SigmoidE109
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR109_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE109 = Sigmoid;
+    end
+    neuronqua2_1_out = SigmoidE109;
+    _argR110_1_ = neuronqua2_2_in;
+    begin : SigmoidE110
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR110_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE110 = Sigmoid;
+    end
+    neuronqua2_2_out = SigmoidE110;
+    _argR111_1_ = neuronqua2_3_in;
+    begin : SigmoidE111
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR111_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE111 = Sigmoid;
+    end
+    neuronqua2_3_out = SigmoidE111;
+    neuronqua3_1_in = nnquaw3_1_1_cap * neuronqua2_1_out + nnquaw3_1_2_cap * neuronqua2_2_out + nnquaw3_1_3_cap * neuronqua2_3_out + nnquab3_1_cap;
+    neuronqua3_2_in = nnquaw3_2_1_cap * neuronqua2_1_out + nnquaw3_2_2_cap * neuronqua2_2_out + nnquaw3_2_3_cap * neuronqua2_3_out + nnquab3_2_cap;
+    neuronqua3_3_in = nnquaw3_3_1_cap * neuronqua2_1_out + nnquaw3_3_2_cap * neuronqua2_2_out + nnquaw3_3_3_cap * neuronqua2_3_out + nnquab3_3_cap;
+    _argR112_1_ = neuronqua3_1_in;
+    begin : SigmoidE112
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR112_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE112 = Sigmoid;
+    end
+    neuronqua3_1_out = SigmoidE112;
+    _argR113_1_ = neuronqua3_2_in;
+    begin : SigmoidE113
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR113_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE113 = Sigmoid;
+    end
+    neuronqua3_2_out = SigmoidE113;
+    _argR114_1_ = neuronqua3_3_in;
+    begin : SigmoidE114
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR114_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE114 = Sigmoid;
+    end
+    neuronqua3_3_out = SigmoidE114;
+    qua_output1 = 5 * neuronqua3_1_out;
+    qua_output2 = 5 * neuronqua3_2_out;
+    qua_output3 = 5 * neuronqua3_3_out;
+    neuronmob1_1_in = nnmobw1_1_1_cap * tgaa_nor + nnmobw1_1_2_cap * w_nor + nnmobw1_1_3_cap * l_nor + nnmobb1_1_cap;
+    neuronmob1_2_in = nnmobw1_2_1_cap * tgaa_nor + nnmobw1_2_2_cap * w_nor + nnmobw1_2_3_cap * l_nor + nnmobb1_2_cap;
+    _argR115_1_ = neuronmob1_1_in;
+    begin : SigmoidE115
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR115_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE115 = Sigmoid;
+    end
+    neuronmob1_1_out = SigmoidE115;
+    _argR116_1_ = neuronmob1_2_in;
+    begin : SigmoidE116
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR116_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE116 = Sigmoid;
+    end
+    neuronmob1_2_out = SigmoidE116;
+    neuronmob2_1_in = nnmobw2_1_1_cap * neuronmob1_1_out + nnmobw2_1_2_cap * neuronmob1_2_out + nnmobb2_1_cap;
+    neuronmob2_2_in = nnmobw2_2_1_cap * neuronmob1_1_out + nnmobw2_2_2_cap * neuronmob1_2_out + nnmobb2_2_cap;
+    _argR117_1_ = neuronmob2_1_in;
+    begin : SigmoidE117
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR117_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE117 = Sigmoid;
+    end
+    neuronmob2_1_out = SigmoidE117;
+    _argR118_1_ = neuronmob2_2_in;
+    begin : SigmoidE118
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR118_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE118 = Sigmoid;
+    end
+    neuronmob2_2_out = SigmoidE118;
+    neuronmob3_1_in = nnmobw3_1_1_cap * neuronmob2_1_out + nnmobw3_1_2_cap * neuronmob2_2_out + nnmobb3_1_cap;
+    neuronmob3_2_in = nnmobw3_2_1_cap * neuronmob2_1_out + nnmobw3_2_2_cap * neuronmob2_2_out + nnmobb3_2_cap;
+    neuronmob3_3_in = nnmobw3_3_1_cap * neuronmob2_1_out + nnmobw3_3_2_cap * neuronmob2_2_out + nnmobb3_3_cap;
+    neuronmob3_4_in = nnmobw3_4_1_cap * neuronmob2_1_out + nnmobw3_4_2_cap * neuronmob2_2_out + nnmobb3_4_cap;
+    neuronmob3_5_in = nnmobw3_5_1_cap * neuronmob2_1_out + nnmobw3_5_2_cap * neuronmob2_2_out + nnmobb3_5_cap;
+    _argR119_1_ = neuronmob3_1_in;
+    begin : SigmoidE119
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR119_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE119 = Sigmoid;
+    end
+    neuronmob3_1_out = SigmoidE119;
+    _argR120_1_ = neuronmob3_2_in;
+    begin : SigmoidE120
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR120_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE120 = Sigmoid;
+    end
+    neuronmob3_2_out = SigmoidE120;
+    _argR121_1_ = neuronmob3_3_in;
+    begin : SigmoidE121
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR121_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE121 = Sigmoid;
+    end
+    neuronmob3_3_out = SigmoidE121;
+    _argR122_1_ = neuronmob3_4_in;
+    begin : SigmoidE122
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR122_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE122 = Sigmoid;
+    end
+    neuronmob3_4_out = SigmoidE122;
+    _argR123_1_ = neuronmob3_5_in;
+    begin : SigmoidE123
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR123_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE123 = Sigmoid;
+    end
+    neuronmob3_5_out = SigmoidE123;
+    mob_output1 = 5 * neuronmob3_1_out;
+    mob_output2 = 5 * neuronmob3_2_out;
+    mob_output3 = 5 * neuronmob3_3_out;
+    mob_output4 = 5 * neuronmob3_4_out;
+    mob_output5 = 5 * neuronmob3_5_out;
+    neuroncv1_1_in = nncvw1_1_1_cap * tgaa_nor + nncvw1_1_2_cap * w_nor + nncvw1_1_3_cap * l_nor + nncvb1_1_cap;
+    neuroncv1_2_in = nncvw1_2_1_cap * tgaa_nor + nncvw1_2_2_cap * w_nor + nncvw1_2_3_cap * l_nor + nncvb1_2_cap;
+    neuroncv1_3_in = nncvw1_3_1_cap * tgaa_nor + nncvw1_3_2_cap * w_nor + nncvw1_3_3_cap * l_nor + nncvb1_3_cap;
+    neuroncv1_4_in = nncvw1_4_1_cap * tgaa_nor + nncvw1_4_2_cap * w_nor + nncvw1_4_3_cap * l_nor + nncvb1_4_cap;
+    _argR124_1_ = neuroncv1_1_in;
+    begin : SigmoidE124
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR124_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE124 = Sigmoid;
+    end
+    neuroncv1_1_out = SigmoidE124;
+    _argR125_1_ = neuroncv1_2_in;
+    begin : SigmoidE125
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR125_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE125 = Sigmoid;
+    end
+    neuroncv1_2_out = SigmoidE125;
+    _argR126_1_ = neuroncv1_3_in;
+    begin : SigmoidE126
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR126_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE126 = Sigmoid;
+    end
+    neuroncv1_3_out = SigmoidE126;
+    _argR127_1_ = neuroncv1_4_in;
+    begin : SigmoidE127
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR127_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE127 = Sigmoid;
+    end
+    neuroncv1_4_out = SigmoidE127;
+    neuroncv2_1_in = nncvw2_1_1_cap * neuroncv1_1_out + nncvw2_1_2_cap * neuroncv1_2_out + nncvw2_1_3_cap * neuroncv1_3_out + nncvw2_1_4_cap * neuroncv1_4_out + nncvb2_1_cap;
+    neuroncv2_2_in = nncvw2_2_1_cap * neuroncv1_1_out + nncvw2_2_2_cap * neuroncv1_2_out + nncvw2_2_3_cap * neuroncv1_3_out + nncvw2_2_4_cap * neuroncv1_4_out + nncvb2_2_cap;
+    neuroncv2_3_in = nncvw2_3_1_cap * neuroncv1_1_out + nncvw2_3_2_cap * neuroncv1_2_out + nncvw2_3_3_cap * neuroncv1_3_out + nncvw2_3_4_cap * neuroncv1_4_out + nncvb2_3_cap;
+    neuroncv2_4_in = nncvw2_4_1_cap * neuroncv1_1_out + nncvw2_4_2_cap * neuroncv1_2_out + nncvw2_4_3_cap * neuroncv1_3_out + nncvw2_4_4_cap * neuroncv1_4_out + nncvb2_4_cap;
+    _argR128_1_ = neuroncv2_1_in;
+    begin : SigmoidE128
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR128_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE128 = Sigmoid;
+    end
+    neuroncv2_1_out = SigmoidE128;
+    _argR129_1_ = neuroncv2_2_in;
+    begin : SigmoidE129
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR129_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE129 = Sigmoid;
+    end
+    neuroncv2_2_out = SigmoidE129;
+    _argR130_1_ = neuroncv2_3_in;
+    begin : SigmoidE130
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR130_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE130 = Sigmoid;
+    end
+    neuroncv2_3_out = SigmoidE130;
+    _argR131_1_ = neuroncv2_4_in;
+    begin : SigmoidE131
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR131_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE131 = Sigmoid;
+    end
+    neuroncv2_4_out = SigmoidE131;
+    neuroncv3_1_in = nncvw3_1_1_cap * neuroncv2_1_out + nncvw3_1_2_cap * neuroncv2_2_out + nncvw3_1_3_cap * neuroncv2_3_out + nncvw3_1_4_cap * neuroncv2_4_out + nncvb3_1_cap;
+    neuroncv3_2_in = nncvw3_2_1_cap * neuroncv2_1_out + nncvw3_2_2_cap * neuroncv2_2_out + nncvw3_2_3_cap * neuroncv2_3_out + nncvw3_2_4_cap * neuroncv2_4_out + nncvb3_2_cap;
+    neuroncv3_3_in = nncvw3_3_1_cap * neuroncv2_1_out + nncvw3_3_2_cap * neuroncv2_2_out + nncvw3_3_3_cap * neuroncv2_3_out + nncvw3_3_4_cap * neuroncv2_4_out + nncvb3_3_cap;
+    neuroncv3_4_in = nncvw3_4_1_cap * neuroncv2_1_out + nncvw3_4_2_cap * neuroncv2_2_out + nncvw3_4_3_cap * neuroncv2_3_out + nncvw3_4_4_cap * neuroncv2_4_out + nncvb3_4_cap;
+    neuroncv3_5_in = nncvw3_5_1_cap * neuroncv2_1_out + nncvw3_5_2_cap * neuroncv2_2_out + nncvw3_5_3_cap * neuroncv2_3_out + nncvw3_5_4_cap * neuroncv2_4_out + nncvb3_5_cap;
+    neuroncv3_6_in = nncvw3_6_1_cap * neuroncv2_1_out + nncvw3_6_2_cap * neuroncv2_2_out + nncvw3_6_3_cap * neuroncv2_3_out + nncvw3_6_4_cap * neuroncv2_4_out + nncvb3_6_cap;
+    neuroncv3_7_in = nncvw3_7_1_cap * neuroncv2_1_out + nncvw3_7_2_cap * neuroncv2_2_out + nncvw3_7_3_cap * neuroncv2_3_out + nncvw3_7_4_cap * neuroncv2_4_out + nncvb3_7_cap;
+    neuroncv3_8_in = nncvw3_8_1_cap * neuroncv2_1_out + nncvw3_8_2_cap * neuroncv2_2_out + nncvw3_8_3_cap * neuroncv2_3_out + nncvw3_8_4_cap * neuroncv2_4_out + nncvb3_8_cap;
+    neuroncv3_9_in = nncvw3_9_1_cap * neuroncv2_1_out + nncvw3_9_2_cap * neuroncv2_2_out + nncvw3_9_3_cap * neuroncv2_3_out + nncvw3_9_4_cap * neuroncv2_4_out + nncvb3_9_cap;
+    neuroncv3_10_in = nncvw3_10_1_cap * neuroncv2_1_out + nncvw3_10_2_cap * neuroncv2_2_out + nncvw3_10_3_cap * neuroncv2_3_out + nncvw3_10_4_cap * neuroncv2_4_out + nncvb3_10_cap;
+    neuroncv3_11_in = nncvw3_11_1_cap * neuroncv2_1_out + nncvw3_11_2_cap * neuroncv2_2_out + nncvw3_11_3_cap * neuroncv2_3_out + nncvw3_11_4_cap * neuroncv2_4_out + nncvb3_11_cap;
+    neuroncv3_12_in = nncvw3_12_1_cap * neuroncv2_1_out + nncvw3_12_2_cap * neuroncv2_2_out + nncvw3_12_3_cap * neuroncv2_3_out + nncvw3_12_4_cap * neuroncv2_4_out + nncvb3_12_cap;
+    neuroncv3_13_in = nncvw3_13_1_cap * neuroncv2_1_out + nncvw3_13_2_cap * neuroncv2_2_out + nncvw3_13_3_cap * neuroncv2_3_out + nncvw3_13_4_cap * neuroncv2_4_out + nncvb3_13_cap;
+    neuroncv3_14_in = nncvw3_14_1_cap * neuroncv2_1_out + nncvw3_14_2_cap * neuroncv2_2_out + nncvw3_14_3_cap * neuroncv2_3_out + nncvw3_14_4_cap * neuroncv2_4_out + nncvb3_14_cap;
+    neuroncv3_15_in = nncvw3_15_1_cap * neuroncv2_1_out + nncvw3_15_2_cap * neuroncv2_2_out + nncvw3_15_3_cap * neuroncv2_3_out + nncvw3_15_4_cap * neuroncv2_4_out + nncvb3_15_cap;
+    _argR132_1_ = neuroncv3_1_in;
+    begin : SigmoidE132
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR132_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE132 = Sigmoid;
+    end
+    neuroncv3_1_out = SigmoidE132;
+    _argR133_1_ = neuroncv3_2_in;
+    begin : SigmoidE133
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR133_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE133 = Sigmoid;
+    end
+    neuroncv3_2_out = SigmoidE133;
+    _argR134_1_ = neuroncv3_3_in;
+    begin : SigmoidE134
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR134_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE134 = Sigmoid;
+    end
+    neuroncv3_3_out = SigmoidE134;
+    _argR135_1_ = neuroncv3_4_in;
+    begin : SigmoidE135
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR135_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE135 = Sigmoid;
+    end
+    neuroncv3_4_out = SigmoidE135;
+    _argR136_1_ = neuroncv3_5_in;
+    begin : SigmoidE136
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR136_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE136 = Sigmoid;
+    end
+    neuroncv3_5_out = SigmoidE136;
+    _argR137_1_ = neuroncv3_6_in;
+    begin : SigmoidE137
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR137_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE137 = Sigmoid;
+    end
+    neuroncv3_6_out = SigmoidE137;
+    _argR138_1_ = neuroncv3_7_in;
+    begin : SigmoidE138
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR138_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE138 = Sigmoid;
+    end
+    neuroncv3_7_out = SigmoidE138;
+    _argR139_1_ = neuroncv3_8_in;
+    begin : SigmoidE139
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR139_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE139 = Sigmoid;
+    end
+    neuroncv3_8_out = SigmoidE139;
+    _argR140_1_ = neuroncv3_9_in;
+    begin : SigmoidE140
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR140_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE140 = Sigmoid;
+    end
+    neuroncv3_9_out = SigmoidE140;
+    _argR141_1_ = neuroncv3_10_in;
+    begin : SigmoidE141
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR141_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE141 = Sigmoid;
+    end
+    neuroncv3_10_out = SigmoidE141;
+    _argR142_1_ = neuroncv3_11_in;
+    begin : SigmoidE142
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR142_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE142 = Sigmoid;
+    end
+    neuroncv3_11_out = SigmoidE142;
+    _argR143_1_ = neuroncv3_12_in;
+    begin : SigmoidE143
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR143_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE143 = Sigmoid;
+    end
+    neuroncv3_12_out = SigmoidE143;
+    _argR144_1_ = neuroncv3_13_in;
+    begin : SigmoidE144
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR144_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE144 = Sigmoid;
+    end
+    neuroncv3_13_out = SigmoidE144;
+    _argR145_1_ = neuroncv3_14_in;
+    begin : SigmoidE145
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR145_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE145 = Sigmoid;
+    end
+    neuroncv3_14_out = SigmoidE145;
+    _argR146_1_ = neuroncv3_15_in;
+    begin : SigmoidE146
+        real Sigmoid;
+        real var_l_f2;
+
+        var_l_f2 = _argR146_1_;
+        Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l_f2));
+        SigmoidE146 = Sigmoid;
+    end
+    neuroncv3_15_out = SigmoidE146;
+    cv_output1 = 5 * neuroncv3_1_out;
+    cv_output2 = 5 * neuroncv3_2_out;
+    cv_output3 = 5 * neuroncv3_3_out;
+    cv_output4 = 5 * neuroncv3_4_out;
+    cv_output5 = 5 * neuroncv3_5_out;
+    cv_output6 = 5 * neuroncv3_6_out;
+    cv_output7 = 5 * neuroncv3_7_out;
+    cv_output8 = 5 * neuroncv3_8_out;
+    cv_output9 = 5 * neuroncv3_9_out;
+    cv_output10 = 5 * neuroncv3_10_out;
+    cv_output11 = 5 * neuroncv3_11_out;
+    cv_output12 = 5 * neuroncv3_12_out;
+    cv_output13 = 5 * neuroncv3_13_out;
+    cv_output14 = 5 * neuroncv3_14_out;
+    cv_output15 = 5 * neuroncv3_15_out;
+    vgs = type * V(G,S);
+    vds = type * V(D,S);
+    if (vds >= 0.0) begin
+        mode = 1.0;
+        vds = vds;
+        vgs = vgs;
+    end
+    else begin
+        mode = -1.0;
+        vds = -vds;
+        vgs = vgs + vds;
+    end
+    Inv_L = 1e-06 / Lg;
+    Inv_NFIN = 1.0 / NFIN;
+    Inv_LNFIN = 1e-06 / (Lg * NFIN);
+    Inv_W = 1e-06 / WGAA;
+    Inv_WL = 1e-12 / (WGAA * Lg);
+    WGAAeff = WGAA;
+    Weff1 = 2 * (WGAAeff + TGAA);
+    Ach1 = WGAAeff * TGAA;
+    Weff_UFCM = Weff1;
+    Ach = Ach1;
+    if (NGAA > 1) begin
+        Weff2 = 2 * (WGAAeff + TGAA);
+        Ach2 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2;
+        Ach = Ach1 + Ach2;
+    end
+    if (NGAA > 2) begin
+        Weff3 = 2 * (WGAAeff + TGAA);
+        Ach3 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3;
+        Ach = Ach1 + Ach2 + Ach3;
+    end
+    if (NGAA > 3) begin
+        Weff4 = 2 * (WGAAeff + TGAA);
+        Ach4 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4;
+    end
+    if (NGAA > 4) begin
+        Weff5 = 2 * (WGAAeff + TGAA);
+        Ach5 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5;
+    end
+    if (NGAA > 5) begin
+        Weff6 = 2 * (WGAAeff + TGAA);
+        Ach6 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5 + Weff6;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5 + Ach6;
+    end
+    WeffB = WGAA;
+    Weff_UFCM = 2 * (WGAA + DeltaWGAA + TGAA + DeltaTGAA) * NGAA;
+    Ach = (WGAA + DeltaWGAA) * (TGAA + DeltaWGAA) * NGAA;
+    EOT = EOT_0 * cv_output14;
+    Cins = Weff_UFCM * EPSROX * EPS0 / EOT;
+    MTcen = 1.0 + AQMTCEN * (((-(2.0 * Ach / Weff_UFCM) / BQMTCEN > 80.0))?5.540622384000e+34 * (1.0 + -(2.0 * Ach / Weff_UFCM) / BQMTCEN - 80.0):((-(2.0 * Ach / Weff_UFCM) / BQMTCEN < -80.0))?1.804851387e-35:exp(-(2.0 * Ach / Weff_UFCM) / BQMTCEN));
+    Tcen0 = (2.0 * Ach / Weff_UFCM) * MTcen;
+    ETAMOB_i = mob_output5;
+    UA_i = mob_output1;
+    EU_i = mob_output2;
+    U0_i = U0 * mob_output3;
+    UD_i = mob_output4;
+    Vtm = KboQ * DevTemp;
+    nVtm = Vtm;
+    Nc = NC0SUB;
+    epssub = EPSRSUB * EPS0;
+    rc = 2.0 * Cins / (Weff_UFCM * Weff_UFCM * epssub / Ach);
+    cox = Cins / Weff_UFCM;
+    qbs = q * NBODY_CV * Ach / Cins;
+    Qdep_ov_Cins = -q * NBODY_CV * Ach / Cins;
+    qdep = Qdep_ov_Cins / nVtm;
+    vth_fixed_factor_SI = (((Cins * nVtm / (q * Nc * 2.0 * Ach) > 9.9999999999999996e-39))?ln(Cins * nVtm / (q * Nc * 2.0 * Ach)):-87.49823353399999);
+    vth_fixed_factor_Sub = ((((qdep * rc) * (qdep * rc) / (((((qdep * rc > 80.0))?5.540622384000e+34 * (1.0 + qdep * rc - 80.0):((qdep * rc < -80.0))?1.804851387e-35:exp(qdep * rc)) - qdep * rc - 1.0)) > 9.9999999999999996e-39))?ln((qdep * rc) * (qdep * rc) / (((((qdep * rc > 80.0))?5.540622384000e+34 * (1.0 + qdep * rc - 80.0):((qdep * rc < -80.0))?1.804851387e-35:exp(qdep * rc)) - qdep * rc - 1.0))):-87.49823353399999) + vth_fixed_factor_SI;
+    q0 = 10.0 * nVtm / rc + 2.0 * qbs;
+    scl = sqrt((epssub * Ach / Cins) * (1.0 + Ach * Cins / (2.0 * epssub * Weff_UFCM * Weff_UFCM)));
+    Eg = BG0SUB;
+    ni = NI0SUB * (((BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) > 80.0))?5.540622384000e+34 * (1.0 + BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) - 80.0):((BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm) < -80.0))?1.804851387e-35:exp(BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm)));
+    phib = Vtm * (((NBODY_CV / ni > 9.9999999999999996e-39))?ln(NBODY_CV / ni):-87.49823353399999);
+    vbi = Vtm * (((NBODY_CV * NSD_CV / (ni * ni) > 9.9999999999999996e-39))?ln(NBODY_CV * NSD_CV / (ni * ni)):-87.49823353399999);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_SCE = 0.5 / (cosh(tmp) - 1.0);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_SW = 0.5 / (cosh(tmp) - 1.0);
+    tmp = sce_output1 * Lg / scl + 1e-06;
+    Theta_DIBL = 0.5 / (cosh(tmp) - 1.0);
+    Theta_RSCE = sqrt(1.0 + LPE0_i / Lg) - 1.0;
+    ThetaSS = (0.5 * ((1.0 - 1e-06) + sqrt((1.0 - 1e-06) * (1.0 - 1e-06) + 4.0 * 0.001 * 0.001)));
+    phist = 0.4 + phib + PHIN_i;
+    T1 = 2.0 * (Cins / Weff_UFCM) / (rc + 2.0);
+    vdsx = sqrt(vds * vds + 0.01) - 0.1;
+    cdsc = Theta_SW * (sce_output4 + sce_output5 * vdsx);
+    nVtm = Vtm * ThetaSS * (1.0 + (CIT_i + cdsc) / T1);
+    kT = Vtm * q;
+    T0 = HBAR * pi / (2.0 * Ach / Weff_UFCM);
+    E0 = T0 * T0 / (2.0 * mx);
+    E0prime = T0 * T0 / (2.0 * mxprime);
+    E1 = 4.0 * E0;
+    E1prime = 4.0 * E0prime;
+    T1 = gprime * mdprime / (gfactor * md);
+    gam0 = 1.0 + T1 * exp((E0 - E0prime) / kT);
+    gam1 = gam0 + ((((E0 - E1) / kT > 80.0))?5.540622384000e+34 * (1.0 + (E0 - E1) / kT - 80.0):(((E0 - E1) / kT < -80.0))?1.804851387e-35:exp((E0 - E1) / kT)) + T1 * ((((E0 - E1prime) / kT > 80.0))?5.540622384000e+34 * (1.0 + (E0 - E1prime) / kT - 80.0):(((E0 - E1prime) / kT < -80.0))?1.804851387e-35:exp((E0 - E1prime) / kT));
+    T2 = -Vtm * (((gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1 > 9.9999999999999996e-39))?ln(gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1):-87.49823353399999);
+    dvch_qm = qua_output1 * (E0 / q + T2);
+    dvth_vtroll = -sce_output2 * Theta_SCE * (vbi - phist);
+    dvth_dibl = -sce_output3 * Theta_DIBL * vdsx + (DVTP0_i * pow(vdsx + 0.01,DVTP1_i));
+    dvth_rsce = K1RSCE_i * Theta_RSCE * sqrt(phist);
+    dvth_all = dvth_vtroll + dvth_dibl + dvth_rsce + DVTSHIFT;
+    deltaPhi = PHIG_CV - EASUB;
+    vgsfb = vgs - deltaPhi;
+    vgsfbeff = vgsfb - dvth_all;
+    vch = dvch_qm;
+    T4 = pow(-qdep,(2.0 / 3));
+    T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T4;
+    T1 = -qdep + vth_fixed_factor_SI;
+    T2 = (vgsfbeff - vch) / nVtm;
+    F0 = -T2 + T1;
+    T3 = 0.5 * (T2 - T0);
+    qm = (((T3 > 80.0))?5.540622384000e+34 * (1.0 + T3 - 80.0):((T3 < -80.0))?1.804851387e-35:exp(T3));
+    T7 = ln(1.0 + qm);
+    qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / (exp(T8) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - 2 / 3 * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    qis = -qm * nVtm;
+    eta_mu = 0.5 * ETAMOB_i;
+    eta_mu_cv = 0.5 * cv_output1;
+    EeffFactor = 1e-08 / (epsratio * EOT);
+    Eeffs = EeffFactor * (qbs + eta_mu * qis);
+    qb0 = 0.01 / cox;
+    T2 = pow((0.5 * (1.0 + qis / qb0)),UCS_t);
+    T3 = pow(Eeffs,EU_i);
+    T3 = UA_i * T3 + UD_i / T2;
+    Dmobs = 1.0 + T3;
+    Dmobs = (0.5 * (Dmobs + 1.0 + sqrt((Dmobs - 1.0) * (Dmobs - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmobs = Dmobs / U0MULT;
+    VSAT_a = VSAT;
+    VSAT_a = VSAT_a * clm_output6;
+    Esat = 2.0 * VSAT_a / U0_i * Dmobs;
+    EsatL = Esat * Lg;
+    KSATIV_a = KSATIV;
+    KSATIV_a = KSATIV_a * clm_output7;
+    T6 = KSATIV_a * (qis + 2.0 * Vtm);
+    Vdsat = EsatL * T6 / (EsatL + T6);
+    Vdsat = (0.5 * ((Vdsat - 0.001) + sqrt((Vdsat - 0.001) * (Vdsat - 0.001) + 4.0 * 1e-05 * 1e-05))) + 0.001;
+    MEXP_a = MEXP;
+    MEXP_a = MEXP_a * clm_output8;
+    T7 = pow(((vds / Vdsat) + 1e-06),MEXP_a);
+    T8 = pow((1.0 + T7),(1 / MEXP_a));
+    Vdseff = min((vds / T8),vds);
+    vch = Vdseff + dvch_qm;
+    T2 = pow((-qdep),(2.0 / 3));
+    T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T2;
+    T1 = -qdep + vth_fixed_factor_SI;
+    T2 = (vgsfbeff - vch) / nVtm;
+    F0 = -T2 + T1;
+    T3 = (T2 - T0) * 0.5;
+    qm = (((T3 > 80.0))?5.540622384000e+34 * (1.0 + T3 - 80.0):((T3 < -80.0))?1.804851387e-35:exp(T3));
+    T7 = ln(1.0 + qm);
+    qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    T8 = (qm * ALPHA_UFCM + qdep) * rc;
+    T4 = T8 / ((((T8 > 80.0))?5.540622384000e+34 * (1.0 + T8 - 80.0):((T8 < -80.0))?1.804851387e-35:exp(T8)) - T8 - 1.0);
+    T5 = T8 * T4;
+    qm_ln = ln(-(qm + qdep));
+    e0 = F0 - qm + (((-qm > 9.9999999999999996e-39))?ln(-qm):-87.49823353399999) + (((T5 > 9.9999999999999996e-39))?ln(T5):-87.49823353399999) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+    e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+    e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+    qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+    qid = -qm * nVtm;
+    qia = 0.5 * (qis + qid);
+    dqi = qis - qid;
+    etaiv = q0 / (q0 + qia);
+    ids0_ov_dqi = qia + (2.0 - etaiv) * nVtm;
+    ids0 = ids0_ov_dqi * dqi;
+    Leff = Lg;
+    LeffCV = Lg;
+    DROUT_i = DROUT;
+    DROUT_i = DROUT_i * clm_output9;
+    tmp = DROUT_i * Leff / scl + 1e-06;
+    PDIBL1_a = PDIBL1;
+    PDIBL1_a = PDIBL1_a * clm_output10;
+    PDIBL2_a = PDIBL2;
+    PDIBL2_a = PDIBL2_a * clm_output11;
+    DIBLfactor = PDIBL1_a * exp(-tmp) + PDIBL2_a;
+    PVAG_i = PVAG;
+    PVAG_i = PVAG_i * clm_output12;
+    PVAGfactor = 1.0 + PVAG_i * qia / EsatL;
+    diffVds = vds - Vdseff;
+    Vgst2Vtm = qia + 2.0 * Vtm;
+    T1 = Vgst2Vtm;
+    T3 = T1 / (Vdsat + T1);
+    VaDIBL = T1 / DIBLfactor * T3 * PVAGfactor;
+    Moc = 1.0 + diffVds / VaDIBL;
+    T1 = clm_output1 + clm_output5 * qia;
+    Mclm = 1.0 + T1 * (((1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL) > 9.9999999999999996e-39))?ln(1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL)):-87.49823353399999);
+    Moc = Moc * Mclm;
+    T4 = qia / QM0;
+    T5 = 1.0 + pow(T4,PQM);
+    Tcen = Tcen0 / T5;
+    coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * qua_output2)) + Tcen * qua_output3 / epssub);
+    cox = Cins / Weff_UFCM;
+    beta = U0_i * cox * Weff_UFCM / Lg;
+    qia2 = 0.5 * (qis + qid);
+    Eeffm = EeffFactor * (qbs + eta_mu * qia2);
+    T2 = pow(0.5 * (1.0 + qia2 / qb0),UCS_t);
+    T0 = pow(Eeffm,EU_i);
+    T3 = UA_i * T0 + UD_i / T2;
+    Dmob = 1.0 + T3;
+    Dmob = (0.5 * (Dmob + 1.0 + sqrt((Dmob - 1.0) * (Dmob - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmob = Dmob / U0MULT;
+    ueff = U0_i / Dmob;
+    Eeffm_cv = EeffFactor * (qbs + eta_mu_cv * qia2);
+    T3 = UA_i * pow(Eeffm_cv,EU_i) + UD_i / T2;
+    Dmob_cv = 1.0 + T3;
+    Dmob_cv = (0.5 * (Dmob_cv + 1.0 + sqrt((Dmob_cv - 1.0) * (Dmob_cv - 1.0) + 0.25 * DMOBCLAMP * DMOBCLAMP)));
+    Dmob_cv = Dmob_cv / U0MULT;
+    VSAT1_a = VSAT1;
+    VSAT1_a = VSAT1_a * clm_output13;
+    Esat1 = 2.0 * VSAT1_a / ueff;
+    Esat1L = Esat1 * Lg;
+    T0 = (((clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) - 80.0):((clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999) < -80.0))?1.804851387e-35:exp(clm_output2 * (((dqi / Esat1L > 9.9999999999999996e-39))?ln(dqi / Esat1L):-87.49823353399999)));
+    T1 = 1.0 / clm_output2;
+    Ta = 1.0 + (((T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) - 80.0):((T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999) < -80.0))?1.804851387e-35:exp(T1 * (((clm_output3 > 9.9999999999999996e-39))?ln(clm_output3):-87.49823353399999)));
+    Dvsat = (1.0 + (((T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) > 80.0))?5.540622384000e+34 * (1.0 + T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) - 80.0):((T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999) < -80.0))?1.804851387e-35:exp(T1 * (((clm_output3 + T0 > 9.9999999999999996e-39))?ln(clm_output3 + T0):-87.49823353399999)))) / Ta;
+    Dvsat = Dvsat + 0.5 * clm_output4 * qia * dqi * dqi;
+    T0 = A1_t + A2_t / (qia + 2.0 * nVtm);
+    T1 = T0 * dqi * dqi;
+    T2 = T1 + 1.0 - 0.001;
+    T3 = -1.0 + 0.5 * (T2 + sqrt(T2 * T2 + 0.004));
+    Nsat = 0.5 * (1.0 + sqrt(1.0 + T3));
+    Dvsat = Dvsat * Nsat;
+    Dvsat = (0.5 * (Dvsat + 1.0 + sqrt((Dvsat - 1.0) * (Dvsat - 1.0) + 0.25 * DVSATCLAMP * DVSATCLAMP)));
+    EsatCV = 2.0 * VSATCV_t * cv_output2 * Dmob_cv / U0_i;
+    EsatCVL = EsatCV * LeffCV;
+    T0 = pow((dqi / EsatCVL),cv_output3);
+    T1 = 1.0 / cv_output3;
+    Ta = 1.0 + pow(cv_output4,T1);
+    DvsatCV = (1.0 + pow((cv_output4 + T0),T1)) / Ta;
+    MclmCV = 1.0 + cv_output5 * (((1.0 + (vds - Vdseff) / cv_output5 / (Vdsat + EsatCVL) > 9.9999999999999996e-39))?ln(1.0 + (vds - Vdseff) / cv_output5 / (Vdsat + EsatCVL)):-87.49823353399999);
+    T0 = epsratio * EOT;
+    T1 = (-(vgs - vds)) / T0;
+    T1 = (0.5 * (T1 + sqrt(T1 * T1 + 4.0 * 0.01 * 0.01)));
+    T2 = 10 * pow(10.0,8.0) * gidl_output4 / (T1 + 0.001);
+    T3 = pow(T1,1);
+    T6 = 6.05 * pow(10.0,-12.0) * Weff0 * T3 * (((-T2 > 80.0))?5.540622384000e+34 * (1.0 + -T2 - 80.0):((-T2 < -80.0))?1.804851387e-35:exp(-T2)) * vds * 4 * gidl_output5;
+    igidl = T6;
+    ids = beta * ids0 * Moc / (Dmob * Dvsat) + igidl;
+    ids_tmp = beta * ids0 * Moc / (Dmob * Dvsat);
+    T11 = (2.0 * qia + nVtm) / DvsatCV;
+    qg = qia + dqi * dqi / (6.0 * T11);
+    qd = -0.5 * (qia - (dqi / 6.0) * (1.0 - (dqi / T11) * (1.0 + dqi / (5.0 * T11))));
+    inv_MclmCV = 1.0 / MclmCV;
+    qg = inv_MclmCV * qg + (MclmCV - 1.0) * qid;
+    qd = inv_MclmCV * inv_MclmCV * qd + 0.5 * (MclmCV - inv_MclmCV) * qid;
+    qs = -qg - qd;
+    T6 = WeffCV0 * LeffCV * coxeff * NF;
+    qg = T6 * qg;
+    qd = T6 * qd;
+    qs = T6 * qs;
+    CGSO_i = 0.3 * WGAA * cox * cv_output10;
+    CGDO_i = 0.3 * WGAA * cox * cv_output13;
+    T1 = WeffCV0 * devsign;
+    T2 = devsign * vgs;
+    T0 = T2 - vfbsdcv + DELTA_1;
+    vgs_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+    qgs_ov = T1 * (CGSL_i * cv_output8 * (T2 - vfbsdcv - vgs_overlap - 0.5 * cv_output9 * (sqrt(1.0 - 4.0 * vgs_overlap / cv_output9) - 1.0)) + CGSO_i * T2);
+    T2 = devsign * (vgs - vds);
+    T0 = T2 - vfbsdcv + DELTA_1;
+    vgd_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+    qgd_ov = T1 * (CGSL_i * cv_output11 * (T2 - vfbsdcv - vgd_overlap - 0.5 * cv_output12 * (sqrt(1.0 - 4.0 * vgd_overlap / cv_output12) - 1.0)) + CGDO_i * T2);
+    T1 = WeffCV0;
+    qgs_fr = T1 * CFS_i_CV * cv_output6 * vgs;
+    qgd_fr = T1 * CFD_i_CV * cv_output6 * (vgs - vds);
+    qgs_parasitic = qgs_ov + qgs_fr;
+    qgd_parasitic = qgd_ov + qgd_fr;
+    QG = type * (devsign * qg + qgs_parasitic + qgd_parasitic);
+    QG = QG * 0.5;
+    QD = type * (devsign * qd - qgd_parasitic);
+    QD = QD * 0.5;
+    QS = type * (devsign * qs - qgs_parasitic);
+    QS = QS * 0.5;
+    GM = ddx(ids,V(G));
+    GDS = ddx(ids,V(D));
+    CGG = ddx(QG,V(G));
+    CGD = ddx(QG,V(D));
+    CGS = ddx(QG,V(S));
+    CDG = ddx(QD,V(G));
+    CDD = ddx(QD,V(D));
+    CDS = ddx(QD,V(S));
+    CSG = ddx(QS,V(G));
+    CSD = ddx(QS,V(D));
+    CSS = ddx(QS,V(S));
+    I(G,S) <+ ddt(QG);
+    I(D,S) <+ ddt(QD);
+end
+
+endmodule
+
+// Finished pva on Mon Jul 13 18:11:35 2026
+

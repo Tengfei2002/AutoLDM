@@ -1,0 +1,20 @@
+libepva built by synopsyshspmgr synmake_pva_build  on Thu Sep 26 11:41:22 CST 2019 - p4:
+
+======================================
+HVA Verilog-A Modules (filename:line#)
+--------------------------------------
+ N  cfet_nmos_lvt (../va/cfet_nmos_lvt.va:29)
+ N  cfet_pmos_lvt (../va/cfet_pmos_lvt.va:27)
+--------------------------------------
+Total 2 module(s) loaded.
+======================================
+
+======================================
+Lists of Used Modules during GMD Setup
+--------------------------------------
+    cfet_nmos_lvt
+    cfet_pmos_lvt
+--------------------------------------
+Total 2 module(s) used.
+======================================
+

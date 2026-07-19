@@ -1,0 +1,1307 @@
+// PKU PHIMO-Fusion Model - Verilog-A
+//
+//  Copyright 2025 Peking University, ShenZhen. All rights reserved
+//
+//  Project Directors : Prof. Lining Zhang, Prof. Ru Huang
+//  Authors           : Baokang Peng, Guoyao Cheng, Wu Dai,
+//                      Fangxing Zhang, Yu Li, Honglin Wu
+//
+//  Notes:
+//    - GAA global model (Lg: 16-100 nm; WGAA: 10-40 nm).
+//    - Current and capacitance merged.
+//    - Derived from BSIM-CMG ver.111.2.1 with the fusion modeling
+//      technique [B. Peng et al., "PHIMO-NN: Compact Modeling by
+//      Fusing Device Physics and Neural Networks for One-Shot
+//      Parameterization," IEEE TCAD].
+//    - The Verilog-A code corresponds to the model's Python
+//      implementation used for training and adopts a re-organized
+//      structure for clarity.
+//
+`include "constants.vams"
+`include "disciplines.vams"
+
+(* instance_parameter_list = {L, W, NF} *)
+module pmos_lvt(D, G, S, B);
+    inout D, G, S, B;
+    electrical D, G, S, B;
+
+    parameter real L = 1.6e-8;
+    parameter real W = 3.5e-8;
+    parameter real NF = 1;
+
+    parameter real U0 = 3.0e-2;
+    parameter real XL = 1.2e-8;
+    parameter real DVTSHIFT = 0.0;
+    parameter real DeltaWGAA = 0;
+    parameter real DeltaTGAA = 0;
+    parameter real EOT_0 = 1.1e-9;
+
+// network normalization factors
+    real tgaamax = 5.0e-9;
+    real tgaamin = 5.0e-9;
+    real wgaamax = 4.0e-8;
+    real wgaamin = 1.0e-8;
+    real lgaamax = 1e-7;
+    real lgaamin = 1.6e-8;
+    real netmax = 1.0;
+    real netmin = -1.0;
+
+    real TGAA = 5.0e-9;
+    real WGAA = W;
+
+  // real L = 1.0e-8; // Uncomment and set the range as needed (10n-20n)
+    real TFIN = 6.0e-9;
+    real HFIN = 3.3e-8;
+    real NFIN = 1.0;
+
+    real TOXP = 1.07464e-9;
+    real DevTemp = 300;
+  // real WGAA = 45.0e-9; // Uncomment and set the range as needed (10n-30n)
+  // real TGAA = 5.0e-9; // Uncomment and set the range as needed (4n-10n)
+    real NGAA = 3.0; // Set the range as needed (1-6)
+    real TOXG = 1.46e-9;
+    real type = -1.0; // 1 denotes nmos, -1 denotes pmos
+
+    real mode; // S and D symmetry
+  // Binning
+    real Inv_L, Inv_NFIN, Inv_LNFIN, Inv_W, Inv_WL;
+
+    real q = 1.60219e-19;
+    real KboQ = 8.617087e-5;
+    real pi = 3.1415926;
+    real HBAR = 1.05457e-34;
+    real DELTA_1 = 0.02;
+
+// Quantum
+    real MEL = 9.11e-31;
+    real mx = 0.916 * MEL;
+    real mxprime = 0.190 * MEL;
+    real md = 0.190 * MEL;
+    real mdprime = 0.417 * MEL;
+    real gprime = 4.0;
+    real gfactor = 2.0;
+
+    real WDIM0 = 9.5e-9;
+    real WDIMR = 0.1;
+    real WSSP0 = 9.5e-9;
+    real WSSPR = 0.1;
+
+    real DIM1H = 3.0;
+    real DIMENSION1_i = 2.0;
+    real DIM2H = 3.0;
+    real DIMENSION2_i = 2.6;
+    real DIM3H = 3.0;
+    real DIMENSION3_i = 2.6;
+    real DSSP1 = 2.0;
+    real DSSP2 = 0.0;
+    real DSSP3 = 0.0;
+    real SSP1_i = 14.0;
+    real SSP2_i = 24.0;
+    real SSP3_i = 24.0;
+
+    real TSRE2 = 1.8;
+    real TDWSE2 = 1.0;
+    real TSRE3 = 0.67;
+    real TDWSE3 = 0.23;
+
+    real TSRQ1 = 1.1;
+    real TDWSQ1 = 2.4;
+    real TSRQ2 = 2.0;
+    real TDWSQ2 = 2.0;
+    real TSRQ3 = 6.0;
+    real TDWSQ3 = 2.4;
+
+    real WGAANOM = 8.0e-9;
+    real WSFE2 = 1.0;
+    real WSFE3 = 1.0;
+
+    real E2NOM_i = 0.139;
+    real E3NOM_i = 2.0;
+
+    real MFE2 = 1.0;
+    real MFE3 = 1.0;
+
+    real MFQ1 = 1.0;
+    real MFQ2 = 1.0;
+    real MFQ3 = 1.0;
+
+    real WSFQ1 = 1.0;
+    real WSFQ2 = 1.0;
+    real WSFQ3 = 1.0;
+
+    real MFQ1NOM_i = 11.2;
+    real MFQ2NOM_i = 8.02;
+    real MFQ3NOM_i = 6.18;
+
+    real QMFACTOR_i = 2.5;
+
+    real QMTCENCV_i = 0.0;
+
+    real AQMTCEN = 0.0;
+    real BQMTCEN = 1.2e-8;
+    real QM0 = 1.0e-3;
+    real PQM = 0.66;
+
+// Mobility
+    real ETAMOBTHIN = 2.0;
+    real ETAMOB = 2.0;
+    real ETAMOBTNI = 7.5e-9;
+    real ETAMOBIR = 0.1;
+    real UA = 0.3;
+    real UATHIN = 0.3;
+    real UATSAT = 9.0e-9;
+    real UARTSC = 0.09;
+    real UATNI = 6.4e-9;
+    real UAIR = 0.2;
+    real EUTHIN = 2.6;
+    real EU = 2.5;
+    real EUPTSC = 3.5;
+    real EUTNI = 6.0e-9;
+    real EUIR = 0.2;
+    real U0ETAWSC = 1.5;
+    real EGBULK = 1.1;
+    real U0EMSM1 = 26.6;
+    real U0EMSM2 = 4.0;
+
+  //real u0 = 3.0e-2;  // default 3e-2
+    real UDTHIN = 0.6;
+    real UD = 0.5;
+    real UDTSAT = 8.1e-9;
+    real UDPTSC = 1.3;
+    real UCS_t = 1.0;
+    real DMOBCLAMP = 0.01;
+    real U0MULT = 1.0;
+
+// Velocity  Saturation
+    real VSAT1 = 8.5e4;
+    real PSAT_i = 1.0;
+    real PSATCV_i = 2.0;
+    real DELTAVSAT_i = 1.0;
+    real DELTAVSATCV_i = 1.0;
+    real PTWG_a = 0.5;
+    real A1_t = 0.0;
+    real A2_t = 0.0;
+    real DVSATCLAMP = 0.01;
+
+    real NBODY = 1.0e23;
+    real NSD = 2.0e26;
+    real EPSROX = 3.9;
+    real EPS0 = 8.8542e-12;
+    real NC0SUB = 2.86e25;
+    real EPSRSUB = 11.9;
+    real epsratio = EPSRSUB / EPSROX;
+    real QMFACTORCVfinal = 0.0;
+    real EASUB = 4.05;
+    real PHIG = 4.47;
+    real ALPHA_UFCM = 0.5556;
+    real VSAT = 8.5e4;
+    real VSATCV_t = 8.5e4;
+    real KSATIV = 1.0;
+    real MEXP = 4.0;
+    real DROUT = 1.06;
+    real PVAG = 1.0;
+    real PDIBL1 = 1.3;
+    real PDIBL2 = 2.0e-4;
+    real devsign = 1.0; // 1 denotes nmos -1 denotes pmos
+
+    real PCLMG = 0.0;
+    real NI0SUB = 1.1e16;
+    real BG0SUB = 1.12;
+    real PHIN_i = 0.05;
+
+    real PCLM = 1.3e-2;
+    real LPCLM = 5.0e-4;
+    real NPCLM = 1.0e-4;
+    real PPCLM = 1.0e-4;
+    real WPCLM = 5.0e-5;
+    real P2PCLM = 5.0e-5;
+
+    real PCLMCV_i = 1.3e-2;
+
+    real DVT1 = 0.475;
+    real LDVT1 = 0.0;
+    real NDVT1 = 0.0;
+    real PDVT1 = 0.0;
+    real WDVT1 = 0.0;
+    real P2DVT1 = 0.0;
+
+    real DVT1SS = 0.6;
+    real LDVT1SS = 0.0;
+    real NDVT1SS = 0.0;
+    real PDVT1SS = 0.0;
+    real WDVT1SS = 0.0;
+    real P2DVT1SS = 0.0;
+
+    real DSUB = 0.35;
+    real LDSUB = 0.0;
+    real NDSUB = 0.0;
+    real PDSUB = 0.0;
+    real WDSUB = 0.0;
+    real P2DSUB = 0.0;
+
+    real LPE0 = 0.0;
+    real LLPE0 = 0.0;
+    real NLPE0 = 0.0;
+    real PLPE0 = 0.0;
+    real WLPE0 = 0.0;
+    real P2LPE0 = 0.0;
+
+    real CDSC = 0.01;
+    real LCDSC = 0.0;
+    real NCDSC = 0.0;
+    real PCDSC = 0.0;
+    real WCDSC = 0.0;
+    real P2CDSC = 0.0;
+
+    real CDSCD = 0.01;
+    real LCDSCD = 0.0;
+    real NCDSCD = 0.0;
+    real PCDSCD = 0.0;
+    real WCDSCD = 0.0;
+    real P2CDSCD = 0.0;
+
+    real CIT = 0.0;
+    real LCIT = 0.0;
+    real NCIT = 0.0;
+    real PCIT = 0.0;
+    real WCIT = 0.0;
+    real P2CIT = 0.0;
+
+    real DVT0 = 0.05;
+    real LDVT0 = 0.0;
+    real NDVT0 = 0.0;
+    real PDVT0 = 0.0;
+    real WDVT0 = 0.0;
+    real P2DVT0 = 0.0;
+
+    real ETA0 = 0.068;
+    real LETA0 = 0.0;
+    real NETA0 = 0.0;
+    real PETA0 = 0.0;
+    real WETA0 = 0.0;
+    real P2ETA0 = 0.0;
+
+    real DVTP0 = 0.0;
+    real LDVTP0 = 0.0;
+    real NDVTP0 = 0.0;
+    real PDVTP0 = 0.0;
+    real WDVTP0 = 0.0;
+    real P2DVTP0 = 0.0;
+
+    real DVTP1 = 0.0;
+    real LDVTP1 = 0.0;
+    real NDVTP1 = 0.0;
+    real PDVTP1 = 0.0;
+    real WDVTP1 = 0.0;
+    real P2DVTP1 = 0.0;
+
+    real K1RSCE = 0.0;
+    real LK1RSCE = 0.0;
+    real NK1RSCE = 0.0;
+    real PK1RSCE = 0.0;
+    real WK1RSCE = 0.0;
+    real P2K1RSCE = 0.0;
+
+// Fringe capacitance
+    real CFS_i = 2.5e-10;
+    real CFD_i = 2.5e-10;
+    real vfbsdcv = 0.0;
+    real CGSL_i = 1.0e-10;
+    real CKAPPAS_i = 0.6;
+
+// model reals
+    real 1.0, 1.0, 1.0, 1.0, 1.0;
+
+    real 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0;
+
+    real 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0;
+
+    real 1.0, 1.0, 1.0, 1.0, 1.0;
+
+    real 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0;
+
+    real CGG, CGD, CGS, CDG, CDD, CDS, CSG, CSD, CSS;
+
+    real tmp1_pku, tmp2_pku, tmp3_pku, tmp4_pku, tmp5_pku, NBODY_CV, NSD_CV, PHIG_CV, CFS_i_CV, CFD_i_CV;
+
+    real WGAAeff, Weff1, Weff_UFCM;
+    real vfbsd1,vgs_a,vgd_a,Ach1,Ach,Weff2,Weff3,Weff4,Weff5,Weff6,Ach2,Ach3,Ach4,Ach5,Ach6,WeffB,Cins,MTcen,Tcen0,T0,Weff0,WeffCV0;
+
+    real d1,d2,d3,p1,p2,p3,Tp1,Tp2,Tp3,Wp1,Wp2,Wp3;
+
+    real VnD1, qndnf1, VnD2, qndnf2, VnD3, qndnf3,
+     nc3d0, nc3d, ncq,
+     QT0, QT1, ne2h, pe2h, ne3h, pe3h,
+     nc1l0, pnc1l, nc2l0, pnc2l, nc3l0, pnc3l,
+     qe2n, qe3n, qe2, qe3,
+     nc1l, nc1ln, nc1, nc2l, nc2ln, nc2, nc3l, nc3ln, nc3,
+     qnd10, qnd20, qnd30;
+
+    real T1,T2,T3,T4,T5,T7,T8,T11;
+    real GM,GDS;
+    real qndd1,qndd2,qndd3;
+
+    real Vtm, nVtm, Nc, epssub, rc, cox, qbs, Qdep_ov_Cins, qdep,
+     vth_fixed_factor_SI, vth_fixed_factor_Sub, q0, scl, Eg, ni, phib, vbi,
+     Theta_SCE, Theta_SW, Theta_DIBL, Theta_RSCE, ThetaSS, phist,vdsx,
+     cdsc, kT,  E0, E0prime, E1, E1prime, gam0, gam1,
+     dvth_vtroll, dvth_dibl, dvth_rsce, dvth_all, deltaPhi, vgsfb, vgsfbeff,
+      qm, qm_ln, e0, e1, e2,
+     QT2, QT3, QT4, qnds1, QT5, QT6, QT7, qnds2, QT8, QT9, QT10, qnds3,
+     eta_mu, eta_mu_cv, EeffFactor, Eeffs, qb0,  Dmobs, Esat,
+     EsatL,  T6, Vdsat, Vdseff, qia, dqi, ids0_ov_dqi,
+     ids0, Leff, LeffCV, tmp, DIBLfactor,
+     PVAGfactor, diffVds, Vgst2Vtm,  VaDIBL, Moc, Mclm,
+     Tcen, coxeff, beta, qia2, Eeffm,  Dmob, ueff, Eeffm_cv,
+     Dmob_cv, Esat1, Esat1L, Dvsat,
+     Nsat, EsatCV, EsatCVL, DvsatCV, Ta,MclmCV,
+     igidl, ids, TOXG1, igtemp, Tox_ratio, T0_g, igc, igs, igd, ig,vgd,
+     qg, qd, qs,  CGSO_i, CGDO_i, vgs_overlap, qgs_ov,
+     vgd_overlap, qgd_ov, qgs_fr, qgd_fr, qgs_parasitic, qgd_parasitic,
+     QG, QD, QS,dvch_qm,vch,F0,qis,qid,etaiv,inv_MclmCV, EOT;
+
+    real UA_i,UD_i,VSAT1_a,U0_i;
+
+    real CIT_i,DVTP0_i,DVTP1_i,K1RSCE_i,NTOX_i,LPE0_i,ETAMOB_i,  mut0, mut1, mut2, mut3, mut4, mut5, mut6, EU_i,
+    VSAT_a, KSATIV_a, MEXP_a, DROUT_i, PDIBL1_a, PDIBL2_a, PVAG_i, ids_tmp;
+
+`include "discipline.h"
+
+// Beginning of the model
+
+// Activation function tansig
+   analog function real Tanh;
+                        input var_g;
+    real var_g;
+
+                        begin
+                                 Tanh = (1.0 - exp(-2.0*var_g))/(1.0 + exp(-2.0*var_g));
+                        end
+         endfunction
+
+// Activation function logsig
+   analog function real Sigmoid;
+                        input var_l;
+    real  var_l;
+
+                        begin
+                                 Sigmoid = 1.0 / (1.0 + exp(-1.0 * var_l));
+                        end
+   endfunction
+
+`define EXPL_THRESHOLD 80.0
+`define MAX_EXPL 5.540622384e34
+`define MIN_EXPL 1.804851387e-35
+`define N_MINLOG 1.0e-38
+`define LN_N_MINLOG -87.498233534
+
+// Clamped exponential
+`define lexp(x) ((x > `EXPL_THRESHOLD) ? `MAX_EXPL * (1.0 + x - `EXPL_THRESHOLD) : (x < -`EXPL_THRESHOLD) ? `MIN_EXPL : exp(x))
+
+// Clamped logarithm
+`define lln(x) ((x > `N_MINLOG) ? ln(x) : `LN_N_MINLOG)
+
+// Hyperbolic smoothing
+`define hypsmooth(x, c) (0.5 * (x + sqrt(x * x + 4.0 * c * c)))
+
+// Smoothing with a minimum value
+`define smoothminx(x, x0, deltax) (0.5 * (x + x0 + sqrt((x - x0) * (x - x0) + 0.25 * deltax * deltax)))
+
+// Smoothing with a maximum value
+`define smoothmaxx(x, x0, deltax) (0.5 * (x + x0 - sqrt((x - x0) * (x - x0) + 0.25 * deltax * deltax)) + 0.25 * deltax)
+
+// Smoothing with a maximum value
+`define smoothmaxx2(x, x0, deltax) (0.5 * (x + x0 - sqrt((x - x0) * (x - x0) + 0.25 * deltax * deltax)))
+
+//Gamma function
+`define gammafunc(x) (0.0385 * exp(-4.6 * (x-1)) + 7.5893e-7 * pow(2*x - 3, 8) + 6.9583e-5 * pow(2*(x-1), 6) - 6.583e-4 * pow(2*(x-1), 5) + 0.0065 * pow(2*(x-1), 4) - 0.026 * pow(2*(x-1), 3) + 0.1371 * pow(2*(x-1), 2) - 0.194 * 2*(x-1) + 0.959)
+
+// Binning equations
+`define binning(param_i, r_term, l_term, n_term, p_term, w_term, wl_term) \
+begin \
+    param_i = r_term + Inv_L * l_term + Inv_NFIN * n_term + Inv_LNFIN * p_term + Inv_W * w_term + Inv_WL * wl_term; \
+end
+
+// the calculation starts
+   analog
+          begin
+            Lg = L + XL;
+
+// calculation starts Physics Model
+         vgs = type * V(G, S);
+       vds = type * V(D, S);
+
+// Mode choice
+       if (vds >= 0.0)
+         begin
+                 mode = 1.0;
+                 vds = vds;
+                 vgs = vgs;
+             end
+       else
+             begin
+                 mode = -1.0;
+                 vds = -vds;
+                 vgs = vgs + vds;
+            end
+// Binning
+        //WGAA = WGAA + DeltaWGAA;
+        //TGAA = TGAA + DeltaTGAA;
+        Inv_L      = 1.0e-6 / Lg;
+        Inv_NFIN   = 1.0 / NFIN;
+        Inv_LNFIN  = 1.0e-6 / (Lg * NFIN);
+        Inv_W      = 1.0e-6 / WGAA;
+        Inv_WL     = 1.0e-12 / (WGAA * Lg);
+
+// Nanosheet G Start
+    WGAAeff = WGAA; // Assuming WGAA is already defined
+    Weff1 = 2 * (WGAAeff + TGAA);
+    Ach1 = WGAAeff * TGAA;
+    Weff_UFCM = Weff1;
+    Ach = Ach1;
+
+    if (NGAA > 1) begin
+        Weff2 = 2 * (WGAAeff + TGAA);
+        Ach2 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2;
+        Ach = Ach1 + Ach2;
+    end
+
+    if (NGAA > 2) begin
+        Weff3 = 2 * (WGAAeff + TGAA);
+        Ach3 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3;
+        Ach = Ach1 + Ach2 + Ach3;
+    end
+
+    if (NGAA > 3) begin
+        Weff4 = 2 * (WGAAeff + TGAA);
+        Ach4 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4;
+    end
+
+    if (NGAA > 4) begin
+        Weff5 = 2 * (WGAAeff + TGAA);
+        Ach5 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5;
+    end
+
+    if (NGAA > 5) begin
+        Weff6 = 2 * (WGAAeff + TGAA);
+        Ach6 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5 + Weff6;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5 + Ach6;
+    end
+
+    WeffB = WGAA;
+
+         Weff_UFCM = 2 * (WGAA + DeltaWGAA + TGAA + DeltaTGAA) * NGAA;
+         Ach = (WGAA + DeltaWGAA) * (TGAA + DeltaWGAA) * NGAA;
+         EOT = EOT_0*1.0;
+    Cins = Weff_UFCM * EPSROX * EPS0 / EOT;
+// Nanosheet G End
+
+// Geometric scaling for Toxeff / charge centroid Tcen
+    MTcen = 1.0 + AQMTCEN * `lexp(-(2.0 * Ach / Weff_UFCM) / BQMTCEN);
+    Tcen0 = (2.0 * Ach / Weff_UFCM) * MTcen;
+
+    // Dimension scaling
+    T0 = TOXG * TOXG;
+    Weff0 = Weff_UFCM;
+    WeffCV0 = Weff_UFCM;
+
+// Mobility degradation for GAA Starts
+
+        ETAMOB_i = 1.0;
+
+        UA_i = 1.0;
+
+        EU_i = 1.0;
+
+        U0_i = U0 * 1.0;
+
+        UD_i = 1.0;
+
+        Vtm = KboQ * DevTemp;
+        nVtm = Vtm;
+        Nc = NC0SUB;
+        epssub = EPSRSUB * EPS0;
+        rc = 2.0 * Cins / (Weff_UFCM * Weff_UFCM * epssub / Ach);
+        cox = Cins / Weff_UFCM;
+        qbs = q * NBODY * Ach / Cins;
+        Qdep_ov_Cins = -q * NBODY * Ach / Cins;
+        qdep = Qdep_ov_Cins / nVtm;
+
+        vth_fixed_factor_SI = `lln(Cins * nVtm / (q * Nc * 2.0 * Ach));
+        vth_fixed_factor_Sub = `lln((qdep * rc) * (qdep * rc) / ((`lexp(qdep * rc) - qdep * rc - 1.0))) + vth_fixed_factor_SI;
+        q0 = 10.0 * nVtm / rc + 2.0 * qbs;
+// Mobility degradation for GAA Ends
+
+// Short Channel Effect Starts
+        scl = sqrt((epssub * Ach / Cins) * (1.0 + Ach * Cins / (2.0 * epssub * Weff_UFCM * Weff_UFCM)));
+
+        Eg = BG0SUB;
+        ni = NI0SUB * `lexp(BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm));
+        phib = Vtm * `lln(NBODY / ni);
+
+        vbi = Vtm * `lln(NBODY * NSD / (ni * ni));
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_SCE = 0.5 / (cosh(tmp) - 1.0);
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_SW = 0.5 / (cosh(tmp) - 1.0);
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_DIBL = 0.5 / (cosh(tmp) - 1.0);
+
+        Theta_RSCE = sqrt(1.0 + LPE0_i / Lg) - 1.0;
+
+        ThetaSS = `hypsmooth((1.0 - 1.0e-6), 1.0e-3);
+
+        phist = 0.4 + phib + PHIN_i;
+        T1 = 2.0 * (Cins / Weff_UFCM) / (rc + 2.0);
+        vdsx = sqrt(vds * vds + 0.01) - 0.1;
+        cdsc = Theta_SW * (1.0 + 1.0 * vdsx);
+        nVtm = Vtm * ThetaSS * (1.0 + (CIT_i + cdsc) / T1);
+
+        //Quantum mechanical Vth correction
+        kT = Vtm * q;
+        T0 = HBAR * pi / (2.0 * Ach / Weff_UFCM);
+        E0 = T0 * T0 / (2.0 * mx);
+        E0prime = T0 * T0 / (2.0 * mxprime);
+        E1 = 4.0 * E0;
+        E1prime = 4.0 * E0prime;
+        T1 = gprime * mdprime / (gfactor * md);
+        gam0 = 1.0 + T1 * exp((E0 - E0prime) / kT);
+        gam1 = gam0 + `lexp((E0 - E1) / kT) + T1 * `lexp((E0 - E1prime) / kT);
+        T2 = -Vtm * `lln(gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1);
+        dvch_qm = 1.0 * (E0 / q + T2);
+
+        dvth_vtroll = -1.0 * Theta_SCE * (vbi - phist);
+        dvth_dibl = -1.0 * Theta_DIBL * vdsx + (DVTP0_i * pow(vdsx + 0.01, DVTP1_i));
+        dvth_rsce = K1RSCE_i * Theta_RSCE * sqrt(phist);
+        dvth_all = dvth_vtroll + dvth_dibl + dvth_rsce + DVTSHIFT;
+
+        deltaPhi = PHIG - EASUB;
+        vgsfb = vgs - deltaPhi;
+        vgsfbeff = vgsfb - dvth_all;
+// Short Channel Effect Ends
+
+// Core model calculation at S
+        vch = dvch_qm;
+        T4 = pow(-qdep, (2.0 / 3));
+
+        T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T4;
+        T1 = -qdep + vth_fixed_factor_SI;
+
+        T2 = (vgsfbeff - vch) / nVtm;
+        F0 = -T2 + T1;
+        T3 = 0.5 * (T2 - T0);
+        qm = `lexp(T3);
+
+        T7 = ln(1.0 + qm);
+        qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (exp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - 2 / 3 * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+
+        qis = -qm * nVtm;
+
+        ///   D-to-S saturation voltage
+        eta_mu = 0.5 * ETAMOB_i;
+        //eta_mu_cv = 0.5;
+        eta_mu_cv = 0.5 * 1.0;
+        EeffFactor = 1.0e-8 / (epsratio * EOT);
+        Eeffs = EeffFactor * (qbs + eta_mu * qis);
+        qb0 = 1.0e-2 / cox;
+        T2 = pow((0.5 * (1.0 + qis / qb0)), UCS_t);
+        T3 = pow(Eeffs, EU_i);
+        T3 = UA_i * T3 + UD_i / T2;
+        Dmobs = 1.0 + T3;
+        Dmobs = `smoothminx(Dmobs, 1.0, DMOBCLAMP);
+        Dmobs = Dmobs / U0MULT;
+        VSAT_a = VSAT;
+        VSAT_a = VSAT_a * 1.0;
+        Esat = 2.0 * VSAT_a / U0_i * Dmobs;
+        EsatL = Esat * Lg;
+        KSATIV_a = KSATIV;
+        KSATIV_a = KSATIV_a * 1.0;
+        T6 = KSATIV_a * (qis + 2.0 * Vtm);
+        Vdsat = EsatL * T6 / (EsatL + T6);
+        Vdsat = `hypsmooth((Vdsat - 1.0e-3), 1.0e-5) + 1.0e-3;
+        MEXP_a = MEXP;
+        MEXP_a = MEXP_a * 1.0;
+        T7 = pow(((vds / Vdsat) + 1e-6), MEXP_a);
+        T8 = pow((1.0 + T7), (1 / MEXP_a));
+        Vdseff = min((vds / T8), vds);
+
+// Core model calculation at D
+        vch = Vdseff + dvch_qm;
+        T2 = pow((-qdep), (2.0 / 3));
+
+        T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T2;
+        T1 = -qdep + vth_fixed_factor_SI;
+
+        T2 = (vgsfbeff - vch) / nVtm;
+        F0 = -T2 + T1;
+        T3 = (T2 - T0) * 0.5;
+        qm = `lexp(T3);
+
+        T7 = ln(1.0 + qm);
+        qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+
+        qid = -qm * nVtm;
+
+// Quasi-static I-V model
+        qia = 0.5 * (qis + qid);
+        dqi = qis - qid;
+        etaiv = q0 / (q0 + qia);
+        ids0_ov_dqi = qia + (2.0 - etaiv) * nVtm;
+        ids0 = ids0_ov_dqi * dqi;
+
+// Channel length modulation
+        Leff = Lg;
+        LeffCV = Lg;
+
+        DROUT_i = DROUT;
+        DROUT_i = DROUT_i * 1.0;
+        tmp = DROUT_i * Leff / scl + 1.0e-6;
+
+        PDIBL1_a = PDIBL1;
+        PDIBL1_a = PDIBL1_a * 1.0;
+        PDIBL2_a = PDIBL2;
+        PDIBL2_a = PDIBL2_a * 1.0;
+
+        DIBLfactor = PDIBL1_a * exp(-tmp) + PDIBL2_a;
+
+        PVAG_i = PVAG;
+        PVAG_i = PVAG_i * 1.0;
+        PVAGfactor = 1.0 + PVAG_i * qia / EsatL;
+        diffVds = vds - Vdseff;
+        Vgst2Vtm = qia + 2.0 * Vtm;
+        T1 = Vgst2Vtm;
+        T3 = T1 / (Vdsat + T1);
+        VaDIBL = T1 / DIBLfactor * T3 * PVAGfactor;
+        Moc = 1.0 + diffVds / VaDIBL;
+        T1 = 1.0 + 1.0 * qia;
+        Mclm = 1.0 + T1 * `lln(1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL));
+        Moc = Moc * Mclm;
+
+// Toxeff model for quantum mechanical effects
+        T4 = qia / QM0;
+        T5 = 1.0 + pow(T4, PQM);
+        Tcen = Tcen0 / T5;
+        //coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * 1.0)) + Tcen * QMTCENCV_i * 1.0 / epssub);
+        coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * 1.0)) + Tcen * 1.0 / epssub);
+
+        // D current
+        cox = Cins / Weff_UFCM;
+        beta = U0_i * cox * Weff_UFCM / Lg;
+
+// Mobility degradation
+        qia2 = 0.5 * (qis + qid);
+        Eeffm = EeffFactor * (qbs + eta_mu * qia2);
+        T2 = pow(0.5 * (1.0 + qia2 / qb0), UCS_t);
+        T0 = pow(Eeffm, EU_i);
+        T3 = UA_i * T0 + UD_i / T2;
+        Dmob = 1.0 + T3;
+        Dmob = `smoothminx(Dmob, 1.0, DMOBCLAMP);
+        Dmob = Dmob / U0MULT;
+        ueff = U0_i / Dmob;
+
+// Mobility degradation for C-V
+        Eeffm_cv = EeffFactor * (qbs + eta_mu_cv * qia2);
+        T3 = UA_i * pow(Eeffm_cv, EU_i) + UD_i / T2;
+        Dmob_cv = 1.0 + T3;
+        Dmob_cv = `smoothminx(Dmob_cv, 1.0, DMOBCLAMP);
+        Dmob_cv = Dmob_cv / U0MULT;
+
+// Current degradation due to velocity saturation
+        VSAT1_a = VSAT1;
+        VSAT1_a = VSAT1_a * 1.0;
+        Esat1 = 2.0 * VSAT1_a / ueff;
+        Esat1L = Esat1 * Lg;
+        T0 = `lexp(1.0 * `lln(dqi / Esat1L));
+        T1 = 1.0 / 1.0;
+        Ta = 1.0 + `lexp(T1 * `lln(1.0));
+        Dvsat = (1.0 + `lexp(T1 * `lln(1.0 + T0))) / Ta;
+        Dvsat = Dvsat + 0.5 * 1.0 * qia * dqi * dqi;
+
+// Non-saturation effect
+        T0 = A1_t + A2_t / (qia + 2.0 * nVtm);
+        T1 = T0 * dqi * dqi;
+        T2 = T1 + 1.0 - 0.001;
+        T3 = -1.0 + 0.5 * (T2 + sqrt(T2 * T2 + 0.004));
+        Nsat = 0.5 * (1.0 + sqrt(1.0 + T3));
+        Dvsat = Dvsat * Nsat;
+        Dvsat = `smoothminx(Dvsat, 1.0, DVSATCLAMP);
+
+// Velocity saturation for C-V
+
+        EsatCV = 2.0 * VSATCV_t * 1.0 * Dmob_cv / U0_i;
+        EsatCVL = EsatCV * LeffCV;
+        T0 = pow((dqi / EsatCVL), 1.0);
+        T1 = 1.0 / 1.0;
+        Ta = 1.0 + pow(1.0, T1);
+        DvsatCV = (1.0 + pow((1.0 + T0), T1)) / Ta;
+        MclmCV = 1.0 + 1.0 * `lln(1.0 + (vds - Vdseff) / 1.0 / (Vdsat + EsatCVL));
+
+// GIDL
+        T0 = epsratio * EOT;
+        T1 = (-(vgs - vds)) / T0;
+        T1 = `hypsmooth(T1, 1.0e-2);
+        T2 = 10 * pow(10.0, 8.0) * 1.0 / (T1 + 1.0e-3);
+        T3 = pow(T1, 1);
+        T6 = 6.05 * pow(10.0, -12.0) * Weff0 * T3 * `lexp(-T2) * vds * 4 * 1.0;
+        igidl = T6;
+        //igidl_tmp1 = T2;
+        //igidl_tmp2 = T3;
+
+        ids = NF * beta * ids0 * Moc / (Dmob * Dvsat) + igidl;
+
+        ids_tmp = beta * ids0 * Moc / (Dmob * Dvsat);
+
+// Quasi-static C-V model
+        T11 = (2.0 * qia + nVtm) / DvsatCV;
+        qg = qia + dqi * dqi / (6.0 * T11);
+        qd = -0.5 * (qia - (dqi / 6.0) * (1.0 - (dqi / T11) * (1.0 + dqi / (5.0 * T11))));
+
+        //  CLM in qg and qd
+        inv_MclmCV = 1.0 / MclmCV;
+        qg = inv_MclmCV * qg + (MclmCV - 1.0) * qid;
+        qd = inv_MclmCV * inv_MclmCV * qd + 0.5 * (MclmCV - inv_MclmCV) * qid;
+        //$strobe("qg=",qg);
+        //$strobe("qd=",qd);
+        qs = -qg - qd;
+        T6 = WeffCV0 * LeffCV * coxeff;
+        qg = T6 * qg;
+        qd = T6 * qd;
+        qs = T6 * qs;
+
+        //  Bias-dependent overlap capacitances
+        CGSO_i = 0.3 * TFIN * cox * 1.0;
+        CGDO_i = 0.3 * TFIN * cox * 1.0;
+
+        T1 = WeffCV0 * devsign;
+        T2 = devsign * vgs;
+        T0 = T2 - vfbsdcv + DELTA_1;
+        vgs_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+        qgs_ov = T1 * (CGSL_i * 1.0 * (T2 - vfbsdcv - vgs_overlap - 0.5 * 1.0 * (sqrt(1.0 - 4.0 * vgs_overlap / 1.0) - 1.0)) + CGSO_i * T2);
+
+        T2 = devsign * (vgs - vds);
+        T0 = T2 - vfbsdcv + DELTA_1;
+        vgd_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+        qgd_ov = T1 * (CGSL_i * 1.0 * (T2 - vfbsdcv - vgd_overlap - 0.5 * 1.0 * (sqrt(1.0 - 4.0 * vgd_overlap / 1.0) - 1.0)) + CGDO_i * T2);
+
+        T1 = WeffCV0;
+        qgs_fr = T1 * CFS_i * 1.0 * vgs;
+        qgd_fr = T1 * CFD_i * 1.0 * (vgs - vds);
+
+        qgs_parasitic = qgs_ov + qgs_fr;
+        qgd_parasitic = qgd_ov + qgd_fr;
+
+        QG = type * (devsign * qg + qgs_parasitic + qgd_parasitic);
+        QD = type * (devsign * qd - qgd_parasitic);
+        QS = type * (devsign * qs - qgs_parasitic);
+
+    GM = ddx(ids, V(G));
+    GDS = ddx(ids, V(D));
+
+    CGG = ddx(QG, V(G));
+    CGD = ddx(QG, V(D));
+    CGS = ddx(QG, V(S));
+    CDG = ddx(QD, V(G));
+    CDD = ddx(QD, V(D));
+    CDS = ddx(QD, V(S));
+    CSG = ddx(QS, V(G));
+    CSD = ddx(QS, V(D));
+    CSS = ddx(QS, V(S));
+
+// dc current
+       if (mode > 0.0)
+          I(D, S) <+ type * ids;
+       else
+          I(D, S) <+ -type * ids;
+
+// charging current
+       //I(G, S)   <+ ddt(QG);
+       //I(D, S)  <+ ddt(QD);
+
+        tmp1_pku =         1.0;
+        tmp2_pku =         1.0;
+        tmp3_pku =         1.0;
+        tmp4_pku =         1.0;
+        tmp5_pku =         1.0;
+
+//`include "discipline.h"
+
+// Beginning of the model
+
+NBODY_CV = 5.0e21;
+NSD_CV = 1.0e26;
+PHIG_CV = 4.37;
+CFS_i_CV = 1e-10;
+CFD_i_CV = 1e-10;
+
+// the calculation starts
+
+            Lg = L + XL;
+
+// calculation starts Physics Model
+         vgs = type * V(G, S);
+       vds = type * V(D, S);
+
+// Mode choice
+       if (vds >= 0.0)
+         begin
+                 mode = 1.0;
+                 vds = vds;
+                 vgs = vgs;
+             end
+       else
+             begin
+                 mode = -1.0;
+                 vds = -vds;
+                 vgs = vgs + vds;
+            end
+// Binning
+        //WGAA = WGAA + DeltaWGAA;
+        //TGAA = TGAA + DeltaTGAA;
+        Inv_L      = 1.0e-6 / Lg;
+        Inv_NFIN   = 1.0 / NFIN;
+        Inv_LNFIN  = 1.0e-6 / (Lg * NFIN);
+        Inv_W      = 1.0e-6 / WGAA;
+        Inv_WL     = 1.0e-12 / (WGAA * Lg);
+
+// Nanosheet G Start
+    WGAAeff = WGAA; // Assuming WGAA is already defined
+    Weff1 = 2 * (WGAAeff + TGAA);
+    Ach1 = WGAAeff * TGAA;
+    Weff_UFCM = Weff1;
+    Ach = Ach1;
+
+    if (NGAA > 1) begin
+        Weff2 = 2 * (WGAAeff + TGAA);
+        Ach2 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2;
+        Ach = Ach1 + Ach2;
+    end
+
+    if (NGAA > 2) begin
+        Weff3 = 2 * (WGAAeff + TGAA);
+        Ach3 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3;
+        Ach = Ach1 + Ach2 + Ach3;
+    end
+
+    if (NGAA > 3) begin
+        Weff4 = 2 * (WGAAeff + TGAA);
+        Ach4 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4;
+    end
+
+    if (NGAA > 4) begin
+        Weff5 = 2 * (WGAAeff + TGAA);
+        Ach5 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5;
+    end
+
+    if (NGAA > 5) begin
+        Weff6 = 2 * (WGAAeff + TGAA);
+        Ach6 = WGAAeff * TGAA;
+        Weff_UFCM = Weff1 + Weff2 + Weff3 + Weff4 + Weff5 + Weff6;
+        Ach = Ach1 + Ach2 + Ach3 + Ach4 + Ach5 + Ach6;
+    end
+
+    WeffB = WGAA;
+
+         Weff_UFCM = 2 * (WGAA + DeltaWGAA + TGAA + DeltaTGAA) * NGAA;
+         Ach = (WGAA + DeltaWGAA) * (TGAA + DeltaWGAA) * NGAA;
+         EOT = EOT_0*1.0;
+    Cins = Weff_UFCM * EPSROX * EPS0 / EOT;
+// Nanosheet G End
+
+// Geometric scaling for Toxeff / charge centroid Tcen
+    MTcen = 1.0 + AQMTCEN * `lexp(-(2.0 * Ach / Weff_UFCM) / BQMTCEN);
+    Tcen0 = (2.0 * Ach / Weff_UFCM) * MTcen;
+
+// Mobility degradation for GAA Starts
+        ETAMOB_i = 1.0;
+
+        UA_i = 1.0;
+
+        EU_i = 1.0;
+
+        U0_i = U0 * 1.0;
+
+        UD_i = 1.0;
+
+        Vtm = KboQ * DevTemp;
+        nVtm = Vtm;
+        Nc = NC0SUB;
+        epssub = EPSRSUB * EPS0;
+        rc = 2.0 * Cins / (Weff_UFCM * Weff_UFCM * epssub / Ach);
+        cox = Cins / Weff_UFCM;
+        qbs = q * NBODY_CV * Ach / Cins;
+        Qdep_ov_Cins = -q * NBODY_CV * Ach / Cins;
+        qdep = Qdep_ov_Cins / nVtm;
+
+        vth_fixed_factor_SI = `lln(Cins * nVtm / (q * Nc * 2.0 * Ach));
+        vth_fixed_factor_Sub = `lln((qdep * rc) * (qdep * rc) / ((`lexp(qdep * rc) - qdep * rc - 1.0))) + vth_fixed_factor_SI;
+        q0 = 10.0 * nVtm / rc + 2.0 * qbs;
+// Mobility degradation for GAA Ends
+
+// Short Channel Effect Starts
+        scl = sqrt((epssub * Ach / Cins) * (1.0 + Ach * Cins / (2.0 * epssub * Weff_UFCM * Weff_UFCM)));
+
+        Eg = BG0SUB;
+        ni = NI0SUB * `lexp(BG0SUB / (2.0 * KboQ * 300.15) - Eg / (2.0 * Vtm));
+        phib = Vtm * `lln(NBODY_CV / ni);
+
+        vbi = Vtm * `lln(NBODY_CV * NSD_CV / (ni * ni));
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_SCE = 0.5 / (cosh(tmp) - 1.0);
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_SW = 0.5 / (cosh(tmp) - 1.0);
+        tmp = 1.0 * Lg / scl + 1.0e-6;
+        Theta_DIBL = 0.5 / (cosh(tmp) - 1.0);
+
+        Theta_RSCE = sqrt(1.0 + LPE0_i / Lg) - 1.0;
+
+        ThetaSS = `hypsmooth((1.0 - 1.0e-6), 1.0e-3);
+
+        phist = 0.4 + phib + PHIN_i;
+        T1 = 2.0 * (Cins / Weff_UFCM) / (rc + 2.0);
+        vdsx = sqrt(vds * vds + 0.01) - 0.1;
+        cdsc = Theta_SW * (1.0 + 1.0 * vdsx);
+        nVtm = Vtm * ThetaSS * (1.0 + (CIT_i + cdsc) / T1);
+
+        //Quantum mechanical Vth correction
+        kT = Vtm * q;
+        T0 = HBAR * pi / (2.0 * Ach / Weff_UFCM);
+        E0 = T0 * T0 / (2.0 * mx);
+        E0prime = T0 * T0 / (2.0 * mxprime);
+        E1 = 4.0 * E0;
+        E1prime = 4.0 * E0prime;
+        T1 = gprime * mdprime / (gfactor * md);
+        gam0 = 1.0 + T1 * exp((E0 - E0prime) / kT);
+        gam1 = gam0 + `lexp((E0 - E1) / kT) + T1 * `lexp((E0 - E1prime) / kT);
+        T2 = -Vtm * `lln(gfactor * md / (pi * HBAR * HBAR * Nc) * kT / (2.0 * Ach / Weff_UFCM) * gam1);
+        dvch_qm = 1.0 * (E0 / q + T2);
+
+        dvth_vtroll = -1.0 * Theta_SCE * (vbi - phist);
+        dvth_dibl = -1.0 * Theta_DIBL * vdsx + (DVTP0_i * pow(vdsx + 0.01, DVTP1_i));
+        dvth_rsce = K1RSCE_i * Theta_RSCE * sqrt(phist);
+        dvth_all = dvth_vtroll + dvth_dibl + dvth_rsce + DVTSHIFT;
+
+        deltaPhi = PHIG_CV - EASUB;
+        vgsfb = vgs - deltaPhi;
+        vgsfbeff = vgsfb - dvth_all;
+// Short Channel Effect Ends
+
+// Core model calculation at S
+        vch = dvch_qm;
+        T4 = pow(-qdep, (2.0 / 3));
+
+        T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T4;
+        T1 = -qdep + vth_fixed_factor_SI;
+
+        T2 = (vgsfbeff - vch) / nVtm;
+        F0 = -T2 + T1;
+        T3 = 0.5 * (T2 - T0);
+        qm = `lexp(T3);
+
+        T7 = ln(1.0 + qm);
+        qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (exp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - 2 / 3 * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + 1.0 / qm + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+
+        qis = -qm * nVtm;
+
+        ///   D-to-S saturation voltage
+        eta_mu = 0.5 * ETAMOB_i;
+        //eta_mu_cv = 0.5;
+        eta_mu_cv = 0.5 * 1.0;
+        EeffFactor = 1.0e-8 / (epsratio * EOT);
+        Eeffs = EeffFactor * (qbs + eta_mu * qis);
+        qb0 = 1.0e-2 / cox;
+        T2 = pow((0.5 * (1.0 + qis / qb0)), UCS_t);
+        T3 = pow(Eeffs, EU_i);
+        T3 = UA_i * T3 + UD_i / T2;
+        Dmobs = 1.0 + T3;
+        Dmobs = `smoothminx(Dmobs, 1.0, DMOBCLAMP);
+        Dmobs = Dmobs / U0MULT;
+        VSAT_a = VSAT;
+        VSAT_a = VSAT_a * 1.0;
+        Esat = 2.0 * VSAT_a / U0_i * Dmobs;
+        EsatL = Esat * Lg;
+        KSATIV_a = KSATIV;
+        KSATIV_a = KSATIV_a * 1.0;
+        T6 = KSATIV_a * (qis + 2.0 * Vtm);
+        Vdsat = EsatL * T6 / (EsatL + T6);
+        Vdsat = `hypsmooth((Vdsat - 1.0e-3), 1.0e-5) + 1.0e-3;
+        MEXP_a = MEXP;
+        MEXP_a = MEXP_a * 1.0;
+        T7 = pow(((vds / Vdsat) + 1e-6), MEXP_a);
+        T8 = pow((1.0 + T7), (1 / MEXP_a));
+        Vdseff = min((vds / T8), vds);
+
+// Core model calculation at D
+        vch = Vdseff + dvch_qm;
+        T2 = pow((-qdep), (2.0 / 3));
+
+        T0 = -qdep + vth_fixed_factor_Sub + QMFACTORCVfinal * T2;
+        T1 = -qdep + vth_fixed_factor_SI;
+
+        T2 = (vgsfbeff - vch) / nVtm;
+        F0 = -T2 + T1;
+        T3 = (T2 - T0) * 0.5;
+        qm = `lexp(T3);
+
+        T7 = ln(1.0 + qm);
+        qm = 2.0 * (1.0 - sqrt(1.0 + T7 * T7));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+        T8 = (qm * ALPHA_UFCM + qdep) * rc;
+        T4 = T8 / (`lexp(T8) - T8 - 1.0);
+        T5 = T8 * T4;
+        qm_ln = ln(-(qm + qdep));
+        e0 = F0 - qm + `lln(-qm) + `lln(T5) + QMFACTORCVfinal * exp((2.0 / 3) * qm_ln);
+        e1 = -1.0 + (1.0 / qm) + (2.0 / T8 - T4 - 1.0) * rc - (2.0 / 3) * QMFACTORCVfinal * exp(-(1.0 / 3) * qm_ln);
+        e2 = -1.0 / (qm * qm) - (2.0 / 9.0) * QMFACTORCVfinal * exp(-(4.0 / 3) * qm_ln);
+        qm = qm - (e0 / e1) * (1.0 + (e0 * e2) / (2.0 * e1 * e1));
+
+        qid = -qm * nVtm;
+
+// Quasi-static I-V model
+        qia = 0.5 * (qis + qid);
+        dqi = qis - qid;
+        etaiv = q0 / (q0 + qia);
+        ids0_ov_dqi = qia + (2.0 - etaiv) * nVtm;
+        ids0 = ids0_ov_dqi * dqi;
+
+// Channel length modulation
+        Leff = Lg;
+        LeffCV = Lg;
+
+        DROUT_i = DROUT;
+        DROUT_i = DROUT_i * 1.0;
+        tmp = DROUT_i * Leff / scl + 1.0e-6;
+
+        PDIBL1_a = PDIBL1;
+        PDIBL1_a = PDIBL1_a * 1.0;
+        PDIBL2_a = PDIBL2;
+        PDIBL2_a = PDIBL2_a * 1.0;
+
+        DIBLfactor = PDIBL1_a * exp(-tmp) + PDIBL2_a;
+
+        PVAG_i = PVAG;
+        PVAG_i = PVAG_i * 1.0;
+        PVAGfactor = 1.0 + PVAG_i * qia / EsatL;
+        diffVds = vds - Vdseff;
+        Vgst2Vtm = qia + 2.0 * Vtm;
+        T1 = Vgst2Vtm;
+        T3 = T1 / (Vdsat + T1);
+        VaDIBL = T1 / DIBLfactor * T3 * PVAGfactor;
+        Moc = 1.0 + diffVds / VaDIBL;
+        T1 = 1.0 + 1.0 * qia;
+        Mclm = 1.0 + T1 * `lln(1.0 + (vds - Vdseff) / T1 / (Vdsat + EsatL));
+        Moc = Moc * Mclm;
+
+// Toxeff model for quantum mechanical effects
+        T4 = qia / QM0;
+        T5 = 1.0 + pow(T4, PQM);
+        Tcen = Tcen0 / T5;
+        //coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * 1.0)) + Tcen * QMTCENCV_i * 1.0 / epssub);
+        coxeff = 1.0 / (1.0 / (cox * EOT / (TOXP * 1.0)) + Tcen * 1.0 / epssub);
+
+        // D current
+        cox = Cins / Weff_UFCM;
+        beta = U0_i * cox * Weff_UFCM / Lg;
+
+// Mobility degradation
+        qia2 = 0.5 * (qis + qid);
+        Eeffm = EeffFactor * (qbs + eta_mu * qia2);
+        T2 = pow(0.5 * (1.0 + qia2 / qb0), UCS_t);
+        T0 = pow(Eeffm, EU_i);
+        T3 = UA_i * T0 + UD_i / T2;
+        Dmob = 1.0 + T3;
+        Dmob = `smoothminx(Dmob, 1.0, DMOBCLAMP);
+        Dmob = Dmob / U0MULT;
+        ueff = U0_i / Dmob;
+
+// Mobility degradation for C-V
+        Eeffm_cv = EeffFactor * (qbs + eta_mu_cv * qia2);
+        T3 = UA_i * pow(Eeffm_cv, EU_i) + UD_i / T2;
+        Dmob_cv = 1.0 + T3;
+        Dmob_cv = `smoothminx(Dmob_cv, 1.0, DMOBCLAMP);
+        Dmob_cv = Dmob_cv / U0MULT;
+
+// Current degradation due to velocity saturation
+        VSAT1_a = VSAT1;
+        VSAT1_a = VSAT1_a * 1.0;
+        Esat1 = 2.0 * VSAT1_a / ueff;
+        Esat1L = Esat1 * Lg;
+        T0 = `lexp(1.0 * `lln(dqi / Esat1L));
+        T1 = 1.0 / 1.0;
+        Ta = 1.0 + `lexp(T1 * `lln(1.0));
+        Dvsat = (1.0 + `lexp(T1 * `lln(1.0 + T0))) / Ta;
+        Dvsat = Dvsat + 0.5 * 1.0 * qia * dqi * dqi;
+
+// Non-saturation effect
+        T0 = A1_t + A2_t / (qia + 2.0 * nVtm);
+        T1 = T0 * dqi * dqi;
+        T2 = T1 + 1.0 - 0.001;
+        T3 = -1.0 + 0.5 * (T2 + sqrt(T2 * T2 + 0.004));
+        Nsat = 0.5 * (1.0 + sqrt(1.0 + T3));
+        Dvsat = Dvsat * Nsat;
+        Dvsat = `smoothminx(Dvsat, 1.0, DVSATCLAMP);
+
+// Velocity saturation for C-V
+
+        EsatCV = 2.0 * VSATCV_t * 1.0 * Dmob_cv / U0_i;
+        EsatCVL = EsatCV * LeffCV;
+        T0 = pow((dqi / EsatCVL), 1.0);
+        T1 = 1.0 / 1.0;
+        Ta = 1.0 + pow(1.0, T1);
+        DvsatCV = (1.0 + pow((1.0 + T0), T1)) / Ta;
+        MclmCV = 1.0 + 1.0 * `lln(1.0 + (vds - Vdseff) / 1.0 / (Vdsat + EsatCVL));
+
+// GIDL
+        T0 = epsratio * EOT;
+        T1 = (-(vgs - vds)) / T0;
+        T1 = `hypsmooth(T1, 1.0e-2);
+        T2 = 10 * pow(10.0, 8.0) * 1.0 / (T1 + 1.0e-3);
+        T3 = pow(T1, 1);
+        T6 = 6.05 * pow(10.0, -12.0) * Weff0 * T3 * `lexp(-T2) * vds * 4 * 1.0;
+        igidl = T6;
+        //igidl_tmp1 = T2;
+        //igidl_tmp2 = T3;
+
+        ids = beta * ids0 * Moc / (Dmob * Dvsat) + igidl;
+        //ids = beta * ids0 * Moc / (Dmob * Dvsat);
+        ids_tmp = beta * ids0 * Moc / (Dmob * Dvsat);
+
+// Quasi-static C-V model
+        T11 = (2.0 * qia + nVtm) / DvsatCV;
+        qg = qia + dqi * dqi / (6.0 * T11);
+        qd = -0.5 * (qia - (dqi / 6.0) * (1.0 - (dqi / T11) * (1.0 + dqi / (5.0 * T11))));
+
+        //  CLM in qg and qd
+        inv_MclmCV = 1.0 / MclmCV;
+        qg = inv_MclmCV * qg + (MclmCV - 1.0) * qid;
+        qd = inv_MclmCV * inv_MclmCV * qd + 0.5 * (MclmCV - inv_MclmCV) * qid;
+        //$strobe("qg=",qg);
+        //$strobe("qd=",qd);
+        qs = -qg - qd;
+        T6 = NF * WeffCV0 * LeffCV * coxeff;
+        qg = T6 * qg;
+        qd = T6 * qd;
+        qs = T6 * qs;
+
+        //  Bias-dependent overlap capacitances
+        CGSO_i = 0.3 * WGAA * cox * 1.0;
+        CGDO_i = 0.3 * WGAA * cox * 1.0;
+
+        T1 = WeffCV0 * devsign;
+        T2 = devsign * vgs;
+        T0 = T2 - vfbsdcv + DELTA_1;
+        vgs_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+        qgs_ov = T1 * (CGSL_i * 1.0 * (T2 - vfbsdcv - vgs_overlap - 0.5 * 1.0 * (sqrt(1.0 - 4.0 * vgs_overlap / 1.0) - 1.0)) + CGSO_i * T2);
+
+        T2 = devsign * (vgs - vds);
+        T0 = T2 - vfbsdcv + DELTA_1;
+        vgd_overlap = 0.5 * (T0 - sqrt(T0 * T0 + 4.0 * DELTA_1));
+        qgd_ov = T1 * (CGSL_i * 1.0 * (T2 - vfbsdcv - vgd_overlap - 0.5 * 1.0 * (sqrt(1.0 - 4.0 * vgd_overlap / 1.0) - 1.0)) + CGDO_i * T2);
+
+        T1 = WeffCV0;
+        qgs_fr = T1 * CFS_i_CV * 1.0 * vgs;
+        qgd_fr = T1 * CFD_i_CV * 1.0 * (vgs - vds);
+
+        qgs_parasitic = qgs_ov + qgs_fr;
+        qgd_parasitic = qgd_ov + qgd_fr;
+
+        QG = type * (devsign * qg + qgs_parasitic + qgd_parasitic);
+        QG = QG * 0.5;
+        QD = type * (devsign * qd - qgd_parasitic);
+        QD = QD * 0.5;
+        QS = type * (devsign * qs - qgs_parasitic);
+        QS = QS * 0.5;
+
+    GM = ddx(ids, V(G));
+    GDS = ddx(ids, V(D));
+
+    CGG = ddx(QG, V(G));
+    CGD = ddx(QG, V(D));
+    CGS = ddx(QG, V(S));
+    CDG = ddx(QD, V(G));
+    CDD = ddx(QD, V(D));
+    CDS = ddx(QD, V(S));
+    CSG = ddx(QS, V(G));
+    CSD = ddx(QS, V(D));
+    CSS = ddx(QS, V(S));
+
+// dc current
+       //if (mode > 0.0)
+       //   I(D, S) <+ type * ids;
+       //else
+       //   I(D, S) <+ -type * ids;
+
+// charging current
+       I(G, S)   <+ ddt(QG);
+       I(D, S)  <+ ddt(QD);
+
+            end
+
+endmodule
