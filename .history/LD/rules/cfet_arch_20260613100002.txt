@@ -1,9 +1,0 @@
-%designed by gds file
-Lgate = 0.016:0.001:10
-Lchannel = 0.016:001:5
-
-
-
-
-%designed by super parameters
-

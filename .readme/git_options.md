@@ -9,7 +9,7 @@ git status
 ```powershell
 git add -A
 git status
-git commit -m "save latest version before major overhaul"
+git commit -m "delete rubbish"
 git push
 ```
 

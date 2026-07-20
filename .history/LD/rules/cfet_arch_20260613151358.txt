@@ -1,9 +1,0 @@
-%designed by gds file
-Num_channel = 
-L_Gate = 0.030
-
-
-
-
-%designed by super parameters
-
