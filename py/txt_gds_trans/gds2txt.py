@@ -123,7 +123,8 @@ def main() -> None:
     parser.add_argument("txt", nargs="?")
     args = parser.parse_args()
     in_path = Path(args.gds)
-    out_path = Path(args.txt) if args.txt else in_path.with_suffix(".txt")
+    # xxx.gds -> xxx_gds.txt
+    out_path = Path(args.txt) if args.txt else in_path.with_name(f"{in_path.stem}_gds.txt")
     name, rects, _texts = read_gds(in_path)
     write_txt(name, rects, out_path)
     print(f"Wrote {out_path}")
