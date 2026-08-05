@@ -273,7 +273,7 @@ flowchart TD
     OBJ --> LSQ[有边界非线性最小二乘]
     LSQ -->|下一组参数| PATCH
     LSQ --> BASELINE[fitted_va_1]
-    BASELINE -->|作为保留基线| XL[abs(XL) 不超过 3 nm 的再拟合]
+    BASELINE -->|作为保留基线| XL["abs(XL) 不超过 3 nm 的再拟合"]
     XL --> SMALL[fitted_va_2_minXL]
     BASELINE --> REPORT[模型、JSON、对比图]
     SMALL --> REPORT
