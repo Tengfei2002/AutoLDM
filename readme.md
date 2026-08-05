@@ -1,393 +1,392 @@
-# AutoLDM 项目说明
+# AutoLDM
 
-AutoLDM 是一个面向 DTCO（Design-Technology Co-Optimization）流程的自动化项目，用于从版图、规则文件和器件模型出发，生成 SDE 结构脚本、HSPICE 仿真 deck，并对 SRAM 与 CFET/VA 模型结果进行可视化和参数校准。
+AutoLDM 是一个面向 DTCO 研究的自动化原型工程，将参考器件曲线、Verilog-A 紧凑模型、版图描述、三维结构生成、寄生参数提取和 HSPICE 标准单元验证连接成可重复执行的流程。
 
-项目当前包含两条主要流程：
+当前仓库中：
 
-- SDE 结构生成：由 layout txt 与 rules 文件生成 Sentaurus SDE `.cmd`。
-- HSPICE 电学验证：生成 SRAM RC deck、单管 Id-Vg/Id-Vd deck、参数扫描 deck，并用 Python 生成科研绘图。
+- `fitness/` 负责根据参考 `Id-Vg` 数据拟合 N/P 型 Verilog-A 模型；
+- `FLOW/` 负责从版图和工艺描述生成 SDE 输入、执行 DRC、整理寄生参数，并生成可复用的 HSPICE 子电路；
+- `FLOW/test/` 是目前文件最完整的参考工程；其中的电路连接由输入文件描述，生成器本身不绑定特定标准单元，可迁移到反相器、缓冲器、与非门、或非门及其他晶体管级标准单元。
 
-## 目录结构
+> 当前定位是研究原型，而不是已经封装完成的一键式 PDK 工具。Sentaurus、寄生提取器和 HSPICE 的安装路径、许可证及远程计算环境仍需由使用者配置。
 
-```text
-AutoLDM/
-|-- gen_sde.py                         # layout/rules -> SDE .cmd 的核心生成脚本
-|-- readme.md                          # 本说明文档
-|-- gds/                               # GDS 及其转换后的 layout txt
-|-- rules/                             # 工艺结构参数与 layer rule
-|-- guides/                            # 结构参数、建模流程和说明文档
-|-- output_SDE/
-|   |-- sde_cmd/                       # SDE command 输出
-|   |-- rc_raphreal/                   # SRAM schematic 映射与 RC matrix
-|   `-- rc_sp/                         # SRAM HSPICE deck 输出
-`-- Hspice/
-    |-- va/                            # CFET Verilog-A 模型
-    |-- iv/                            # HSPICE deck、脚本、结果和 PNG
-    |-- iv_flow/                       # HSPICE 运行封装脚本
-    `-- wt_cfet/                       # 外部 CSV 参考曲线
+## 总体流程
+
+```mermaid
+flowchart LR
+    subgraph FIT[器件模型拟合]
+        CSV[参考 Id-Vg CSV<br/>电流密度 A/um] --> PRE[数据检查与预处理]
+        NORM[无量纲归一化备份] -. 仅用于追溯 .-> PRE
+        PRE --> OPT[参数优化]
+        BASE[原始 N/P Verilog-A] --> OPT
+        OPT --> HS1[HSPICE 器件仿真]
+        HS1 --> ERR[对数域误差与导通电流误差]
+        ERR -->|迭代| OPT
+        OPT --> VA[分工艺角的完整 N/P VA 模型]
+        OPT --> REP[拟合报告与对比图]
+    end
+
+    subgraph CELL[标准单元生成与验证]
+        LAYOUT[版图矩形与标签] --> PRECHECK[预检查和 DRC]
+        PARAM[器件与网格参数] --> PRECHECK
+        STACK[材料和 Z 向堆叠] --> PRECHECK
+        RULE[设计规则和层间关系] --> PRECHECK
+        PRECHECK --> SDE[SDE R/C 两套结构命令]
+        SDE --> EXTRACT[三维建模、网格与寄生提取]
+        EXTRACT --> MATRIX[原始 R/C 矩阵]
+        PIN[自描述连接清单<br/>R、C、FET、PORT] --> MAP[节点收缩和引脚级映射]
+        MATRIX --> MAP
+        MAP --> PINRC[带数值的 pin-RC 文件]
+        PINRC --> INC[通用 HSPICE 子电路 .inc]
+        VA --> INC
+        INC --> SMOKE[零偏置编译验证]
+        INC --> TB[功能/时序测试 deck]
+        TB --> HS2[HSPICE 标准单元仿真]
+        HS2 --> RESULT[波形、测量值、状态和图表]
+    end
+
+    RESULT -->|修改几何、规则或模型| LAYOUT
+    RESULT -->|需要重新标定器件| FIT
 ```
 
-## SDE 结构生成
+这条链路把“器件模型标定”和“互连/电路验证”分开：`fitness` 生成的模型可以回填到任意标准单元工程，而一个标准单元的连接变化只需修改输入清单，不应修改 HSPICE 生成器源码。
 
-核心脚本：
+## `FLOW/test` 参考工程
 
-```text
-gen_sde.py
+### 输入、处理和产物
+
+```mermaid
+flowchart TD
+    subgraph INPUT[INPUT_MODEL]
+        GDS[test_gds.txt<br/>x1 y1 x2 y2 layer label]
+        PAR[test_params.txt<br/>尺寸、材料、掺杂、网格]
+        STK[test_stacked.txt<br/>层角色与 Z 向堆叠]
+        DRC[test_design_rules.txt<br/>规则与层间关系]
+        PINS[test_pin.txt<br/>R/C 请求、FET、PORT]
+        NV[N 型 VA]
+        PV[P 型 VA]
+    end
+
+    GDS --> GS[gen_sde.py]
+    PAR --> GS
+    STK --> GS
+    DRC --> GS
+    GDS --> GD[gen_drc_report.py]
+    PAR --> GD
+    STK --> GD
+    DRC --> GD
+
+    GS --> RCMD[SDE/test_r_sde.cmd]
+    GS --> CCMD[SDE/test_c_sde.cmd]
+    GD --> DRPT[OUTPUT/test_drc_report.txt]
+
+    RCMD --> TOOL[Sentaurus 与寄生提取环境]
+    CCMD --> TOOL
+    TOOL --> RMAT[SDE/test_r_cMatrix.spi]
+    TOOL --> CMAT[SDE/test_c_cMatrix.spi]
+
+    RMAT --> GR[gen_rc_Matrix.py]
+    CMAT --> GR
+    PINS --> GR
+    GR --> PRC[Hspice/test_pin_spice.txt]
+
+    PRC --> GH[gen_hspice.py]
+    NV --> GH
+    PV --> GH
+    GH --> LIB[Hspice/test_pex.inc]
+    GH --> VSP[Hspice/test_pex_validate.sp]
+
+    LIB --> TBG[测试 deck 生成器]
+    TBG --> SPRUN[HSPICE runner]
+    SPRUN --> RES[Hspice/results]
 ```
 
-基本命令：
+各阶段职责如下：
+
+| 阶段 | 脚本或目录 | 主要职责 |
+|---|---|---|
+| 版图转换 | `INPUT_MODEL/txt_gds_trans/` | 在 GDS 与矩形文本描述之间转换，便于脚本处理和人工检查 |
+| 几何预检查 | `gen_sde.py --validate-only` | 在写出 SDE 命令前检查输入、层角色和几何一致性 |
+| DRC | `gen_drc_report.py` | 检查宽度、面积、间距、包围、重叠、Z 向落点和接触构造规则 |
+| 三维结构 | `gen_sde.py` | 由版图、参数、堆叠和层关系生成 R/C 两种 SDE 命令与网格入口 |
+| 寄生映射 | `gen_rc_Matrix.py` | 收缩理想短路，将提取器矩阵映射为连接清单要求的引脚级电阻和电容 |
+| 子电路生成 | `gen_hspice.py` | 合并 N/P VA 模型、R/C 数值、晶体管连接和端口，生成单器件式 `.subckt` |
+| 编译冒烟测试 | 自动生成的 `*_validate.sp` | 将所有外部端口钳位到 0 V，用于检查 VA、`.inc` 和拓扑能否被 HSPICE 编译 |
+| 电路测试 | `INPUT_MODEL/py_test4inc/` | 根据独立的测试描述生成 deck、调用 HSPICE，并整理数据、图像、清单和运行状态 |
+
+### 标准单元拓扑为什么可以泛化
+
+`gen_hspice.py` 不包含某个具体电路的节点表，也不在 Python 中实例化固定数量的晶体管。电路特有信息由 `test_pin.txt` 及其数值化版本完整表达：
+
+```text
+(FET){N1,P1}{S,G,D,B}
+N1 S=n_internal G=IN D=OUT B=VSS L=default W=default NF=default
+P1 S=p_internal G=IN D=OUT B=VDD L=default W=default NF=default
+
+(PORT){IN,OUT,VDD,VSS}
+IN=IN
+OUT=OUT
+VDD=VDD
+VSS=VSS
+```
+
+同一文件还可包含：
+
+- `(R){...}`：允许进入电阻网络的物理节点，以及需要计算的节点对；
+- `(C){...}`：需要输出电容的节点及节点对；
+- `(FET){...}{S,G,D,B}`：任意数量实例及每个实例的四端映射；
+- `(PORT){...}`：子电路外部端口顺序及端口到内部物理节点的映射。
+
+生成器遵循以下通用约定：
+
+1. 实例名以 `N` 或 `P` 开头，用于选择对应的 Verilog-A 模块；
+2. S/G/D/B 由清单显式指定，不根据节点名字猜测；
+3. `L/W/NF=default` 从相应 VA 文件的参数默认值解析后显式写入实例；
+4. 端口数、晶体管数、内部节点数和 R/C 元件数均不固定；
+5. 物理接触标签和电路端口可以不同，通过 `PORT` 映射建立关系；
+6. 更换标准单元时，主要修改版图、连接清单和测试场景，不修改生成器里的电路构造。
+
+```mermaid
+flowchart LR
+    PHY[物理版图标签] --> RC[寄生网络节点]
+    MAN[连接清单] -->|R/C 请求| RC
+    MAN -->|S/G/D/B| DEV[任意 N/P 实例集合]
+    MAN -->|端口映射| PORT[有序外部端口]
+    RC --> SUB[统一 .subckt]
+    DEV --> SUB
+    PORT --> SUB
+    NVA[N 型 VA 模块] --> SUB
+    PVA[P 型 VA 模块] --> SUB
+    SUB --> USE[不同测试平台或更高层级网表复用]
+```
+
+这种泛化仍有明确边界：当前版图文本以轴对齐矩形为主；每次生成使用一份 N 型和一份 P 型 VA 模块；实例命名必须满足 N/P 前缀约定；连接关系必须显式写入清单；当前 DRC 只覆盖脚本已经实现的规则类型。
+
+## 分阶段运行示例
+
+以下命令从仓库根目录运行。建议先逐阶段验证，再把它们包装成环境相关的总控脚本。
+
+### 1. 预检查并生成 SDE 命令
 
 ```powershell
-python gen_sde.py .\gds\standard_sram_v1_2.txt .\rules\standard_arch.txt .\rules\standard_layer_rule.txt -o .\output_SDE\sde_cmd\standard_sram_v1_2_sde.cmd
+$Project = Resolve-Path ".\FLOW\test"
+
+python "$Project\gen_sde.py" `
+  "$Project\INPUT_MODEL\test_gds.txt" `
+  "$Project\INPUT_MODEL\test_params.txt" `
+  "$Project\INPUT_MODEL\test_stacked.txt" `
+  --design-rules "$Project\INPUT_MODEL\test_design_rules.txt" `
+  --validate-only `
+  -o "$Project\SDE\test_sde.cmd"
+
+python "$Project\gen_sde.py" `
+  "$Project\INPUT_MODEL\test_gds.txt" `
+  "$Project\INPUT_MODEL\test_params.txt" `
+  "$Project\INPUT_MODEL\test_stacked.txt" `
+  --design-rules "$Project\INPUT_MODEL\test_design_rules.txt" `
+  -o "$Project\SDE\test_sde.cmd"
 ```
 
-通用格式：
+第二条命令实际写出 `test_r_sde.cmd` 和 `test_c_sde.cmd`。验证错误默认会阻止输出；只有明确接受风险时才使用 `--allow-errors`。
+
+### 2. 生成 DRC 报告
 
 ```powershell
-python gen_sde.py <layout_txt> <arch_rule> <layer_rule> -o <output_cmd>
+python "$Project\gen_drc_report.py" `
+  "$Project\INPUT_MODEL\test_gds.txt" `
+  "$Project\INPUT_MODEL\test_params.txt" `
+  "$Project\INPUT_MODEL\test_stacked.txt" `
+  "$Project\INPUT_MODEL\test_design_rules.txt" `
+  -o "$Project\OUTPUT\test_drc_report.txt"
 ```
 
-典型输入：
+### 3. 在外部提取环境生成 R/C 矩阵
 
-- `gds/*.txt`：版图矩形与 label/net 信息。
-- `rules/*_arch.txt`：器件结构、材料、掺杂、网格等参数。
-- `rules/*_layer_rule.txt`：版图层到三维结构层的映射规则。
+用生成的 R/C SDE 命令完成结构构建、网格和寄生提取，并把矩阵结果放入项目的 `SDE/` 目录。该步骤依赖本机或远程 EDA 环境，仓库不提供许可证和集群配置。
 
-典型输出：
-
-- `output_SDE/sde_cmd/*.cmd`：可在 Sentaurus SDE 中运行的结构生成脚本。
-
-## SRAM RC HSPICE 流程
-
-SRAM 的 RC 信息来自：
-
-```text
-output_SDE/rc_raphreal/sram_schematic.txt
-output_SDE/rc_raphreal/n18_cMatrix.spi
-output_SDE/rc_raphreal/n19_cMatrix.spi
-```
-
-生成脚本：
-
-```text
-Hspice/iv/generate_sram_mapped_rc.py
-Hspice/iv/split_sram_decks.py
-```
-
-主要输出：
-
-```text
-output_SDE/rc_sp/standard_sram.sp
-Hspice/iv/standard_sram.sp
-Hspice/iv/standard_sram_tran.sp
-Hspice/iv/standard_sram_snm.sp
-Hspice/iv/standard_sram_mapped_rc_report.txt
-```
-
-说明：
-
-- `generate_sram_mapped_rc.py` 根据 `sram_schematic.txt` 中的命名关系，从 `n18_cMatrix.spi` 和 `n19_cMatrix.spi` 查找对应 RC。
-- 对缺失或明显异常的同网 RC，脚本使用对称节点或相邻有限路径给出合理近似。
-- 测试高阻隔离使用 `1e16`。
-- deck 中加入 `GSHUNT=1e-12` 以增强 DC/SNM 收敛。
-- `split_sram_decks.py` 将完整 deck 拆分为 transient 和 SNM/DC 两个独立 deck，避免 `.ALTER` 继承导致的仿真干扰。
-
-运行示例：
+### 4. 将矩阵映射为引脚级 RC
 
 ```powershell
-python Hspice\iv\generate_sram_mapped_rc.py
-python Hspice\iv\split_sram_decks.py
-python Hspice\iv_flow\run_hspice.py Hspice\iv\standard_sram_tran.sp --results-dir Hspice\iv\results
-python Hspice\iv_flow\run_hspice.py Hspice\iv\standard_sram_snm.sp --results-dir Hspice\iv\results
-python Hspice\iv\plot_hspice_results.py --results Hspice\iv\results --png Hspice\iv\png
+python "$Project\gen_rc_Matrix.py" `
+  "$Project\INPUT_MODEL\test_pin.txt" `
+  "$Project\SDE\test_c_cMatrix.spi" `
+  "$Project\SDE\test_r_cMatrix.spi" `
+  --strict-contact-face `
+  -o "$Project\Hspice\test_pin_spice.txt"
 ```
 
-SRAM 图像输出：
+`--strict-contact-face` 按层角色选择规定的接触面，避免把接触标签错误地收缩到不应直接相连的金属节点。
 
-```text
-Hspice/iv/png/sram_read_transient.png
-Hspice/iv/png/sram_write_transient.png
-Hspice/iv/png/sram_hold_retention.png
-Hspice/iv/png/sram_supply_current.png
-Hspice/iv/png/sram_snm_butterfly.png
-Hspice/iv/png/sram_ncurve.png
-```
-
-## 单管 VA Id-Vg / Id-Vd 验证
-
-Verilog-A 模型：
-
-```text
-Hspice/va/cfet_nmos_lvt.va
-Hspice/va/cfet_pmos_lvt.va
-```
-
-单管 deck：
-
-```text
-Hspice/iv/single_va_nmos_idvg.sp
-Hspice/iv/single_va_nmos_idvd.sp
-Hspice/iv/single_va_pmos_idvg.sp
-Hspice/iv/single_va_pmos_idvd.sp
-```
-
-运行方式：
+### 5. 生成通用 HSPICE 子电路
 
 ```powershell
-python Hspice\iv_flow\run_hspice.py Hspice\iv\single_va_nmos_idvg.sp --results-dir Hspice\iv\results
-python Hspice\iv_flow\run_hspice.py Hspice\iv\single_va_nmos_idvd.sp --results-dir Hspice\iv\results
-python Hspice\iv_flow\run_hspice.py Hspice\iv\single_va_pmos_idvg.sp --results-dir Hspice\iv\results
-python Hspice\iv_flow\run_hspice.py Hspice\iv\single_va_pmos_idvd.sp --results-dir Hspice\iv\results
-python Hspice\iv\plot_hspice_results.py --results Hspice\iv\results --png Hspice\iv\png
+python "$Project\gen_hspice.py" `
+  "$Project\INPUT_MODEL\test_fet_n.va" `
+  "$Project\INPUT_MODEL\test_fet_p.va" `
+  "$Project\Hspice\test_pin_spice.txt" `
+  -o "$Project\Hspice\test_pex.inc"
 ```
 
-图像输出：
+命令同时生成同目录下的 `test_pex_validate.sp`。需要自定义外部子电路名或验证文件位置时，可使用 `--subckt-name` 和 `--validation-output`。
 
-```text
-Hspice/iv/png/single_va_nmos_idvg.png
-Hspice/iv/png/single_va_nmos_idvd.png
-Hspice/iv/png/single_va_pmos_idvg.png
-Hspice/iv/png/single_va_pmos_idvd.png
-```
-
-## CSV 与 VA 曲线对比
-
-参考 CSV：
-
-```text
-Hspice/wt_cfet/CFET_N4.40_14000.csv
-```
-
-基础对比脚本：
-
-```text
-Hspice/iv/plot_compare_wt_cfet_nmos_idvg.py
-```
-
-输出：
-
-```text
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg.png
-```
-
-该图用于比较 WT CFET CSV 与 `single_va_nmos_idvg.sp` 中 `L16_W25, VDS=0.05/0.35/0.70 V` 的 HSPICE 曲线。
-
-## EOT_0 参数扫描
-
-`cfet_nmos_lvt.va` 中 `EOT_0` 已在 `instance_parameter_list` 中，因此无需复制或修改 `.va` 文件，可以直接在 HSPICE 实例上覆盖：
-
-```spice
-Xmn d g s b cfet_nmos_lvt L='LCH' W='WDEV' NF='NFDEV' EOT_0=9.50e-10
-```
-
-生成脚本：
-
-```text
-Hspice/iv/generate_nmos_eot_idvg_sweep.py
-Hspice/iv/plot_compare_eot_nmos_idvg.py
-```
-
-EOT 扫描值：
-
-```text
-0.90, 0.95, 1.00, 1.05, 1.10, 1.15, 1.20 nm
-```
-
-deck 输出：
-
-```text
-Hspice/iv/single_va_nmos_idvg_EOT0_90.sp
-Hspice/iv/single_va_nmos_idvg_EOT0_95.sp
-Hspice/iv/single_va_nmos_idvg_EOT1_00.sp
-Hspice/iv/single_va_nmos_idvg_EOT1_05.sp
-Hspice/iv/single_va_nmos_idvg_EOT1_10.sp
-Hspice/iv/single_va_nmos_idvg_EOT1_15.sp
-Hspice/iv/single_va_nmos_idvg_EOT1_20.sp
-```
-
-结果目录：
-
-```text
-Hspice/iv/results_eot/
-```
-
-图像输出：
-
-```text
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_EOT_sweep.png
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_EOT_sweep_logy.png
-```
-
-## NMOS Id-Vg 自动拟合流程
-
-自动拟合脚本：
-
-```text
-Hspice/iv/fit_nmos_idvg_params.py
-```
-
-该流程保持名义 `L/W/NF` 不变：
-
-```verilog
-L  = 1.6e-8
-W  = 2.5e-8
-NF = 1
-```
-
-并只通过实例参数覆盖以下 Verilog-A 参数：
-
-```verilog
-U0
-XL
-DVTSHIFT
-DeltaWGAA
-DeltaTGAA
-EOT_0
-```
-
-运行方式：
+### 6. 验证与功能测试
 
 ```powershell
-python Hspice\iv\fit_nmos_idvg_params.py --max-local 72
+hspice "$Project\Hspice\test_pex_validate.sp"
 ```
 
-如果已有 HSPICE 结果，只重新解析和画图：
+编译冒烟测试通过后，再使用 `INPUT_MODEL/py_test4inc/` 中的测试生成器和 runner 执行功能、时序或功耗场景。测试激励与单元拓扑保持分离，同一 `.inc` 可以被多个测试 deck 或更高层级网表调用。
 
-```powershell
-python Hspice\iv\fit_nmos_idvg_params.py --max-local 72 --reuse
-```
+## `fitness`：Verilog-A 拟合
 
-第二版全范围拟合目录：
+### 数据约定
 
-```text
-Hspice/iv/fit_nmos_idvg_vmax1/
-```
+- `.ref_iv/` 目录外层的 CSV 是乘系数后的参考电流密度，单位为 `A/um`；
+- `.ref_iv/backup/` 中的 CSV 是最大电流归一到 1 的无量纲备份，不应直接作为绝对电流拟合目标；
+- CSV 文件名中的 `44` 和 `48` 表示 CPP 工艺角，不表示栅长；参考图中的 `Lg` 为 12 nm；
+- HSPICE 输出的器件电流单位为 A，拟合脚本按模型名义有效宽度换算为 `A/um` 后再与 CSV 比较；N/P 两类器件只需分别保证换算后的电流密度单位一致，不要求使用相同换算系数。
 
-关键输出：
+### 固定量与拟合量
 
-```text
-Hspice/iv/fit_nmos_idvg_vmax1/fit_summary.csv
-Hspice/iv/fit_nmos_idvg_vmax1/fit_best_vmax1_params.json
-Hspice/iv/fit_nmos_idvg_vmax1/fit_best_vmax1_curve.csv
-Hspice/iv/fit_nmos_idvg_vmax1/fit_visual_vmax1_params.json
-Hspice/iv/fit_nmos_idvg_vmax1/fit_visual_vmax1_curve.csv
-```
+当前脚本固定 `L`、`W`、`TGAA`、`NGAA`、`NF`、`NBODY`、`NSD` 和 N/P 各自的 `PHIG`，优化以下六个参数：
 
-全局 `log + high-current` 混合最优：
+`U0`、`XL`、`DVTSHIFT`、`DeltaWGAA`、`DeltaTGAA`、`EOT_0`。
 
-```text
-tag = fit_l202
-U0 = 0.016
-XL = 1.2e-8
-DVTSHIFT = 0.0
-DeltaWGAA = 0.0
-DeltaTGAA = -1e-9
-EOT_0 = 9.5e-10
-```
+拟合目标同时包含低漏压和高漏压 `Id-Vg` 曲线，主要在对数电流域度量误差，并记录导通电流相对误差。输出是 CPP44、CPP48 各自完整的 N/P Verilog-A 模型、JSON 报告和对比图。
 
-对应图：
+### 当前保留的两套结果
 
-```text
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_fit_best_vmax1.png
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_fit_best_vmax1_logy.png
-```
+| 目录 | 用途 | XL 约束 |
+|---|---|---|
+| `fitness/fitted_va_1/` | 原始拟合结果，用作误差优先的基线 | 使用原始较宽边界 |
+| `fitness/fitted_va_2_minXL/` | 在保留基线结果的前提下重新拟合 | `abs(XL) <= 3 nm` |
 
-偏高电流区视觉最优：
+每套目录均包含 `cpp44/`、`cpp48/` 的完整 N/P VA 文件、`fit_report.json` 和 `fit_comparison.png`。受限拟合中四个工艺角的 `XL` 都满足 3 nm 限制；这是以一定拟合误差增长换取更小 `XL` 的折中。
 
-```text
-tag = fit_l230
-U0 = 0.020
-XL = 1.6e-8
-DVTSHIFT = -0.02
-DeltaWGAA = 0.0
-DeltaTGAA = -1e-9
-EOT_0 = 9.5e-10
-```
-
-对应图：
-
-```text
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_fit_visual_vmax1.png
-Hspice/iv/png/compare_wt_cfet_vs_va_nmos_idvg_fit_visual_vmax1_logy.png
-```
-
-## 关键 VA 参数含义
-
-```verilog
-parameter real L = 1.6e-8;
-parameter real W = 2.5e-8;
-parameter real NF = 1;
-```
-
-名义沟道长度、名义器件宽度和等效 finger/fin/nanosheet 数量。本项目的拟合流程中固定不改。
-
-```verilog
-parameter real U0 = 3.0e-2;
-```
-
-低场迁移率参数，主要影响电流幅值，尤其是中高 `VGS` 区。
-
-```verilog
-parameter real XL = 1.2e-8;
-```
-
-有效沟道长度修正。模型中使用 `Lg = L + XL`，因此 `XL` 增大通常会降低电流。
-
-```verilog
-parameter real DVTSHIFT = 0.0;
-```
-
-阈值电压偏移量，主要控制 Id-Vg 曲线左右移动。
-
-```verilog
-parameter real DeltaWGAA = 0;
-parameter real DeltaTGAA = 0;
-```
-
-模型内部 GAA 等效宽度和厚度修正，不改变 deck 中的名义 `W/L`，但会改变有效截面和电流。
-
-```verilog
-parameter real EOT_0 = 1.1e-9;
-```
-
-等效氧化层厚度，影响栅控能力、栅电容、亚阈值斜率和开启形状。
-
-## HSPICE Runner
-
-统一运行入口：
-
-```text
-Hspice/iv_flow/run_hspice.py
+```mermaid
+flowchart TD
+    REF[.ref_iv 中的 A/um CSV] --> OBJ[构造多曲线目标]
+    ORIG[原始 N/P VA] --> PATCH[写入候选参数]
+    PATCH --> HSP[调用 HSPICE]
+    HSP --> CONV[器件电流 A 转为 A/um]
+    CONV --> OBJ
+    OBJ --> LSQ[有边界非线性最小二乘]
+    LSQ -->|下一组参数| PATCH
+    LSQ --> BASELINE[fitted_va_1]
+    BASELINE -->|作为保留基线| XL[abs(XL) 不超过 3 nm 的再拟合]
+    XL --> SMALL[fitted_va_2_minXL]
+    BASELINE --> REPORT[模型、JSON、对比图]
+    SMALL --> REPORT
+    REPORT --> CELLIN[选定模型回填标准单元 INPUT_MODEL]
 ```
 
 示例：
 
 ```powershell
-python Hspice\iv_flow\run_hspice.py Hspice\iv\standard_sram_tran.sp --results-dir Hspice\iv\results
+python .\fitness\fit_hspice_va.py `
+  --hspice "C:\path\to\hspice.exe" `
+  --output-dir fitted_va_new
+
+python .\fitness\fit_hspice_va.py `
+  --hspice "C:\path\to\hspice.exe" `
+  --minimize-xl `
+  --xl-limit-nm 3 `
+  --output-dir fitted_va_new_minXL
 ```
 
-runner 会自动：
+`--output-dir` 的相对路径以 `fitness/` 为基准，并且脚本会拒绝写到该目录之外。
 
-- 查找 HSPICE 可执行文件。
-- 设置 license 环境变量。
-- 建立结果目录。
-- 保存 `.lis/.sw0` 等输出。
-- 写入 `manifest.json`。
+> 当前仓库中的原始模型文件名是 `original_nfet.va` 和 `original_pfert.va`，而 `fit_hspice_va.py` 仍固定查找 `fitness/test_fet_n.va` 与 `fitness/test_fet_p.va`。因此重新拟合前必须先统一这组文件名，或把脚本改为接受显式 N/P 模型路径；否则会在启动检查阶段得到 `FileNotFoundError`。现有两套拟合结果不受此命名差异影响。
 
-## Git 提交参考
+先运行 `python .\fitness\fit_hspice_va.py --help` 查看恢复计算、仅重绘和中间文件保留等选项。日常运行不建议开启中间文件保留，以免产生大量临时 HSPICE deck 和输出。
 
-查看状态：
+当前拟合只标定 DC `Id-Vg`。电荷、电容、瞬态、高场效应和更独立的 DIBL 控制尚未通过这些数据完整约束；接近参数边界的结果应视为数值工艺角，而不是唯一的物理参数提取值。
 
-```powershell
-git status
+## 仓库目录结构
+
+```text
+AutoLDM/
+├─ FLOW/
+│  ├─ test/                    当前最完整的参考工程
+│  ├─ Template_Create_New/     新工程骨架
+│  ├─ Template_Mini/           最小命令示例
+│  ├─ StandardCells_DataBase/  标准单元定义与引脚资料
+│  ├─ FLOW.cmd                 本机/远程流程编排示例
+│  └─ cleanup_obsolete_swb_files.sh
+├─ fitness/                    参考曲线、拟合器、模型、报告和图片
+├─ Database/                   标准单元 GDS 与相关数据库资料
+├─ .Referance_Paper/           参考论文、提取文本和渲染图片
+├─ .paper_publish/             论文投稿、会议与出版规划资料
+├─ PKU_TODO/                   阶段任务、里程碑和流程草图
+├─ .readme/                    内部进展、Git 与 TODO 记录
+├─ .agents/                    自动化代理的本地配置
+├─ .history/                   编辑历史或阶段性副本
+├─ .trash/                     暂存的废弃文件
+├─ __pycache__/                Python 运行缓存
+└─ readme.md                   本文件
 ```
 
-提交全部改动：
+### 主要目录说明
 
-```powershell
-git add -A
-git commit -m "add hspice sram rc flow and iv fitting results"
-git push
+- `FLOW/test/INPUT_MODEL/`：工程的源输入。应优先在这里修改几何、工艺、规则、连接、VA 模型和测试描述。
+- `FLOW/test/SDE/`：SDE 命令、网格相关产物以及原始寄生矩阵。大部分内容可以由上游输入再生成。
+- `FLOW/test/Hspice/`：数值化连接文件、生成的 `.inc`、验证 deck、测试 deck 和仿真结果。
+- `FLOW/test/OUTPUT/`：DRC 等面向人的检查报告。
+- `FLOW/Template_Create_New/`：复制并重命名后可作为新标准单元工程起点；模板应保持无特定拓扑的生成逻辑。
+- `FLOW/Template_Mini/`：保留最短的 SDE 生成命令，适合检查环境和参数格式。
+- `FLOW/StandardCells_DataBase/` 与 `Database/`：前者偏流程所需的单元定义和引脚信息，后者偏原始版图及数据库资产。
+- `.Referance_Paper/`、`.paper_publish/` 和 `PKU_TODO/`：研究资料与项目管理内容，不是运行时依赖。
+- `.history/`、`.trash/`、`__pycache__/`：不应作为权威输入，也不建议纳入批量发布产物。
+
+## 新建一个标准单元工程
+
+```mermaid
+flowchart TD
+    COPY[复制 Template_Create_New] --> NAME[替换工程名前缀]
+    NAME --> GEO[准备矩形版图和物理标签]
+    GEO --> TECH[填写 params、stack、design_rules]
+    TECH --> NET[填写 R/C/FET/PORT 连接清单]
+    NET --> MODEL[放入 N/P VA 模型]
+    MODEL --> CHECK[validate-only 与 DRC]
+    CHECK --> EXT[SDE 和寄生提取]
+    EXT --> LIB[生成并验证 .inc]
+    LIB --> BENCH[编写与拓扑独立的测试场景]
+    BENCH --> ITERATE[根据结果迭代]
 ```
 
-如果不希望提交大量 HSPICE 中间结果，可以改为只 `git add` 脚本、deck、README 和关键 PNG/CSV。
+迁移时建议遵循以下原则：
+
+1. 复制模板目录，不复制已有单元的内部节点假设；
+2. 统一工程文件名前缀，但脚本调用使用相对路径或显式命令行参数；
+3. 让版图标签承担物理定位，让 `FET`/`PORT` 段承担电路语义；
+4. 每次修改连接后先生成零偏置验证 deck，再进入功能仿真；
+5. 将测试平台视为消费者，生成的 `.inc` 本身是可独立实例化的标准单元器件；
+6. 把可再生成产物与人工维护输入分开，便于自动化和版本控制。
+
+## 环境与依赖
+
+| 类别 | 用途 |
+|---|---|
+| Python 3 | 所有文本生成、检查、矩阵映射和拟合脚本 |
+| NumPy、SciPy、Matplotlib | 数值优化、数据处理和拟合绘图 |
+| HSPICE | Verilog-A 器件仿真、`.inc` 编译与电路验证 |
+| Sentaurus Structure Editor / 网格工具 | 三维结构和网格生成 |
+| 寄生参数提取环境 | 生成 R/C 矩阵 |
+| PowerShell、SSH/SCP | Windows 本地编排及可选的远程运行 |
+
+`FLOW/FLOW.cmd` 记录了当前环境的一种编排方式，但其中包含机器相关的绝对路径、工程名和远程配置，不能直接视为可移植入口。脚本化时应把这些内容改成命令行参数、配置文件或环境变量，并使用 SSH 密钥或安全的凭据管理方式，不要在仓库脚本中保存明文口令。还应以各工具的实际目录为准核对版图转换脚本路径。
+
+## 建议的自动化检查
+
+在把流程接入持续集成或批处理前，至少执行：
+
+1. `gen_sde.py --validate-only` 返回 0；
+2. DRC 报告没有未豁免的 `ERROR`；
+3. pin 清单中的每个 FET 均有完整 S/G/D/B，每个端口均可映射到有效节点；
+4. R/C 矩阵映射没有悬空请求或意外节点收缩；
+5. 自动生成的零偏置验证 deck 能由目标 HSPICE 版本编译；
+6. 测试 runner 输出明确的成功/失败状态和可追溯清单；
+7. 拟合模型附带 `fit_report.json`、对比图和参考数据单位说明；
+8. 生成产物能够由受版本控制的输入重新构建。
+
+这样可以把某个完整参考工程沉淀为通用流程，同时避免把示例单元的节点命名、器件数量或测试激励固化到生成脚本中。
