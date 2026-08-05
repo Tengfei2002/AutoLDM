@@ -40,3 +40,7 @@ parameter real NSD = 3e26; （拟合时不可变）
 parameter real PHIG = 4.67; （拟合时不可变）
 
 最终需要生成两套va模型，分别对应44nm和48nmCPP
+
+
+fitted_va_1是无限制处理
+fitted_va_2_minXL是限制XL的处理
