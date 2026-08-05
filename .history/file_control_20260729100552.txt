@@ -1,0 +1,45 @@
+c_dvs.cmd	      new_C11_rcfx.cmd	       sde2_dvs.prf
+c_dvs.prf	      new_C11_rcfx.prf	       sde3_dvs.cmd
+cmlog.txt	      new_C1_rcfx.cmd	       sde3_dvs.prf
+gadvscens.dat	      new_C1_rcfx.prf	       st1_dvs.cmd
+gcomments.dat	      new_C_rcfx.cmd	       st1_dvs.prf
+gscens.dat	      new_C_rcfx.prf	       st2_dvs.cmd
+gtree.dat	      new_sde1_dvs.cmd	       st2_dvs.prf
+gtree.dat.backup      new_sde1_dvs.prf	       st3_dvs.cmd
+gvars.dat	      new_sde1_noname_dvs.cmd  st3_dvs.prf
+new_1_dvs.cmd	      new_sde1_noname_dvs.prf  st4_dvs.cmd
+new_1_dvs.prf	      new_sde2_dvs.cmd	       st4_dvs.prf
+new_1_noname_dvs.cmd  new_sde2_dvs.prf	       SVisualTcl.log
+new_1_noname_dvs.prf  raphaelfx_1_rcfx.cmd     SVisualTcl.log.BAK
+new1_R1_rcfx.cmd      raphaelfx_1_rcfx.prf     test_C_bnd.tdr
+new1_R1_rcfx.prf      raphaelfx_2_rcfx.cmd     test_C_msh.cmd
+new1_R2_rcfx.cmd      raphaelfx_2_rcfx.prf     test_C_msh.log
+new1_R2_rcfx.prf      r_dvs.cmd		       test_C_msh.tdr
+new1_R_rcfx.cmd       r_dvs.prf		       test_R_bnd.tdr
+new1_R_rcfx.prf       sde1_dvs.cmd	       test_R_msh.cmd
+new_C111_rcfx.cmd     sde1_dvs.prf	       test_R_msh.log
+new_C111_rcfx.prf     sde2_dvs.cmd	       test_R_msh.tdr
+
+
+c_dvs.cmd	    sde2_dvs.prf
+c_dvs.prf	    sde3_dvs.cmd
+cmlog.txt	    sde3_dvs.prf
+gadvscens.dat	      new_C1_rcfx.prf	       st1_dvs.cmd
+gcomments.dat	      new_C_rcfx.cmd	       st1_dvs.prf
+gscens.dat	      new_C_rcfx.prf	       st2_dvs.cmd
+gtree.dat	      new_sde1_dvs.cmd	       st2_dvs.prf
+gtree.dat.backup      new_sde1_dvs.prf	       st3_dvs.cmd
+gvars.dat	      new_sde1_noname_dvs.cmd  st3_dvs.prf
+new_1_dvs.cmd	      new_sde1_noname_dvs.prf  st4_dvs.cmd
+new_1_dvs.prf	      new_sde2_dvs.cmd	       st4_dvs.prf
+new_1_noname_dvs.cmd  new_sde2_dvs.prf	       SVisualTcl.log
+new_1_noname_dvs.prf  raphaelfx_1_rcfx.cmd     SVisualTcl.log.BAK
+new1_R1_rcfx.cmd      raphaelfx_1_rcfx.prf     test_C_bnd.tdr
+new1_R1_rcfx.prf      raphaelfx_2_rcfx.cmd     test_C_msh.cmd
+new1_R2_rcfx.cmd      raphaelfx_2_rcfx.prf     test_C_msh.log
+new1_R2_rcfx.prf      r_dvs.cmd		       test_C_msh.tdr
+new1_R_rcfx.cmd       r_dvs.prf		       test_R_bnd.tdr
+new1_R_rcfx.prf       sde1_dvs.cmd	       test_R_msh.cmd
+new_C111_rcfx.cmd     sde1_dvs.prf	       test_R_msh.log
+new_C111_rcfx.prf     sde2_dvs.cmd	       test_R_msh.tdr
+.\cleanup_obsolete_swb_files.ps1 -TargetDirectory "你的SWB文件目录" -Execute

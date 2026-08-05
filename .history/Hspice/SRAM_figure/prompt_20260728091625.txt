@@ -1,0 +1,7 @@
+总共有四个层可能被需要进行标注，
+（1）最高层的M金属层，例如如果M2的面积是0，那么M1就是最高层，如果M2面积不为0，那么M2就是最高金属层；M0，M1，M2...依次递增；
+（2）最低金属层，BMx层
+（3）MD层，
+（4）BMD层
+
+你需要通过判断各个层的对应的电位坐标，将电位C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\Hspice\SRAM_figure\sram.txt标记在C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\INPUT_MODEL\test_gds.txt中，优先分析电路结构和各个电位之间的连接关系

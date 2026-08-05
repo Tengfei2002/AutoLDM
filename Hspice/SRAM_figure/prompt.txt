@@ -1,0 +1,127 @@
+# SRAM 双层 6T：R 连通性与 GDS 标记规则（2026-07-28）
+
+## 1. 目标与层选择
+
+根据 `sram.txt` 的 `(R){...}` 原子端点及其 `R_...` 连通关系，在
+`test_gds.txt` 中标记四类导体；先按晶体管与接触/通孔的真实连接关系
+判断，不能只按二维投影坐标猜测连接。
+
+本布局的目标层为：
+
+| 类别 | 层号 | 含义 |
+|---|---:|---|
+| 顶层局部金属 | 16（MD） | 顶层 NFET 的 PG/PD 端点和栅端 |
+| 顶层引出金属 | 19（M0） | `BL`、`WL`、`VSS`；两个存储节点金属保持未命名 |
+| 底层局部金属 | 51（BMD） | 底层 PFET 的 PU 端点和栅端 |
+| 底层引出金属 | 53（BM0） | `VDD` |
+
+一般化的层选择原则：在 `M0,M1,M2,...` 中，面积不为零的最大编号为最高
+金属层；`BMx` 中最低有效编号为最低金属层；再分别处理 `MD` 与 `BMD`。
+本例的几何层号已由版图确定为上表，不应因为 M0/BM0 与 MD/BMD 同坐标而跨层
+合并名称。
+
+## 2. R 端点的解析原则
+
+`(R){...}` 中逗号分隔的字符串是不可再拆分的原子端点。例如
+`PG1_G_WL`、`PD1_SD_Q`、`PU1_G_QB` 都是完整名称，不能按下划线逐段作为
+独立节点。`R_...` 行将这些端点归入同一电位分量；解析时应以 R 头中的完整
+原子名做最长匹配。
+
+本图采用“器件端口类型 + 电位”的新命名，不再使用编号式 S/D 名称：
+
+| 电位 | R 原子端点 |
+|---|---|
+| WL | `WL`、`PG1_G_WL`、`PG2_G_WL` |
+| BL | `BL`、`PG1_SD_BL` |
+| BLB | `BLB`、`PG2_SD_BLB` |
+| VDD | `VDD`、`PU1_SD_VDD`、`PU2_SD_VDD` |
+| VSS | `VSS`、`PD1_SD_VSS`、`PD2_SD_VSS` |
+| Q | `PG1_SD_Q`、`PU1_SD_Q`、`PD1_SD_Q`、`PU2_G_Q`、`PD2_G_Q` |
+| QB | `PG2_SD_QB`、`PU2_SD_QB`、`PD2_SD_QB`、`PU1_G_QB`、`PD1_G_QB` |
+
+`Q` 与 `QB` 是由 R 连通分量得到的电位名称，不是本次 GDS 中要新增的裸标签。
+因此所有 GDS 标记必须使用上表的完整 R 原子端点；不能写单独的 `Q` 或 `QB`。
+
+## 3. 电路与空间排列
+
+这是双层 CFET 6T SRAM：上层是 NFET（PG1、PD1、PD2、PG2），下层是
+PFET（PU1、PU2）。两层通过允许的竖向接触/通孔形成 Q、QB、VDD/VSS 等
+电位，不因平面投影重叠自动短接。
+
+上层 MD（层 16）从左到右的横向端点条为：
+
+```text
+PG1_SD_BL -- PG1_G_WL -- [PG1_SD_Q + PD1_SD_Q]
+          -- PD1_G_QB -- [PD1_SD_VSS + PD2_SD_VSS]
+          -- PD2_G_Q -- [PD2_SD_QB + PG2_SD_QB]
+          -- PG2_G_WL -- PG2_SD_BLB
+```
+
+对应近似 x 位置依次为 `0, 0.021, 0.042, 0.063, 0.084, 0.105, 0.126, 0.147,
+0.168 um`。其中中括号内的两个名称落在同一层同一接触位置，必须用下划线
+连接成一个标签。
+
+下层 BMD（层 51）从左到右为：
+
+```text
+PU1_SD_Q -- PU1_G_QB -- [PU1_SD_VDD + PU2_SD_VDD]
+         -- PU2_G_Q -- PU2_SD_QB
+```
+
+对应近似 x 位置为 `0.042, 0.063, 0.084, 0.105, 0.126 um`。
+
+晶体管连接关系为：
+
+```text
+BL -- PG1(gate=WL) -- Q -- PD1(gate=QB) -- VSS
+VSS -- PD2(gate=Q) -- QB -- PG2(gate=WL) -- BLB
+
+VDD -- PU1(gate=QB) -- Q
+VDD -- PU2(gate=Q)  -- QB
+```
+
+## 4. 合并标签的严格规则
+
+只有当多个 R 原子端点实际落在**同一目标金属层**的同一 landing/contact
+几何位置时，才按版图中的次序用 `_` 连接：
+
+```text
+同层 MD：PG1_SD_Q_PD1_SD_Q
+同层 MD：PD1_SD_VSS_PD2_SD_VSS
+同层 MD：PD2_SD_QB_PG2_SD_QB
+同层 BMD：PU1_SD_VDD_PU2_SD_VDD
+```
+
+相同 x-y 但处于 MD 与 BMD 的端点属于不同 tier，不能拼接。例如 x≈0.042
+处 MD 为 `PG1_SD_Q_PD1_SD_Q`，BMD 为 `PU1_SD_Q`，二者仍是两个独立标签。
+同一电位在不同几何条上也不能合并成一个长名称。
+
+## 5. 本例 `test_gds.txt` 的最终标记
+
+```text
+layer 16 (MD):
+PG1_SD_BL, PG1_G_WL, PG1_SD_Q_PD1_SD_Q, PD1_G_QB,
+PD1_SD_VSS_PD2_SD_VSS, PD2_G_Q, PD2_SD_QB_PG2_SD_QB,
+PG2_G_WL, PG2_SD_BLB
+
+layer 51 (BMD):
+PU1_SD_Q, PU1_G_QB, PU1_SD_VDD_PU2_SD_VDD, PU2_G_Q, PU2_SD_QB
+
+layer 19 (M0):
+BL, WL, VSS, BLB；两个 Q/QB 存储互连金属保持 None
+
+layer 53 (BM0):
+VDD
+```
+
+## 6. 判定流程
+
+1. 读取 `(R){...}`，建立完整原子端点集合；读取每条 R 行，以最长原子名匹配
+   并用并查集得到七个电位分量。
+2. 从晶体管版图识别 gate、S/D 与顶/底 tier；确认接触和通孔，不以 xy 重合为
+   唯一依据。
+3. 对目标层上的每一块金属，收集其实际接触到的 R 原子端点。
+4. 若收集到一个端点，写该完整名称；若同层同 landing 收集到多个端点，按几何
+   次序以 `_` 合并；若无端点或存在无法消除的冲突，写 `None` 并报告。
+5. 最后检查每个 GDS 标签均能在 `(R){...}` 中找到完整端点；禁止生成裸 `Q`、
+   `QB`，也禁止遗留旧式编号 S/D 命名。

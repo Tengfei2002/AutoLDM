@@ -1,0 +1,22 @@
+(SUPPLY)
+vdd=0.7
+vss=0
+
+(ARRAY)
+* Unified external boundary for every compared PEX cell. Do not change it between structures.
+cbl=30f
+rbl=100
+rwl=100
+rbl_drv=100
+cwl=5f
+rvdd=10
+rvss=10
+cvdd=10f
+
+(TIMING)
+tr=20p
+tstep=1p
+tstop=5n
+
+(MEASURE)
+sense_v=0.05

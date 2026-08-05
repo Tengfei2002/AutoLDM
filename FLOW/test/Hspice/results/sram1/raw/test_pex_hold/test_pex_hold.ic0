@@ -1,0 +1,39 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "20:06:21 08/03/2026 "
+* "netlist" "test_pex_hold.sp "
+* "runtitle" "* auto-generated sram1 pex test: hold"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl = 7.000e-01       
++ blb = 7.000e-01       
++ blbf = 7.000e-01       
++ blf = 7.000e-01       
++ q = 2.324e-11       
++ qb = 7.000e-01       
++ vdd = 7.000e-01       
++ vdd_src = 7.000e-01       
++ vss = 1.965e-08       
++ vss_src = 0.000e+00       
++ wl = 0.000e+00       
++ wldrv = 0.000e+00       
++ xdut.pd1_g_qb = 7.000e-01       
++ xdut.pd1_sd_vss = 1.939e-08       
++ xdut.pd2_g_q = 2.324e-11       
++ xdut.pd2_sd_vss = 5.742e-08       
++ xdut.pg1_g_wl = 0.000e+00       
++ xdut.pg1_sd_bl = 7.000e-01       
++ xdut.pg2_g_wl = 0.000e+00       
++ xdut.pg2_sd_blb = 7.000e-01       
++ xdut.pu1_g_qb = 7.000e-01       
++ xdut.pu1_sd_q = 1.790e-08       
++ xdut.pu1_sd_vdd = 7.000e-01       
++ xdut.pu2_g_q = 2.324e-11       
++ xdut.pu2_sd_qb = 7.000e-01       
++ xdut.pu2_sd_vdd = 7.000e-01       
+***   END: Saved Operating Point ***                     

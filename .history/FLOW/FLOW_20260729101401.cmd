@@ -1,0 +1,28 @@
+
+cd C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\.
+$env:NAME = "test"
+echo $env:NAME
+
+
+python .\gen_sde.py `
+  .\INPUT_MODEL\${env:NAME}_gds.txt `
+  .\INPUT_MODEL\${env:NAME}_params.txt `
+  .\INPUT_MODEL\${env:NAME}_stacked.txt `
+  -o .\SDE\${env:NAME}_sde.cmd
+
+
+python .\INPUT_MODEL\txt_gds_trans\gds2txt.py .\INPUT_MODEL\${env:NAME}.gds
+
+python .\INPUT_MODEL\txt_gds_trans\txt2gds.py .\INPUT_MODEL\${env:NAME}_gds.txt
+
+python .\gen_drc_report.py `
+  ".\INPUT_MODEL\${env:NAME}_gds.txt" `
+  ".\INPUT_MODEL\test_params.txt" `
+  ".\INPUT_MODEL\test_stacked.txt" `
+  ".\INPUT_MODEL\${env:NAME}_design_rules.txt" `
+  -o ".\OUTPUT\${env:NAME}_drc_report.txt"
+
+ssh tfzhang@10.129.166.83
+pwd:tftfZhanG
+
+cd 

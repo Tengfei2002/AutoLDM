@@ -1,0 +1,219 @@
+{
+  "title": "HSPICE Verilog-A Id-Vg fits for CPP44 and CPP48",
+  "fit_profile": "minimum_abs_XL",
+  "preserved_previous_results": true,
+  "initial_report": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\fitness\\fitted_va\\fit_report.json",
+  "reference_current_unit": "A/um",
+  "hspice_output_unit": "A",
+  "current_density_conversion": "abs(I_HSPICE_A) / nominal_model_Weff_um",
+  "nominal_model_Weff_um": 0.17999999999999997,
+  "fixed_parameters": {
+    "L": 1.6e-08,
+    "W": 2.5e-08,
+    "TGAA": 5e-09,
+    "NGAA": 3.0,
+    "NF": 1.0,
+    "NBODY": 1e+21,
+    "NSD": 3e+26,
+    "PHIG_NFET": 4.38,
+    "PHIG_PFET": 4.67
+  },
+  "fitted_parameters": [
+    "U0",
+    "XL",
+    "DVTSHIFT",
+    "DeltaWGAA",
+    "DeltaTGAA",
+    "EOT_0"
+  ],
+  "fit_bounds": {
+    "U0": [
+      0.001,
+      0.1
+    ],
+    "XL_nm": [
+      -3.0,
+      3.0
+    ],
+    "DVTSHIFT_V": [
+      -1.0,
+      1.0
+    ],
+    "DeltaWGAA_nm": [
+      -15.0,
+      20.0
+    ],
+    "DeltaTGAA_nm": [
+      -4.5,
+      10.0
+    ],
+    "EOT_0_nm": [
+      0.2,
+      3.0
+    ]
+  },
+  "reference_metadata": {
+    "Lg_nm": 12,
+    "corner_dimension": "CPP_nm",
+    "normalized_backup_unit": "dimensionless"
+  },
+  "limitations": [
+    "Only DC Id-Vg was fitted; charge and capacitance behavior was not calibrated.",
+    "The selected six parameters do not provide an independent DIBL/high-field control, so PFET Vd=0.70 V retains a larger residual than the other curves.",
+    "Parameters that reach a fit bound should be interpreted as numerical corner values rather than uniquely extracted physical quantities."
+  ],
+  "corners": {
+    "NFET_CPP44": {
+      "fit_profile": "minimum_abs_XL",
+      "success": true,
+      "termination": "`ftol` termination condition is satisfied.",
+      "scipy_nfev": 19,
+      "hspice_evaluations": 115,
+      "cost": 0.17224343071384438,
+      "optimality": 0.0470263685145951,
+      "parameters": {
+        "U0": 0.002912543796083909,
+        "XL": -1.540104491500995e-09,
+        "DVTSHIFT": 0.4907139419468307,
+        "DeltaWGAA": -2.271707028292407e-09,
+        "DeltaTGAA": 2.3587533166170743e-09,
+        "EOT_0": 3.5151126051352767e-10
+      },
+      "effective_Lg_nm": 14.459895508499006,
+      "curves": {
+        "Vd_0.05": {
+          "source": "nfet_idvg_0_05V_44nm.csv",
+          "point_count": 20,
+          "log_rmse_decades": 0.09089503847374726,
+          "log_mae_decades": 0.05903575955835536,
+          "max_abs_log_error_decades": 0.2898119718446548,
+          "on_current_relative_error_percent": 7.598993714012137
+        },
+        "Vd_0.70": {
+          "source": "nfet_idvg_0_70V_44nm.csv",
+          "point_count": 16,
+          "log_rmse_decades": 0.08407403666744925,
+          "log_mae_decades": 0.07313622560864369,
+          "max_abs_log_error_decades": 0.13737966587374117,
+          "on_current_relative_error_percent": -1.5466391755059816
+        }
+      }
+    },
+    "PFET_CPP44": {
+      "fit_profile": "minimum_abs_XL",
+      "success": true,
+      "termination": "Both `ftol` and `xtol` termination conditions are satisfied.",
+      "scipy_nfev": 15,
+      "hspice_evaluations": 87,
+      "cost": 0.7895346271192264,
+      "optimality": 0.15304143414943946,
+      "parameters": {
+        "U0": 0.008307305410627542,
+        "XL": 2.9995677556466326e-09,
+        "DVTSHIFT": 0.999816708274226,
+        "DeltaWGAA": -9.022323882228897e-09,
+        "DeltaTGAA": 3.769947974591251e-09,
+        "EOT_0": 2.6613802395246714e-09
+      },
+      "effective_Lg_nm": 18.999567755646634,
+      "curves": {
+        "Vd_0.05": {
+          "source": "pfet_idvg_0_05V_44nm.csv",
+          "point_count": 12,
+          "log_rmse_decades": 0.25337621326251925,
+          "log_mae_decades": 0.1845433151910282,
+          "max_abs_log_error_decades": 0.5418628447045215,
+          "on_current_relative_error_percent": -9.309034606592014
+        },
+        "Vd_0.70": {
+          "source": "pfet_idvg_0_70V_44nm.csv",
+          "point_count": 13,
+          "log_rmse_decades": 0.3768398624283151,
+          "log_mae_decades": 0.27247644754661243,
+          "max_abs_log_error_decades": 1.100712068040398,
+          "on_current_relative_error_percent": -47.09345321208065
+        }
+      }
+    },
+    "NFET_CPP48": {
+      "fit_profile": "minimum_abs_XL",
+      "success": true,
+      "termination": "`ftol` termination condition is satisfied.",
+      "scipy_nfev": 19,
+      "hspice_evaluations": 115,
+      "cost": 0.17224343071384438,
+      "optimality": 0.0470263685145951,
+      "parameters": {
+        "U0": 0.002912543796083909,
+        "XL": -1.540104491500995e-09,
+        "DVTSHIFT": 0.4907139419468307,
+        "DeltaWGAA": -2.271707028292407e-09,
+        "DeltaTGAA": 2.3587533166170743e-09,
+        "EOT_0": 3.5151126051352767e-10
+      },
+      "effective_Lg_nm": 14.459895508499006,
+      "curves": {
+        "Vd_0.05": {
+          "source": "nfet_idvg_0_05V_48nm.csv",
+          "point_count": 20,
+          "log_rmse_decades": 0.09089503847374726,
+          "log_mae_decades": 0.05903575955835536,
+          "max_abs_log_error_decades": 0.2898119718446548,
+          "on_current_relative_error_percent": 7.598993714012137
+        },
+        "Vd_0.70": {
+          "source": "nfet_idvg_0_70V_48nm.csv",
+          "point_count": 16,
+          "log_rmse_decades": 0.08407403666744925,
+          "log_mae_decades": 0.07313622560864369,
+          "max_abs_log_error_decades": 0.13737966587374117,
+          "on_current_relative_error_percent": -1.5466391755059816
+        }
+      },
+      "note": "Reused CPP44 NFET fit because CPP44/CPP48 CSV curves are identical."
+    },
+    "PFET_CPP48": {
+      "fit_profile": "minimum_abs_XL",
+      "success": true,
+      "termination": "Both `ftol` and `xtol` termination conditions are satisfied.",
+      "scipy_nfev": 30,
+      "hspice_evaluations": 180,
+      "cost": 0.4086449638996236,
+      "optimality": 0.11605172247152913,
+      "parameters": {
+        "U0": 0.004105893202262211,
+        "XL": 8.014837613340222e-10,
+        "DVTSHIFT": 0.9999716596335166,
+        "DeltaWGAA": 5.827120507050987e-09,
+        "DeltaTGAA": 1.7086903755650234e-09,
+        "EOT_0": 1.9059270541548725e-09
+      },
+      "effective_Lg_nm": 16.801483761334023,
+      "curves": {
+        "Vd_0.05": {
+          "source": "pfet_idvg_0_05V_48nm.csv",
+          "point_count": 13,
+          "log_rmse_decades": 0.1279634695727745,
+          "log_mae_decades": 0.10671386355564681,
+          "max_abs_log_error_decades": 0.22086264422201562,
+          "on_current_relative_error_percent": 4.219341212701999
+        },
+        "Vd_0.70": {
+          "source": "pfet_idvg_0_70V_48nm.csv",
+          "point_count": 12,
+          "log_rmse_decades": 0.1971845317760193,
+          "log_mae_decades": 0.16008460412868356,
+          "max_abs_log_error_decades": 0.46553122034573136,
+          "on_current_relative_error_percent": -41.460985757770615
+        }
+      }
+    }
+  },
+  "output_models": [
+    "fitted_va_min_xl\\cpp44\\test_fet_n.va",
+    "fitted_va_min_xl\\cpp44\\test_fet_p.va",
+    "fitted_va_min_xl\\cpp48\\test_fet_n.va",
+    "fitted_va_min_xl\\cpp48\\test_fet_p.va"
+  ],
+  "comparison_plot": "fitted_va_min_xl\\fit_comparison.png"
+}

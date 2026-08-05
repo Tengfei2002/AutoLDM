@@ -1,0 +1,69 @@
+ ****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: test_pex_smoke.sp                                                 
+  Command line options: C:\synopsys\Hspice_P-2019.06-SP1-1\WIN64\hspice.com -i test_pex_smoke.sp -o C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\Hspice\results\sram1.txt\raw\test_pex_smoke\test_pex_smoke
+  Start time: Mon Aug  3 17:38:00 2026
+  lic:  
+  lic: FLEXlm: SDK_12.3 
+  lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM 
+  lic: HOSTID: "00155da0660f"       PID:      7992 
+  lic: Using FLEXlm license file: 
+  lic: 27000@LAPTOP-K9QP6UAM 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12 
+  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM 
+  lic:   
+ **error** *pvaE* TODO: symbol name mapping 0:314
+
+
+          ***** job aborted
+1****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+ ******  
+ 
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    20
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       0 # elements   =       0
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       0
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  readin             0.01
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         62.13 megabytes
+           total cpu time            0.22 seconds
+           total elapsed time        0.25 seconds
+           job started at     17:38:00 08/03/2026
+           job ended   at     17:38:00 08/03/2026
+           job total runtime         0.25 seconds
+
+
+  lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.03(s)

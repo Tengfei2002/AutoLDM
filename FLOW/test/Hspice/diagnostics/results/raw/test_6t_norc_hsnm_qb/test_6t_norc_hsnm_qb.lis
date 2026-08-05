@@ -1,0 +1,1982 @@
+ ****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: test_6t_norc_hsnm_qb.sp                                           
+  Command line options: C:\synopsys\Hspice_P-2019.06-SP1-1\WIN64\hspice.com -i test_6t_norc_hsnm_qb.sp -o C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\Hspice\diagnostics\results\raw\test_6t_norc_hsnm_qb\test_6t_norc_hsnm_qb
+  Start time: Mon Aug  3 20:16:01 2026
+  lic:  
+  lic: FLEXlm: SDK_12.3 
+  lic: USER:   Tengfei              HOSTNAME: LAPTOP-K9QP6UAM 
+  lic: HOSTID: "00155da0660f"       PID:      5188 
+  lic: Using FLEXlm license file: 
+  lic: 27000@LAPTOP-K9QP6UAM 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 30-dec-2030/2030.12 
+  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@LAPTOP-K9QP6UAM 
+  lic:   
+ **info** *pvaI* Module (nmos_lvt): 4 unexpanded port, 0 init, 980 behav, 4 contrib, 136/1414 expr(s)
+
+ **info** *pvaI*        Has DIS(ST), 2/146 afCount, 0 MT, sys, IO(0/0/1/0)
+
+ **info** *pvaI*        0 gmdIsThreadSafe (ST)
+
+ **info** *pvaI*        0 const-G and 0 const-C, Has switchBranch, 22 bypassOpt, 0 bus2scalar, 0 vwb
+
+ **info** *pvaI*        set_va_exp = 600 set by default
+
+ **warning** *pvaW*        variable 'tgaamax' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:49)
+
+ **warning** *pvaW*                   To relax this rule, use 'setenv PVA_KEEP_VARS 1' to keep variables for probing.
+
+ **warning** *pvaW*        variable 'tgaamin' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:50)
+
+ **warning** *pvaW*        variable 'HFIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:455)
+
+ **warning** *pvaW*        variable 'Inv_L' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2272)
+
+ **warning** *pvaW*        variable 'Inv_NFIN' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2273)
+
+ **warning** *pvaW*        variable 'Inv_LNFIN' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2274)
+
+ **warning** *pvaW*        variable 'Inv_W' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2275)
+
+ **warning** *pvaW*        variable 'Inv_WL' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2276)
+
+ **warning** *pvaW*        variable 'WDIM0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:489)
+
+ **warning** *pvaW*        variable 'WDIMR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:490)
+
+ **warning** *pvaW*        variable 'WSSP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:491)
+
+ **warning** *pvaW*        variable 'WSSPR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:492)
+
+ **warning** *pvaW*        variable 'DIM1H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:494)
+
+ **warning** *pvaW*        variable 'DIMENSION1_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:495)
+
+ **warning** *pvaW*        variable 'DIM2H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:496)
+
+ **warning** *pvaW*        variable 'DIMENSION2_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:497)
+
+ **warning** *pvaW*        variable 'DIM3H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:498)
+
+ **warning** *pvaW*        variable 'DIMENSION3_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:499)
+
+ **warning** *pvaW*        variable 'DSSP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:500)
+
+ **warning** *pvaW*        variable 'DSSP2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:501)
+
+ **warning** *pvaW*        variable 'DSSP3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:502)
+
+ **warning** *pvaW*        variable 'SSP1_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:503)
+
+ **warning** *pvaW*        variable 'SSP2_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:504)
+
+ **warning** *pvaW*        variable 'SSP3_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:505)
+
+ **warning** *pvaW*        variable 'TSRE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:507)
+
+ **warning** *pvaW*        variable 'TDWSE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:508)
+
+ **warning** *pvaW*        variable 'TSRE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:509)
+
+ **warning** *pvaW*        variable 'TDWSE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:510)
+
+ **warning** *pvaW*        variable 'TSRQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:512)
+
+ **warning** *pvaW*        variable 'TDWSQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:513)
+
+ **warning** *pvaW*        variable 'TSRQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:514)
+
+ **warning** *pvaW*        variable 'TDWSQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:515)
+
+ **warning** *pvaW*        variable 'TSRQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:516)
+
+ **warning** *pvaW*        variable 'TDWSQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:517)
+
+ **warning** *pvaW*        variable 'WGAANOM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:519)
+
+ **warning** *pvaW*        variable 'WSFE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:520)
+
+ **warning** *pvaW*        variable 'WSFE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:521)
+
+ **warning** *pvaW*        variable 'E2NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:523)
+
+ **warning** *pvaW*        variable 'E3NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:524)
+
+ **warning** *pvaW*        variable 'MFE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:526)
+
+ **warning** *pvaW*        variable 'MFE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:527)
+
+ **warning** *pvaW*        variable 'MFQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:529)
+
+ **warning** *pvaW*        variable 'MFQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:530)
+
+ **warning** *pvaW*        variable 'MFQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:531)
+
+ **warning** *pvaW*        variable 'WSFQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:533)
+
+ **warning** *pvaW*        variable 'WSFQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:534)
+
+ **warning** *pvaW*        variable 'WSFQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:535)
+
+ **warning** *pvaW*        variable 'MFQ1NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:537)
+
+ **warning** *pvaW*        variable 'MFQ2NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:538)
+
+ **warning** *pvaW*        variable 'MFQ3NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:539)
+
+ **warning** *pvaW*        variable 'QMFACTOR_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:541)
+
+ **warning** *pvaW*        variable 'QMTCENCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:543)
+
+ **warning** *pvaW*        variable 'ETAMOBTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:551)
+
+ **warning** *pvaW*        variable 'ETAMOB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:552)
+
+ **warning** *pvaW*        variable 'ETAMOBTNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:553)
+
+ **warning** *pvaW*        variable 'ETAMOBIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:554)
+
+ **warning** *pvaW*        variable 'UA' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:555)
+
+ **warning** *pvaW*        variable 'UATHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:556)
+
+ **warning** *pvaW*        variable 'UATSAT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:557)
+
+ **warning** *pvaW*        variable 'UARTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:558)
+
+ **warning** *pvaW*        variable 'UATNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:559)
+
+ **warning** *pvaW*        variable 'UAIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:560)
+
+ **warning** *pvaW*        variable 'EUTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:561)
+
+ **warning** *pvaW*        variable 'EU' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:562)
+
+ **warning** *pvaW*        variable 'EUPTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:563)
+
+ **warning** *pvaW*        variable 'EUTNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:564)
+
+ **warning** *pvaW*        variable 'EUIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:565)
+
+ **warning** *pvaW*        variable 'U0ETAWSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:566)
+
+ **warning** *pvaW*        variable 'EGBULK' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:567)
+
+ **warning** *pvaW*        variable 'U0EMSM1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:568)
+
+ **warning** *pvaW*        variable 'U0EMSM2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:569)
+
+ **warning** *pvaW*        variable 'UDTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:572)
+
+ **warning** *pvaW*        variable 'UD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:573)
+
+ **warning** *pvaW*        variable 'UDTSAT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:574)
+
+ **warning** *pvaW*        variable 'UDPTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:575)
+
+ **warning** *pvaW*        variable 'PSAT_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:582)
+
+ **warning** *pvaW*        variable 'PSATCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:583)
+
+ **warning** *pvaW*        variable 'DELTAVSAT_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:584)
+
+ **warning** *pvaW*        variable 'DELTAVSATCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:585)
+
+ **warning** *pvaW*        variable 'PTWG_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:586)
+
+ **warning** *pvaW*        variable 'PCLMG' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:613)
+
+ **warning** *pvaW*        variable 'PCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:618)
+
+ **warning** *pvaW*        variable 'LPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:619)
+
+ **warning** *pvaW*        variable 'NPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:620)
+
+ **warning** *pvaW*        variable 'PPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:621)
+
+ **warning** *pvaW*        variable 'WPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:622)
+
+ **warning** *pvaW*        variable 'P2PCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:623)
+
+ **warning** *pvaW*        variable 'PCLMCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:625)
+
+ **warning** *pvaW*        variable 'DVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:627)
+
+ **warning** *pvaW*        variable 'LDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:628)
+
+ **warning** *pvaW*        variable 'NDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:629)
+
+ **warning** *pvaW*        variable 'PDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:630)
+
+ **warning** *pvaW*        variable 'WDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:631)
+
+ **warning** *pvaW*        variable 'P2DVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:632)
+
+ **warning** *pvaW*        variable 'DVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:634)
+
+ **warning** *pvaW*        variable 'LDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:635)
+
+ **warning** *pvaW*        variable 'NDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:636)
+
+ **warning** *pvaW*        variable 'PDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:637)
+
+ **warning** *pvaW*        variable 'WDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:638)
+
+ **warning** *pvaW*        variable 'P2DVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:639)
+
+ **warning** *pvaW*        variable 'DSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:641)
+
+ **warning** *pvaW*        variable 'LDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:642)
+
+ **warning** *pvaW*        variable 'NDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:643)
+
+ **warning** *pvaW*        variable 'PDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:644)
+
+ **warning** *pvaW*        variable 'WDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:645)
+
+ **warning** *pvaW*        variable 'P2DSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:646)
+
+ **warning** *pvaW*        variable 'LPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:648)
+
+ **warning** *pvaW*        variable 'LLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:649)
+
+ **warning** *pvaW*        variable 'NLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:650)
+
+ **warning** *pvaW*        variable 'PLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:651)
+
+ **warning** *pvaW*        variable 'WLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:652)
+
+ **warning** *pvaW*        variable 'P2LPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:653)
+
+ **warning** *pvaW*        variable 'CDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:655)
+
+ **warning** *pvaW*        variable 'LCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:656)
+
+ **warning** *pvaW*        variable 'NCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:657)
+
+ **warning** *pvaW*        variable 'PCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:658)
+
+ **warning** *pvaW*        variable 'WCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:659)
+
+ **warning** *pvaW*        variable 'P2CDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:660)
+
+ **warning** *pvaW*        variable 'CDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:662)
+
+ **warning** *pvaW*        variable 'LCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:663)
+
+ **warning** *pvaW*        variable 'NCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:664)
+
+ **warning** *pvaW*        variable 'PCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:665)
+
+ **warning** *pvaW*        variable 'WCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:666)
+
+ **warning** *pvaW*        variable 'P2CDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:667)
+
+ **warning** *pvaW*        variable 'CIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:669)
+
+ **warning** *pvaW*        variable 'LCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:670)
+
+ **warning** *pvaW*        variable 'NCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:671)
+
+ **warning** *pvaW*        variable 'PCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:672)
+
+ **warning** *pvaW*        variable 'WCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:673)
+
+ **warning** *pvaW*        variable 'P2CIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:674)
+
+ **warning** *pvaW*        variable 'DVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:676)
+
+ **warning** *pvaW*        variable 'LDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:677)
+
+ **warning** *pvaW*        variable 'NDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:678)
+
+ **warning** *pvaW*        variable 'PDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:679)
+
+ **warning** *pvaW*        variable 'WDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:680)
+
+ **warning** *pvaW*        variable 'P2DVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:681)
+
+ **warning** *pvaW*        variable 'ETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:683)
+
+ **warning** *pvaW*        variable 'LETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:684)
+
+ **warning** *pvaW*        variable 'NETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:685)
+
+ **warning** *pvaW*        variable 'PETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:686)
+
+ **warning** *pvaW*        variable 'WETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:687)
+
+ **warning** *pvaW*        variable 'P2ETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:688)
+
+ **warning** *pvaW*        variable 'DVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:690)
+
+ **warning** *pvaW*        variable 'LDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:691)
+
+ **warning** *pvaW*        variable 'NDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:692)
+
+ **warning** *pvaW*        variable 'PDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:693)
+
+ **warning** *pvaW*        variable 'WDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:694)
+
+ **warning** *pvaW*        variable 'P2DVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:695)
+
+ **warning** *pvaW*        variable 'DVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:697)
+
+ **warning** *pvaW*        variable 'LDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:698)
+
+ **warning** *pvaW*        variable 'NDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:699)
+
+ **warning** *pvaW*        variable 'PDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:700)
+
+ **warning** *pvaW*        variable 'WDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:701)
+
+ **warning** *pvaW*        variable 'P2DVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:702)
+
+ **warning** *pvaW*        variable 'K1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:704)
+
+ **warning** *pvaW*        variable 'LK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:705)
+
+ **warning** *pvaW*        variable 'NK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:706)
+
+ **warning** *pvaW*        variable 'PK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:707)
+
+ **warning** *pvaW*        variable 'WK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:708)
+
+ **warning** *pvaW*        variable 'P2K1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:709)
+
+ **warning** *pvaW*        variable 'CKAPPAS_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:716)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:909)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:910)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:911)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:912)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:913)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:914)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:915)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:916)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:917)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:918)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:919)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:920)
+
+ **warning** *pvaW*        variable 'nnquab3_4_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:936)
+
+ **warning** *pvaW*        variable 'nnquab3_5_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:937)
+
+ **warning** *pvaW*        variable 'nnquab3_6_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:938)
+
+ **warning** *pvaW*        variable 'nnquab3_7_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:939)
+
+ **warning** *pvaW*        variable 'gidl_output6' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1455)
+
+ **warning** *pvaW*        variable 'gidl_output7' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1456)
+
+ **warning** *pvaW*        variable 'cv_output15' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2246)
+
+ **warning** *pvaW*        variable 'CGG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2709)
+
+ **warning** *pvaW*        variable 'CGD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2710)
+
+ **warning** *pvaW*        variable 'CGS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2711)
+
+ **warning** *pvaW*        variable 'CDG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2712)
+
+ **warning** *pvaW*        variable 'CDD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2713)
+
+ **warning** *pvaW*        variable 'CDS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2714)
+
+ **warning** *pvaW*        variable 'CSG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2715)
+
+ **warning** *pvaW*        variable 'CSD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2716)
+
+ **warning** *pvaW*        variable 'CSS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2717)
+
+ **warning** *pvaW*        variable 'tmp1_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1998)
+
+ **warning** *pvaW*        variable 'tmp2_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1999)
+
+ **warning** *pvaW*        variable 'tmp3_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2000)
+
+ **warning** *pvaW*        variable 'tmp4_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2001)
+
+ **warning** *pvaW*        variable 'tmp5_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2002)
+
+ **warning** *pvaW*        variable 'vfbsd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1203)
+
+ **warning** *pvaW*        variable 'vgs_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1203)
+
+ **warning** *pvaW*        variable 'vgd_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1203)
+
+ **warning** *pvaW*        variable 'WeffB' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2321)
+
+ **warning** *pvaW*        variable 'd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'd2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'd3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'p1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'p2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'p3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Tp1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Tp2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Tp3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Wp1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Wp2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'Wp3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1207)
+
+ **warning** *pvaW*        variable 'VnD1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qndnf1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'VnD2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qndnf2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'VnD3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qndnf3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3d0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3d' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'ncq' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'QT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'QT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'ne2h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'pe2h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'ne3h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'pe3h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc1l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'pnc1l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc2l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'pnc2l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'pnc3l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qe2n' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qe3n' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qe2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qe3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc1l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc1ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc2l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc2ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'nc3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qnd10' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qnd20' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'qnd30' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1215)
+
+ **warning** *pvaW*        variable 'GM' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2706)
+
+ **warning** *pvaW*        variable 'GDS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2707)
+
+ **warning** *pvaW*        variable 'qndd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1219)
+
+ **warning** *pvaW*        variable 'qndd2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1219)
+
+ **warning** *pvaW*        variable 'qndd3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1219)
+
+ **warning** *pvaW*        variable 'QT2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT4' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'qnds1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT5' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT6' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT7' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'qnds2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT8' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT9' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'QT10' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'qnds3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'TOXG1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'igtemp' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'Tox_ratio' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'T0_g' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'igc' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'igs' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'igd' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'ig' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'vgd' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1238)
+
+ **warning** *pvaW*        variable 'NTOX_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut4' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut5' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'mut6' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:1244)
+
+ **warning** *pvaW*        variable 'ids_tmp' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_n.va:2656)
+
+ **info** *pvaI*        port 'B' at 4 declared, but not used
+
+ **info** *pvaI*        generated 0 flow node(s) during compilation.
+
+ **info** *pvaI* Module (pmos_lvt): 4 unexpanded port, 0 init, 1005 behav, 4 contrib, 136/1439 expr(s)
+
+ **info** *pvaI*        Has DIS(ST), 2/146 afCount, 0 MT, sys, IO(0/0/1/0)
+
+ **info** *pvaI*        0 gmdIsThreadSafe (ST)
+
+ **info** *pvaI*        0 const-G and 0 const-C, Has switchBranch, 22 bypassOpt, 0 bus2scalar, 0 vwb
+
+ **info** *pvaI*        set_va_exp = 600 set by default
+
+ **warning** *pvaW*        variable 'tgaamax' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:44)
+
+ **warning** *pvaW*        variable 'tgaamin' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:45)
+
+ **warning** *pvaW*        variable 'HFIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:449)
+
+ **warning** *pvaW*        variable 'Inv_L' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2313)
+
+ **warning** *pvaW*        variable 'Inv_NFIN' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2314)
+
+ **warning** *pvaW*        variable 'Inv_LNFIN' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2315)
+
+ **warning** *pvaW*        variable 'Inv_W' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2316)
+
+ **warning** *pvaW*        variable 'Inv_WL' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2317)
+
+ **warning** *pvaW*        variable 'WDIM0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:484)
+
+ **warning** *pvaW*        variable 'WDIMR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:485)
+
+ **warning** *pvaW*        variable 'WSSP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:486)
+
+ **warning** *pvaW*        variable 'WSSPR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:487)
+
+ **warning** *pvaW*        variable 'DIM1H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:489)
+
+ **warning** *pvaW*        variable 'DIMENSION1_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:490)
+
+ **warning** *pvaW*        variable 'DIM2H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:491)
+
+ **warning** *pvaW*        variable 'DIMENSION2_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:492)
+
+ **warning** *pvaW*        variable 'DIM3H' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:493)
+
+ **warning** *pvaW*        variable 'DIMENSION3_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:494)
+
+ **warning** *pvaW*        variable 'DSSP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:495)
+
+ **warning** *pvaW*        variable 'DSSP2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:496)
+
+ **warning** *pvaW*        variable 'DSSP3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:497)
+
+ **warning** *pvaW*        variable 'SSP1_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:498)
+
+ **warning** *pvaW*        variable 'SSP2_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:499)
+
+ **warning** *pvaW*        variable 'SSP3_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:500)
+
+ **warning** *pvaW*        variable 'TSRE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:502)
+
+ **warning** *pvaW*        variable 'TDWSE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:503)
+
+ **warning** *pvaW*        variable 'TSRE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:504)
+
+ **warning** *pvaW*        variable 'TDWSE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:505)
+
+ **warning** *pvaW*        variable 'TSRQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:507)
+
+ **warning** *pvaW*        variable 'TDWSQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:508)
+
+ **warning** *pvaW*        variable 'TSRQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:509)
+
+ **warning** *pvaW*        variable 'TDWSQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:510)
+
+ **warning** *pvaW*        variable 'TSRQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:511)
+
+ **warning** *pvaW*        variable 'TDWSQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:512)
+
+ **warning** *pvaW*        variable 'WGAANOM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:514)
+
+ **warning** *pvaW*        variable 'WSFE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:515)
+
+ **warning** *pvaW*        variable 'WSFE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:516)
+
+ **warning** *pvaW*        variable 'E2NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:518)
+
+ **warning** *pvaW*        variable 'E3NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:519)
+
+ **warning** *pvaW*        variable 'MFE2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:521)
+
+ **warning** *pvaW*        variable 'MFE3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:522)
+
+ **warning** *pvaW*        variable 'MFQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:524)
+
+ **warning** *pvaW*        variable 'MFQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:525)
+
+ **warning** *pvaW*        variable 'MFQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:526)
+
+ **warning** *pvaW*        variable 'WSFQ1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:528)
+
+ **warning** *pvaW*        variable 'WSFQ2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:529)
+
+ **warning** *pvaW*        variable 'WSFQ3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:530)
+
+ **warning** *pvaW*        variable 'MFQ1NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:532)
+
+ **warning** *pvaW*        variable 'MFQ2NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:533)
+
+ **warning** *pvaW*        variable 'MFQ3NOM_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:534)
+
+ **warning** *pvaW*        variable 'QMFACTOR_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:536)
+
+ **warning** *pvaW*        variable 'QMTCENCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:538)
+
+ **warning** *pvaW*        variable 'ETAMOBTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:546)
+
+ **warning** *pvaW*        variable 'ETAMOB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:547)
+
+ **warning** *pvaW*        variable 'ETAMOBTNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:548)
+
+ **warning** *pvaW*        variable 'ETAMOBIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:549)
+
+ **warning** *pvaW*        variable 'UA' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:550)
+
+ **warning** *pvaW*        variable 'UATHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:551)
+
+ **warning** *pvaW*        variable 'UATSAT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:552)
+
+ **warning** *pvaW*        variable 'UARTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:553)
+
+ **warning** *pvaW*        variable 'UATNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:554)
+
+ **warning** *pvaW*        variable 'UAIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:555)
+
+ **warning** *pvaW*        variable 'EUTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:556)
+
+ **warning** *pvaW*        variable 'EU' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:557)
+
+ **warning** *pvaW*        variable 'EUPTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:558)
+
+ **warning** *pvaW*        variable 'EUTNI' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:559)
+
+ **warning** *pvaW*        variable 'EUIR' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:560)
+
+ **warning** *pvaW*        variable 'U0ETAWSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:561)
+
+ **warning** *pvaW*        variable 'EGBULK' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:562)
+
+ **warning** *pvaW*        variable 'U0EMSM1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:563)
+
+ **warning** *pvaW*        variable 'U0EMSM2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:564)
+
+ **warning** *pvaW*        variable 'UDTHIN' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:567)
+
+ **warning** *pvaW*        variable 'UD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:568)
+
+ **warning** *pvaW*        variable 'UDTSAT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:569)
+
+ **warning** *pvaW*        variable 'UDPTSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:570)
+
+ **warning** *pvaW*        variable 'PSAT_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:577)
+
+ **warning** *pvaW*        variable 'PSATCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:578)
+
+ **warning** *pvaW*        variable 'DELTAVSAT_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:579)
+
+ **warning** *pvaW*        variable 'DELTAVSATCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:580)
+
+ **warning** *pvaW*        variable 'PTWG_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:581)
+
+ **warning** *pvaW*        variable 'PCLMG' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:608)
+
+ **warning** *pvaW*        variable 'PCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:613)
+
+ **warning** *pvaW*        variable 'LPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:614)
+
+ **warning** *pvaW*        variable 'NPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:615)
+
+ **warning** *pvaW*        variable 'PPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:616)
+
+ **warning** *pvaW*        variable 'WPCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:617)
+
+ **warning** *pvaW*        variable 'P2PCLM' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:618)
+
+ **warning** *pvaW*        variable 'PCLMCV_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:620)
+
+ **warning** *pvaW*        variable 'DVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:622)
+
+ **warning** *pvaW*        variable 'LDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:623)
+
+ **warning** *pvaW*        variable 'NDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:624)
+
+ **warning** *pvaW*        variable 'PDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:625)
+
+ **warning** *pvaW*        variable 'WDVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:626)
+
+ **warning** *pvaW*        variable 'P2DVT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:627)
+
+ **warning** *pvaW*        variable 'DVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:629)
+
+ **warning** *pvaW*        variable 'LDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:630)
+
+ **warning** *pvaW*        variable 'NDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:631)
+
+ **warning** *pvaW*        variable 'PDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:632)
+
+ **warning** *pvaW*        variable 'WDVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:633)
+
+ **warning** *pvaW*        variable 'P2DVT1SS' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:634)
+
+ **warning** *pvaW*        variable 'DSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:636)
+
+ **warning** *pvaW*        variable 'LDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:637)
+
+ **warning** *pvaW*        variable 'NDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:638)
+
+ **warning** *pvaW*        variable 'PDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:639)
+
+ **warning** *pvaW*        variable 'WDSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:640)
+
+ **warning** *pvaW*        variable 'P2DSUB' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:641)
+
+ **warning** *pvaW*        variable 'LPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:643)
+
+ **warning** *pvaW*        variable 'LLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:644)
+
+ **warning** *pvaW*        variable 'NLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:645)
+
+ **warning** *pvaW*        variable 'PLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:646)
+
+ **warning** *pvaW*        variable 'WLPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:647)
+
+ **warning** *pvaW*        variable 'P2LPE0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:648)
+
+ **warning** *pvaW*        variable 'CDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:650)
+
+ **warning** *pvaW*        variable 'LCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:651)
+
+ **warning** *pvaW*        variable 'NCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:652)
+
+ **warning** *pvaW*        variable 'PCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:653)
+
+ **warning** *pvaW*        variable 'WCDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:654)
+
+ **warning** *pvaW*        variable 'P2CDSC' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:655)
+
+ **warning** *pvaW*        variable 'CDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:657)
+
+ **warning** *pvaW*        variable 'LCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:658)
+
+ **warning** *pvaW*        variable 'NCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:659)
+
+ **warning** *pvaW*        variable 'PCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:660)
+
+ **warning** *pvaW*        variable 'WCDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:661)
+
+ **warning** *pvaW*        variable 'P2CDSCD' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:662)
+
+ **warning** *pvaW*        variable 'CIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:664)
+
+ **warning** *pvaW*        variable 'LCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:665)
+
+ **warning** *pvaW*        variable 'NCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:666)
+
+ **warning** *pvaW*        variable 'PCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:667)
+
+ **warning** *pvaW*        variable 'WCIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:668)
+
+ **warning** *pvaW*        variable 'P2CIT' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:669)
+
+ **warning** *pvaW*        variable 'DVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:671)
+
+ **warning** *pvaW*        variable 'LDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:672)
+
+ **warning** *pvaW*        variable 'NDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:673)
+
+ **warning** *pvaW*        variable 'PDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:674)
+
+ **warning** *pvaW*        variable 'WDVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:675)
+
+ **warning** *pvaW*        variable 'P2DVT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:676)
+
+ **warning** *pvaW*        variable 'ETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:678)
+
+ **warning** *pvaW*        variable 'LETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:679)
+
+ **warning** *pvaW*        variable 'NETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:680)
+
+ **warning** *pvaW*        variable 'PETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:681)
+
+ **warning** *pvaW*        variable 'WETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:682)
+
+ **warning** *pvaW*        variable 'P2ETA0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:683)
+
+ **warning** *pvaW*        variable 'DVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:685)
+
+ **warning** *pvaW*        variable 'LDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:686)
+
+ **warning** *pvaW*        variable 'NDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:687)
+
+ **warning** *pvaW*        variable 'PDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:688)
+
+ **warning** *pvaW*        variable 'WDVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:689)
+
+ **warning** *pvaW*        variable 'P2DVTP0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:690)
+
+ **warning** *pvaW*        variable 'DVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:692)
+
+ **warning** *pvaW*        variable 'LDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:693)
+
+ **warning** *pvaW*        variable 'NDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:694)
+
+ **warning** *pvaW*        variable 'PDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:695)
+
+ **warning** *pvaW*        variable 'WDVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:696)
+
+ **warning** *pvaW*        variable 'P2DVTP1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:697)
+
+ **warning** *pvaW*        variable 'K1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:699)
+
+ **warning** *pvaW*        variable 'LK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:700)
+
+ **warning** *pvaW*        variable 'NK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:701)
+
+ **warning** *pvaW*        variable 'PK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:702)
+
+ **warning** *pvaW*        variable 'WK1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:703)
+
+ **warning** *pvaW*        variable 'P2K1RSCE' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:704)
+
+ **warning** *pvaW*        variable 'CKAPPAS_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:711)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:904)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:905)
+
+ **warning** *pvaW*        variable 'nnquaw3_4_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:906)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:907)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:908)
+
+ **warning** *pvaW*        variable 'nnquaw3_5_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:909)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:910)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:911)
+
+ **warning** *pvaW*        variable 'nnquaw3_6_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:912)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_1_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:913)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_2_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:914)
+
+ **warning** *pvaW*        variable 'nnquaw3_7_3_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:915)
+
+ **warning** *pvaW*        variable 'nnquab3_4_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:931)
+
+ **warning** *pvaW*        variable 'nnquab3_5_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:932)
+
+ **warning** *pvaW*        variable 'nnquab3_6_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:933)
+
+ **warning** *pvaW*        variable 'nnquab3_7_cap' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:934)
+
+ **warning** *pvaW*        variable 'gidl_output6' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1452)
+
+ **warning** *pvaW*        variable 'gidl_output7' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1453)
+
+ **warning** *pvaW*        variable 'cv_output15' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2287)
+
+ **warning** *pvaW*        variable 'CGG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2743)
+
+ **warning** *pvaW*        variable 'CGD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2744)
+
+ **warning** *pvaW*        variable 'CGS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2745)
+
+ **warning** *pvaW*        variable 'CDG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2746)
+
+ **warning** *pvaW*        variable 'CDD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2747)
+
+ **warning** *pvaW*        variable 'CDS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2748)
+
+ **warning** *pvaW*        variable 'CSG' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2749)
+
+ **warning** *pvaW*        variable 'CSD' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2750)
+
+ **warning** *pvaW*        variable 'CSS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2751)
+
+ **warning** *pvaW*        variable 'tmp1_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2034)
+
+ **warning** *pvaW*        variable 'tmp2_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2035)
+
+ **warning** *pvaW*        variable 'tmp3_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2036)
+
+ **warning** *pvaW*        variable 'tmp4_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2037)
+
+ **warning** *pvaW*        variable 'tmp5_pku' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2038)
+
+ **warning** *pvaW*        variable 'vfbsd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1199)
+
+ **warning** *pvaW*        variable 'vgs_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1199)
+
+ **warning** *pvaW*        variable 'vgd_a' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1199)
+
+ **warning** *pvaW*        variable 'WeffB' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2361)
+
+ **warning** *pvaW*        variable 'd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'd2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'd3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'p1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'p2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'p3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Tp1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Tp2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Tp3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Wp1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Wp2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'Wp3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1203)
+
+ **warning** *pvaW*        variable 'VnD1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'VnD2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'VnD3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qndnf3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3d0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3d' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'ncq' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'QT0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'QT1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'ne2h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'pe2h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'ne3h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'pe3h' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc1l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'pnc1l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc2l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'pnc2l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3l0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'pnc3l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qe2n' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qe3n' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qe2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qe3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc1l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc1ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc2l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc2ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3l' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3ln' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'nc3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qnd10' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qnd20' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'qnd30' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1211)
+
+ **warning** *pvaW*        variable 'GM' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2740)
+
+ **warning** *pvaW*        variable 'GDS' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2741)
+
+ **warning** *pvaW*        variable 'qndd1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1215)
+
+ **warning** *pvaW*        variable 'qndd2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1215)
+
+ **warning** *pvaW*        variable 'qndd3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1215)
+
+ **warning** *pvaW*        variable 'QT2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT4' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'qnds1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT5' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT6' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT7' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'qnds2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT8' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT9' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'QT10' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'qnds3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'TOXG1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'igtemp' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'Tox_ratio' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'T0_g' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'igc' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'igs' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'igd' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'ig' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'vgd' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1234)
+
+ **warning** *pvaW*        variable 'NTOX_i' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut0' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut1' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut2' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut3' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut4' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut5' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'mut6' declared but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:1240)
+
+ **warning** *pvaW*        variable 'ids_tmp' initialized but not used in RHS, deleted (../../../INPUT_MODEL/test_fet_p.va:2690)
+
+ **info** *pvaI*        port 'B' at 4 declared, but not used
+
+ **info** *pvaI*        generated 0 flow node(s) during compilation.
+
+ **info** *pvaI* #### Total 4376 line-size(s), 272/2853 expr(s), 8 contr(s), 0 init(s), 1985 behav(s), 8 port(s)
+
+ Loading pVA library C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\Hspice\diagnostics\results\raw\test_6t_norc_hsnm_qb\test_6t_norc_hsnm_qb.pvadir\pvaRTL_win64.dll...
+1****** HSPICE -- P-2019.06-SP1-1 win64 (Sep 27 2019) ******                    
+ ******  
+ * auto-generated sram1 pex test: hsnm_qb
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xdut.                           test_6t_norc       1.00 
+        2 xdut.xn1.                       nmos_lvt(va)       1.00 
+        3 xdut.xn2.                       nmos_lvt(va)       1.00 
+        4 xdut.xn3.                       nmos_lvt(va)       1.00 
+        5 xdut.xn4.                       nmos_lvt(va)       1.00 
+        6 xdut.xp1.                       pmos_lvt(va)       1.00 
+        7 xdut.xp2.                       pmos_lvt(va)       1.00 
+ **info** *pvaI* Creating VA module (pmos_lvt) for instance XDUT.XP2 with gmd reduction
+
+ **info** *pvaI*        termCount=4 diwSize=16 probeSize=1086 Qsize=2 Isize=1
+
+ End of GMD creation on Mon Aug  3 20:16:04 2026	
+
+
+ **info** *pvaI* Creating VA module (nmos_lvt) for instance XDUT.XN4 with gmd reduction
+
+ **info** *pvaI*        termCount=4 diwSize=16 probeSize=1086 Qsize=2 Isize=1
+
+ End of GMD creation on Mon Aug  3 20:16:04 2026	
+
+
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+  Opening plot unit= 79
+ file=C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\test\Hspice\diagnostics\results\raw\test_6t_norc_hsnm_qb\test_6t_norc_hsnm_qb.pa0
+
+ End of pVA setup    on Mon Aug  3 20:16:04 2026	
+
+
+ Begin of pVA simulation on Mon Aug  3 20:16:04 2026	
+
+
+ ******
+ * auto-generated sram1 pex test: hsnm_qb
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+x
+
+ volt         voltage    voltage   
+             q          qb         
+  0.0000e+00  7.000e-01  2.310e-08 
+  1.0000e-03  7.000e-01  1.000e-03 
+  2.0000e-03  7.000e-01  2.000e-03 
+  3.0000e-03  7.000e-01  3.000e-03 
+  4.0000e-03  7.000e-01  4.000e-03 
+  5.0000e-03  7.000e-01  5.000e-03 
+  6.0000e-03  7.000e-01  6.000e-03 
+  7.0000e-03  7.000e-01  7.000e-03 
+  8.0000e-03  7.000e-01  8.000e-03 
+  9.0000e-03  7.000e-01  9.000e-03 
+  1.0000e-02  7.000e-01  1.000e-02 
+  1.1000e-02  7.000e-01  1.100e-02 
+  1.2000e-02  7.000e-01  1.200e-02 
+  1.3000e-02  7.000e-01  1.300e-02 
+  1.4000e-02  7.000e-01  1.400e-02 
+  1.5000e-02  7.000e-01  1.500e-02 
+  1.6000e-02  7.000e-01  1.600e-02 
+  1.7000e-02  7.000e-01  1.700e-02 
+  1.8000e-02  7.000e-01  1.800e-02 
+  1.9000e-02  7.000e-01  1.900e-02 
+  2.0000e-02  7.000e-01  2.000e-02 
+  2.1000e-02  7.000e-01  2.100e-02 
+  2.2000e-02  7.000e-01  2.200e-02 
+  2.3000e-02  7.000e-01  2.300e-02 
+  2.4000e-02  7.000e-01  2.400e-02 
+  2.5000e-02  7.000e-01  2.500e-02 
+  2.6000e-02  7.000e-01  2.600e-02 
+  2.7000e-02  7.000e-01  2.700e-02 
+  2.8000e-02  7.000e-01  2.800e-02 
+  2.9000e-02  7.000e-01  2.900e-02 
+  3.0000e-02  7.000e-01  3.000e-02 
+  3.1000e-02  7.000e-01  3.100e-02 
+  3.2000e-02  7.000e-01  3.200e-02 
+  3.3000e-02  7.000e-01  3.300e-02 
+  3.4000e-02  7.000e-01  3.400e-02 
+  3.5000e-02  7.000e-01  3.500e-02 
+  3.6000e-02  7.000e-01  3.600e-02 
+  3.7000e-02  7.000e-01  3.700e-02 
+  3.8000e-02  7.000e-01  3.800e-02 
+  3.9000e-02  7.000e-01  3.900e-02 
+  4.0000e-02  7.000e-01  4.000e-02 
+  4.1000e-02  7.000e-01  4.100e-02 
+  4.2000e-02  7.000e-01  4.200e-02 
+  4.3000e-02  7.000e-01  4.300e-02 
+  4.4000e-02  7.000e-01  4.400e-02 
+  4.5000e-02  7.000e-01  4.500e-02 
+  4.6000e-02  7.000e-01  4.600e-02 
+  4.7000e-02  7.000e-01  4.700e-02 
+  4.8000e-02  7.000e-01  4.800e-02 
+  4.9000e-02  7.000e-01  4.900e-02 
+  5.0000e-02  7.000e-01  5.000e-02 
+  5.1000e-02  7.000e-01  5.100e-02 
+  5.2000e-02  7.000e-01  5.200e-02 
+  5.3000e-02  7.000e-01  5.300e-02 
+  5.4000e-02  7.000e-01  5.400e-02 
+  5.5000e-02  7.000e-01  5.500e-02 
+  5.6000e-02  7.000e-01  5.600e-02 
+  5.7000e-02  7.000e-01  5.700e-02 
+  5.8000e-02  7.000e-01  5.800e-02 
+  5.9000e-02  7.000e-01  5.900e-02 
+  6.0000e-02  7.000e-01  6.000e-02 
+  6.1000e-02  7.000e-01  6.100e-02 
+  6.2000e-02  7.000e-01  6.200e-02 
+  6.3000e-02  7.000e-01  6.300e-02 
+  6.4000e-02  7.000e-01  6.400e-02 
+  6.5000e-02  7.000e-01  6.500e-02 
+  6.6000e-02  7.000e-01  6.600e-02 
+  6.7000e-02  7.000e-01  6.700e-02 
+  6.8000e-02  7.000e-01  6.800e-02 
+  6.9000e-02  7.000e-01  6.900e-02 
+  7.0000e-02  7.000e-01  7.000e-02 
+  7.1000e-02  7.000e-01  7.100e-02 
+  7.2000e-02  7.000e-01  7.200e-02 
+  7.3000e-02  7.000e-01  7.300e-02 
+  7.4000e-02  7.000e-01  7.400e-02 
+  7.5000e-02  7.000e-01  7.500e-02 
+  7.6000e-02  7.000e-01  7.600e-02 
+  7.7000e-02  7.000e-01  7.700e-02 
+  7.8000e-02  7.000e-01  7.800e-02 
+  7.9000e-02  7.000e-01  7.900e-02 
+  8.0000e-02  7.000e-01  8.000e-02 
+  8.1000e-02  7.000e-01  8.100e-02 
+  8.2000e-02  7.000e-01  8.200e-02 
+  8.3000e-02  7.000e-01  8.300e-02 
+  8.4000e-02  7.000e-01  8.400e-02 
+  8.5000e-02  7.000e-01  8.500e-02 
+  8.6000e-02  6.999e-01  8.600e-02 
+  8.7000e-02  6.999e-01  8.700e-02 
+  8.8000e-02  6.999e-01  8.800e-02 
+  8.9000e-02  6.999e-01  8.900e-02 
+  9.0000e-02  6.999e-01  9.000e-02 
+  9.1000e-02  6.999e-01  9.100e-02 
+  9.2000e-02  6.999e-01  9.200e-02 
+  9.3000e-02  6.999e-01  9.300e-02 
+  9.4000e-02  6.999e-01  9.400e-02 
+  9.5000e-02  6.999e-01  9.500e-02 
+  9.6000e-02  6.999e-01  9.600e-02 
+  9.7000e-02  6.999e-01  9.700e-02 
+  9.8000e-02  6.999e-01  9.800e-02 
+  9.9000e-02  6.999e-01  9.900e-02 
+  1.0000e-01  6.999e-01  1.000e-01 
+  1.0100e-01  6.999e-01  1.010e-01 
+  1.0200e-01  6.999e-01  1.020e-01 
+  1.0300e-01  6.999e-01  1.030e-01 
+  1.0400e-01  6.999e-01  1.040e-01 
+  1.0500e-01  6.999e-01  1.050e-01 
+  1.0600e-01  6.999e-01  1.060e-01 
+  1.0700e-01  6.999e-01  1.070e-01 
+  1.0800e-01  6.999e-01  1.080e-01 
+  1.0900e-01  6.999e-01  1.090e-01 
+  1.1000e-01  6.999e-01  1.100e-01 
+  1.1100e-01  6.999e-01  1.110e-01 
+  1.1200e-01  6.999e-01  1.120e-01 
+  1.1300e-01  6.999e-01  1.130e-01 
+  1.1400e-01  6.999e-01  1.140e-01 
+  1.1500e-01  6.999e-01  1.150e-01 
+  1.1600e-01  6.999e-01  1.160e-01 
+  1.1700e-01  6.999e-01  1.170e-01 
+  1.1800e-01  6.998e-01  1.180e-01 
+  1.1900e-01  6.998e-01  1.190e-01 
+  1.2000e-01  6.998e-01  1.200e-01 
+  1.2100e-01  6.998e-01  1.210e-01 
+  1.2200e-01  6.998e-01  1.220e-01 
+  1.2300e-01  6.998e-01  1.230e-01 
+  1.2400e-01  6.998e-01  1.240e-01 
+  1.2500e-01  6.998e-01  1.250e-01 
+  1.2600e-01  6.998e-01  1.260e-01 
+  1.2700e-01  6.998e-01  1.270e-01 
+  1.2800e-01  6.998e-01  1.280e-01 
+  1.2900e-01  6.998e-01  1.290e-01 
+  1.3000e-01  6.998e-01  1.300e-01 
+  1.3100e-01  6.998e-01  1.310e-01 
+  1.3200e-01  6.998e-01  1.320e-01 
+  1.3300e-01  6.997e-01  1.330e-01 
+  1.3400e-01  6.997e-01  1.340e-01 
+  1.3500e-01  6.997e-01  1.350e-01 
+  1.3600e-01  6.997e-01  1.360e-01 
+  1.3700e-01  6.997e-01  1.370e-01 
+  1.3800e-01  6.997e-01  1.380e-01 
+  1.3900e-01  6.997e-01  1.390e-01 
+  1.4000e-01  6.997e-01  1.400e-01 
+  1.4100e-01  6.997e-01  1.410e-01 
+  1.4200e-01  6.997e-01  1.420e-01 
+  1.4300e-01  6.996e-01  1.430e-01 
+  1.4400e-01  6.996e-01  1.440e-01 
+  1.4500e-01  6.996e-01  1.450e-01 
+  1.4600e-01  6.996e-01  1.460e-01 
+  1.4700e-01  6.996e-01  1.470e-01 
+  1.4800e-01  6.996e-01  1.480e-01 
+  1.4900e-01  6.996e-01  1.490e-01 
+  1.5000e-01  6.996e-01  1.500e-01 
+  1.5100e-01  6.995e-01  1.510e-01 
+  1.5200e-01  6.995e-01  1.520e-01 
+  1.5300e-01  6.995e-01  1.530e-01 
+  1.5400e-01  6.995e-01  1.540e-01 
+  1.5500e-01  6.995e-01  1.550e-01 
+  1.5600e-01  6.995e-01  1.560e-01 
+  1.5700e-01  6.994e-01  1.570e-01 
+  1.5800e-01  6.994e-01  1.580e-01 
+  1.5900e-01  6.994e-01  1.590e-01 
+  1.6000e-01  6.994e-01  1.600e-01 
+  1.6100e-01  6.994e-01  1.610e-01 
+  1.6200e-01  6.993e-01  1.620e-01 
+  1.6300e-01  6.993e-01  1.630e-01 
+  1.6400e-01  6.993e-01  1.640e-01 
+  1.6500e-01  6.993e-01  1.650e-01 
+  1.6600e-01  6.992e-01  1.660e-01 
+  1.6700e-01  6.992e-01  1.670e-01 
+  1.6800e-01  6.992e-01  1.680e-01 
+  1.6900e-01  6.992e-01  1.690e-01 
+  1.7000e-01  6.991e-01  1.700e-01 
+  1.7100e-01  6.991e-01  1.710e-01 
+  1.7200e-01  6.991e-01  1.720e-01 
+  1.7300e-01  6.990e-01  1.730e-01 
+  1.7400e-01  6.990e-01  1.740e-01 
+  1.7500e-01  6.990e-01  1.750e-01 
+  1.7600e-01  6.989e-01  1.760e-01 
+  1.7700e-01  6.989e-01  1.770e-01 
+  1.7800e-01  6.989e-01  1.780e-01 
+  1.7900e-01  6.988e-01  1.790e-01 
+  1.8000e-01  6.988e-01  1.800e-01 
+  1.8100e-01  6.988e-01  1.810e-01 
+  1.8200e-01  6.987e-01  1.820e-01 
+  1.8300e-01  6.987e-01  1.830e-01 
+  1.8400e-01  6.986e-01  1.840e-01 
+  1.8500e-01  6.986e-01  1.850e-01 
+  1.8600e-01  6.986e-01  1.860e-01 
+  1.8700e-01  6.985e-01  1.870e-01 
+  1.8800e-01  6.985e-01  1.880e-01 
+  1.8900e-01  6.984e-01  1.890e-01 
+  1.9000e-01  6.984e-01  1.900e-01 
+  1.9100e-01  6.983e-01  1.910e-01 
+  1.9200e-01  6.983e-01  1.920e-01 
+  1.9300e-01  6.982e-01  1.930e-01 
+  1.9400e-01  6.982e-01  1.940e-01 
+  1.9500e-01  6.981e-01  1.950e-01 
+  1.9600e-01  6.980e-01  1.960e-01 
+  1.9700e-01  6.980e-01  1.970e-01 
+  1.9800e-01  6.979e-01  1.980e-01 
+  1.9900e-01  6.978e-01  1.990e-01 
+  2.0000e-01  6.978e-01  2.000e-01 
+  2.0100e-01  6.977e-01  2.010e-01 
+  2.0200e-01  6.976e-01  2.020e-01 
+  2.0300e-01  6.976e-01  2.030e-01 
+  2.0400e-01  6.975e-01  2.040e-01 
+  2.0500e-01  6.974e-01  2.050e-01 
+  2.0600e-01  6.973e-01  2.060e-01 
+  2.0700e-01  6.973e-01  2.070e-01 
+  2.0800e-01  6.972e-01  2.080e-01 
+  2.0900e-01  6.971e-01  2.090e-01 
+  2.1000e-01  6.970e-01  2.100e-01 
+  2.1100e-01  6.969e-01  2.110e-01 
+  2.1200e-01  6.968e-01  2.120e-01 
+  2.1300e-01  6.967e-01  2.130e-01 
+  2.1400e-01  6.967e-01  2.140e-01 
+  2.1500e-01  6.966e-01  2.150e-01 
+  2.1600e-01  6.965e-01  2.160e-01 
+  2.1700e-01  6.964e-01  2.170e-01 
+  2.1800e-01  6.963e-01  2.180e-01 
+  2.1900e-01  6.961e-01  2.190e-01 
+  2.2000e-01  6.960e-01  2.200e-01 
+  2.2100e-01  6.959e-01  2.210e-01 
+  2.2200e-01  6.958e-01  2.220e-01 
+  2.2300e-01  6.957e-01  2.230e-01 
+  2.2400e-01  6.956e-01  2.240e-01 
+  2.2500e-01  6.954e-01  2.250e-01 
+  2.2600e-01  6.953e-01  2.260e-01 
+  2.2700e-01  6.952e-01  2.270e-01 
+  2.2800e-01  6.950e-01  2.280e-01 
+  2.2900e-01  6.949e-01  2.290e-01 
+  2.3000e-01  6.948e-01  2.300e-01 
+  2.3100e-01  6.946e-01  2.310e-01 
+  2.3200e-01  6.945e-01  2.320e-01 
+  2.3300e-01  6.943e-01  2.330e-01 
+  2.3400e-01  6.942e-01  2.340e-01 
+  2.3500e-01  6.940e-01  2.350e-01 
+  2.3600e-01  6.938e-01  2.360e-01 
+  2.3700e-01  6.937e-01  2.370e-01 
+  2.3800e-01  6.935e-01  2.380e-01 
+  2.3900e-01  6.933e-01  2.390e-01 
+  2.4000e-01  6.931e-01  2.400e-01 
+  2.4100e-01  6.930e-01  2.410e-01 
+  2.4200e-01  6.928e-01  2.420e-01 
+  2.4300e-01  6.926e-01  2.430e-01 
+  2.4400e-01  6.924e-01  2.440e-01 
+  2.4500e-01  6.922e-01  2.450e-01 
+  2.4600e-01  6.920e-01  2.460e-01 
+  2.4700e-01  6.917e-01  2.470e-01 
+  2.4800e-01  6.915e-01  2.480e-01 
+  2.4900e-01  6.913e-01  2.490e-01 
+  2.5000e-01  6.911e-01  2.500e-01 
+  2.5100e-01  6.908e-01  2.510e-01 
+  2.5200e-01  6.906e-01  2.520e-01 
+  2.5300e-01  6.903e-01  2.530e-01 
+  2.5400e-01  6.901e-01  2.541e-01 
+  2.5500e-01  6.898e-01  2.551e-01 
+  2.5600e-01  6.896e-01  2.561e-01 
+  2.5700e-01  6.893e-01  2.571e-01 
+  2.5800e-01  6.890e-01  2.581e-01 
+  2.5900e-01  6.887e-01  2.591e-01 
+  2.6000e-01  6.884e-01  2.601e-01 
+  2.6100e-01  6.881e-01  2.611e-01 
+  2.6200e-01  6.878e-01  2.621e-01 
+  2.6300e-01  6.875e-01  2.631e-01 
+  2.6400e-01  6.872e-01  2.641e-01 
+  2.6500e-01  6.868e-01  2.651e-01 
+  2.6600e-01  6.865e-01  2.661e-01 
+  2.6700e-01  6.861e-01  2.671e-01 
+  2.6800e-01  6.858e-01  2.681e-01 
+  2.6900e-01  6.854e-01  2.691e-01 
+  2.7000e-01  6.850e-01  2.701e-01 
+  2.7100e-01  6.846e-01  2.711e-01 
+  2.7200e-01  6.842e-01  2.721e-01 
+  2.7300e-01  6.838e-01  2.731e-01 
+  2.7400e-01  6.834e-01  2.741e-01 
+  2.7500e-01  6.829e-01  2.751e-01 
+  2.7600e-01  6.825e-01  2.761e-01 
+  2.7700e-01  6.820e-01  2.771e-01 
+  2.7800e-01  6.815e-01  2.781e-01 
+  2.7900e-01  6.810e-01  2.791e-01 
+  2.8000e-01  6.805e-01  2.801e-01 
+  2.8100e-01  6.800e-01  2.811e-01 
+  2.8200e-01  6.795e-01  2.821e-01 
+  2.8300e-01  6.789e-01  2.831e-01 
+  2.8400e-01  6.783e-01  2.841e-01 
+  2.8500e-01  6.777e-01  2.851e-01 
+  2.8600e-01  6.771e-01  2.861e-01 
+  2.8700e-01  6.765e-01  2.871e-01 
+  2.8800e-01  6.758e-01  2.881e-01 
+  2.8900e-01  6.751e-01  2.891e-01 
+  2.9000e-01  6.744e-01  2.901e-01 
+  2.9100e-01  6.737e-01  2.911e-01 
+  2.9200e-01  6.729e-01  2.921e-01 
+  2.9300e-01  6.722e-01  2.931e-01 
+  2.9400e-01  6.713e-01  2.941e-01 
+  2.9500e-01  6.705e-01  2.951e-01 
+  2.9600e-01  6.696e-01  2.961e-01 
+  2.9700e-01  6.687e-01  2.971e-01 
+  2.9800e-01  6.677e-01  2.981e-01 
+  2.9900e-01  6.667e-01  2.991e-01 
+  3.0000e-01  6.657e-01  3.001e-01 
+  3.0100e-01  6.646e-01  3.011e-01 
+  3.0200e-01  6.634e-01  3.021e-01 
+  3.0300e-01  6.623e-01  3.031e-01 
+  3.0400e-01  6.610e-01  3.041e-01 
+  3.0500e-01  6.597e-01  3.051e-01 
+  3.0600e-01  6.583e-01  3.061e-01 
+  3.0700e-01  6.568e-01  3.071e-01 
+  3.0800e-01  6.553e-01  3.081e-01 
+  3.0900e-01  6.537e-01  3.091e-01 
+  3.1000e-01  6.519e-01  3.101e-01 
+  3.1100e-01  6.501e-01  3.111e-01 
+  3.1200e-01  6.481e-01  3.121e-01 
+  3.1300e-01  6.460e-01  3.131e-01 
+  3.1400e-01  6.438e-01  3.141e-01 
+  3.1500e-01  6.414e-01  3.151e-01 
+  3.1600e-01  6.389e-01  3.161e-01 
+  3.1700e-01  6.361e-01  3.171e-01 
+  3.1800e-01  6.331e-01  3.182e-01 
+  3.1900e-01  6.298e-01  3.192e-01 
+  3.2000e-01  6.263e-01  3.202e-01 
+  3.2100e-01  6.224e-01  3.212e-01 
+  3.2200e-01  6.182e-01  3.222e-01 
+  3.2300e-01  6.135e-01  3.232e-01 
+  3.2400e-01  6.084e-01  3.242e-01 
+  3.2500e-01  6.026e-01  3.252e-01 
+  3.2600e-01  5.962e-01  3.262e-01 
+  3.2700e-01  5.891e-01  3.272e-01 
+  3.2800e-01  5.810e-01  3.282e-01 
+  3.2900e-01  5.719e-01  3.292e-01 
+  3.3000e-01  5.616e-01  3.302e-01 
+  3.3100e-01  5.500e-01  3.312e-01 
+  3.3200e-01  5.367e-01  3.322e-01 
+  3.3300e-01  5.217e-01  3.332e-01 
+  3.3400e-01  5.047e-01  3.342e-01 
+  3.3500e-01  4.854e-01  3.352e-01 
+  3.3600e-01  4.638e-01  3.362e-01 
+  3.3700e-01  4.395e-01  3.372e-01 
+  3.3800e-01  4.124e-01  3.382e-01 
+  3.3900e-01  3.824e-01  3.393e-01 
+  3.4000e-01  3.491e-01  3.403e-01 
+  3.4100e-01  3.127e-01  3.415e-01 
+  3.4200e-01  2.747e-01  3.426e-01 
+  3.4300e-01  2.380e-01  3.438e-01 
+  3.4400e-01  2.057e-01  3.450e-01 
+  3.4500e-01  1.792e-01  3.461e-01 
+  3.4600e-01  1.582e-01  3.472e-01 
+  3.4700e-01  1.417e-01  3.483e-01 
+  3.4800e-01  1.287e-01  3.493e-01 
+  3.4900e-01  1.182e-01  3.503e-01 
+  3.5000e-01  1.095e-01  3.514e-01 
+  3.5100e-01  1.023e-01  3.524e-01 
+  3.5200e-01  9.611e-02  3.534e-01 
+  3.5300e-01  9.072e-02  3.544e-01 
+  3.5400e-01  8.599e-02  3.555e-01 
+  3.5500e-01  8.176e-02  3.565e-01 
+  3.5600e-01  7.796e-02  3.575e-01 
+  3.5700e-01  7.451e-02  3.585e-01 
+  3.5800e-01  7.135e-02  3.595e-01 
+  3.5900e-01  6.844e-02  3.605e-01 
+  3.6000e-01  6.574e-02  3.615e-01 
+  3.6100e-01  6.323e-02  3.625e-01 
+  3.6200e-01  6.089e-02  3.635e-01 
+  3.6300e-01  5.869e-02  3.645e-01 
+  3.6400e-01  5.661e-02  3.655e-01 
+  3.6500e-01  5.466e-02  3.665e-01 
+  3.6600e-01  5.280e-02  3.675e-01 
+  3.6700e-01  5.105e-02  3.685e-01 
+  3.6800e-01  4.937e-02  3.695e-01 
+  3.6900e-01  4.778e-02  3.705e-01 
+  3.7000e-01  4.626e-02  3.715e-01 
+  3.7100e-01  4.481e-02  3.725e-01 
+  3.7200e-01  4.342e-02  3.735e-01 
+  3.7300e-01  4.208e-02  3.745e-01 
+  3.7400e-01  4.080e-02  3.755e-01 
+  3.7500e-01  3.957e-02  3.765e-01 
+  3.7600e-01  3.839e-02  3.775e-01 
+  3.7700e-01  3.726e-02  3.785e-01 
+  3.7800e-01  3.616e-02  3.795e-01 
+  3.7900e-01  3.511e-02  3.805e-01 
+  3.8000e-01  3.409e-02  3.815e-01 
+  3.8100e-01  3.311e-02  3.825e-01 
+  3.8200e-01  3.216e-02  3.835e-01 
+  3.8300e-01  3.124e-02  3.845e-01 
+  3.8400e-01  3.036e-02  3.855e-01 
+  3.8500e-01  2.950e-02  3.865e-01 
+  3.8600e-01  2.868e-02  3.875e-01 
+  3.8700e-01  2.788e-02  3.885e-01 
+  3.8800e-01  2.710e-02  3.895e-01 
+  3.8900e-01  2.635e-02  3.905e-01 
+  3.9000e-01  2.562e-02  3.915e-01 
+  3.9100e-01  2.492e-02  3.925e-01 
+  3.9200e-01  2.424e-02  3.935e-01 
+  3.9300e-01  2.358e-02  3.945e-01 
+  3.9400e-01  2.294e-02  3.955e-01 
+  3.9500e-01  2.231e-02  3.965e-01 
+  3.9600e-01  2.171e-02  3.975e-01 
+  3.9700e-01  2.113e-02  3.985e-01 
+  3.9800e-01  2.056e-02  3.995e-01 
+  3.9900e-01  2.001e-02  4.005e-01 
+  4.0000e-01  1.947e-02  4.015e-01 
+  4.0100e-01  1.896e-02  4.025e-01 
+  4.0200e-01  1.845e-02  4.035e-01 
+  4.0300e-01  1.796e-02  4.045e-01 
+  4.0400e-01  1.749e-02  4.055e-01 
+  4.0500e-01  1.703e-02  4.065e-01 
+  4.0600e-01  1.658e-02  4.075e-01 
+  4.0700e-01  1.615e-02  4.085e-01 
+  4.0800e-01  1.572e-02  4.095e-01 
+  4.0900e-01  1.531e-02  4.105e-01 
+  4.1000e-01  1.491e-02  4.115e-01 
+  4.1100e-01  1.453e-02  4.125e-01 
+  4.1200e-01  1.415e-02  4.135e-01 
+  4.1300e-01  1.378e-02  4.145e-01 
+  4.1400e-01  1.343e-02  4.155e-01 
+  4.1500e-01  1.308e-02  4.165e-01 
+  4.1600e-01  1.275e-02  4.175e-01 
+  4.1700e-01  1.242e-02  4.185e-01 
+  4.1800e-01  1.211e-02  4.194e-01 
+  4.1900e-01  1.180e-02  4.204e-01 
+  4.2000e-01  1.150e-02  4.214e-01 
+  4.2100e-01  1.121e-02  4.224e-01 
+  4.2200e-01  1.092e-02  4.234e-01 
+  4.2300e-01  1.065e-02  4.244e-01 
+  4.2400e-01  1.038e-02  4.254e-01 
+  4.2500e-01  1.012e-02  4.264e-01 
+  4.2600e-01  9.870e-03  4.274e-01 
+  4.2700e-01  9.624e-03  4.284e-01 
+  4.2800e-01  9.385e-03  4.294e-01 
+  4.2900e-01  9.153e-03  4.304e-01 
+  4.3000e-01  8.927e-03  4.314e-01 
+  4.3100e-01  8.707e-03  4.324e-01 
+  4.3200e-01  8.494e-03  4.334e-01 
+  4.3300e-01  8.286e-03  4.344e-01 
+  4.3400e-01  8.084e-03  4.354e-01 
+  4.3500e-01  7.888e-03  4.364e-01 
+  4.3600e-01  7.697e-03  4.374e-01 
+  4.3700e-01  7.512e-03  4.384e-01 
+  4.3800e-01  7.331e-03  4.394e-01 
+  4.3900e-01  7.155e-03  4.404e-01 
+  4.4000e-01  6.985e-03  4.414e-01 
+  4.4100e-01  6.819e-03  4.424e-01 
+  4.4200e-01  6.657e-03  4.434e-01 
+  4.4300e-01  6.500e-03  4.444e-01 
+  4.4400e-01  6.347e-03  4.454e-01 
+  4.4500e-01  6.198e-03  4.464e-01 
+  4.4600e-01  6.054e-03  4.474e-01 
+  4.4700e-01  5.913e-03  4.484e-01 
+  4.4800e-01  5.776e-03  4.494e-01 
+  4.4900e-01  5.643e-03  4.504e-01 
+  4.5000e-01  5.514e-03  4.514e-01 
+  4.5100e-01  5.388e-03  4.523e-01 
+  4.5200e-01  5.265e-03  4.533e-01 
+  4.5300e-01  5.146e-03  4.543e-01 
+  4.5400e-01  5.030e-03  4.553e-01 
+  4.5500e-01  4.918e-03  4.563e-01 
+  4.5600e-01  4.808e-03  4.573e-01 
+  4.5700e-01  4.701e-03  4.583e-01 
+  4.5800e-01  4.597e-03  4.593e-01 
+  4.5900e-01  4.496e-03  4.603e-01 
+  4.6000e-01  4.398e-03  4.613e-01 
+  4.6100e-01  4.302e-03  4.623e-01 
+  4.6200e-01  4.209e-03  4.633e-01 
+  4.6300e-01  4.119e-03  4.643e-01 
+  4.6400e-01  4.031e-03  4.653e-01 
+  4.6500e-01  3.945e-03  4.663e-01 
+  4.6600e-01  3.862e-03  4.673e-01 
+  4.6700e-01  3.781e-03  4.683e-01 
+  4.6800e-01  3.702e-03  4.693e-01 
+  4.6900e-01  3.625e-03  4.703e-01 
+  4.7000e-01  3.550e-03  4.713e-01 
+  4.7100e-01  3.478e-03  4.723e-01 
+  4.7200e-01  3.407e-03  4.733e-01 
+  4.7300e-01  3.338e-03  4.743e-01 
+  4.7400e-01  3.271e-03  4.753e-01 
+  4.7500e-01  3.206e-03  4.763e-01 
+  4.7600e-01  3.142e-03  4.773e-01 
+  4.7700e-01  3.081e-03  4.783e-01 
+  4.7800e-01  3.021e-03  4.793e-01 
+  4.7900e-01  2.962e-03  4.803e-01 
+  4.8000e-01  2.905e-03  4.812e-01 
+  4.8100e-01  2.850e-03  4.822e-01 
+  4.8200e-01  2.796e-03  4.832e-01 
+  4.8300e-01  2.744e-03  4.842e-01 
+  4.8400e-01  2.693e-03  4.852e-01 
+  4.8500e-01  2.643e-03  4.862e-01 
+  4.8600e-01  2.595e-03  4.872e-01 
+  4.8700e-01  2.548e-03  4.882e-01 
+  4.8800e-01  2.502e-03  4.892e-01 
+  4.8900e-01  2.458e-03  4.902e-01 
+  4.9000e-01  2.414e-03  4.912e-01 
+  4.9100e-01  2.372e-03  4.922e-01 
+  4.9200e-01  2.331e-03  4.932e-01 
+  4.9300e-01  2.291e-03  4.942e-01 
+  4.9400e-01  2.252e-03  4.952e-01 
+  4.9500e-01  2.214e-03  4.962e-01 
+  4.9600e-01  2.177e-03  4.972e-01 
+  4.9700e-01  2.142e-03  4.982e-01 
+  4.9800e-01  2.107e-03  4.992e-01 
+  4.9900e-01  2.073e-03  5.002e-01 
+  5.0000e-01  2.039e-03  5.012e-01 
+  5.0100e-01  2.007e-03  5.022e-01 
+  5.0200e-01  1.976e-03  5.032e-01 
+  5.0300e-01  1.945e-03  5.042e-01 
+  5.0400e-01  1.915e-03  5.052e-01 
+  5.0500e-01  1.886e-03  5.061e-01 
+  5.0600e-01  1.858e-03  5.071e-01 
+  5.0700e-01  1.830e-03  5.081e-01 
+  5.0800e-01  1.803e-03  5.091e-01 
+  5.0900e-01  1.777e-03  5.101e-01 
+  5.1000e-01  1.751e-03  5.111e-01 
+  5.1100e-01  1.727e-03  5.121e-01 
+  5.1200e-01  1.702e-03  5.131e-01 
+  5.1300e-01  1.679e-03  5.141e-01 
+  5.1400e-01  1.656e-03  5.151e-01 
+  5.1500e-01  1.633e-03  5.161e-01 
+  5.1600e-01  1.611e-03  5.171e-01 
+  5.1700e-01  1.590e-03  5.181e-01 
+  5.1800e-01  1.569e-03  5.191e-01 
+  5.1900e-01  1.548e-03  5.201e-01 
+  5.2000e-01  1.528e-03  5.211e-01 
+  5.2100e-01  1.509e-03  5.221e-01 
+  5.2200e-01  1.490e-03  5.231e-01 
+  5.2300e-01  1.472e-03  5.241e-01 
+  5.2400e-01  1.454e-03  5.251e-01 
+  5.2500e-01  1.436e-03  5.261e-01 
+  5.2600e-01  1.419e-03  5.271e-01 
+  5.2700e-01  1.402e-03  5.281e-01 
+  5.2800e-01  1.385e-03  5.290e-01 
+  5.2900e-01  1.369e-03  5.300e-01 
+  5.3000e-01  1.353e-03  5.310e-01 
+  5.3100e-01  1.338e-03  5.320e-01 
+  5.3200e-01  1.323e-03  5.330e-01 
+  5.3300e-01  1.308e-03  5.340e-01 
+  5.3400e-01  1.294e-03  5.350e-01 
+  5.3500e-01  1.280e-03  5.360e-01 
+  5.3600e-01  1.266e-03  5.370e-01 
+  5.3700e-01  1.252e-03  5.380e-01 
+  5.3800e-01  1.239e-03  5.390e-01 
+  5.3900e-01  1.226e-03  5.400e-01 
+  5.4000e-01  1.213e-03  5.410e-01 
+  5.4100e-01  1.201e-03  5.420e-01 
+  5.4200e-01  1.189e-03  5.430e-01 
+  5.4300e-01  1.177e-03  5.440e-01 
+  5.4400e-01  1.165e-03  5.450e-01 
+  5.4500e-01  1.153e-03  5.460e-01 
+  5.4600e-01  1.142e-03  5.470e-01 
+  5.4700e-01  1.131e-03  5.480e-01 
+  5.4800e-01  1.120e-03  5.490e-01 
+  5.4900e-01  1.109e-03  5.500e-01 
+  5.5000e-01  1.099e-03  5.509e-01 
+  5.5100e-01  1.088e-03  5.519e-01 
+  5.5200e-01  1.078e-03  5.529e-01 
+  5.5300e-01  1.068e-03  5.539e-01 
+  5.5400e-01  1.058e-03  5.549e-01 
+  5.5500e-01  1.049e-03  5.559e-01 
+  5.5600e-01  1.039e-03  5.569e-01 
+  5.5700e-01  1.030e-03  5.579e-01 
+  5.5800e-01  1.020e-03  5.589e-01 
+  5.5900e-01  1.011e-03  5.599e-01 
+  5.6000e-01  1.002e-03  5.609e-01 
+  5.6100e-01  9.931e-04  5.619e-01 
+  5.6200e-01  9.843e-04  5.629e-01 
+  5.6300e-01  9.756e-04  5.639e-01 
+  5.6400e-01  9.670e-04  5.649e-01 
+  5.6500e-01  9.586e-04  5.659e-01 
+  5.6600e-01  9.502e-04  5.669e-01 
+  5.6700e-01  9.419e-04  5.679e-01 
+  5.6800e-01  9.337e-04  5.689e-01 
+  5.6900e-01  9.256e-04  5.698e-01 
+  5.7000e-01  9.176e-04  5.708e-01 
+  5.7100e-01  9.096e-04  5.718e-01 
+  5.7200e-01  9.018e-04  5.728e-01 
+  5.7300e-01  8.940e-04  5.738e-01 
+  5.7400e-01  8.863e-04  5.748e-01 
+  5.7500e-01  8.786e-04  5.758e-01 
+  5.7600e-01  8.710e-04  5.768e-01 
+  5.7700e-01  8.635e-04  5.778e-01 
+  5.7800e-01  8.561e-04  5.788e-01 
+  5.7900e-01  8.486e-04  5.798e-01 
+  5.8000e-01  8.413e-04  5.808e-01 
+  5.8100e-01  8.340e-04  5.818e-01 
+  5.8200e-01  8.267e-04  5.828e-01 
+  5.8300e-01  8.195e-04  5.838e-01 
+  5.8400e-01  8.123e-04  5.848e-01 
+  5.8500e-01  8.052e-04  5.858e-01 
+  5.8600e-01  7.981e-04  5.868e-01 
+  5.8700e-01  7.911e-04  5.878e-01 
+  5.8800e-01  7.841e-04  5.887e-01 
+  5.8900e-01  7.771e-04  5.897e-01 
+  5.9000e-01  7.701e-04  5.907e-01 
+  5.9100e-01  7.632e-04  5.917e-01 
+  5.9200e-01  7.563e-04  5.927e-01 
+  5.9300e-01  7.494e-04  5.937e-01 
+  5.9400e-01  7.426e-04  5.947e-01 
+  5.9500e-01  7.357e-04  5.957e-01 
+  5.9600e-01  7.289e-04  5.967e-01 
+  5.9700e-01  7.221e-04  5.977e-01 
+  5.9800e-01  7.154e-04  5.987e-01 
+  5.9900e-01  7.086e-04  5.997e-01 
+  6.0000e-01  7.019e-04  6.007e-01 
+  6.0100e-01  6.952e-04  6.017e-01 
+  6.0200e-01  6.885e-04  6.027e-01 
+  6.0300e-01  6.817e-04  6.037e-01 
+  6.0400e-01  6.751e-04  6.047e-01 
+  6.0500e-01  6.684e-04  6.056e-01 
+  6.0600e-01  6.617e-04  6.066e-01 
+  6.0700e-01  6.550e-04  6.076e-01 
+  6.0800e-01  6.484e-04  6.086e-01 
+  6.0900e-01  6.417e-04  6.096e-01 
+  6.1000e-01  6.351e-04  6.106e-01 
+  6.1100e-01  6.284e-04  6.116e-01 
+  6.1200e-01  6.218e-04  6.126e-01 
+  6.1300e-01  6.151e-04  6.136e-01 
+  6.1400e-01  6.085e-04  6.146e-01 
+  6.1500e-01  6.018e-04  6.156e-01 
+  6.1600e-01  5.952e-04  6.166e-01 
+  6.1700e-01  5.886e-04  6.176e-01 
+  6.1800e-01  5.819e-04  6.186e-01 
+  6.1900e-01  5.753e-04  6.196e-01 
+  6.2000e-01  5.686e-04  6.206e-01 
+  6.2100e-01  5.620e-04  6.215e-01 
+  6.2200e-01  5.553e-04  6.225e-01 
+  6.2300e-01  5.486e-04  6.235e-01 
+  6.2400e-01  5.420e-04  6.245e-01 
+  6.2500e-01  5.353e-04  6.255e-01 
+  6.2600e-01  5.286e-04  6.265e-01 
+  6.2700e-01  5.219e-04  6.275e-01 
+  6.2800e-01  5.152e-04  6.285e-01 
+  6.2900e-01  5.085e-04  6.295e-01 
+  6.3000e-01  5.018e-04  6.305e-01 
+  6.3100e-01  4.951e-04  6.315e-01 
+  6.3200e-01  4.883e-04  6.325e-01 
+  6.3300e-01  4.816e-04  6.335e-01 
+  6.3400e-01  4.749e-04  6.345e-01 
+  6.3500e-01  4.681e-04  6.355e-01 
+  6.3600e-01  4.613e-04  6.365e-01 
+  6.3700e-01  4.545e-04  6.374e-01 
+  6.3800e-01  4.478e-04  6.384e-01 
+  6.3900e-01  4.410e-04  6.394e-01 
+  6.4000e-01  4.341e-04  6.404e-01 
+  6.4100e-01  4.273e-04  6.414e-01 
+  6.4200e-01  4.205e-04  6.424e-01 
+  6.4300e-01  4.136e-04  6.434e-01 
+  6.4400e-01  4.068e-04  6.444e-01 
+  6.4500e-01  3.999e-04  6.454e-01 
+  6.4600e-01  3.930e-04  6.464e-01 
+  6.4700e-01  3.861e-04  6.474e-01 
+  6.4800e-01  3.792e-04  6.484e-01 
+  6.4900e-01  3.723e-04  6.494e-01 
+  6.5000e-01  3.654e-04  6.504e-01 
+  6.5100e-01  3.585e-04  6.514e-01 
+  6.5200e-01  3.515e-04  6.523e-01 
+  6.5300e-01  3.445e-04  6.533e-01 
+  6.5400e-01  3.375e-04  6.543e-01 
+  6.5500e-01  3.306e-04  6.553e-01 
+  6.5600e-01  3.235e-04  6.563e-01 
+  6.5700e-01  3.165e-04  6.573e-01 
+  6.5800e-01  3.095e-04  6.583e-01 
+  6.5900e-01  3.024e-04  6.593e-01 
+  6.6000e-01  2.954e-04  6.603e-01 
+  6.6100e-01  2.883e-04  6.613e-01 
+  6.6200e-01  2.812e-04  6.623e-01 
+  6.6300e-01  2.741e-04  6.633e-01 
+  6.6400e-01  2.670e-04  6.643e-01 
+  6.6500e-01  2.599e-04  6.653e-01 
+  6.6600e-01  2.527e-04  6.662e-01 
+  6.6700e-01  2.456e-04  6.672e-01 
+  6.6800e-01  2.384e-04  6.682e-01 
+  6.6900e-01  2.313e-04  6.692e-01 
+  6.7000e-01  2.241e-04  6.702e-01 
+  6.7100e-01  2.169e-04  6.712e-01 
+  6.7200e-01  2.096e-04  6.722e-01 
+  6.7300e-01  2.024e-04  6.732e-01 
+  6.7400e-01  1.952e-04  6.742e-01 
+  6.7500e-01  1.879e-04  6.752e-01 
+  6.7600e-01  1.807e-04  6.762e-01 
+  6.7700e-01  1.734e-04  6.772e-01 
+  6.7800e-01  1.661e-04  6.782e-01 
+  6.7900e-01  1.588e-04  6.792e-01 
+  6.8000e-01  1.515e-04  6.801e-01 
+  6.8100e-01  1.442e-04  6.811e-01 
+  6.8200e-01  1.368e-04  6.821e-01 
+  6.8300e-01  1.295e-04  6.831e-01 
+  6.8400e-01  1.221e-04  6.841e-01 
+  6.8500e-01  1.148e-04  6.851e-01 
+  6.8600e-01  1.074e-04  6.861e-01 
+  6.8700e-01  1.000e-04  6.871e-01 
+  6.8800e-01  9.262e-05  6.881e-01 
+  6.8900e-01  8.521e-05  6.891e-01 
+  6.9000e-01  7.780e-05  6.901e-01 
+  6.9100e-01  7.038e-05  6.911e-01 
+  6.9200e-01  6.295e-05  6.921e-01 
+  6.9300e-01  5.551e-05  6.931e-01 
+  6.9400e-01  4.806e-05  6.940e-01 
+  6.9500e-01  4.061e-05  6.950e-01 
+  6.9600e-01  3.315e-05  6.960e-01 
+  6.9700e-01  2.568e-05  6.970e-01 
+  6.9800e-01  1.821e-05  6.980e-01 
+  6.9900e-01  1.073e-05  6.990e-01 
+  7.0000e-01  3.250e-06  7.000e-01 
+y
+
+          ***** job concluded
+ ******  
+ * auto-generated sram1 pex test: hsnm_qb
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    20
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      10 # elements   =      15
+  # resistors   =       2 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       6
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       6
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  dc sweep           0.10         701        1437
+  readin             3.00
+  errchk             0.01
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         89.13 megabytes
+           total cpu time            3.11 seconds
+           total elapsed time        3.14 seconds
+           job started at     20:16:01 08/03/2026
+           job ended   at     20:16:04 08/03/2026
+           job total runtime         3.14 seconds
+
+
+  lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.02(s)

@@ -1,0 +1,15 @@
+active_average_power_w,active_energy_j,analysis_status,deck,final_q_v,final_qb_v,hold_pass,hold_total_static_power_w,peak_abs_supply_current_a,snm_v,test,vdd_v,vss_v
+3.0014631650720425e-09,1.5008008303385108e-17,ok,test_pex_hold.sp,3.333e-06,0.7,pass,3.00294867222944e-09,2.405e-09,,hold,0.7,0.0
+,,curve_captured,test_pex_hsnm.sp,,,,,,,hsnm,0.7,0.0
+,,curve_captured,test_pex_hsnm_qb.sp,,,,,,,hsnm_qb,0.7,0.0
+,,model_numerical_error,test_pex_read0.sp,,,,,,,read0,,
+,,model_numerical_error,test_pex_read1.sp,,,,,,,read1,,
+,,curve_captured,test_pex_rsnm.sp,,,,,,,rsnm,0.7,0.0
+,,curve_captured,test_pex_rsnm_qb.sp,,,,,,,rsnm_qb,0.7,0.0
+,,hspice_ok,test_pex_smoke.sp,,,,,,,smoke,,
+,,model_numerical_error,test_pex_write0.sp,,,,,,,write0,,
+,,model_numerical_error,test_pex_write1.sp,,,,,,,write1,,
+,,model_numerical_error,test_pex_wtrip0.sp,,,,,,,wtrip0,,
+,,model_numerical_error,test_pex_wtrip1.sp,,,,,,,wtrip1,,
+,,ok,hsnm,,,,,,0.2737,hsnm,0.7,0.0
+,,ok,rsnm,,,,,,0.1064,rsnm,0.7,0.0

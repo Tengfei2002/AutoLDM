@@ -9,7 +9,7 @@ git status
 ```powershell
 git add -A
 git status
-git commit -m "update FLOW\test"
+git commit -m "update test_file @FLOW and fitness"
 git push
 ```
 

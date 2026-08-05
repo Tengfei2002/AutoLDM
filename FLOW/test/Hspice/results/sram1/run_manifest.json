@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-08-03T20:12:28",
+  "input": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\sp",
+  "output": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1",
+  "hspice": "C:\\synopsys\\Hspice_P-2019.06-SP1-1\\WIN64\\hspice.com",
+  "license_server": "27000@LAPTOP-K9QP6UAM",
+  "decks": [
+    {
+      "deck": "test_pex_hold.sp",
+      "test": "hold",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hold\\test_pex_hold.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hold"
+    },
+    {
+      "deck": "test_pex_hsnm.sp",
+      "test": "hsnm",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hsnm\\test_pex_hsnm.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hsnm"
+    },
+    {
+      "deck": "test_pex_hsnm_qb.sp",
+      "test": "hsnm_qb",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hsnm_qb\\test_pex_hsnm_qb.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_hsnm_qb"
+    },
+    {
+      "deck": "test_pex_read0.sp",
+      "test": "read0",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_read0\\test_pex_read0.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_read0"
+    },
+    {
+      "deck": "test_pex_read1.sp",
+      "test": "read1",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_read1\\test_pex_read1.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_read1"
+    },
+    {
+      "deck": "test_pex_rsnm.sp",
+      "test": "rsnm",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_rsnm\\test_pex_rsnm.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_rsnm"
+    },
+    {
+      "deck": "test_pex_rsnm_qb.sp",
+      "test": "rsnm_qb",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_rsnm_qb\\test_pex_rsnm_qb.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_rsnm_qb"
+    },
+    {
+      "deck": "test_pex_smoke.sp",
+      "test": "smoke",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_smoke\\test_pex_smoke.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_smoke"
+    },
+    {
+      "deck": "test_pex_write0.sp",
+      "test": "write0",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_write0\\test_pex_write0.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_write0"
+    },
+    {
+      "deck": "test_pex_write1.sp",
+      "test": "write1",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_write1\\test_pex_write1.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_write1"
+    },
+    {
+      "deck": "test_pex_wtrip0.sp",
+      "test": "wtrip0",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_wtrip0\\test_pex_wtrip0.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_wtrip0"
+    },
+    {
+      "deck": "test_pex_wtrip1.sp",
+      "test": "wtrip1",
+      "return_code": 0,
+      "reused": true,
+      "model_numerical_error": true,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_wtrip1\\test_pex_wtrip1.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\test\\Hspice\\results\\sram1\\raw\\test_pex_wtrip1"
+    }
+  ]
+}

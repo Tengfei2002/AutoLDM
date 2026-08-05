@@ -1,0 +1,23 @@
+* Auto-generated SRAM1 PEX test: hsnm
+.option INGOLD=2 POST=2
+.hdl "../../INPUT_MODEL/test_fet_n.va"
+.hdl "../../INPUT_MODEL/test_fet_p.va"
+.include "../test_pex.inc"
+.param VDD_VAL=0.7 VSS_VAL=0
+.param VCORE='VDD_VAL-VSS_VAL'
+.param CBL=30f RBL=100 RWL=100 RBL_DRV=100 CWL=5f RVDD=10 RVSS=10 CVDD=10f SENSE_V=0.05 TR=20p TSTEP=1p TSTOP=5n
+
+VVSS VSS_SRC 0 'VSS_VAL'
+VVDD VDD_SRC VSS_SRC 'VCORE'
+RVDD VDD_SRC VDD 'RVDD'
+RVSS VSS VSS_SRC 'RVSS'
+CVDD VDD VSS 'CVDD'
+
+VBL BL VSS 'VCORE'
+VBLB BLB VSS 'VCORE'
+VWL WL VSS 0
+VQFORCE Q VSS 0
+XDUT BL BLB WL VDD VSS Q QB TEST_PEX
+.dc VQFORCE 0 'VCORE' 1m
+.print dc v(Q) v(QB)
+.end
