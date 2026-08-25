@@ -13,40 +13,27 @@ AutoLDM 是一个面向 DTCO 研究的自动化原型工程，将参考器件曲
 ## 总体流程
 
 ```mermaid
-flowchart LR
-    subgraph FIT[器件模型拟合]
-        CSV[参考 Id-Vg CSV<br/>电流密度 A/um] --> PRE[数据检查与预处理]
-        NORM[无量纲归一化备份] -. 仅用于追溯 .-> PRE
-        PRE --> OPT[参数优化]
-        BASE[原始 N/P Verilog-A] --> OPT
-        OPT --> HS1[HSPICE 器件仿真]
-        HS1 --> ERR[对数域误差与导通电流误差]
-        ERR -->|迭代| OPT
-        OPT --> VA[分工艺角的完整 N/P VA 模型]
-        OPT --> REP[拟合报告与对比图]
-    end
+flowchart TD
+    IV["参考 Id-Vg 数据"] --> FIT["① 拟合 N/P Verilog-A"]
+    VA0["原始 N/P 模型"] --> FIT
+    FIT --> DEV["② HSPICE 器件级校准"]
+    DEV --> VA["分工艺角 N/P 模型<br/>报告与对比图"]
 
-    subgraph CELL[标准单元生成与验证]
-        LAYOUT[版图矩形与标签] --> PRECHECK[预检查和 DRC]
-        PARAM[器件与网格参数] --> PRECHECK
-        STACK[材料和 Z 向堆叠] --> PRECHECK
-        RULE[设计规则和层间关系] --> PRECHECK
-        PRECHECK --> SDE[SDE R/C 两套结构命令]
-        SDE --> EXTRACT[三维建模、网格与寄生提取]
-        EXTRACT --> MATRIX[原始 R/C 矩阵]
-        PIN[自描述连接清单<br/>R、C、FET、PORT] --> MAP[节点收缩和引脚级映射]
-        MATRIX --> MAP
-        MAP --> PINRC[带数值的 pin-RC 文件]
-        PINRC --> INC[通用 HSPICE 子电路 .inc]
-        VA --> INC
-        INC --> SMOKE[零偏置编译验证]
-        INC --> TB[功能/时序测试 deck]
-        TB --> HS2[HSPICE 标准单元仿真]
-        HS2 --> RESULT[波形、测量值、状态和图表]
-    end
+    GEO["版图矩形与标签"] --> CHECK["③ 输入与几何检查"]
+    TECH["器件、材料、网格和层规则"] --> CHECK
+    CHECK --> SDE["④ 生成并执行 SDE"]
+    SDE --> MAT["R/C 寄生矩阵"]
 
-    RESULT -->|修改几何、规则或模型| LAYOUT
-    RESULT -->|需要重新标定器件| FIT
+    MAT --> PEX["⑤ 节点映射与 PEX"]
+    NET["R/C、FET、PORT 连接清单"] --> PEX
+    VA --> PEX
+    PEX --> INC["HSPICE 子电路 .inc"]
+    INC --> VERIFY["⑥ 编译检查与单元测试"]
+    TB["单元专用测试计划和 bench"] --> VERIFY
+    VERIFY --> RESULT["波形、测量值和运行状态"]
+
+    RESULT -.->|调整版图或规则| CHECK
+    RESULT -.->|重新标定器件| FIT
 ```
 
 这条链路把“器件模型标定”和“互连/电路验证”分开：`fitness` 生成的模型可以回填到任意标准单元工程，而一个标准单元的连接变化只需修改输入清单，不应修改 HSPICE 生成器源码。
@@ -57,41 +44,32 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    subgraph INPUT[INPUT_MODEL]
-        GDS[test_gds.txt<br/>x1 y1 x2 y2 layer label]
-        PAR[test_params.txt<br/>尺寸、材料、掺杂、网格]
-        STK[test_stacked.txt<br/>层角色与 Z 向堆叠]
-        DRC[test_design_rules.txt<br/>规则与层间关系]
-        PINS[sdc_pin/&lt;cell&gt;.txt<br/>R/C 请求、FET、PORT]
-        NV[N 型 VA]
-        PV[P 型 VA]
-    end
+    GEO["test_gds.txt<br/>矩形与物理标签"] --> SDEGEN["① gen_sde.py"]
+    TECH["params、stack、design_rules"] --> SDEGEN
+    GEO --> DRCGEN["可选：gen_drc_report.py"]
+    TECH --> DRCGEN
 
-    GDS --> GS[gen_sde.py]
-    PAR --> GS
-    STK --> GS
-    DRC --> GS
-    GDS --> GD[gen_drc_report.py]
-    PAR --> GD
-    STK --> GD
-    DRC --> GD
+    SDEGEN --> RDECK["R结构 SDE 命令"]
+    SDEGEN --> CDECK["C结构 SDE 命令"]
+    RDECK --> EXTRACT["② 三维建模与寄生提取"]
+    CDECK --> EXTRACT
+    EXTRACT --> RMAT["R matrix"]
+    EXTRACT --> CMAT["C matrix"]
+    DRCGEN --> DRPT["DRC 文本报告"]
 
-    GS --> RCMD[SDE/test_r_sde.cmd]
-    GS --> CCMD[SDE/test_c_sde.cmd]
-    GD --> DRPT[OUTPUT/test_drc_report.txt]
-    RMAT --> GP[gen_pex.py]
-    CMAT --> GP
-    PINS --> GP
-    NV --> GP
-    PV --> GP
-    GP --> PRC[Hspice/test_pin_spice.txt]
-    GP --> LIB[Hspice/test_pex.inc]
-    GP --> VSP[Hspice/test_pex_validate.sp]
+    RMAT --> PEX["③ gen_pex.py"]
+    CMAT --> PEX
+    PINS["sdc_pin/&lt;cell&gt;.txt"] --> PEX
+    MODEL["N/P Verilog-A"] --> PEX
+    PEX --> PINRC["数值化 pin-RC"]
+    PEX --> LIB["PEX 子电路 .inc"]
+    PEX --> VSP["零偏置验证 deck"]
 
-
-    LIB --> TBG[测试 deck 生成器]
-    TBG --> SPRUN[HSPICE runner]
-    SPRUN --> RES[Hspice/results]
+    LIB --> RUN["④ run_cell.py / HSPICE"]
+    VSP --> RUN
+    CASE["sdc_pyscript + sdc_tb"] --> RUN
+    RUN --> DECKS["功能、时序和 DC decks"]
+    RUN --> RES["results：状态与测量值"]
 ```
 
 各阶段职责如下：
@@ -139,17 +117,17 @@ VSS=VSS
 6. 更换标准单元时，主要修改版图、连接清单和测试场景，不修改生成器里的电路构造。
 
 ```mermaid
-flowchart LR
-    PHY[物理版图标签] --> RC[寄生网络节点]
-    MAN[连接清单] -->|R/C 请求| RC
-    MAN -->|S/G/D/B| DEV[任意 N/P 实例集合]
-    MAN -->|端口映射| PORT[有序外部端口]
-    RC --> SUB[统一 .subckt]
+flowchart TD
+    PHY["物理版图标签"] --> RC["寄生网络节点"]
+    MAN["sdc_pin 连接清单"] -->|R/C 请求| RC
+    MAN -->|S/G/D/B| DEV["N/P 器件实例"]
+    MAN -->|PORT 映射| PORT["有序外部端口"]
+    RC --> SUB["统一 HSPICE .subckt"]
     DEV --> SUB
     PORT --> SUB
-    NVA[N 型 VA 模块] --> SUB
-    PVA[P 型 VA 模块] --> SUB
-    SUB --> USE[不同测试平台或更高层级网表复用]
+    NVA["N 型 VA 模块"] --> SUB
+    PVA["P 型 VA 模块"] --> SUB
+    SUB --> USE["测试平台或更高层级网表"]
 ```
 
 这种泛化仍有明确边界：当前版图文本以轴对齐矩形为主；每次生成使用一份 N 型和一份 P 型 VA 模块；实例命名必须满足 N/P 前缀约定；连接关系必须显式写入清单；当前 DRC 只覆盖脚本已经实现的规则类型。
@@ -175,7 +153,11 @@ python "$Project\gen_sde.py" `
   "$Project\INPUT_MODEL\test_gds.txt" `
   "$Project\INPUT_MODEL\test_params.txt" `
   "$Project\INPUT_MODEL\test_stacked.txt" `
-### 4. 统一生成 PEX、测试 deck 并运行 HSPICE
+  --design-rules "$Project\INPUT_MODEL\test_design_rules.txt" `
+  -o "$Project\SDE\test_sde.cmd"
+```
+
+### 2. 统一生成 PEX、测试 deck 并运行 HSPICE
 
 矩阵下载完成后，运行新的统一执行脚本。详细说明见 `FLOW/test/README_HSPICE_FLOW.md`。
 
@@ -222,19 +204,21 @@ python "$Project\run_cell.py" `
 
 ```mermaid
 flowchart TD
-    REF[.ref_iv 中的 A/um CSV] --> OBJ[构造多曲线目标]
-    ORIG[原始 N/P VA] --> PATCH[写入候选参数]
-    PATCH --> HSP[调用 HSPICE]
-    HSP --> CONV[器件电流 A 转为 A/um]
+    REF[".ref_iv 参考曲线<br/>单位 A/um"] --> OBJ["多曲线误差目标"]
+    ORIG["原始 N/P Verilog-A"] --> CAND["写入候选参数"]
+    OBJ --> OPT["有边界最小二乘"]
+    OPT -->|下一组参数| CAND
+    CAND --> HSP["HSPICE 器件仿真"]
+    HSP --> CONV["电流 A 转为 A/um"]
     CONV --> OBJ
-    OBJ --> LSQ[有边界非线性最小二乘]
-    LSQ -->|下一组参数| PATCH
-    LSQ --> BASELINE[fitted_va_1]
-    BASELINE -->|作为保留基线| XL["abs(XL) 不超过 3 nm 的再拟合"]
-    XL --> SMALL[fitted_va_2_minXL]
-    BASELINE --> REPORT[模型、JSON、对比图]
-    SMALL --> REPORT
-    REPORT --> CELLIN[选定模型回填标准单元 INPUT_MODEL]
+    OPT --> BASELINE["基线结果 fitted_va_1"]
+    BASELINE --> REPORT1["基线模型、JSON、对比图"]
+    BASELINE --> XL["增加 abs(XL) ≤ 3 nm 约束"]
+    XL --> SMALL["受限结果 fitted_va_2_minXL"]
+    SMALL --> REPORT2["受限模型、JSON、对比图"]
+    REPORT1 --> SELECT["选择适用模型"]
+    REPORT2 --> SELECT
+    SELECT --> CELLIN["回填标准单元 INPUT_MODEL"]
 ```
 
 示例：
@@ -299,16 +283,17 @@ AutoLDM/
 
 ```mermaid
 flowchart TD
-    COPY[复制 Template_Create_New] --> NAME[替换工程名前缀]
-    NAME --> GEO[准备矩形版图和物理标签]
-    GEO --> TECH[填写 params、stack、design_rules]
-    TECH --> NET[填写 R/C/FET/PORT 连接清单]
-    NET --> MODEL[放入 N/P VA 模型]
-    MODEL --> CHECK[validate-only 与 DRC]
-    CHECK --> EXT[SDE 和寄生提取]
-    EXT --> LIB[生成并验证 .inc]
-    LIB --> BENCH[编写与拓扑独立的测试场景]
-    BENCH --> ITERATE[根据结果迭代]
+    COPY["复制 Template_Create_New"] --> NAME["设置工程名和单元名"]
+    NAME --> GEO["① 准备版图矩形与标签"]
+    GEO --> TECH["② 填写 params、stack 和层规则"]
+    TECH --> CELL["③ 生成同名单元三件套<br/>pin、pyscript、tb"]
+    CELL --> MODEL["④ 放入 N/P Verilog-A 模型"]
+    MODEL --> CHECK["⑤ 输入和接口检查"]
+    CHECK --> EXT["⑥ SDE 与寄生提取"]
+    EXT --> PEX["⑦ 生成并验证 PEX .inc"]
+    PEX --> SIM["⑧ 运行单元专用 HSPICE 测试"]
+    SIM --> ITERATE["根据结果修改输入并重跑"]
+    ITERATE -.-> GEO
 ```
 
 迁移时建议遵循以下原则：
