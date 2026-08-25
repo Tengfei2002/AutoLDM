@@ -1,0 +1,21 @@
+* AutoLDM benchmark for xnor2: Y = !(A ^ B)
+(SUPPLY)
+vdd=0.7
+vss=0
+
+(LOAD)
+cload=5f
+
+(TIMING)
+trise=20p
+tfall=20p
+tdelay=200p
+pulse_width=400p
+period=1n
+tstep=1p
+tstop=1.4n
+dc_step=1m
+
+(MEASURE)
+logic_low_max=0.2
+logic_high_min=0.8

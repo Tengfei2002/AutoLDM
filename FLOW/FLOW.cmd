@@ -1,3 +1,4 @@
+﻿$ErrorActionPreference = "Stop"
 $FLOWRoot = "C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW"
 $env:NAME = "test"
 $ProjectRoot = "C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\${env:NAME}"
@@ -8,6 +9,10 @@ $HspiceLocation = "$ProjectRoot\Hspice\"
 
 $RemoteHost  = "tfzhang@10.129.166.83"
 $RemoteDir   = "/home/SOI/tfz/test_RC/test_base"
+
+# Change this value to select sdc_pyscript/<cell>.py, sdc_tb/<cell>.txt,
+# and sdc_pin/<cell>.txt.
+$CellType = "sram1"
 
 Set-Location "$ProjectRoot"
 
@@ -35,39 +40,10 @@ python "$ProjectRoot\gen_drc_report.py" `
   -o "$OUTPUTLocation\${env:NAME}_drc_report.txt"
 
 
-python "$ProjectRoot\gen_rc_Matrix.py" `
-  "$INPUTLocation\test_pin.txt" `
-  "$SDELocation\test_c_cMatrix.spi" `
-  "$SDELocation\test_r_cMatrix.spi" `
-  -o "$HspiceLocation\test_pin_spice.txt" `
-  --strict-contact-face
-
-  python "$FLOWRoot\${env:NAME}\gen_hspice.py" `
-  "$INPUTLocation\${env:NAME}_fet_n.va" `
-  "$INPUTLocation\${env:NAME}_fet_p.va" `
-  "$HspiceLocation\${env:NAME}_pin_spice.txt" `
-  -o "$HspiceLocation\${env:NAME}_pex.inc"
-
-
-  python "$INPUTLocation\py_test4inc\gen_sram1_sp.py" `
-  "$HspiceLocation\test_pex.inc" `
-  "$INPUTLocation\test_bench\sram1.txt" `
-  "$INPUTLocation\test_fet_n.va" `
-  "$INPUTLocation\test_fet_p.va" `
-  -o "$HspiceLocation\sp"
-
-  python "$INPUTLocation\py_test4inc\run_sram1_sp.py" "$HspiceLocation\sp" `
-  -o "$HspiceLocation\results\sram1"
-
-(after process @win, no password need when trying to enter ssh)
-ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\id_ed25519" -C "tfzhang@windows"
-Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub" | ssh "$RemoteHost" "umask 077; mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys"
-
-ssh "$RemoteHost"
-tftfZhanG
-cd /home/SOI/tfz/test_RC/test_base
-chmod +x cleanup_obsolete_swb_files.sh
-./cleanup_obsolete_swb_files.sh --target /home/SOI/tfz/test_RC/test_base --execute
+# The former four local Python calls are consolidated below, after the newest
+# R/C matrices have been downloaded from the extraction host.
+# One-time SSH key setup and remote cleanup are administrative operations.
+# Keep them outside this repeatable flow and never inline a password here.
 
 
 
@@ -76,3 +52,20 @@ scp "$SDELocation\${env:NAME}_r_sde.cmd" "${RemoteHost}:${RemoteDir}/r_dvs.cmd"
 
 scp "${RemoteHost}:${RemoteDir}/test_c_cMatrix.spi" "$SDELocation/${env:NAME}_c_cMatrix.spi"
 scp "${RemoteHost}:${RemoteDir}/test_r_cMatrix.spi" "$SDELocation/${env:NAME}_r_cMatrix.spi"
+
+
+# Consolidated local matrix-to-PEX-to-cell-test stage.
+python "$ProjectRoot\run_cell.py" `
+  --name "${env:NAME}" `
+  --cell "$CellType" `
+  --input-model-dir "$INPUTLocation" `
+  --c-matrix "$SDELocation\${env:NAME}_c_cMatrix.spi" `
+  --r-matrix "$SDELocation\${env:NAME}_r_cMatrix.spi" `
+  --n-va "$INPUTLocation\${env:NAME}_fet_n.va" `
+  --p-va "$INPUTLocation\${env:NAME}_fet_p.va" `
+  --output "$HspiceLocation" `
+  --strict-contact-face
+
+if ($LASTEXITCODE -ne 0) {
+  throw "Consolidated HSPICE cell flow failed with exit code $LASTEXITCODE"
+}

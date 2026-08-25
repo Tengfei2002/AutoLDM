@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='P-2019.06-SP1-1 win64' PARAM_COUNT=0
+.TITLE '* auto-generated inverter pex test: tran'
+ tphl             tplh             tr_out           tf_out          
+ temper           alter#          
+  2.189e-11        2.129e-11        3.208e-11        3.330e-11      
+  2.500e+01       1               

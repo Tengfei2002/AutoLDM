@@ -1,4 +1,4 @@
-# AutoLDM
+﻿# AutoLDM
 
 AutoLDM 是一个面向 DTCO 研究的自动化原型工程，将参考器件曲线、Verilog-A 紧凑模型、版图描述、三维结构生成、寄生参数提取和 HSPICE 标准单元验证连接成可重复执行的流程。
 
@@ -62,7 +62,7 @@ flowchart TD
         PAR[test_params.txt<br/>尺寸、材料、掺杂、网格]
         STK[test_stacked.txt<br/>层角色与 Z 向堆叠]
         DRC[test_design_rules.txt<br/>规则与层间关系]
-        PINS[test_pin.txt<br/>R/C 请求、FET、PORT]
+        PINS[sdc_pin/&lt;cell&gt;.txt<br/>R/C 请求、FET、PORT]
         NV[N 型 VA]
         PV[P 型 VA]
     end
@@ -79,22 +79,15 @@ flowchart TD
     GS --> RCMD[SDE/test_r_sde.cmd]
     GS --> CCMD[SDE/test_c_sde.cmd]
     GD --> DRPT[OUTPUT/test_drc_report.txt]
+    RMAT --> GP[gen_pex.py]
+    CMAT --> GP
+    PINS --> GP
+    NV --> GP
+    PV --> GP
+    GP --> PRC[Hspice/test_pin_spice.txt]
+    GP --> LIB[Hspice/test_pex.inc]
+    GP --> VSP[Hspice/test_pex_validate.sp]
 
-    RCMD --> TOOL[Sentaurus 与寄生提取环境]
-    CCMD --> TOOL
-    TOOL --> RMAT[SDE/test_r_cMatrix.spi]
-    TOOL --> CMAT[SDE/test_c_cMatrix.spi]
-
-    RMAT --> GR[gen_rc_Matrix.py]
-    CMAT --> GR
-    PINS --> GR
-    GR --> PRC[Hspice/test_pin_spice.txt]
-
-    PRC --> GH[gen_hspice.py]
-    NV --> GH
-    PV --> GH
-    GH --> LIB[Hspice/test_pex.inc]
-    GH --> VSP[Hspice/test_pex_validate.sp]
 
     LIB --> TBG[测试 deck 生成器]
     TBG --> SPRUN[HSPICE runner]
@@ -105,18 +98,17 @@ flowchart TD
 
 | 阶段 | 脚本或目录 | 主要职责 |
 |---|---|---|
-| 版图转换 | `INPUT_MODEL/txt_gds_trans/` | 在 GDS 与矩形文本描述之间转换，便于脚本处理和人工检查 |
-| 几何预检查 | `gen_sde.py --validate-only` | 在写出 SDE 命令前检查输入、层角色和几何一致性 |
-| DRC | `gen_drc_report.py` | 检查宽度、面积、间距、包围、重叠、Z 向落点和接触构造规则 |
-| 三维结构 | `gen_sde.py` | 由版图、参数、堆叠和层关系生成 R/C 两种 SDE 命令与网格入口 |
-| 寄生映射 | `gen_rc_Matrix.py` | 收缩理想短路，将提取器矩阵映射为连接清单要求的引脚级电阻和电容 |
-| 子电路生成 | `gen_hspice.py` | 合并 N/P VA 模型、R/C 数值、晶体管连接和端口，生成单器件式 `.subckt` |
-| 编译冒烟测试 | 自动生成的 `*_validate.sp` | 将所有外部端口钳位到 0 V，用于检查 VA、`.inc` 和拓扑能否被 HSPICE 编译 |
-| 电路测试 | `INPUT_MODEL/py_test4inc/` | 根据独立的测试描述生成 deck、调用 HSPICE，并整理数据、图像、清单和运行状态 |
+| 版图转换 | `INPUT_MODEL/txt_gds_trans/` | 在 GDS 与矩形文本描述之间转换 |
+| 几何预检查 | `gen_sde.py --validate-only` | 检查输入、层角色和几何一致性 |
+| DRC | `gen_drc_report.py` | 检查宽度、间距、包围和接触规则 |
+| 三维结构 | `gen_sde.py` | 生成 R/C 两种 SDE 命令与网格入口 |
+| 寄生映射与 PEX | `gen_pex.py` | 计算 pin 级 R/C，生成 PEX `.inc` 与 validation deck |
+| 标准单元测试 | `INPUT_MODEL/sdc_pyscript/<cell>.py` | 生成单元专用 deck、运行 HSPICE 并分析指标 |
+| 统一执行 | `run_cell.py` | 检查参数、控制顺序并传播失败状态 |
 
 ### 标准单元拓扑为什么可以泛化
 
-`gen_hspice.py` 不包含某个具体电路的节点表，也不在 Python 中实例化固定数量的晶体管。电路特有信息由 `test_pin.txt` 及其数值化版本完整表达：
+`gen_pex.py` 不包含某个具体电路的节点表，也不在 Python 中实例化固定数量的晶体管。电路特有信息由 `INPUT_MODEL/sdc_pin/<cell>.txt` 及其数值化版本完整表达：
 
 ```text
 (FET){N1,P1}{S,G,D,B}
@@ -183,59 +175,24 @@ python "$Project\gen_sde.py" `
   "$Project\INPUT_MODEL\test_gds.txt" `
   "$Project\INPUT_MODEL\test_params.txt" `
   "$Project\INPUT_MODEL\test_stacked.txt" `
-  --design-rules "$Project\INPUT_MODEL\test_design_rules.txt" `
-  -o "$Project\SDE\test_sde.cmd"
-```
+### 4. 统一生成 PEX、测试 deck 并运行 HSPICE
 
-第二条命令实际写出 `test_r_sde.cmd` 和 `test_c_sde.cmd`。验证错误默认会阻止输出；只有明确接受风险时才使用 `--allow-errors`。
-
-### 2. 生成 DRC 报告
+矩阵下载完成后，运行新的统一执行脚本。详细说明见 `FLOW/test/README_HSPICE_FLOW.md`。
 
 ```powershell
-python "$Project\gen_drc_report.py" `
-  "$Project\INPUT_MODEL\test_gds.txt" `
-  "$Project\INPUT_MODEL\test_params.txt" `
-  "$Project\INPUT_MODEL\test_stacked.txt" `
-  "$Project\INPUT_MODEL\test_design_rules.txt" `
-  -o "$Project\OUTPUT\test_drc_report.txt"
+python "$Project\run_cell.py" `
+  --name test `
+  --cell sram1 `
+  --input-model-dir "$Project\INPUT_MODEL" `
+  --c-matrix "$Project\SDE\test_c_cMatrix.spi" `
+  --r-matrix "$Project\SDE\test_r_cMatrix.spi" `
+  --n-va "$Project\INPUT_MODEL\test_fet_n.va" `
+  --p-va "$Project\INPUT_MODEL\test_fet_p.va" `
+  --output "$Project\Hspice" `
+  --strict-contact-face
 ```
 
-### 3. 在外部提取环境生成 R/C 矩阵
-
-用生成的 R/C SDE 命令完成结构构建、网格和寄生提取，并把矩阵结果放入项目的 `SDE/` 目录。该步骤依赖本机或远程 EDA 环境，仓库不提供许可证和集群配置。
-
-### 4. 将矩阵映射为引脚级 RC
-
-```powershell
-python "$Project\gen_rc_Matrix.py" `
-  "$Project\INPUT_MODEL\test_pin.txt" `
-  "$Project\SDE\test_c_cMatrix.spi" `
-  "$Project\SDE\test_r_cMatrix.spi" `
-  --strict-contact-face `
-  -o "$Project\Hspice\test_pin_spice.txt"
-```
-
-`--strict-contact-face` 按层角色选择规定的接触面，避免把接触标签错误地收缩到不应直接相连的金属节点。
-
-### 5. 生成通用 HSPICE 子电路
-
-```powershell
-python "$Project\gen_hspice.py" `
-  "$Project\INPUT_MODEL\test_fet_n.va" `
-  "$Project\INPUT_MODEL\test_fet_p.va" `
-  "$Project\Hspice\test_pin_spice.txt" `
-  -o "$Project\Hspice\test_pex.inc"
-```
-
-命令同时生成同目录下的 `test_pex_validate.sp`。需要自定义外部子电路名或验证文件位置时，可使用 `--subckt-name` 和 `--validation-output`。
-
-### 6. 验证与功能测试
-
-```powershell
-hspice "$Project\Hspice\test_pex_validate.sp"
-```
-
-编译冒烟测试通过后，再使用 `INPUT_MODEL/py_test4inc/` 中的测试生成器和 runner 执行功能、时序或功耗场景。测试激励与单元拓扑保持分离，同一 `.inc` 可以被多个测试 deck 或更高层级网表调用。
+该命令根据 `--cell` 自动选择同名 pyscript、bench 和 pin 文件，并依次完成 pin-RC、PEX、validation、单元 deck、HSPICE 执行和结果整理。
 
 ## `fitness`：Verilog-A 拟合
 
@@ -374,7 +331,7 @@ flowchart TD
 | 寄生参数提取环境 | 生成 R/C 矩阵 |
 | PowerShell、SSH/SCP | Windows 本地编排及可选的远程运行 |
 
-`FLOW/FLOW.cmd` 记录了当前环境的一种编排方式，但其中包含机器相关的绝对路径、工程名和远程配置，不能直接视为可移植入口。脚本化时应把这些内容改成命令行参数、配置文件或环境变量，并使用 SSH 密钥或安全的凭据管理方式，不要在仓库脚本中保存明文口令。还应以各工具的实际目录为准核对版图转换脚本路径。
+`FLOW/FLOW.cmd` 记录了当前环境的一种编排方式，但其中包含机器相关的绝对路径、工程名和远程配置，不能直接用于其他环境。脚本化时应把这些内容改成命令行参数、配置文件或环境变量，并使用 SSH 密钥或安全的凭据管理方式，不要在仓库脚本中保存明文口令。还应以各工具的实际目录为准核对版图转换脚本路径。
 
 ## 建议的自动化检查
 
@@ -390,3 +347,5 @@ flowchart TD
 8. 生成产物能够由受版本控制的输入重新构建。
 
 这样可以把某个完整参考工程沉淀为通用流程，同时避免把示例单元的节点命名、器件数量或测试激励固化到生成脚本中。
+
+

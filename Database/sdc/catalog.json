@@ -1,0 +1,1376 @@
+{
+  "schema_version": 1,
+  "library": "autoldm_combinational_reference",
+  "foundry_status": "not_foundry_library",
+  "cells": [
+    {
+      "name": "inv",
+      "family": "basic",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !A",
+      "pdn_expression": "A",
+      "truth_table": [
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 1,
+      "pmos_count": 1,
+      "transistor_count": 2,
+      "test_strategy": "inverter",
+      "timing_arc_count": 1,
+      "dc_sweep_count": 1
+    },
+    {
+      "name": "buf",
+      "family": "basic",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A",
+      "pdn_expression": "~A",
+      "truth_table": [
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A"
+      ],
+      "nmos_count": 2,
+      "pmos_count": 2,
+      "transistor_count": 4,
+      "test_strategy": "buffer",
+      "timing_arc_count": 1,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nand2",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A & B)",
+      "pdn_expression": "A & B",
+      "truth_table": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 2,
+      "pmos_count": 2,
+      "transistor_count": 4,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 2,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nand3",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A & B & C)",
+      "pdn_expression": "A & B & C",
+      "truth_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 3,
+      "pmos_count": 3,
+      "transistor_count": 6,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 3,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nand4",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A & B & C & D)",
+      "pdn_expression": "A & B & C & D",
+      "truth_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nor2",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A | B)",
+      "pdn_expression": "A | B",
+      "truth_table": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 2,
+      "pmos_count": 2,
+      "transistor_count": 4,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 2,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nor3",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A | B | C)",
+      "pdn_expression": "A | B | C",
+      "truth_table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 3,
+      "pmos_count": 3,
+      "transistor_count": 6,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 3,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "nor4",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A | B | C | D)",
+      "pdn_expression": "A | B | C | D",
+      "truth_table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "and2",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A & B",
+      "pdn_expression": "~A | ~B",
+      "truth_table": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B"
+      ],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 2,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "and3",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A & B & C",
+      "pdn_expression": "~A | ~B | ~C",
+      "truth_table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nmos_count": 6,
+      "pmos_count": 6,
+      "transistor_count": 12,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 3,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "and4",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A & B & C & D",
+      "pdn_expression": "~A | ~B | ~C | ~D",
+      "truth_table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "nmos_count": 8,
+      "pmos_count": 8,
+      "transistor_count": 16,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "or2",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A | B",
+      "pdn_expression": "~A & ~B",
+      "truth_table": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B"
+      ],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 2,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "or3",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A | B | C",
+      "pdn_expression": "~A & ~B & ~C",
+      "truth_table": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nmos_count": 6,
+      "pmos_count": 6,
+      "transistor_count": 12,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 3,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "or4",
+      "family": "basic",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A | B | C | D",
+      "pdn_expression": "~A & ~B & ~C & ~D",
+      "truth_table": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "nmos_count": 8,
+      "pmos_count": 8,
+      "transistor_count": 16,
+      "test_strategy": "static_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "aoi21",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A & B) | C)",
+      "pdn_expression": "(A & B) | C",
+      "truth_table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 3,
+      "pmos_count": 3,
+      "transistor_count": 6,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "aoi22",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A & B) | (C & D))",
+      "pdn_expression": "(A & B) | (C & D)",
+      "truth_table": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 8,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "aoi211",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A & B) | C | D)",
+      "pdn_expression": "(A & B) | C | D",
+      "truth_table": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 6,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "aoi221",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A & B) | (C & D) | E)",
+      "pdn_expression": "(A & B) | (C & D) | E",
+      "truth_table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 5,
+      "pmos_count": 5,
+      "transistor_count": 10,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 12,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "oai21",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A | B) & C)",
+      "pdn_expression": "(A | B) & C",
+      "truth_table": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 3,
+      "pmos_count": 3,
+      "transistor_count": 6,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "oai22",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A | B) & (C | D))",
+      "pdn_expression": "(A | B) & (C | D)",
+      "truth_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 8,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "oai211",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A | B) & C & D)",
+      "pdn_expression": "(A | B) & C & D",
+      "truth_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 4,
+      "pmos_count": 4,
+      "transistor_count": 8,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 6,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "oai221",
+      "family": "compound",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !((A | B) & (C | D) & E)",
+      "pdn_expression": "(A | B) & (C | D) & E",
+      "truth_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "complemented_inputs": [],
+      "nmos_count": 5,
+      "pmos_count": 5,
+      "transistor_count": 10,
+      "test_strategy": "compound_unate",
+      "timing_arc_count": 12,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "xor2",
+      "family": "arithmetic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A ^ B",
+      "pdn_expression": "(A & B) | (~A & ~B)",
+      "truth_table": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [
+        "A",
+        "B"
+      ],
+      "nmos_count": 6,
+      "pmos_count": 6,
+      "transistor_count": 12,
+      "test_strategy": "non_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "xnor2",
+      "family": "arithmetic",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A ^ B)",
+      "pdn_expression": "(A & ~B) | (~A & B)",
+      "truth_table": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B"
+      ],
+      "nmos_count": 6,
+      "pmos_count": 6,
+      "transistor_count": 12,
+      "test_strategy": "non_unate",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "xor3",
+      "family": "arithmetic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = A ^ B ^ C",
+      "pdn_expression": "(~A & ~B & ~C) | (~A & B & C) | (A & ~B & C) | (A & B & ~C)",
+      "truth_table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nmos_count": 15,
+      "pmos_count": 15,
+      "transistor_count": 30,
+      "test_strategy": "non_unate",
+      "timing_arc_count": 12,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "xnor3",
+      "family": "arithmetic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(A ^ B ^ C)",
+      "pdn_expression": "(~A & ~B & C) | (~A & B & ~C) | (A & ~B & ~C) | (A & B & C)",
+      "truth_table": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nmos_count": 15,
+      "pmos_count": 15,
+      "transistor_count": 30,
+      "test_strategy": "non_unate",
+      "timing_arc_count": 12,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "mux2",
+      "family": "mux",
+      "inputs": [
+        "A",
+        "B",
+        "S"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "S",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = S ? B : A",
+      "pdn_expression": "(~S & ~A) | (S & ~B)",
+      "truth_table": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "S"
+      ],
+      "nmos_count": 7,
+      "pmos_count": 7,
+      "transistor_count": 14,
+      "test_strategy": "mux",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "muxi2",
+      "family": "mux",
+      "inputs": [
+        "A",
+        "B",
+        "S"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "S",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = !(S ? B : A)",
+      "pdn_expression": "(~S & A) | (S & B)",
+      "truth_table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "complemented_inputs": [
+        "S"
+      ],
+      "nmos_count": 5,
+      "pmos_count": 5,
+      "transistor_count": 10,
+      "test_strategy": "mux",
+      "timing_arc_count": 4,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "mux4",
+      "family": "mux",
+      "inputs": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "S0",
+        "S1"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "S0",
+        "S1",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = D[S1:S0]",
+      "pdn_expression": "(~S1 & ~S0 & ~D0) | (~S1 & S0 & ~D1) | (S1 & ~S0 & ~D2) | (S1 & S0 & ~D3)",
+      "truth_table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "S0",
+        "S1"
+      ],
+      "nmos_count": 18,
+      "pmos_count": 18,
+      "transistor_count": 36,
+      "test_strategy": "mux",
+      "timing_arc_count": 12,
+      "dc_sweep_count": 0
+    },
+    {
+      "name": "maj3",
+      "family": "arithmetic",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "ports": [
+        "A",
+        "B",
+        "C",
+        "Y",
+        "VDD",
+        "VSS"
+      ],
+      "function": "Y = majority(A,B,C)",
+      "pdn_expression": "(~A & ~B) | (~A & ~C) | (~B & ~C)",
+      "truth_table": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "complemented_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nmos_count": 9,
+      "pmos_count": 9,
+      "transistor_count": 18,
+      "test_strategy": "threshold",
+      "timing_arc_count": 6,
+      "dc_sweep_count": 0
+    }
+  ]
+}

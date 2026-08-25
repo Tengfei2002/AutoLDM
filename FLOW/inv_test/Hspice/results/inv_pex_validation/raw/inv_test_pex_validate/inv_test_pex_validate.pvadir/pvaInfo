@@ -1,0 +1,20 @@
+libepva built by synopsyshspmgr synmake_pva_build  on Thu Sep 26 11:41:22 CST 2019 - p4:
+
+======================================
+HVA Verilog-A Modules (filename:line#)
+--------------------------------------
+ N  nmos_lvt (../INPUT_MODEL/inv_test_fet_n.va:29)
+ N  pmos_lvt (../INPUT_MODEL/inv_test_fet_p.va:27)
+--------------------------------------
+Total 2 module(s) loaded.
+======================================
+
+======================================
+Lists of Used Modules during GMD Setup
+--------------------------------------
+    nmos_lvt
+    pmos_lvt
+--------------------------------------
+Total 2 module(s) used.
+======================================
+

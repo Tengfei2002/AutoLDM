@@ -1,0 +1,5 @@
+analysis_status,deck,function_pass,ivdd_avg,runlvl,static_power_w,test,tf_out,timing_pass,tphl,tplh,tr_out,vdd_v,vm,voh,vol,vout_avg,vss_v
+ok,inv_test_pex_dc.sp,pass,,3.0,,dc,,,,,,0.7,0.34062,0.7,4.7132e-07,,0.0
+ok,inv_test_pex_leak0.sp,,-1.979e-09,3.0,1.3852999999999998e-09,leak0,,,,,,0.7,,,,0.7,0.0
+ok,inv_test_pex_leak1.sp,,-3.314e-10,3.0,2.3197999999999998e-10,leak1,,,,,,0.7,,,,4.7132e-07,0.0
+ok,inv_test_pex_tran.sp,,,3.0,,tran,3.3297e-11,pass,2.1888e-11,2.1288e-11,3.2081e-11,0.7,,,,,0.0

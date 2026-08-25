@@ -1,0 +1,44 @@
+% CFET geometry and mesh inputs only.  Length unit: um.
+% Layout coordinates/layers belong to test_gds.txt; stack Z/material for
+% layout layers belongs to test_stacked.txt; validation/SDE controls are fixed
+% in gen_sde.py and are intentionally not exposed here.
+
+% Nanosheet cross-sections.  Each entry is z_bottom:z_top.
+lower_sheet_z = 0.012:0.018,0.030:0.036
+upper_sheet_z = 0.100:0.106,0.118:0.124
+sheet_width = 0.021
+
+% Device materials not represented by a layout layer.
+high_k_material = HfO2
+high_k_thickness = 0.002
+spacer_material = Si3N4
+upper_channel_material = Silicon
+lower_channel_material = Silicon
+upper_sd_material = Silicon
+lower_sd_material = SiGe
+
+% Source/drain geometry.  SD is always the SDE-2022 compatible faceted body.
+sd_width = 0.021
+sd_chamfer = 0.003
+sd_overgrowth_z_down = 0.006
+sd_overgrowth_z_up = 0.006
+
+% Gate-to-S/D separation.  MD/BMD geometry comes exclusively from its
+% layout mask plus the z interval in test_stacked.txt.
+spacer_length = 0.005
+
+% Active S/D profiles.  Species and concentration are physical inputs, not
+% generator controls: the profiles are applied to every generated SD region.
+upper_sd_dopant = ArsenicActiveConcentration
+upper_sd_concentration = 8e19
+lower_sd_dopant = BoronActiveConcentration
+lower_sd_concentration = 8e19
+
+% Mesh lengths.  The generator creates only three windows: global domain,
+% device core (SD/channel/high-k/gate/spacer), and front/back interconnect.
+mesh_global_max = 0.030
+mesh_global_min = 0.010
+mesh_core_max = 0.006
+mesh_core_min = 0.001
+mesh_interconnect_max = 0.015
+mesh_interconnect_min = 0.004

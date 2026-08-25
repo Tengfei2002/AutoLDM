@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-08-24T20:18:59",
+  "cell_id": "inv",
+  "input": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\sp\\inv",
+  "output": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv",
+  "hspice": "C:\\synopsys\\Hspice_P-2019.06-SP1-1\\WIN64\\hspice.com",
+  "license_server": "27000@LAPTOP-K9QP6UAM",
+  "decks": [
+    {
+      "deck": "inv_test_pex_dc.sp",
+      "test": "dc",
+      "return_code": 0,
+      "reused": false,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_dc\\inv_test_pex_dc.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_dc"
+    },
+    {
+      "deck": "inv_test_pex_leak0.sp",
+      "test": "leak0",
+      "return_code": 0,
+      "reused": false,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_leak0\\inv_test_pex_leak0.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_leak0"
+    },
+    {
+      "deck": "inv_test_pex_leak1.sp",
+      "test": "leak1",
+      "return_code": 0,
+      "reused": false,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_leak1\\inv_test_pex_leak1.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_leak1"
+    },
+    {
+      "deck": "inv_test_pex_tran.sp",
+      "test": "tran",
+      "return_code": 0,
+      "reused": false,
+      "model_numerical_error": false,
+      "listing": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_tran\\inv_test_pex_tran.lis",
+      "run_dir": "C:\\Users\\Tengfei\\Desktop\\Project_DTCO\\AutoLDM\\FLOW\\inv_test\\Hspice\\results\\inv\\raw\\inv_test_pex_tran"
+    }
+  ]
+}

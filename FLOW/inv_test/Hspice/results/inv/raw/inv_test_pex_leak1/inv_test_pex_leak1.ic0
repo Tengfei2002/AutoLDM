@@ -1,0 +1,23 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "20:18:54 08/24/2026 "
+* "netlist" "inv_test_pex_leak1.sp "
+* "runtitle" "* auto-generated inverter pex test: leak1"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ a = 7.000e-01       
++ vdd = 7.000e-01       
++ vss = 0.000e+00       
++ y = 4.713e-07       
++ xdut.n1_g_a = 7.000e-01       
++ xdut.n1_sd_vss = 2.320e-09       
++ xdut.n1_sd_y = 4.680e-07       
++ xdut.p1_g_a = 7.000e-01       
++ xdut.p1_sd_vdd = 7.000e-01       
++ xdut.p1_sd_y = 4.760e-07       
+***   END: Saved Operating Point ***                     

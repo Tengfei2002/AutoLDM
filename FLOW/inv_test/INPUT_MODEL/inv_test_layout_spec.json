@@ -1,0 +1,37 @@
+{
+  "cell_name": "inv_test",
+  "unit": "um",
+  "comments": [
+    "One-gate CFET inverter aligned to FLOW/test SRAM grid.",
+    "Upper NMOS and lower PMOS share A; left S/D is Y; right S/D is VSS/VDD.",
+    "VSS uses a frontside M0 rail and VDD uses a backside BM0 rail.",
+    "Both power rails span the full effective layout X range, including shapes outside the L1 boundary."
+  ],
+  "rectangles": [
+    {"x1": 0.000, "y1": 0.000, "x2": 0.042, "y2": 0.072, "layer": 1, "label": "None"},
+
+    {"x1": 0.015, "y1": 0.011, "x2": 0.027, "y2": 0.051, "layer": 7, "label": "None"},
+
+    {"x1": -0.006, "y1": 0.011, "x2": 0.006, "y2": 0.068, "layer": 16, "label": "N1_SD_Y"},
+    {"x1": 0.015, "y1": 0.011, "x2": 0.027, "y2": 0.068, "layer": 16, "label": "N1_G_A"},
+    {"x1": 0.036, "y1": -0.006, "x2": 0.048, "y2": 0.051, "layer": 16, "label": "N1_SD_VSS"},
+
+    {"x1": -0.006, "y1": 0.056, "x2": 0.006, "y2": 0.068, "layer": 17, "label": "None"},
+    {"x1": 0.015, "y1": 0.056, "x2": 0.027, "y2": 0.068, "layer": 17, "label": "None"},
+
+    {"x1": -0.005, "y1": 0.057, "x2": 0.005, "y2": 0.067, "layer": 18, "label": "None"},
+    {"x1": 0.016, "y1": 0.038, "x2": 0.026, "y2": 0.048, "layer": 18, "label": "None"},
+    {"x1": 0.037, "y1": -0.005, "x2": 0.047, "y2": 0.005, "layer": 18, "label": "None"},
+
+    {"x1": -0.006, "y1": 0.056, "x2": 0.006, "y2": 0.068, "layer": 19, "label": "Y"},
+    {"x1": 0.015, "y1": 0.037, "x2": 0.027, "y2": 0.049, "layer": 19, "label": "A"},
+    {"x1": -0.006, "y1": -0.011, "x2": 0.048, "y2": 0.011, "layer": 19, "label": "VSS"},
+
+    {"x1": -0.006, "y1": 0.011, "x2": 0.006, "y2": 0.068, "layer": 51, "label": "P1_SD_Y"},
+    {"x1": 0.015, "y1": 0.011, "x2": 0.027, "y2": 0.068, "layer": 51, "label": "P1_G_A"},
+    {"x1": 0.036, "y1": -0.006, "x2": 0.048, "y2": 0.051, "layer": 51, "label": "P1_SD_VDD"},
+
+    {"x1": 0.037, "y1": -0.005, "x2": 0.047, "y2": 0.005, "layer": 52, "label": "None"},
+    {"x1": -0.006, "y1": -0.011, "x2": 0.048, "y2": 0.011, "layer": 53, "label": "VDD"}
+  ]
+}

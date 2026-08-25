@@ -1,0 +1,17 @@
+
+Begin of pVA compiling on Mon Aug  3 17:38:01 2026	
+
+Parsing '../../INPUT_MODEL/test_fet_n.va'
+Parsing include file 'C:/synopsys/Hspice_P-2019.06-SP1-1/include/constants.vams'
+Parsing include file 'C:/synopsys/Hspice_P-2019.06-SP1-1/include/disciplines.vams'
+Parsing '../../INPUT_MODEL/test_fet_p.va'
+Parsing include file 'C:/synopsys/Hspice_P-2019.06-SP1-1/include/constants.vams'
+Parsing include file 'C:/synopsys/Hspice_P-2019.06-SP1-1/include/disciplines.vams'
+Parsing include file 'C:/synopsys/Hspice_P-2019.06-SP1-1/include/discipline.h'
+
+End of pVA compiling on Mon Aug  3 17:38:01 2026	
+
+
+End of build pVA DB on Mon Aug  3 17:38:01 2026	
+
+*pvaE* TODO: symbol name mapping 0:314

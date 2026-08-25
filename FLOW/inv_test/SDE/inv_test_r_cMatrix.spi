@@ -1,0 +1,9 @@
+* SYNTHETIC R matrix for FLOW/inv_test.
+* Values are assumed for automation testing and are not extraction/sign-off data.
+* Unit: ohm.
+R_A_N1G Contact_M0_A_Top Contact_MD_N1_G_A_Bottom 8.0
+R_A_P1G Contact_M0_A_Top Contact_BMD_P1_G_A_Top 12.0
+R_Y_N1D Contact_M0_Y_Top Contact_MD_N1_SD_Y_Bottom 10.0
+R_Y_P1D Contact_M0_Y_Top Contact_BMD_P1_SD_Y_Top 14.0
+R_VDD_P1S Contact_BM0_VDD_Bottom Contact_BMD_P1_SD_VDD_Top 9.0
+R_VSS_N1S Contact_M0_VSS_Top Contact_MD_N1_SD_VSS_Bottom 7.0

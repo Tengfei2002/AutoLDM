@@ -1,0 +1,29 @@
+* "simulator" "HSPICE" 
+* "version" "P-2019.06-SP1-1 win64"
+* "format" "HSP"
+* "rundate" "20:22:06 08/03/2026 "
+* "netlist" "test_6t_norc_write0_softinit.sp "
+* "runtitle" "* diagnostic only: write0 with finite-resistance, smooth-release initial state."
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl = 3.958e-07       
++ blb = 7.000e-01       
++ blbdrv_src = 7.000e-01       
++ blbf = 7.000e-01       
++ bldrv_src = 0.000e+00       
++ blf = 1.979e-07       
++ q = 7.000e-01       
++ qb = 3.072e-06       
++ qbinit = 0.000e+00       
++ qinit = 7.000e-01       
++ vdd = 7.000e-01       
++ vdd_src = 7.000e-01       
++ vss = 4.136e-08       
++ vss_src = 0.000e+00       
++ wl = 0.000e+00       
++ wldrv = 0.000e+00       
+***   END: Saved Operating Point ***                     

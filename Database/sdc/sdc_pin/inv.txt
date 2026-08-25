@@ -1,0 +1,25 @@
+(R){A,Y,VDD,VSS,N1_SD_VSS,N1_G_A,N1_SD_Y,P1_SD_VDD,P1_G_A,P1_SD_Y}
+R_VSS_N1_SD_VSS
+R_A_N1_G_A
+R_Y_N1_SD_Y
+R_VDD_P1_SD_VDD
+R_A_P1_G_A
+R_Y_P1_SD_Y
+
+(C){A,Y,VDD,VSS}
+C_A_Y
+C_A_VDD
+C_A_VSS
+C_Y_VDD
+C_Y_VSS
+C_VDD_VSS
+
+(FET){N1,P1}{S,G,D,B}
+N1 S=N1_SD_VSS G=N1_G_A D=N1_SD_Y B=VSS L=default W=default NF=default
+P1 S=P1_SD_VDD G=P1_G_A D=P1_SD_Y B=VDD L=default W=default NF=default
+
+(PORT){A,Y,VDD,VSS}
+A=A
+Y=Y
+VDD=VDD
+VSS=VSS

@@ -1,0 +1,9 @@
+* SYNTHETIC C matrix for FLOW/inv_test.
+* Values are assumed for automation testing and are not extraction/sign-off data.
+* Unit: farad.
+C_A_Y Contact_M0_A_Top Contact_M0_Y_Top 9.0e-16
+C_A_VDD Contact_M0_A_Top Contact_BM0_VDD_Bottom 2.5e-16
+C_A_VSS Contact_M0_A_Top Contact_M0_VSS_Top 3.0e-16
+C_Y_VDD Contact_M0_Y_Top Contact_BM0_VDD_Bottom 5.5e-16
+C_Y_VSS Contact_M0_Y_Top Contact_M0_VSS_Top 6.5e-16
+C_VDD_VSS Contact_BM0_VDD_Bottom Contact_M0_VSS_Top 1.2e-15
