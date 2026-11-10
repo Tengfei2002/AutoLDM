@@ -1,4 +1,0 @@
-interface:
-  display_name: "AutoLDM 标准单元版图"
-  short_description: "基于已验证CFET参考单元生成、对比并校验AutoLDM标准单元版图"
-  default_prompt: "使用 $autoldm-standard-cell-layout 基于现有 SRAM 参考单元生成并验证目标标准单元版图。"

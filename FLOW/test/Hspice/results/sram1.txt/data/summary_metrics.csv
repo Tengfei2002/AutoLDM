@@ -1,8 +1,0 @@
-analysis_status,deck,test
-hspice_failed,test_pex_hold.sp,hold
-hspice_failed,test_pex_hsnm.sp,hsnm
-hspice_failed,test_pex_read.sp,read
-hspice_failed,test_pex_rsnm.sp,rsnm
-hspice_failed,test_pex_smoke.sp,smoke
-hspice_failed,test_pex_write0.sp,write0
-hspice_failed,test_pex_write1.sp,write1

@@ -1,4 +1,0 @@
-interface:
-  display_name: "AutoLDM SDC Cell Generator"
-  short_description: "Generate checked standalone SDC cell triplets"
-  default_prompt: "Use $autoldm-generate-sdc-cell to generate the pin, standalone Python adapter, and testbench files for one catalog standard cell."

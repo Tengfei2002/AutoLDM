@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "minimal_inv",
+  "version": "1",
+  "cell": "inv",
+  "description": "Imported inv_test; synthetic RC for workflow verification",
+  "stages": [
+    "sde",
+    "drc",
+    "pex"
+  ],
+  "options": {
+    "strict_contact_face": true
+  },
+  "files": {
+    "n_va": "inputs/n_va.va",
+    "p_va": "inputs/p_va.va",
+    "pin": "inputs/pin.txt",
+    "bench": "inputs/bench.txt",
+    "adapter": "../../adapters/inv.py",
+    "r_matrix": "inputs/r_matrix.spi",
+    "c_matrix": "inputs/c_matrix.spi",
+    "layout": "inputs/layout.txt",
+    "params": "inputs/params.txt",
+    "stack": "inputs/stack.txt",
+    "rules": "inputs/rules.txt"
+  },
+  "sha256": {
+    "n_va": "2d19ac309b270763831c7b0252c94b0df309a22a6211656cab103b8ac17d3e31",
+    "p_va": "0fbfb848101c9754305ade1ce971210a29b9a3ce5318067cc3f4a9bbf1814270",
+    "pin": "57b3a3b56db367d04392f4c8da0ca7038963d6daa82de6b346146949f07312fe",
+    "bench": "9e9335590c93f0db6c7ababaeecd85edcd5d2741c10769a8fb23abf97fde7c11",
+    "adapter": "17a12e62b2c267004f6c334d4e00ed2208279b9903b6df8bcfbc4a842b4c4174",
+    "r_matrix": "5e217d8cc89089fc87acaf161263f8dd9e6155949748fee15d5276909d390015",
+    "c_matrix": "846f6c38f7c8034602225530a0a5caf81ca3b01f176df62cbd1637eae1f1eab0",
+    "layout": "9d7e97583c1fe88c21356b27e560822a64432df4ea3c61ee677f76364db29ae5",
+    "params": "4ac96e9294cbce51438c8804640b67ebb55411852694cff73402e7d5e21fb10f",
+    "stack": "8632aab58360e1a7c394d4d5d44e5ad6715b230556b871cb7020e83ebf8b4452",
+    "rules": "bc5612152265b010398e78f80b424291466f1004883b7359aaa8c84fc5fcf15d"
+  },
+  "provenance": {
+    "original_folder": "AutoLDM/FLOW/inv_test",
+    "rc_origin": "synthetic"
+  },
+  "warnings": []
+}

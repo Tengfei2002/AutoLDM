@@ -1,0 +1,5 @@
+# Only needed for fitting, plots, or GDS import; minimal validation uses stdlib.
+numpy
+scipy
+matplotlib
+gdstk

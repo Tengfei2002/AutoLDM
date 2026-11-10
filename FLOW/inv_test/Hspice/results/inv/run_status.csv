@@ -1,5 +1,0 @@
-deck,listing,model_numerical_error,return_code,reused,run_dir,test
-inv_test_pex_dc.sp,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_dc\inv_test_pex_dc.lis,False,0,False,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_dc,dc
-inv_test_pex_leak0.sp,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_leak0\inv_test_pex_leak0.lis,False,0,False,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_leak0,leak0
-inv_test_pex_leak1.sp,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_leak1\inv_test_pex_leak1.lis,False,0,False,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_leak1,leak1
-inv_test_pex_tran.sp,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_tran\inv_test_pex_tran.lis,False,0,False,C:\Users\Tengfei\Desktop\Project_DTCO\AutoLDM\FLOW\inv_test\Hspice\results\inv\raw\inv_test_pex_tran,tran

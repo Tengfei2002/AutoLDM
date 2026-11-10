@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.gds binary
+*.zip binary
+*.npz binary
+# Preserve formatting of the vendored Verilog-A models.
+configs/minimal_inv/inputs/*.va whitespace=-blank-at-eol,-space-before-tab
