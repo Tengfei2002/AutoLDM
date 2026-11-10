@@ -2,6 +2,151 @@
 
 本目录是唯一的上传边界。框架、标准单元生成资源、一个 INV 最小配置和自动检查均在此目录内；不依赖原来的 `AutoLDM/FLOW`。Python 3.10+ 即可完成最小生成验证。
 
+AutoLDM 面向 DTCO 研究，将器件模型标定、版图与工艺描述、三维建模、寄生参数映射和标准单元验证连接起来。以下保留原 README 的五类框图，并按当前目录与配置包接口更新。
+
+## 总体流程
+
+```mermaid
+flowchart TD
+    IV["参考 Id-Vg 数据"] --> FIT["① 拟合 N/P Verilog-A"]
+    VA0["原始 N/P 模型"] --> FIT
+    FIT --> DEV["② HSPICE 器件级校准"]
+    DEV --> VA["适用模型、拟合报告与对比图"]
+
+    GEO["版图矩形与标签"] --> CHECK["③ 输入与几何检查"]
+    TECH["器件、材料、网格和层规则"] --> CHECK
+    CHECK --> SDE["④ 生成 R/C SDE 命令"]
+    SDE --> EXT["外部 Sentaurus 与寄生提取流程"]
+    EXT --> MAT["R/C 寄生矩阵"]
+
+    MAT --> PEX["⑤ 节点映射与 PEX"]
+    NET["R/C、FET、PORT 连接清单"] --> PEX
+    VA --> PEX
+    PEX --> INC["HSPICE 子电路 .inc"]
+    INC --> VERIFY["⑥ 编译检查与单元测试"]
+    TB["单元专用测试适配器与 bench"] --> VERIFY
+    VERIFY --> RESULT["波形、测量值和运行状态"]
+
+    RESULT -.->|调整版图或规则| CHECK
+    RESULT -.->|重新标定器件| FIT
+```
+
+器件模型标定由 `core/fit_hspice_va.py` 负责，互连和电路验证由其余公共生成器与单元适配器负责。更换标准单元时，主要替换输入和测试适配器。当前统一入口生成 SDE 命令，Sentaurus 与寄生提取仍需在外部配置执行；最小示例直接使用人工 RC 矩阵。
+
+## 输入、处理和产物
+
+`configs/minimal_inv/profile.json` 为每项输入声明路径及 SHA256；`ldm.py run` 检查配置、复制输入快照并调用公共脚本。
+
+```mermaid
+flowchart TD
+    CFG["profile.json<br/>路径、单元名、阶段与输入哈希"] --> ENTRY["ldm.py run<br/>配置检查与隔离运行"]
+    GEO["inputs/layout.txt<br/>矩形与物理标签"] --> SDEGEN["core/gen_sde.py"]
+    TECH["inputs/params.txt、stack.txt、rules.txt"] --> SDEGEN
+    GEO --> DRCGEN["core/gen_drc_report.py"]
+    TECH --> DRCGEN
+    ENTRY --> SDEGEN
+    ENTRY --> DRCGEN
+
+    SDEGEN --> RDECK["R 结构 SDE 命令"]
+    SDEGEN --> CDECK["C 结构 SDE 命令"]
+    RDECK --> EXT["外部三维建模与寄生提取"]
+    CDECK --> EXT
+    EXT --> MAT["r_matrix.spi 与 c_matrix.spi"]
+    SYN["最小示例的人工矩阵"] --> MAT
+    DRCGEN --> DRPT["DRC 文本报告"]
+
+    MAT --> PEX["core/gen_pex.py"]
+    PINS["inputs/pin.txt"] --> PEX
+    MODEL["inputs/n_va.va 与 p_va.va"] --> PEX
+    PEX --> PINRC["数值化 pin-RC"]
+    PEX --> LIB["PEX 子电路 .inc"]
+    PEX --> VSP["零偏置验证 deck"]
+
+    ENTRY --> RUN["core/run_cell.py"]
+    LIB --> RUN
+    VSP --> RUN
+    CASE["adapter 与 inputs/bench.txt"] --> RUN
+    RUN --> DECKS["单元专用功能、时序和 DC decks"]
+    DECKS --> SIM["显式 --simulate 才执行 HSPICE"]
+    SIM --> RES["状态、测量值与原始输出"]
+    RUN --> RECORD["运行清单、日志与本地目录数据库"]
+```
+
+| 阶段 | 当前实现 | 主要职责 |
+|---|---|---|
+| 版图转换 | `core/gds2txt.py`、`core/txt2gds.py` | GDS 与矩形文本描述转换 |
+| 几何预检查与三维输入 | `core/gen_sde.py` | 检查输入并生成 R/C SDE 命令 |
+| DRC | `core/gen_drc_report.py` | 宽度、间距、包围和接触检查 |
+| 寄生映射与 PEX | `core/gen_pex.py` | 计算 pin 级 R/C，生成子电路及验证 deck |
+| 标准单元测试 | 配置包的 `adapter` 与 `bench` | 生成单元专用 deck、执行并分析测试 |
+| 电路统一执行 | `core/run_cell.py` | 检查单元接口、控制顺序并传播失败状态 |
+| 配置与记录 | `tools/workspace.py` | 解析配置包、保存快照、登记运行与结果 |
+
+默认生成模式到 deck 生成结束，不调用 HSPICE；`--dry-run` 检查调度，`--simulate` 才执行仿真。
+
+## 标准单元拓扑为什么可以泛化
+
+电路连接由 `pin` 清单的 `(R)`、`(C)`、`(FET)`、`(PORT)` 四部分表达，公共 PEX 生成器读取这些描述来构建子电路。物理标签与电路端口通过清单显式关联。
+
+```mermaid
+flowchart TD
+    PHY["物理版图标签"] --> RC["寄生网络节点"]
+    MAN["pin 连接清单"] -->|R/C 请求| RC
+    MAN -->|S/G/D/B| DEV["N/P 器件实例"]
+    MAN -->|PORT 映射| PORT["有序外部端口"]
+    RC --> SUB["统一 HSPICE .subckt"]
+    DEV --> SUB
+    PORT --> SUB
+    NVA["N 型 VA 模块"] --> SUB
+    PVA["P 型 VA 模块"] --> SUB
+    SUB --> USE["单元测试平台或更高层级网表"]
+```
+
+实例以 N/P 前缀选择对应器件模型，S/G/D/B 及端口顺序由清单指定；`L/W/NF=default` 从模型解析。改变端口或器件数量，需要同步维护连接清单、矩阵、测试条件和适配器。当前版图以轴对齐矩形为主，DRC 仅覆盖已实现的规则类型；这些约定不代表工艺签核。
+
+## Verilog-A 拟合流程
+
+`core/fit_hspice_va.py` 接受参考曲线目录、N/P 模型模板和输出目录，使用有边界最小二乘调用 HSPICE 评估候选参数。参考电流密度按 A/μm 组织，仿真电流转换到相同口径后计算误差。
+
+```mermaid
+flowchart TD
+    REF["--ref-dir 参考 Id-Vg 曲线"] --> OBJ["多曲线误差目标"]
+    ORIG["--n-va 与 --p-va 模型模板"] --> CAND["写入候选参数"]
+    OBJ --> OPT["有边界最小二乘"]
+    OPT -->|下一组参数| CAND
+    CAND --> HSP["HSPICE 器件仿真"]
+    HSP --> CONV["电流 A 转为 A/um"]
+    CONV --> OBJ
+    OPT --> FITTED["拟合参数与 N/P 模型"]
+    XL["可选 --minimize-xl<br/>范围由 --xl-limit-nm 指定"] --> OPT
+    FITTED --> REPORT["--output-dir<br/>模型、JSON 报告与对比图"]
+    REPORT --> SELECT["核对误差与适用范围"]
+    SELECT --> CELLIN["回填配置包的 n_va 与 p_va"]
+```
+
+旧版 README 中两套历史拟合结果的目录不再作为当前软件依赖；其来源可在 [历史文件说明](docs/history.md) 指向的提交中查阅。拟合需要实际参考数据、可选科学计算依赖及 HSPICE，最小验证不会执行拟合。
+
+## 新建或替换标准单元配置
+
+```mermaid
+flowchart TD
+    COPY["复制配置包或创建 profile.json"] --> NAME["设置配置 ID、版本与 cell"]
+    NAME --> GEO["① 准备版图矩形与标签"]
+    GEO --> TECH["② 指定 params、stack 和规则"]
+    TECH --> CELL["③ 配置 pin、adapter、bench"]
+    CELL --> MODEL["④ 指定 N/P Verilog-A 模型"]
+    MODEL --> EXT["⑤ 准备与节点匹配的 R/C 矩阵"]
+    EXT --> CHECK["⑥ 更新哈希并验证配置与单元接口"]
+    CHECK --> GEN["⑦ 隔离生成 SDE、DRC、PEX 和测试 deck"]
+    GEN --> SIM["⑧ 在商业工具环境中运行单元测试"]
+    SIM --> RESULT["保留配置快照、结果和有效性标记"]
+    RESULT -.->|创建新配置版本| GEO
+```
+
+同一单元的变体可通过 `fork` 创建独立输入包。新单元须保证 `cell`、适配器的 `CELL_ID`、连接清单、bench 和矩阵一致；`resources/standard_cells/` 提供 30 个组合单元的生成资源，仍需匹配版图和提取数据。配置继承和替换规则见 [配置说明](docs/configuration.md)。
+
+## 仓库目录结构
+
 ```text
 ldm.py                 统一入口
 core/                  SDE、DRC、PEX、HSPICE 调度、GDS 转换及可选模型拟合

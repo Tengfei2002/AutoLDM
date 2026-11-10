@@ -2,6 +2,7 @@
 
 ## 2026-11-10 — repository cleanup
 
+- Restore the README's five architecture/workflow diagrams and their explanations, with paths and execution boundaries updated to the current framework.
 - Extract the common SDE, DRC, PEX, fitting, GDS conversion, and cell-runner code into `core/`.
 - Keep one self-contained inverter example and the standard-cell generator resources.
 - Add replaceable configuration packages, input checksums, isolated runs, and a local result catalog.
